@@ -67,6 +67,7 @@ const CONFIG = {
 
   /* ── RACK ─────────────────────────────────────────────────────────────── */
   rack: {
+    style: "photo",            // "photo" = the real rack photo · "clean" = only the coats on a chrome rod (like the rack at the bottom of each page)
     base: "rack/00-rack-base.png", // your photo with the 7 coats lifted out: rod, hangers, parka, cap, frame
     aspect: 1057 / 439,        // width ÷ height of the base image (change if you swap the photo)
     width: "min(77.4vw, 137.6vh)", // photo width on wide screens (all coat x / y / w values are % of the photo)
@@ -91,7 +92,7 @@ const CONFIG = {
   eggs: true,
 
   /* Small hint for first-time visitors. Disappears after the first hover or tap. */
-  hint: { mouse: "Pick a coat", touch: "Tap a coat · tap again to open" },
+  hint: { mouse: "Hover a coat to peek · click to open", touch: "Tap a coat to peek · tap again to open" },
 
   /* ── FUN ──────────────────────────────────────────────────────────────────
      Playful extras. Set any of them to false to switch it off. */
@@ -182,7 +183,9 @@ const CONFIG = {
               { label: "Tools", value: "Figma, Miro, Notion, Power BI" } ] },
             { step: "Brief", type: "text", label: "Perspectivity",
               text: "Perspectivity is a collective of facilitators who help governments, NGOs and companies navigate complex social challenges through dialogue. Their website didn't reflect that. It was text-heavy, hard to navigate, and visitors left within a minute." },
-            { step: "Brief", type: "split", label: "The website before", text: "", image: "", alt: "The old Perspectivity website" },
+            { step: "Brief", type: "split", label: "The website before",
+              text: "A beautiful crowd photo and the line “For the love of complexity”, but no clear answer to what Perspectivity actually does. Under it: long paragraphs, abstract menu labels and no stories of real projects.",
+              image: "work/persp/old-site.jpg", alt: "The old Perspectivity homepage: crowd photo with the headline For the love of complexity" },
             { step: "Brief", type: "text", label: "The question", big: true,
               text: "How can we strengthen Perspectivity's online presence by redesigning its website?" },
 
@@ -196,6 +199,9 @@ const CONFIG = {
 
             { step: "Research", type: "text", label: "How we researched",
               text: "A mixed-method approach: Google Analytics and LinkedIn visitor data (visualised in Power BI), interviews with four members of the collective, interviews with clients and students, a poll, personas and a competitor analysis." },
+            { step: "Research", type: "split", label: "Who is actually looking", flip: true,
+              text: "Their LinkedIn visitor data told us who the website really has to work for. Two thirds of the views came from the Netherlands, and business developers looked far more than anyone else, followed by researchers, HR and education. So: busy professionals who need to understand the offer quickly.",
+              image: "work/persp/linkedin-jobs.jpg", alt: "Bar chart of LinkedIn page views by job function, Business Development far ahead", caption: "LinkedIn views by job function" },
             { step: "Research", type: "stakeholders", label: "Stakeholder map",
               quadrants: [
                 { title: "Keep satisfied", note: "high influence · lower interest", items: [ "Current clients", "Ministries & government", "NGOs" ] },
@@ -235,6 +241,12 @@ const CONFIG = {
 
             { step: "Define", type: "statement", label: "The real problem",
               lines: [ "It wasn't the content. It was how it was shown.", "Too much text. No hierarchy. Buried key information." ] },
+            { step: "Define", type: "list", label: "What was wrong, in five words", items: [
+              "Clarity: the site didn't say what Perspectivity does.",
+              "Structure: every page was built differently.",
+              "Stories: no human stories or real project results.",
+              "Mobile: hard to use on a phone.",
+              "Outreach: nothing pulled visitors back or into the newsletter." ] },
             { step: "Define", type: "list", label: "How might we…", items: [
               "…make Perspectivity's purpose clear within seconds?",
               "…make projects and stories easy to find?",
@@ -304,38 +316,105 @@ const CONFIG = {
           questionLabel: "The purpose",
           question: "Lessons from this 4-year test park will shape the permanent Waterfront Park opening in 2029. If residents reject the \"wild\" look now, they'll reject it again later.",
           caseStudy: [
-            { step: "Brief", type: "hero", title: "Proefpark Binckhorst",
+            { step: "Brief", type: "hero", title: "Making a “wild” park read as designed, not abandoned",
               image: "work/b-plan.png", alt: "Isometric plan of Proefpark Binckhorst", caption: "Park plan · SYLVA", paper: true },
-            { step: "Brief", type: "text", label: "What",
-              text: "A temporary biodiversity park in Binckhorst was designed to grow \"wild\" on purpose — supporting rare local species. Residents just saw it as abandoned." },
-            { step: "Brief", type: "text", label: "Why",
-              text: "Lessons from this 4-year test park will shape the permanent Waterfront Park opening in 2029. If residents reject the \"wild\" look now, they'll reject it again later." },
-            { step: "Brief", type: "text", label: "Objective of the project", big: true,
-              text: "To design an interactive shared-space experience that communicates the value of biodiversity-focused green spaces and encourages residents to appreciate and engage with the nature." },
-            { step: "Research", type: "quote", text: "I'd appreciate it more if I knew the messy bushes were VIP suites for birds.", by: "resident survey" },
+            { step: "Brief", type: "facts", items: [
+              { label: "My role", value: "Team lead · research, ideation, AI visuals & physical prototyping" },
+              { label: "Team", value: "4 students · Group 16" },
+              { label: "Client", value: "Municipality of The Hague · Digital Innovation & Smart City team (DISC)" },
+              { label: "Methods", value: "Interviews, surveys, observation, data cards, scale-model testing" },
+              { label: "Made with", value: "Miro, paper, cardboard, stones & a lot of gravel" } ] },
+            { step: "Brief", type: "text", label: "My part",
+              text: "This was a group project with four of us, and I took the lead. Most of the research went through my hands, including 10 of our 13 data cards. I drove the ideation, generated the AI visualisations of each concept, and built the physical prototypes, from the paper plan to the 1:100 scale model." },
+            { step: "Brief", type: "split", label: "The park",
+              text: "Proefpark Binckhorst is a temporary test park on a former industrial site. It's left to grow wild on purpose: tall grass, dead wood and bushes give rare local species a home. 190 trees are kept there as a nursery for the future city park.",
+              image: "work/bk/site-path.jpg", alt: "A gravel path with a bench and young trees along a fence in the park" },
+            { step: "Brief", type: "split", label: "The problem", flip: true,
+              text: "Residents didn't see biodiversity. They saw a messy, unfinished lot. Logs on the ground and long grass looked like nobody was taking care of it, so people walked past instead of in.",
+              image: "work/bk/site-logs.jpg", alt: "Tree trunks lying in the grass next to graffiti walls" },
+            { step: "Brief", type: "list", label: "The constraints", items: [
+              "The park only exists for 4 years, until a tram line goes through.",
+              "No structural changes and no fences: the space stays open and wild.",
+              "Lessons from here go into the permanent Waterfront Park, opening in 2029. If people reject the wild look now, they'll reject it again later." ] },
+            { step: "Brief", type: "text", label: "Research question", big: true,
+              text: "Which design interventions could communicate to residents that the “wild” state of the park is an intentional choice, not a lack of maintenance?" },
+
+            { step: "Research", type: "text", label: "How we researched",
+              text: "We went to the park a lot. Interviews on site, a survey on a QR sign placed in the park plus an online version, observation and behavioural maps of who uses it and how, and desk research into how people read “cared for” nature (Nassauer's cues to care, Turku, Landschaftspark Duisburg-Nord)." },
+            { step: "Research", type: "split", label: "Talking to people in the park",
+              text: "Four interviews right there in the park: two teachers, a resident and a parent. We also mapped the routes of a dog owner, a family, a runner and a young person to see where people actually walk, stop and turn around.",
+              image: "work/bk/interview.jpg", alt: "Two team members interviewing a visitor in the park" },
+            { step: "Research", type: "split", label: "A survey you scan in the park", flip: true,
+              text: "Our “Binck Five” poster asked visitors to scan and answer a few questions on the spot. The name came from the five species the park is built for: the long-tailed tit, house sparrow, small tortoiseshell, Daubenton's bat and pike.",
+              image: "work/bk/qr-survey.jpg", alt: "The Binck Five QR survey poster taped to a tree in the park" },
             { step: "Research", type: "stats", items: [
-                { value: "on-site", label: "interviews" },
-                { value: "27", label: "data points" },
-                { value: "3", label: "personas" } ],
-              after: "revealed a pattern: without benches, signs, or clear paths, people's brains read \"wild\" as \"unmaintained\" — not \"designed.\"" },
+                { value: "57%", label: "saw an industrial transit zone" },
+                { value: "0%", label: "saw a peaceful nature spot" },
+                { value: "71%", label: "would feel better with a sign explaining it" } ],
+              after: "After hearing about the biodiversity, every respondent said they'd appreciate the park more. Nobody wanted a clean, traditional park instead." },
+            { step: "Research", type: "quote", text: "I'd appreciate it more if I knew the messy bushes were VIP suites for birds.", by: "resident survey" },
+            { step: "Research", type: "list", label: "What we found", items: [
+              "Without benches, signs or clear paths, people read “wild” as “unmaintained”, not as “designed”.",
+              "Safety matters most: 87.5% of online respondents would stop visiting a park where they don't feel safe.",
+              "Kids already loved the wild space. Teachers and parents just needed a way to understand it.",
+              "Interest in an AR app was lukewarm (2.9 out of 5). People wanted something they could see and touch." ] },
+
             { step: "Define", type: "statement", label: "The real problem",
               lines: [ "It wasn't the park.", "It was the missing signal that the mess was intentional." ] },
-            { step: "Define", type: "image", image: "work/b-persona.png", alt: "Persona card: Thijs, 12 years old, middle school pupil from Binckhorst", caption: "Persona · Thijs, 12" },
-            { step: "Ideate", type: "directions", label: "Three directions, explored", items: [
-              { title: "Binck Eye", text: "an AR app revealing hidden wildlife through your phone", image: "work/b-dir1.png" },
-              { title: "Living Labyrinth", text: "a physical spiral path with sculptures and reflection prompts", image: "work/b-dir3.png" },
-              { title: "Animal Track Adventure", text: "turning a jogging route into a biodiversity trail", image: "work/b-dir2.png" } ] },
-            { step: "Prototype", type: "built", label: "What we built",
-              text: "The Hidden Trail — combining the strongest ideas: a walking path with wooden info panels (QR-linked), movement challenges, stone seating, and a spiral labyrinth as the park's heart. Low-tech, leave-no-trace, budget-friendly — built to survive a 4-year lifespan before the tram comes through.",
+            { step: "Define", type: "text", label: "How might we", big: true,
+              text: "How might we help Binckhorst residents understand, accept and value the wild, biodiversity-first greenery?" },
+            { step: "Define", type: "image", image: "work/b-persona.png", alt: "Persona card: Thijs, 12 years old, middle school pupil from Binckhorst", caption: "One of three personas · Thijs, 12" },
+
+            { step: "Ideate", type: "text", label: "Ideation",
+              text: "Brainstorming and round robin first, then clustering the ideas: info boards at the entrance, learning boards for kids, sensory things like bird sounds and feeding stations, and playful touchpoints like QR codes for the Binck Five. Lotus blossom pushed each cluster further into three concepts, which we presented to the client." },
+            { step: "Ideate", type: "directions", label: "Three directions, explored",
+              note: "Each concept as a four-step story of a visitor in the park. I generated the visualisations with AI to make the ideas easy to picture for the client and testers.", items: [
+              { title: "Binck Eye", text: "an AR app revealing hidden wildlife through your phone", image: "work/b-dir1.webp" },
+              { title: "Living Labyrinth", text: "a physical spiral path with sculptures and reflection prompts", image: "work/b-dir3.webp" },
+              { title: "Animal Track Adventure", text: "turning a jogging route into a biodiversity trail", image: "work/b-dir2.webp" } ] },
+            { step: "Ideate", type: "statement", label: "Client feedback",
+              lines: [ "Merge the labyrinth with the animal tracks.", "The client also asked for playful challenges (“can you jump that far?”), a light digital layer of QR codes instead of a full app, and wooden info panels made by local artists, so the park feels connected to Binckhorst." ] },
+
+            { step: "Prototype & test", type: "split", label: "Round 1 · a plan on paper",
+              text: "Our first prototype was a 2D plan of the park with paper touchpoints to move around. Testers compared the concepts and placed the interactions themselves. They preferred physical interaction over AR, and wanted it spread out like a trail instead of one station, with the entrance as the most important spot.",
+              image: "work/bk/plan-2d.jpg", alt: "Paper touchpoints placed on a printed park plan" },
+            { step: "Prototype & test", type: "split", label: "Round 2 · a 1:100 scale model", flip: true,
+              text: "Then I built a high-fidelity scale model with real stones, gravel and grass carpet. The labyrinth is detachable, so testers could pick it up and rearrange what goes inside it.",
+              image: "work/bk/model-full.jpg", alt: "The long 1:100 scale model of the park with paths and trees" },
+            { step: "Prototype & test", type: "split", label: "Organising the labyrinth",
+              text: "Testers placed the elements themselves. Quiet things, like reflection stones, ended up inside the labyrinth. Movement challenges went outside, along the trail. That became the structure of the final design.",
+              image: "work/bk/model-test.jpg", alt: "A tester arranging pieces on the scale model" },
+            { step: "Prototype & test", type: "statement", label: "The pivot",
+              lines: [ "Low-tech beat high-tech.", "Every round pointed away from the AR app and towards things you can touch, walk and climb. The QR codes stayed, but as an extra layer, not the main thing." ] },
+
+            { step: "Final concept", type: "built", label: "The Hidden Trail",
+              text: "Animal footprints along the paths lead you through the park. On the way: movement challenges (“can you jump like the frog?”), wooden info panels made with local artists, and QR codes for bird sounds and species facts. At the heart sits a spiral labyrinth with reflection stones, near the playground. Low-tech, leave-no-trace and cheap enough for a 4-year park.",
               images: [
                 { image: "work/b-labyrinth.png", alt: "Spiral labyrinth of stones in the grass" },
                 { image: "work/b-sign1.png", alt: "Wooden sign: Can you jump like the frog?" },
                 { image: "work/b-sign2.png", alt: "Wooden info panel: Life in the Binckhorst" },
                 { image: "work/b-heron.png", alt: "Phone showing the Grey Heron page" },
                 { image: "work/b-qr.png", alt: "Scanning the QR code on a wooden panel" } ] },
-            { step: "Test & result", type: "text", label: "The result", big: true,
-              text: "Tested the final physical scale prototype with fellow students, then presented the full concept to the client. They were impressed and enthusiastic about the direction." },
-            { step: "Test & result", type: "image", image: "work/b-map.png", alt: "Illustrated park map with the spiral labyrinth and touchpoints", caption: "Park map", wide: true },
+            { step: "Final concept", type: "list", label: "Design principles", items: [
+              "Playfulness over instruction.",
+              "Discovery over overload.",
+              "Movement as engagement.",
+              "Layered perception: a quick look and a deep dive both work.",
+              "Low-tech, high impact." ] },
+            { step: "Final concept", type: "image", image: "work/b-map.png", alt: "Illustrated park map with the spiral labyrinth and touchpoints", caption: "Park map", wide: true },
+
+            { step: "Result", type: "text", label: "The result", big: true,
+              text: "We presented the Hidden Trail and the scale model to the municipality. They were enthusiastic about the direction." },
+            { step: "Result", type: "list", label: "Next steps we recommended", items: [
+              "A maintenance plan, so the trail itself never looks abandoned.",
+              "A toolkit for schools to use the park as an outdoor classroom.",
+              "Testing with children aged 6 to 12, the main audience.",
+              "Making it modular, so it can move to the Waterfront Park in 2029." ] },
+            { step: "Result", type: "list", label: "What I learned", items: [
+              "Testing with a physical model gives better feedback than any screen: people grab things and move them.",
+              "Leading a team means delegating, even when it feels uncomfortable, and telling people what I'm working on.",
+              "Client feedback can make a concept better, not just smaller: the local artists idea came from them.",
+              "We solved what happens inside the park, but not how to pull people in from outside. That's the next problem." ] },
           ],
         },
         {
@@ -386,7 +465,7 @@ const CONFIG = {
              poster : still image shown before playing (optional)
              wide   : true for horizontal (16:9) videos, leave it out for vertical phone videos
              title / note : small caption under the video */
-        { title: "Product promo · cosmetic clinic", note: "Client brief · filmed, directed & edited by me", videos: [
+        { title: "Medi Studio · product promo", note: "Cosmetic clinic · filmed, directed & edited by me", videos: [
           { title: "", note: "", src: "", embed: "", poster: "" } ] },
         { title: "Wedding film", note: "Videographer & editor · highlight cut", videos: [
           { title: "", note: "", src: "", embed: "", poster: "", wide: true } ] },
@@ -427,14 +506,14 @@ const CONFIG = {
         /* Fill in the dates and places. Add or remove lines freely. */
         blocks: [
           { title: "Education", items: [
-            { when: "", what: "UX Design", where: "The Hague University of Applied Sciences", note: "" } ] },
+            { when: "2024 – now", what: "UX Design", where: "The Hague University of Applied Sciences", note: "" } ] },
           { title: "Client projects", items: [
             { when: "2025/2026", what: "Perspectivity", where: "Website research & redesign", note: "" },
             { when: "2026", what: "Proefpark Binckhorst", where: "Municipality / DISC team", note: "" } ] },
           { title: "Side work", items: [
-            { when: "", what: "Video editing", where: "My brother's company", note: "" },
-            { when: "", what: "Nail design", where: "", note: "" },
-            { when: "", what: "Posters & campaigns", where: "muse*, Lab Rats Radio", note: "" } ] },
+            { when: "2020 – now", what: "Video editing", where: "My own videos · my brother's company · Medi Studio", note: "" },
+            { when: "2019 – now", what: "Posters & campaigns", where: "muse*, Lab Rats Radio", note: "" },
+            { when: "2024 – now", what: "Nail design", where: "The Hague", note: "" } ] },
         ],
         cv: "",                    // path to your CV PDF, e.g. "work/emma-neznikova-cv.pdf"
       } },
@@ -450,8 +529,19 @@ const CONFIG = {
            seed   : change the number to get a different random arrangement */
         seed: 7,
         hint: "drag to explore · click to pick · click again to view",
+        /* Short note at the top of the playground. Leave title "" to hide it. */
+        intro: {
+          kicker: "Me, beyond the design",
+          title: "The fun, messy side",
+          text: "Not everything I make starts with a brief. These are the posters I design for Lab Rats Radio and muse*, the nails I paint, and a few photos of me. Same eye for detail, just with fewer sticky notes.",
+        },
         items: [
-        // ── posters ──
+        // ── posters (always placed together in the middle) ──
+        { type: "poster", image: "work/pg/t/gold-standard.jpg", ar: 1.251, full: "work/gold-standard.jpg" },
+        { type: "poster", image: "work/pg/t/just-dance.jpg", ar: 1.251, full: "work/just-dance.jpg" },
+        { type: "poster", image: "work/pg/t/rock-n-roll.jpg", ar: 1.251, full: "work/rock-n-roll.jpg" },
+        { type: "poster", image: "work/pg/t/king-of-pop.jpg", ar: 1.251, full: "work/king-of-pop.jpg" },
+        { type: "poster", image: "work/pg/t/house-music.jpg", ar: 1.251, full: "work/house-music.jpg" },
         { type: "poster", image: "work/pg/t/muse-01.jpg", ar: 1.413, full: "work/muse-01.jpg" },
         { type: "poster", image: "work/pg/t/all-on-you.jpg", ar: 1.416, full: "work/all-on-you.jpg" },
         { type: "poster", image: "work/pg/t/lab-rats-on-air.jpg", ar: 1.25, full: "work/lab-rats-on-air.jpg" },
@@ -765,7 +855,7 @@ body.in-section .back{opacity:1; visibility:visible; transition:opacity .4s .45s
 
 /* ── Section template ── */
 .section{
-  position:fixed; inset:0; z-index:2; overflow-y:auto; overscroll-behavior:contain;
+  position:fixed; inset:0; z-index:2; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain;
   padding-top:calc((var(--tt) + var(--th)*var(--tk))*1vh + 3.5vh);
   outline:none;
 }
@@ -818,6 +908,9 @@ a.card:focus-visible{outline:2px dashed var(--blue); outline-offset:6px}
   border-bottom:1px solid currentColor; padding-bottom:2px; color:var(--blue)}
 .linkish:hover{color:var(--coral)}
 .linkish:focus-visible{outline:2px dashed var(--blue); outline-offset:4px}
+.cs-top .linkish{display:inline-flex; align-items:center; gap:10px; min-height:48px; box-sizing:border-box; padding:12px 20px 11px; font-size:clamp(15px,1.25vw,18px); font-weight:500;
+  border:2px solid var(--blue); border-radius:999px; background:var(--paper); transition:background .2s, color .2s, border-color .2s}
+.cs-top .linkish:hover{background:var(--blue); color:#fff; border-color:var(--blue)}
 .stamp{display:inline-block; font-family:var(--f-title); text-transform:uppercase; letter-spacing:.06em; line-height:1;
   font-size:15px; padding:6px 9px 5px; border:2px solid currentColor; border-radius:3px; rotate:-4deg;
   color:var(--coral); mix-blend-mode:multiply}
@@ -971,8 +1064,12 @@ figcaption.fc::before{content:"fig. " attr(data-n) " — "; color:var(--coral)}
 .dirs{display:grid; gap:clamp(36px,6vh,64px); margin-top:30px}
 .dir h4{margin:0; font-family:var(--f-title); font-weight:400; text-transform:uppercase; color:var(--blue); font-size:clamp(26px,3vw,40px); line-height:1}
 .dir p{margin:6px 0 16px; font-size:17px}
-.dir .strip{overflow-x:auto; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch}
-.dir .strip img{display:block; width:100%; min-width:640px; border-radius:6px}
+.dirs > .dir{min-width:0}
+.dir .strip{display:block; position:relative; cursor:zoom-in}
+.strip-zoom{display:none; position:absolute; right:10px; bottom:10px; padding:5px 9px 4px; background:var(--ink); color:var(--paper); font-family:var(--f-mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase}
+@media (hover:none){ .strip-zoom{display:block} }
+.dir .strip img{display:block; width:100%; max-width:1000px; height:auto; margin:0 auto}
+.dir-note{max-width:640px; margin:14px 0 0; font-size:17px; line-height:1.55}
 .dir-n{font-family:var(--f-mono); font-size:12px; color:var(--coral); margin-right:10px; vertical-align:middle}
 
 /* what we built: text + taped photo collage */
@@ -1186,6 +1283,20 @@ body.in-canvas .sec-body{display:none}
 .pg-item:hover{scale:1.03}
 .pg-item.front{rotate:0deg; scale:1.06; box-shadow:0 30px 50px -22px rgba(20,10,40,.7), 0 0 0 3px var(--coral)}
 .pg-item:focus-visible{outline:3px dashed var(--blue); outline-offset:4px}
+.pg-intro{position:fixed; z-index:4; left:max(14px,2vw); top:calc(var(--pg-top, 150px)); width:min(360px, calc(100vw - 28px)); background:var(--paper); color:var(--ink);
+  box-shadow:0 18px 40px -22px rgba(20,10,40,.55), 0 0 0 1px rgba(17,17,17,.14); rotate:-1deg; transition:width .35s}
+.pg-intro::before{content:""; position:absolute; inset:5px; border:1px dashed rgba(17,17,17,.25); pointer-events:none}
+.pg-intro-t{all:unset; cursor:pointer; display:flex; width:100%; box-sizing:border-box; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px 0; position:relative}
+.pg-intro-t .kick{color:var(--coral)}
+.pg-intro-t b{font-family:var(--f-mono); font-weight:400; font-size:20px; line-height:1; width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:var(--ink); color:var(--paper)}
+.pg-intro-t:focus-visible{outline:2px dashed var(--blue); outline-offset:3px}
+.pg-intro-b{padding:6px 20px 20px; position:relative}
+.pg-intro h3{margin:0 0 8px; font-family:var(--f-serif); font-style:italic; font-weight:400; font-size:clamp(28px,2.6vw,38px); line-height:1; color:var(--blue)}
+.pg-intro p{margin:0; font-family:var(--f-body, Jost), sans-serif; font-size:15px; line-height:1.5}
+.pg-intro.min{width:auto}
+.pg-intro.min .pg-intro-t{padding:11px 14px 11px 18px}
+.pg-intro.min .pg-intro-b{display:none}
+@media (max-width:600px){ .pg-intro{left:12px; right:12px; top:172px; width:auto; rotate:0deg} .pg-intro.min{right:auto} .pg-intro p{font-size:14px} .pg-intro h3{font-size:26px} }
 .pg-ui{position:fixed; inset:auto 0 0 0; z-index:3; pointer-events:none; display:flex; align-items:flex-end; justify-content:space-between; gap:12px; padding:0 max(14px,2vw) max(14px,2.4vh)}
 .pg-hint{margin:0; padding:9px 13px 8px; background:var(--paper); font-family:var(--f-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; position:relative; transition:opacity .6s}
 .pg-hint::before{content:""; position:absolute; inset:3px; border:1px dashed rgba(17,17,17,.3)}
@@ -1361,7 +1472,7 @@ body.used .pg-hint{opacity:.55}
 .ship-bc svg{width:96px; height:26px; fill:#111}
 .ship-bc small{font-size:10px; color:var(--coral)}
 body.in-section .ship{opacity:0; pointer-events:none}
-@media (max-width:760px), (max-height:520px){ .ship{display:none} }
+@media (max-width:760px), (max-height:520px), (max-aspect-ratio:1/1){ .ship{display:none} }
 
 /* AI LAB text */
 .ai-txt{max-width:720px; margin:clamp(40px,7vh,70px) auto 0}
@@ -1571,8 +1682,19 @@ html.tex body{background-color:var(--bg);
 .crumbs button.on .cn{opacity:1}
 .crumbs button.on::after{background:var(--coral); box-shadow:inset 0 0 0 2px var(--coral); scale:1.15}
 .crumbs button:focus-visible{outline:2px dashed var(--blue); outline-offset:3px}
-@media (max-width:1180px){ .crumbs .ct{display:none} .crumbs button.on .ct, .crumbs button:hover .ct{display:inline; background:var(--bg); padding:2px 6px} }
-@media (max-width:640px){ .crumbs{right:4px} .crumbs .cn, .crumbs .ct, .crumbs button.on .ct, .crumbs button:hover .ct{display:none} .crumbs button::after{width:9px; height:9px} .crumbs ol::before{right:3.5px} }
+/* smaller screens: the phases become a small pill at the bottom, so they never cover the text */
+@media (max-width:1180px), (max-height:560px){
+  .crumbs{right:auto; left:50%; top:auto; bottom:max(12px, env(safe-area-inset-bottom)); translate:-50% 0; background:var(--paper); padding:7px 14px 7px 12px; border-radius:999px;
+    box-shadow:0 0 0 1px rgba(17,17,17,.12), 0 10px 20px -10px rgba(0,0,0,.35)}
+  .crumbs ol{flex-direction:row; align-items:center; gap:9px}
+  .crumbs ol::before{left:6px; right:6px; top:50%; bottom:auto; height:2px; width:auto; translate:0 -50%}
+  .crumbs button{padding:4px 0; gap:6px}
+  .crumbs .cn, .crumbs .ct{display:none}
+  .crumbs button.on .ct{display:inline; order:2; opacity:1; font-size:10px; background:none; padding:0; white-space:nowrap}
+  .crumbs button.on{flex-direction:row}
+  .crumbs button::after{width:10px; height:10px}
+  .crumbs button.on::after{order:1}
+}
 
 
 /* ══ nails: cut-out hands left & right ══ */
@@ -1635,7 +1757,7 @@ html.tex body{background-color:var(--bg);
 .pix-t{font-family:var(--f-title); text-transform:uppercase; color:var(--blue); font-size:clamp(42px,5.3vw,96px); line-height:.86; letter-spacing:-.005em; overflow-wrap:anywhere; transition:color .35s, translate .5s var(--spring)}
 .pix-meta{display:flex; flex-direction:column; gap:10px}
 .pix-m{font-family:var(--f-mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; line-height:1.5}
-.pix-s{font-family:var(--f-serif); font-size:clamp(16px,1.3vw,19px); line-height:1.3; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
+.pix-s{font-family:var(--f-serif); font-size:clamp(16px,1.3vw,19px); line-height:1.3; display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
 .pix-st{display:flex; flex-direction:column; align-items:flex-end; gap:10px}
 .pix-st b{font-family:var(--f-mono); font-weight:400; font-size:12px; letter-spacing:.08em}
 .dymo{font-style:normal; display:inline-block; background:#151515; color:#f2f2f2; padding:7px 11px 6px; font-family:var(--f-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;
@@ -1858,6 +1980,111 @@ body.in-section .sticker{pointer-events:none}
   .corner{bottom:auto; top:max(14px, 2.2vh)}
   .hint{bottom:auto; top:calc(max(14px, 2.2vh) + 26px)}
 }
+
+/* ══ v-nav: back pill, project tag, more-rack, home hint ══ */
+.back{width:auto!important; height:54px; border-radius:999px!important; padding:0 7px 0 18px!important; display:flex!important; align-items:center; gap:10px}
+.back svg{width:40px; height:40px; flex:none}
+.back-l{font-family:var(--f-mono); font-size:10.5px; line-height:1.15; letter-spacing:.1em; text-transform:uppercase; text-align:right; order:-1}
+.back:hover svg{animation:hook .9s var(--spring)}
+@keyframes hook{30%{rotate:-14deg} 60%{rotate:9deg}}
+body.scrolled .back-l{max-width:0; opacity:0; margin-right:-10px}
+.back-l{max-width:120px; overflow:hidden; white-space:nowrap; transition:max-width .4s, opacity .3s, margin .4s}
+@media (max-width:600px){ .back{width:50px!important; height:50px; padding:0!important; justify-content:center; border-radius:50%!important}
+  .back svg{width:32px; height:32px} .back-l{position:absolute; top:calc(100% + 5px); left:50%; translate:-50% 0; text-align:center; font-size:8px; letter-spacing:.08em; padding:3px 5px 2px; background:var(--paper); box-shadow:0 0 0 1px rgba(17,17,17,.12)} }
+
+.cs-back{all:unset; cursor:pointer; position:relative; display:inline-flex; align-items:center; gap:10px; min-height:46px; box-sizing:border-box;
+  padding:10px 20px 10px 36px; font-family:var(--f-title); font-size:clamp(18px,1.6vw,22px); letter-spacing:.03em; text-transform:uppercase; color:#1c140a;
+  background:linear-gradient(180deg, rgba(255,255,255,.18), transparent 35%, rgba(60,35,5,.12)), var(--kraft);
+  clip-path:polygon(16px 0, 100% 0, 100% 100%, 16px 100%, 0 50%); rotate:-2deg; transform-origin:0 50%;
+  filter:drop-shadow(0 6px 8px rgba(40,25,5,.25)); transition:rotate .5s var(--spring), translate .3s}
+.cs-back-hole{position:absolute; left:16px; top:50%; width:9px; height:9px; translate:0 -50%; border-radius:50%; background:var(--bg);
+  box-shadow:0 0 0 3px rgba(255,255,255,.55)}
+.cs-back-a{transition:translate .3s}
+.cs-back:hover{rotate:0deg} .cs-back:hover .cs-back-a{translate:-5px 0}
+.cs-back:focus-visible{outline:2px dashed var(--blue); outline-offset:5px}
+
+.mr{margin:clamp(40px,8vh,90px) auto 0; padding:0 max(16px,4vw) clamp(40px,8vh,80px); max-width:1100px; text-align:center}
+.mr-h h3{margin:6px 0 0; font-family:var(--f-serif); font-style:italic; font-weight:400; font-size:clamp(30px,3.6vw,48px); color:var(--blue); line-height:1}
+.mr-rack{position:relative; margin:clamp(26px,4vh,40px) auto 0; padding-top:4px; width:fit-content; max-width:100%}
+.mr-rod{position:absolute; left:-24px; right:-24px; top:3px; height:11px; border-radius:6px; background:var(--chrome); box-shadow:0 4px 8px -4px rgba(0,0,0,.35)}
+.mr-row{list-style:none; margin:0; padding:0 2%; display:flex; justify-content:center; align-items:flex-start; position:relative}
+.mr-row li{margin:0 -6px}
+.mr-coat{all:unset; cursor:pointer; display:flex; flex-direction:column; align-items:center; position:relative; transform-origin:50% 0; transition:translate .4s var(--spring), rotate .6s var(--spring)}
+.mr-coat img{display:block; height:clamp(150px,22vw,250px); width:auto; pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000 70%, transparent); mask-image:linear-gradient(#000 70%, transparent); filter:drop-shadow(0 8px 10px rgba(0,0,0,.18))}
+.mr-tag{margin-top:-28px; position:relative; z-index:2; padding:6px 10px 5px; background:var(--paper); font-family:var(--f-title); font-size:clamp(13px,1.2vw,17px); letter-spacing:.03em; color:var(--ink);
+  box-shadow:0 0 0 1px rgba(17,17,17,.15), 0 6px 10px -6px rgba(0,0,0,.3); rotate:calc((var(--i) - 3) * 1.4deg); white-space:nowrap; transition:background .2s, color .2s}
+.mr-tag small{display:block; font-family:var(--f-mono); font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--coral)}
+.mr-coat:not(.here):hover{translate:0 -8px; rotate:-3deg}
+.mr-coat:not(.here):hover .mr-tag{background:var(--blue); color:#fff}
+.mr-coat:focus-visible{outline:2px dashed var(--blue); outline-offset:4px}
+.mr-coat.here{cursor:default; opacity:.45}
+@media (max-width:700px){
+  .mr-rack{width:100%}
+  .mr-rod{display:none}
+  .mr-row{flex-wrap:wrap; justify-content:center; row-gap:24px; padding:0}
+  .mr-row li{margin:0; position:relative; flex:0 0 25%; display:flex; justify-content:center}
+  .mr-row li::before{content:""; position:absolute; left:0; right:0; top:1px; height:8px; background:linear-gradient(180deg,#f7f8fa,#c3c7ce 45%,#8d919a); box-shadow:0 3px 6px -3px rgba(0,0,0,.35)}
+  .mr-row li:nth-child(1)::before, .mr-row li:nth-child(5)::before{left:8px; border-radius:5px 0 0 5px}
+  .mr-row li:nth-child(4)::before, .mr-row li:nth-child(7)::before{right:8px; border-radius:0 5px 5px 0}
+  .mr-coat img{height:clamp(104px,32vw,128px)}
+  .mr-tag{font-size:clamp(10px,3vw,12px); margin-top:-22px; padding:5px 6px 4px}
+}
+}
+
+.hint{font-size:12px; padding:9px 15px 8px; background:var(--paper); box-shadow:0 0 0 1px rgba(17,17,17,.14), 0 10px 18px -10px rgba(0,0,0,.35); z-index:5}
+.hint::after{content:"↓"; font-size:14px; animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{translate:0 3px}}
+@media (max-width:600px){ .hint::after{content:"↓"} .hint{font-size:10.5px; padding:8px 12px 7px} }
+
+/* EDITS: viewfinder clips */
+.ed{display:grid; gap:clamp(56px,9vh,100px); max-width:1180px; margin:0 auto}
+.ed-g{display:grid; grid-template-columns:minmax(220px, 300px) 1fr; gap:clamp(20px,4vw,56px); align-items:start}
+.ed-h{display:grid; gap:8px; border-top:4px solid var(--ink); padding-top:14px}
+.ed-n{font-family:var(--f-title); font-size:clamp(64px,7vw,110px); line-height:.85; color:transparent; -webkit-text-stroke:1.5px var(--blue)}
+.ed-h h3{margin:0; font-family:var(--f-title); font-weight:400; text-transform:uppercase; color:var(--blue); font-size:clamp(26px,2.6vw,38px); line-height:1}
+.ed-h p{margin:0; font-size:15px; line-height:1.45}
+.ed-c{justify-self:start; margin-top:4px; padding:5px 9px 4px; background:var(--ink); color:var(--paper); font-family:var(--f-mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase}
+.ed-row{display:flex; flex-wrap:wrap; gap:clamp(14px,2vw,26px); align-items:flex-start}
+.vf{margin:0; flex:0 0 clamp(170px,17vw,230px)}
+.vf.wide{flex:1 1 clamp(300px,46vw,640px)}
+.vf-f{position:relative; aspect-ratio:9/16; overflow:hidden; background:#d8d4cd; border-radius:4px;
+  box-shadow:0 0 0 1px rgba(17,17,17,.12), 0 18px 30px -20px rgba(0,0,0,.45)}
+.vf-f.reel-ph{border-radius:4px}
+.vf-f.reel-ph::before{display:none}
+.vf.wide .vf-f{aspect-ratio:16/9}
+.vf.has .vf-f{background:#111}
+.vf-empty{position:absolute; inset:0; display:grid; place-content:center; justify-items:center; gap:6px; font-family:var(--f-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#57524a;
+  background:repeating-linear-gradient(0deg, rgba(0,0,0,.035) 0 2px, transparent 2px 4px)}
+.vf-empty small{font-size:9.5px; opacity:.7}
+.vf-empty .sstar{width:42px; height:40px; fill:var(--coral)}
+.vf-k{position:absolute; z-index:3; width:16px; height:16px; border:2px solid var(--ink); pointer-events:none}
+.vf.has .vf-k{border-color:#fff}
+.vf-k.tl{top:10px; left:10px; border-right:0; border-bottom:0} .vf-k.tr{top:10px; right:10px; border-left:0; border-bottom:0}
+.vf-k.bl{bottom:10px; left:10px; border-right:0; border-top:0} .vf-k.br{bottom:10px; right:10px; border-left:0; border-top:0}
+.vf-rec,.vf-ar,.vf-tc{position:absolute; z-index:3; font-family:var(--f-mono); font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); pointer-events:none}
+.vf.has .vf-rec,.vf.has .vf-ar,.vf.has .vf-tc{color:#fff}
+.vf-rec{top:16px; left:32px; display:flex; align-items:center; gap:5px}
+.vf-rec b{width:7px; height:7px; border-radius:50%; background:var(--coral); animation:blink 1.6s ease-in-out infinite}
+.vf-ar{top:16px; right:32px}
+.vf-tc{bottom:15px; left:50%; translate:-50% 0}
+.vf .reel-play .pl{z-index:2}
+.vf:hover .vf-f{box-shadow:0 0 0 2px var(--coral), 0 18px 30px -20px rgba(0,0,0,.45)}
+.vf figcaption{margin-top:12px; font-family:var(--f-mono); font-size:12px; letter-spacing:.04em}
+.vf figcaption b{display:block; font-weight:500; text-transform:uppercase}
+.vf figcaption span{opacity:.6}
+@media (max-width:760px){
+  .ed-g{grid-template-columns:1fr} .ed-h{position:static; grid-template-columns:auto 1fr; column-gap:14px; align-items:end}
+  .ed-n{grid-row:span 2; font-size:64px} .ed-h p,.ed-c{grid-column:1 / -1}
+  .vf{flex-basis:calc(50% - 8px)} .vf.wide{flex-basis:100%}
+}
+
+/* clean rack: only the coats on a chrome rod */
+.rack-rod{display:none}
+.rack-clean .rack-base{visibility:hidden}
+.rack-clean .rack-rod{display:block; position:absolute; z-index:0; left:7%; right:12%; top:calc(22.096% + .2%); height:clamp(8px,1.05vw,15px); border-radius:99px;
+  background:linear-gradient(180deg,#fbfcfd,#c5c9d0 45%,#8b8f98); box-shadow:0 6px 10px -6px rgba(0,0,0,.4)}
+.rack-clean .coat img{-webkit-mask-image:linear-gradient(#000 62%, transparent 96%); mask-image:linear-gradient(#000 62%, transparent 96%); filter:drop-shadow(0 10px 14px rgba(0,0,0,.16))}
 </style>
 </head>
 <body>
@@ -1881,6 +2108,7 @@ body.in-section .sticker{pointer-events:none}
 </main>
 
 <button class="back" id="back" type="button" aria-label="Back to the rack">
+  <span class="back-l" aria-hidden="true">back to<br>the rack</span>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path d="M9.6 6.4A2.4 2.4 0 1 1 12 8.8v2"/><path d="M12 10.8 2.9 17a1.1 1.1 0 0 0 .6 2h17a1.1 1.1 0 0 0 .6-2L12 10.8"/>
   </svg>
@@ -1959,6 +2187,7 @@ body.in-section .sticker{pointer-events:none}
   baseImg.alt = ''; baseImg.draggable = false; baseImg.decoding = 'async';
   baseImg.src = C.rack.base;
   rackEl.appendChild(baseImg);
+  if (C.rack.style === 'clean') { document.body.classList.add('rack-clean'); const rod = document.createElement('span'); rod.className = 'rack-rod'; rod.setAttribute('aria-hidden', 'true'); rackEl.appendChild(rod); }
 
   const coatEls = C.coats.map((c, i) => {
     const el = document.createElement('div');
@@ -2235,9 +2464,9 @@ body.in-section .sticker{pointer-events:none}
     process: b => `<section class="blk rv"><ol class="proc">${b.steps.map(s =>
         `<li><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[s.toLowerCase()] || ICONS.define}</svg>${esc(s)}</li>`).join('')}</ol></section>`,
     list: b => `<section class="blk row rv">${label(b.label)}<ol class="chg">${b.items.map(i => `<li>${esc(i)}</li>`).join('')}</ol></section>`,
-    directions: b => `<section class="blk rv">${label(b.label)}<div class="dirs">${b.items.map((d, i) =>
+    directions: b => `<section class="blk rv">${label(b.label)}${b.note ? `<p class="dir-note">${esc(b.note)}</p>` : ''}<div class="dirs">${b.items.map((d, i) =>
         `<div class="dir"><h4><span class="dir-n">0${i + 1}</span>${esc(d.title)}</h4><p>${esc(d.text)}</p>
-         ${d.image ? `<div class="strip" tabindex="0" aria-label="${esc(d.title)} storyboard"><img src="${esc(d.image)}" alt="${esc(d.title)} storyboard" loading="lazy"></div>` : ''}</div>`).join('')}</div></section>`,
+         ${d.image ? `<a class="strip" href="${esc(d.image)}" target="_blank" rel="noopener" aria-label="${esc(d.title)} storyboard, open full size"><img src="${esc(d.image)}" alt="${esc(d.title)} storyboard" loading="lazy"><span class="strip-zoom">tap to enlarge ↗</span></a>` : ''}</div>`).join('')}</div></section>`,
     built: b => `<section class="blk rv">${label(b.label)}<div class="built" style="margin-top:24px"><p class="txt">${esc(b.text)}</p>
         <div class="collage">${(b.images || []).map(im => `<figure><img src="${esc(im.image)}" alt="${esc(im.alt)}" loading="lazy"></figure>`).join('')}</div></div></section>`,
   };
@@ -2264,7 +2493,7 @@ body.in-section .sticker{pointer-events:none}
     const crumbs = steps.length > 1 ? `<nav class="crumbs" aria-label="Case study phases"><ol>${steps.map((st, i) =>
       `<li><button type="button" data-crumb="${esc(st)}"><span class="cn">0${i + 1}</span><span class="ct">${esc(st)}</span></button></li>`).join('')}</ol></nav>` : '';
     return `${crumbs}<article class="cs">
-      <div class="cs-top"><button type="button" class="linkish" data-go="${esc(slug(s))}">← All projects</button>
+      <div class="cs-top"><button type="button" class="cs-back" data-go="${esc(slug(s))}"><span class="cs-back-hole" aria-hidden="true"></span><span class="cs-back-a" aria-hidden="true">←</span><span>All projects</span></button>
         <span class="kick">No. ${two(idx)} / ${two(items.length - 1)}</span></div>
       ${body}
       ${next && next !== p ? `<nav class="cs-next"><span class="kick">${p.status === 'ongoing' ? 'Ongoing project' : 'Finished project'}${p.year ? ' · ' + esc(p.year) : ''}</span>
@@ -2281,6 +2510,10 @@ body.in-section .sticker{pointer-events:none}
         <div class="pg-world">${items.map((it, i) =>
           `<button type="button" class="pg-item pg-${esc(it.type || 'x')}" data-i="${i}" aria-label="Picture ${i + 1}"><img src="${esc(it.image)}" alt="" draggable="false" loading="lazy" decoding="async"></button>`).join('')}</div>
       </div>
+      ${c.intro && c.intro.title ? `<aside class="pg-intro" aria-label="About the playground">
+        <button type="button" class="pg-intro-t" aria-expanded="true"><span class="kick">${esc(c.intro.kicker || '')}</span><b aria-hidden="true">–</b></button>
+        <div class="pg-intro-b"><h3>${esc(c.intro.title)}</h3>${c.intro.text ? `<p>${esc(c.intro.text)}</p>` : ''}</div>
+      </aside>` : ''}
       <div class="pg-ui">
         <p class="pg-hint"><span>${esc(c.hint || 'drag to explore')}</span></p>
         <button type="button" class="pg-home" aria-label="Back to the middle">${sstar()}<span>middle</span></button>
@@ -2306,31 +2539,59 @@ body.in-section .sticker{pointer-events:none}
     function layout() {
       const u = Math.max(.62, Math.min(1.1, innerWidth / 1400));
       const colW = 230 * u, m = colW * .9, N = els.length;
-      const avg = items.reduce((t, it) => t + (it.ar || 1.3), 0) / Math.max(1, N);
-      const cols = Math.max(4, Math.round(Math.sqrt(N * avg * 1.7)));
       const step = colW * .97;                       // columns barely touch
-      const colH = new Array(cols).fill(0).map(() => rnd() * colW * .5);
-      const order = els.map((_, i) => i);
-      for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
       const sizes = { s: .8, m: .9, l: 1 };
+      const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+      const posters = shuffle(els.map((_, i) => i).filter(i => items[i].type === 'poster'));
+      const others = shuffle(els.map((_, i) => i).filter(i => items[i].type !== 'poster'));
+      const avg = items.reduce((t, it) => t + (it.ar || 1.3), 0) / Math.max(1, N);
+      // posters: a block of columns in the middle; everything else grows around it
+      const pc = posters.length ? Math.max(1, Math.min(posters.length, Math.round(Math.sqrt(posters.length * (innerWidth > innerHeight ? 1.3 : .8))))) : 0;
+      let cols = Math.max(pc + 2, Math.round(Math.sqrt(N * avg * 1.7 * Math.max(.5, Math.min(2.2, innerWidth / innerHeight)))) + 4);
+      if ((cols - pc) % 2) cols++;
+      const c0 = (cols - pc) / 2;
+      const up = new Array(cols).fill(0), dn = new Array(cols).fill(0);
       const placed = [];
-      order.forEach(idx => {
+      const put = (idx, c, dir) => {
         const it = items[idx];
-        // pick one of the two shortest columns
-        const ranked = colH.map((h, c) => [h, c]).sort((p, q) => p[0] - q[0]);
-        const c = ranked[rnd() < .7 ? 0 : 1][1];
         const sz = it.size || (it.type === 'poster' ? 'l' : (rnd() < .35 ? 's' : 'm'));
-        const w = colW * (sizes[sz] || .9);
-        const pad = it.type === 'poster' ? 0 : 12;
-        const h = w * (it.ar || 1.3) + pad;
-        const x = m + c * step + (colW - w) / 2 + (rnd() - .5) * colW * .14;
-        const y = m + colH[c] + (rnd() - .7) * h * .1;  // small overlap or a small gap
-        colH[c] = y - m + h + colW * .02;
+        const w = colW * (sizes[sz] || .9), h = w * (it.ar || 1.3) + (it.type === 'poster' ? 0 : 12);
+        const x = c * step + (colW - w) / 2 + (rnd() - .5) * colW * .14;
+        const gap = (rnd() - .7) * h * .1 + colW * .02;   // a small overlap or a small gap
+        let y;
+        if (dir > 0) { y = dn[c] + gap * (dn[c] === up[c] ? 0 : 1); dn[c] = y + h; }
+        else { y = up[c] - h - gap; up[c] = y; }
         placed.push({ idx, x, y, w, h });
+      };
+      // 1. posters, column by column, downwards
+      posters.forEach(idx => { let best = c0; for (let c = c0; c < c0 + pc; c++) if (dn[c] < dn[best]) best = c; put(idx, best, 1); });
+      if (pc) {   // centre the poster block on y = 0 and let the other columns start from there
+        const hb = Math.max(...dn.slice(c0, c0 + pc));
+        placed.forEach(p => p.y -= hb / 2);
+        for (let c = 0; c < cols; c++) {
+          if (c >= c0 && c < c0 + pc) { up[c] = -hb / 2; dn[c] -= hb / 2; }
+          else { up[c] = dn[c] = (rnd() - .5) * colW * .6; }
+        }
+      }
+      // 2. everything else: always into the free spot closest to the middle (wider than tall, like a screen)
+      const cx = (cols - 1) / 2, k = Math.max(.45, Math.min(2.4, innerHeight / innerWidth * 1.1)) * step;   // grows into the shape of the screen
+      others.forEach(idx => {
+        let best = null;
+        for (let c = 0; c < cols; c++) for (const dir of [1, -1]) {
+          const dy = dir > 0 ? dn[c] : -up[c];
+          const cost = Math.hypot(dy, Math.abs(c - cx) * k) + rnd() * colW * .5;
+          if (!best || cost < best.cost) best = { c, dir, cost };
+        }
+        put(idx, best.c, best.dir);
       });
-      S.W = m * 2 + (cols - 1) * step + colW; S.H = m * 2 + Math.max(...colH);
+      const minY = Math.min(...placed.map(p => p.y)), maxY = Math.max(...placed.map(p => p.y + p.h));
+      const minX = Math.min(...placed.map(p => p.x)), maxX = Math.max(...placed.map(p => p.x + p.w));   // drop empty columns
+      placed.forEach(p => { p.x += m - minX; p.y += m - minY; });
+      S.W = m * 2 + (maxX - minX); S.H = m * 2 + (maxY - minY);
+      S.cx = m - minX + (c0 + pc / 2) * step; S.cy = m - minY;   // middle of the poster block
       world.style.width = S.W + 'px'; world.style.height = S.H + 'px';
       mapIn.innerHTML = '';
+      placed.sort((p, q) => (items[p.idx].type === 'poster') - (items[q.idx].type === 'poster'));   // posters on top
       placed.forEach(({ idx, x, y, w, h }, k) => {
         const el = els[idx], it = items[idx];
         el.style.cssText = `left:${x}px;top:${y}px;width:${w}px;--r:${((rnd() - .5) * 7).toFixed(1)}deg;z-index:${k + 1}`;
@@ -2340,6 +2601,7 @@ body.in-section .sticker{pointer-events:none}
         mapIn.appendChild(d);
       });
       map.style.aspectRatio = `${S.W} / ${S.H}`;
+      map.style.width = S.H > S.W ? `${Math.round(Math.min(150, innerHeight * .2) * S.W / S.H)}px` : '';
     }
 
     const vw = () => innerWidth, vh = () => innerHeight;
@@ -2355,7 +2617,7 @@ body.in-section .sticker{pointer-events:none}
       view.style.left = `${-S.x / S.W * 100}%`; view.style.top = `${-S.y / S.H * 100}%`;
       view.style.width = `${vw() / S.W * 100}%`; view.style.height = `${vh() / S.H * 100}%`;
     }
-    function center(smooth) { goTo(S.W / 2, S.H / 2, smooth); }
+    function center(smooth) { goTo(S.cx ?? S.W / 2, S.cy ?? S.H / 2, smooth); }
     function goTo(wx, wy, smooth) {
       const tx = vw() / 2 - wx, ty = vh() / 2 - wy;
       cancelAnimationFrame(S.raf);
@@ -2445,6 +2707,13 @@ body.in-section .sticker{pointer-events:none}
     map.addEventListener('pointerdown', e => { e.stopPropagation(); map.setPointerCapture(e.pointerId); mapJump(e); });
     map.addEventListener('pointermove', e => { if (e.buttons) mapJump(e); });
     secContent.querySelector('.pg-home').addEventListener('click', () => center(true));
+    const intro = secContent.querySelector('.pg-intro');
+    if (intro && innerHeight < 560) { intro.classList.add('min'); const t = intro.querySelector('.pg-intro-t'); t.setAttribute('aria-expanded', 'false'); t.querySelector('b').textContent = '+'; }
+    intro?.querySelector('.pg-intro-t').addEventListener('click', e => {
+      const t = e.currentTarget, min = intro.classList.toggle('min');
+      t.setAttribute('aria-expanded', String(!min)); t.querySelector('b').textContent = min ? '+' : '–';
+    });
+    ['pointerdown', 'wheel'].forEach(ev => intro?.addEventListener(ev, e => e.stopPropagation()));
 
     layout(); center(false);
     S.resize = () => { if (!pg.isConnected) return; const cx = vw() / 2 - S.x, cy = vh() / 2 - S.y, ow = S.W, oh = S.H;
@@ -2452,7 +2721,7 @@ body.in-section .sticker{pointer-events:none}
 
     // scatter in from the middle
     if (!RM) els.forEach(el => {
-      const dx = el.offsetLeft - S.W / 2, dy = el.offsetTop - S.H / 2, dist = Math.hypot(dx, dy);
+      const dx = el.offsetLeft - (S.cx ?? S.W / 2), dy = el.offsetTop - (S.cy ?? S.H / 2), dist = Math.hypot(dx, dy);
       el.animate([{ opacity: 0, translate: `${-dx * .35}px ${-dy * .35}px`, scale: .6 }, { opacity: 1, translate: '0 0', scale: 1 }],
         { duration: 900, delay: 350 + dist * .35, easing: 'cubic-bezier(.2,.9,.3,1.15)', fill: 'backwards' });
     });
@@ -2533,15 +2802,20 @@ body.in-section .sticker{pointer-events:none}
     const groups = (c.groups || []).filter(g => (g.videos || []).length);
     if (!groups.length) return C.showPlaceholders ? starsRow() : '';
     let n = 0;
-    return `<div class="reels">${groups.map(g => `<section class="rg rv">
-        <header class="rg-h"><h3>${esc(g.title || '')}</h3>${g.note ? `<p>${esc(g.note)}</p>` : ''}</header>
-        <div class="rg-row">${g.videos.map(v => { const i = n++;
+    return `<div class="ed">${groups.map((g, gi) => `<section class="ed-g rv">
+        <header class="ed-h"><span class="ed-n" aria-hidden="true">${two(gi)}</span>
+          <h3>${esc(g.title || '')}</h3>${g.note ? `<p>${esc(g.note)}</p>` : ''}
+          <span class="ed-c">${g.videos.length} ${g.videos.length === 1 ? 'clip' : 'clips'}</span></header>
+        <div class="ed-row">${g.videos.map(v => { const i = n++;
           const has = v.src || v.embed;
-          return `<figure class="reel${v.wide ? ' wide' : ''}" style="--r:${[-2, 1.5, -1, 2, -1.5][i % 5]}deg">
-            <div class="reel-ph">
+          return `<figure class="vf${v.wide ? ' wide' : ''}${has ? ' has' : ''}">
+            <div class="vf-f reel-ph">
+              <i class="vf-k tl"></i><i class="vf-k tr"></i><i class="vf-k bl"></i><i class="vf-k br"></i>
+              <span class="vf-rec"><b></b>rec</span><span class="vf-ar">${v.wide ? '16:9' : '9:16'}</span>
               ${has ? `<button type="button" class="reel-play" data-src="${esc(v.src || '')}" data-embed="${esc(v.embed || '')}" aria-label="Play ${esc(v.title || 'video')}">
                   ${v.poster ? `<img src="${esc(v.poster)}" alt="" loading="lazy">` : ''}<span class="pl">${sstar()}<b>play</b></span></button>`
-                : `<div class="reel-empty">${sstar()}<span>video ${String(i + 1).padStart(2, '0')}</span></div>`}
+                : `<div class="vf-empty">${sstar()}<span>clip ${String(i + 1).padStart(2, '0')}</span><small>coming soon</small></div>`}
+              <span class="vf-tc">00:00:${String(i * 7 % 60).padStart(2, '0')}:${String(i * 13 % 25).padStart(2, '0')}</span>
             </div>
             ${v.title || v.note ? `<figcaption><b>${esc(v.title || '')}</b>${v.note ? `<span>${esc(v.note)}</span>` : ''}</figcaption>` : ''}
           </figure>`; }).join('')}</div>
@@ -2665,6 +2939,20 @@ body.in-section .sticker{pointer-events:none}
     </button></div>`;
   }
 
+  /* the other coats, hanging at the end of every page */
+  function moreRackHTML(cur) {
+    const items = sections.map((sec, i) => ({ sec, coat: C.coats[i] })).filter(x => x.coat);
+    if (items.length < 2) return '';
+    return `<nav class="mr" aria-label="Other sections">
+      <div class="mr-h"><span class="kick">Keep browsing</span><h3>Try on another coat</h3></div>
+      <div class="mr-rack"><span class="mr-rod" aria-hidden="true"></span>
+        <ul class="mr-row">${items.map(({ sec, coat }, i) => { const here = sec === cur;
+          return `<li style="--i:${i}"><button type="button" class="mr-coat${here ? ' here' : ''}" ${here ? 'aria-current="page" disabled' : `data-go="${esc(slug(sec))}"`}>
+            <img src="${esc(coat.image)}" alt="" loading="lazy" draggable="false">
+            <span class="mr-tag">${here ? '<small>you are here</small>' : ''}${esc(sec.label)}</span></button></li>`; }).join('')}</ul>
+      </div></nav>`;
+  }
+
   let curSub = null;
   let curSecObj = null;
   const curSection = () => curSecObj;
@@ -2689,6 +2977,7 @@ body.in-section .sticker{pointer-events:none}
       html = build();
     }
     if (s.layout !== 'contact' && s.layout !== 'canvas') html += workTogetherHTML();
+    if (s.layout !== 'canvas') html += moreRackHTML(s);
     document.body.classList.toggle('in-canvas', s.layout === 'canvas' && !caseItem);
     secContent.innerHTML = html;
     secContent.querySelectorAll('.thumb').forEach(b => b.addEventListener('click', () => {
@@ -3034,6 +3323,24 @@ body.in-section .sticker{pointer-events:none}
       });
     }
   }, { passive: true });
+  /* attract mode: until someone touches the rack, the coats show off their names one by one */
+  (function attract() {
+    if (RM) return;
+    let k = -1, t = 0;
+    const stop = () => { clearTimeout(t); if (k >= 0 && state === 'home' && hovered < 0) { coatEls.forEach(el => el.classList.remove('is-hover')); setTitle(C.name); } k = -2; };
+    const tick = () => {
+      if (k === -2) return;
+      if (document.body.classList.contains('used') || state !== 'home' || hovered >= 0) { stop(); return; }
+      k++;
+      if (k >= coatEls.length) { k = -1; coatEls.forEach(el => el.classList.remove('is-hover')); setTitle(C.name); t = setTimeout(tick, 6000); return; }
+      coatEls.forEach((el, j) => el.classList.toggle('is-hover', j === k));
+      nudgeCoat(k); setTitle(sections[k]?.label || C.name);
+      t = setTimeout(tick, 1100);
+    };
+    t = setTimeout(tick, (FUN.intro ? 3400 : 1600));
+    ['pointerdown', 'keydown', 'wheel'].forEach(ev => addEventListener(ev, stop, { once: true, capture: true }));
+    rackEl.addEventListener('pointermove', stop, { once: true });
+  })();
   function nudgeCoat(si) { if (coatBodies[si]) kick(coatBodies[si], (Math.random() < .5 ? -1 : 1) * 70); }
   function stillCoats() { coatBodies.forEach(b => { b.a = 0; b.v = 0; b.el.style.transform = ''; }); }
   function registerPosters() {
