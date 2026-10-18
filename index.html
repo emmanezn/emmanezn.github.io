@@ -642,6 +642,7 @@ const CONFIG = {
           { label: "Age", value: "21" } ],
         cv: "",                    // path or link to your CV (PDF) — shows a download button
 
+        showNails: false,          // the big nails section at the bottom (hidden — nails now live in the "Off the rack" text)
         /* ── nail design: photo-filled title, text and a chrome board with your favourite sets ── */
         nails: {
           word: "NAILS",                               // giant word, filled with the photo below
@@ -685,8 +686,9 @@ const CONFIG = {
           title: "Off the", titleItalic: "rack",
           /* DRAFT in your words — rewrite freely. One string per paragraph. */
           text: [
-            "I love making things. Outside of UX I design nails, take photos and make posters, and all of it comes from the same place: an eye for detail.",
-            "A nail set is a design brief one centimetre wide. A photo is framing, light and timing. That same care goes into every screen I design.",
+            "I love making things. Outside of UX I make posters, take photos and design nails, and all of it comes from the same place: an eye for detail.",
+            "Doing nails since 2024 taught me more than I expected. A set is planned down to the millimetre and finished within one appointment, so it trained my patience, precision and time management. And every client arrives with a vague idea that I have to turn into something they love, which is exactly what a design brief is.",
+            "A photo is framing, light and timing. That same care goes into every screen I design.",
             "Want to see the fun, messy side?",
           ],
           button: "Go to the playground",
@@ -2216,6 +2218,7 @@ body.scrolled .back-l{max-width:0; opacity:0; margin-right:-10px}
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'hit';
+    b.dataset.name = s.label;
     b.style.cssText = `--l:${l};--hw:${r - l}`;
     b.setAttribute('aria-label', `Open ${s.label.toLowerCase()}`);
     rackEl.appendChild(b);
@@ -2798,7 +2801,7 @@ body.scrolled .back-l{max-width:0; opacity:0; margin-right:-10px}
           <div class="hands r">${hands.slice(half).map((h, i) => handBtn(h, i)).join('')}</div>
         </div>
       </section>` : '';
-    return `<div class="ab">${spread}${beyond}${credits}${nailsSec}</div>`;
+    return `<div class="ab">${spread}${beyond}${credits}${c.showNails ? nailsSec : ''}</div>`;
   }
 
   /* ── EDITS: vertical video reels ── */
@@ -3424,7 +3427,7 @@ body.scrolled .back-l{max-width:0; opacity:0; margin-right:-10px}
       else if (t.closest?.('.pg-item')) lab = t.closest('.pg-item').classList.contains('front') ? 'view' : 'pick';
       else if (t.closest?.('.pg-map')) lab = 'jump';
       else if (t.closest?.('.pg') && !t.closest('.pg-ui')) lab = 'drag';
-      else if (t.closest?.('.hit')) lab = 'open';
+      else if (t.closest?.('.hit')) lab = t.closest('.hit').dataset.name || 'open';
       else if (t.closest?.('#star')) lab = 'boom!';
       else if (t.closest?.('.poster, .look, .swatch')) lab = 'view';
       else if (t.closest?.('.ab-me')) lab = 'hi!';
