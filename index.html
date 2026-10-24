@@ -46,34 +46,23 @@ const CONFIG = {
   ],
 
   /* ── UI & VISUAL: screens shown on their own. wide: true = spans two columns ── */
-  ui: [
-    { image: "work/persp/final/01-hero.jpg", title: "Homepage hero", project: "Perspectivity", wide: true },
-    { image: "work/persp/final/02-intro-team.jpg", title: "Intro & team", project: "Perspectivity" },
-    { image: "work/persp/old-site.jpg", title: "Before: the old homepage", project: "Perspectivity" },
-    { image: "work/persp/final/03-navigator.jpg", title: "Navigator", project: "Perspectivity" },
-    { image: "work/persp/final/04-latest-work.jpg", title: "Latest work", project: "Perspectivity" },
-    { image: "work/persp/final/05-iconic-work.jpg", title: "Project cards", project: "Perspectivity" },
-    { image: "work/persp/final/06-serious-gaming.jpg", title: "Serious gaming", project: "Perspectivity" },
-    { image: "work/persp/final/07-faq.jpg", title: "FAQ section", project: "Perspectivity" },
-    { image: "work/persp/final/08-get-to-know-us.jpg", title: "Get to know us", project: "Perspectivity" },
-    { image: "work/persp/dir-warm.jpg", title: "Direction A · too warm", project: "Perspectivity" },
-    { image: "work/persp/dir-cold.jpg", title: "Direction B · too cold", project: "Perspectivity" },
-    { image: "work/persp/final/02b-help.jpg", title: "How can we help", project: "Perspectivity" },
-    { image: "work/persp/page-about.jpg", title: "About us page", project: "Perspectivity" },
-    { image: "work/persp/page-training.jpg", title: "Training page", project: "Perspectivity" },
-    { image: "work/persp/wireframes.png", title: "Wireframes · three structures", project: "Perspectivity", paper: true },
-    { image: "work/b-dir3.webp", title: "Concept storyboard · Living Labyrinth", project: "Proefpark Binckhorst", wide: true, paper: true },
-    { image: "work/b-heron.png", title: "QR species page", project: "Proefpark Binckhorst" },
-    { image: "work/b-map.png", title: "Park map", project: "Proefpark Binckhorst", wide: true, paper: true },
-    { image: "work/b-sign1.png", title: "Movement challenge panel", project: "Proefpark Binckhorst" },
-    { image: "work/b-sign2.png", title: "Info panel", project: "Proefpark Binckhorst" },
+  /* Screens: a few visual projects, grouped. Keep it short: 2–3 images per project. */
+  screens: [
+    { title: "Marek na Farme", type: "E-shop website · microgreen farm", link: "",
+      images: [ "work/screens/mnf-home.jpg", "work/screens/mnf-shop.jpg", "work/screens/mnf-delivery.jpg" ] },
+    { title: "RAW. Skincare", type: "E-shop & routine builder · self-initiated", link: "raw/",
+      images: [ "work/screens/raw-home.jpg", "work/screens/raw-routine.jpg" ] },
+    { title: "Pure Charge", type: "Brand, packaging & landing page · concept", link: "",
+      images: [ "work/screens/pure-home.jpg", "work/screens/pure-labels.jpg", "work/screens/pure-poster.jpg" ] },
+    { title: "Lekker Box", type: "Grocery e-shop · concept", link: "",
+      images: [ "work/screens/lekker-home.jpg", "work/screens/lekker-product.jpg" ] },
   ],
 
   /* ── BEYOND UX ── */
   beyond: {
     intro: "Not everything starts with a brief. I design posters and campaign artwork for Lab Rats Radio and muse*, edit video since 2020, and paint nails. It's the same eye for detail, just louder.",
-    posters: [ "gold-standard", "just-dance", "king-of-pop", "house-music", "rock-n-roll", "muse-01", "all-on-you", "lab-rats-on-air",
-               "mac-miller", "muse-02", "felt-like-flying", "table-talk", "cowboy", "muse-03", "asap-rocky", "the-1985" ].map(n => `work/${n}.jpg`),
+    posters: [ "muse-01", "all-on-you", "cowboy", "table-talk", "lab-rats-on-air", "gold-standard", "king-of-pop", "house-music", "rock-n-roll",
+               "mac-miller", "muse-02", "felt-like-flying", "muse-03", "asap-rocky", "the-1985", "just-dance" ].map(n => `work/${n}.jpg`),
     cards: [
       { title: "Video", text: "Filming and editing since 2020: my own videos, my brother's company and a product promo for Medi Studio, a cosmetic clinic. Reels coming soon." },
       { title: "AI, with limits", text: "I use Claude, ChatGPT and Gemini to summarise interviews and to visualise ideas. Never for ideation: ideas come from research and from people." },
@@ -87,18 +76,18 @@ const CONFIG = {
     portrait: "work/pg/red-jacket-1.jpg",
     text: [
       "I'm Emma: 21, from Slovakia, studying UX Design at The Hague University of Applied Sciences. I work where research meets visuals. I listen to people first, then shape what they see, tap and feel.",
-      "My client work so far goes from a website for a social-impact collective to a biodiversity trail for a test park in Binckhorst. Every project starts with the same question: what is actually going wrong for the people using this?",
-      "Fashion, type and a good hat are a big part of how I think. Getting dressed is the same game as designing a screen: proportion, contrast, and one detail that makes you look twice.",
+      "So far I've worked on a website redesign for a social-impact collective, a biodiversity trail for a test park in Binckhorst, and an ordering portal for a microgreen farm.",
+      "Outside of UX I make posters, edit videos and decorate my family's flower store, so visual detail is always part of how I design.",
     ],
     facts: [
-      { label: "Studying", value: "UX Design · The Hague University of Applied Sciences" },
+      { label: "Studying", value: "Communication & Multimedia Design (UX) · The Hague University of Applied Sciences" },
       { label: "From", value: "Slovakia" },
       { label: "Based in", value: "The Hague, NL" },
-      { label: "Languages", value: "English, Slovak, Czech · a little Dutch" },
+      { label: "Languages", value: "English, Slovak, Czech · basic German & Dutch" },
     ],
     skills: [ "User research", "Interviews & surveys", "Personas & journeys", "Wireframing", "Prototyping", "Usability testing", "UI design", "Graphic design", "Video editing" ],
-    tools: [ "Figma", "Miro", "Canva", "Affinity", "Notion", "Power BI", "Claude / ChatGPT / Gemini" ],
-    cv: "",       // path to your CV PDF, e.g. "work/emma-neznikova-cv.pdf" — shows View + Download buttons
+    tools: [ "Figma", "Miro", "Canva", "Affinity", "Procreate", "Notion", "Power BI", "Claude / ChatGPT / Gemini" ],
+    cv: "work/emma-neznikova-cv.pdf",       // path to your CV PDF, e.g. "work/emma-neznikova-cv.pdf" — shows View + Download buttons
   },
 
   links: [ { label: "LinkedIn", url: "" }, { label: "Instagram", url: "" }, { label: "Behance", url: "" } ],
@@ -109,7 +98,7 @@ const CONFIG = {
     "id": "perspectivity",
     "title": "Perspectivity",
     "meta": "Client project · Figma · Scrum · 4 sprints",
-    "cover": "work/persp/final/01-hero.jpg",
+    "cover": "work/persp/cover-training.jpg",
     "status": "finished",
     "year": "2025/2026",
     "logo": "work/logo-perspectivity.png",
@@ -582,7 +571,7 @@ const CONFIG = {
     "id": "proefpark-binckhorst",
     "title": "Proefpark Binckhorst",
     "meta": "Client project (municipality/DISC team) · Research · Physical scale prototype",
-    "cover": "work/bk/f-labyrinth.jpg",
+    "cover": "work/bk/m-iter-3.jpg",
     "status": "finished",
     "year": "2026",
     "logo": "work/logo-binckhorst.png",
@@ -1010,7 +999,7 @@ const CONFIG = {
     "id": "mnf-grow-buddy",
     "title": "MNF Chef Portal",
     "meta": "Client project · B2B · Multi-role UX · Figma · Live web portal",
-    "cover": "work/mnf-purple.jpg",
+    "cover": "work/mnf-market.jpg",
     "status": "ongoing",
     "year": "2026/2027",
     "logo": "work/logo-marek.png",
@@ -1142,7 +1131,7 @@ const CONFIG = {
     "id": "raw",
     "title": "RAW. Skincare",
     "meta": "Self-initiated · Brand · Packaging · Website · AI mockups",
-    "cover": "raw/img/hero.jpg",
+    "cover": "raw/img/tray.jpg",
     "status": "ongoing",
     "year": "2026",
     "summary": "A skincare concept brand I created from scratch: name, logo, sculptural chrome packaging and a working website with a routine builder that recommends products based on how your skin feels today.",
@@ -1253,7 +1242,7 @@ const CONFIG = {
     "items": [
       {
         "when": "2024 – now",
-        "what": "UX Design",
+        "what": "Communication & Multimedia Design · UX",
         "where": "The Hague University of Applied Sciences",
         "note": ""
       }
@@ -1278,6 +1267,23 @@ const CONFIG = {
         "when": "2026 – 2027",
         "what": "MNF Chef Portal",
         "where": "Marek na farme · B2B ordering portal",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "title": "Work",
+    "items": [
+      {
+        "when": "2019 – 2025",
+        "what": "Florist & visual merchandising",
+        "where": "Naomi s.r.o. · family flower & decoration store",
+        "note": ""
+      },
+      {
+        "when": "2024 – 2025",
+        "what": "Florist",
+        "where": "Pure Flowers by Peter van der Meij · The Hague",
         "note": ""
       }
     ]
@@ -1334,11 +1340,11 @@ button{font:inherit; color:inherit}
 
 /* halftone photos */
 .ht{position:relative; overflow:hidden; background:var(--ink)}
-.ht img{width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.45) brightness(1.06)}
-.ht::after{content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.42;
+.ht img{width:100%; height:100%; object-fit:cover}
+.ht::after{display:none; content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.42;
   background-image:radial-gradient(circle, #000 36%, transparent 40%); background-size:4px 4px}
-.ht.blue{background:var(--blue)} .ht.blue img{mix-blend-mode:screen}
-.ht.red{background:var(--red)} .ht.red img{mix-blend-mode:screen}
+ 
+ 
 .ht.color img{filter:contrast(1.25) saturate(1.25)}
 
 /* header */
@@ -1477,6 +1483,27 @@ body[data-hc="red-on-black"] .hero .badge{background:transparent; box-shadow:ins
 .ui-i:focus-visible{outline:3px solid var(--red); outline-offset:4px}
 @media (max-width:820px){ .ui-g{grid-template-columns:1fr 1fr} }
 @media (max-width:520px){ .ui-g{grid-template-columns:1fr} .ui-i.wide{grid-column:auto} }
+
+/* project covers: blue halftone */
+.wk-img.ht{background:var(--blue)}
+.wk-img.ht img{filter:grayscale(1) contrast(1.45) brightness(1.06); mix-blend-mode:screen}
+.wk-img.ht::after{display:block; content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.42;
+  background-image:radial-gradient(circle, #000 36%, transparent 40%); background-size:4px 4px}
+
+/* SCREENS */
+.scs{display:grid; gap:clamp(48px,8vh,90px)}
+.sc-h{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:2px solid var(--ink); padding-top:14px; margin-bottom:16px}
+.sc-h h3{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(28px,3vw,44px); line-height:1; margin:0}
+.sc-h .mono{opacity:.65}
+.sc-link{margin-left:auto; text-decoration:none; border-bottom:2px solid var(--red); padding-bottom:2px}
+.sc-link:hover{color:var(--red)}
+.sc-row{display:grid; gap:clamp(8px,1.2vw,16px)}
+.sc-row.n2{grid-template-columns:1fr 1fr} .sc-row.n3{grid-template-columns:1fr 1fr 1fr} .sc-row.n1{grid-template-columns:1fr}
+.sc-i{all:unset; box-sizing:border-box; cursor:zoom-in; display:block; aspect-ratio:16/10; overflow:hidden; background:#fff; box-shadow:0 0 0 1px rgba(12,12,14,.18)}
+.sc-i img{width:100%; height:100%; object-fit:cover; object-position:top; transition:scale .6s cubic-bezier(.2,.8,.2,1)}
+.sc-i:hover img{scale:1.03}
+.sc-i:focus-visible{outline:3px solid var(--red); outline-offset:3px}
+@media (max-width:700px){ .sc-row.n3,.sc-row.n2{grid-template-columns:1fr 1fr} .sc-row.n3 .sc-i:first-child{grid-column:1 / -1} .sc-link{margin-left:0} }
 
 /* BEYOND */
 .bey{background:var(--ink); color:var(--paper)}
@@ -1668,7 +1695,6 @@ body.in-cs .cs-view{display:block}
 </head>
 <body>
 <script>document.body.dataset.hc = (new URLSearchParams(location.search).get("colors")) || CONFIG.heroColors || "black-red";</script>
-<div class="grain" aria-hidden="true"></div>
 
 <header class="top" id="top">
   <div class="wrap top-in">
@@ -1723,9 +1749,10 @@ body.in-cs .cs-view{display:block}
               : `<div class="wk-img"><span>Case study<br>coming soon</span></div>`}
       </button>`; }).join('');
     const proc = (C.process || []).map((s, i) => `<article class="rv"><div class="pn">0${i + 1}</div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></article>`).join('');
-    const ui = (C.ui || []).map((it, i) => `<button type="button" class="ui-i rv${it.wide ? ' wide' : ''}" data-lb="${esc(u(it.image))}" data-cap="${esc(it.project + ' · ' + it.title)}">
-        <div class="ui-f${it.paper ? ' paper' : ''}"><img src="${esc(u(it.image))}" alt="${esc(it.title)}" loading="lazy"></div>
-        <div class="ui-cap"><b>${esc(it.title)}</b><span>${esc(it.project)}</span></div></button>`).join('');
+    const ui = (C.screens || []).map(g => `<article class="sc rv">
+        <header class="sc-h"><h3>${esc(g.title)}</h3><span class="mono">${esc(g.type)}</span>${g.link ? `<a class="sc-link mono" href="${esc(u(g.link))}" target="_blank" rel="noopener">Visit ↗</a>` : ''}</header>
+        <div class="sc-row n${(g.images || []).length}">${(g.images || []).map(src => `<button type="button" class="sc-i" data-lb="${esc(u(src))}" data-cap="${esc(g.title)}"><img src="${esc(u(src))}" alt="${esc(g.title)} screen" loading="lazy"></button>`).join('')}</div>
+      </article>`).join('');
     const b = C.beyond || {};
     const a = C.about || {};
     const xp = (C.experience || []).flatMap(bl => bl.items.map(it => ({ ...it, group: bl.title })));
@@ -1740,10 +1767,9 @@ body.in-cs .cs-view{display:block}
       <div class="wrap"><p class="big hero-role"><span class="fit">${esc(C.role)}</span></p></div>
       <div class="wrap hero-row">
         <p>${esc(h.intro)}</p>
-        <div class="hero-ctas"><span class="badge mono"><i class="dot"></i>${esc(C.availability)}</span><a class="btn" href="#work">${esc(h.cta || 'See the work')} ↓</a></div>
+        <div class="hero-ctas"><span class="badge mono">${esc(C.availability)}</span><a class="btn" href="#work">${esc(h.cta || 'See the work')} ↓</a></div>
       </div>
     </section>
-    <div class="tick" aria-hidden="true"><div class="tick-in">${tick}${tick}${tick}${tick}</div></div>
 
     <section class="sec" id="work"><div class="wrap">
       <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">01 — Selected work</span><h2 class="big"><span class="fit">Case studies</span></h2></div></div>
@@ -1757,18 +1783,16 @@ body.in-cs .cs-view{display:block}
 
     <section class="sec" id="ui"><div class="wrap">
       <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">03 — UI &amp; visual design</span><h2 class="big"><span class="fit">Screens</span></h2></div></div>
-      <p class="lead rv" style="margin-bottom:clamp(24px,4vh,44px)">Interface work from my client projects: from wireframes and two tested directions to the final hi-fi screens. Click any screen to see it big.</p>
-      <div class="ui-g">${ui}</div>
+      <p class="lead rv" style="margin-bottom:clamp(30px,5vh,56px)">Visual and interface work from client, school and self-initiated projects. Click a screen to see it big.</p>
+      <div class="scs">${ui}</div>
     </div></section>
 
-    <div class="tick red" aria-hidden="true"><div class="tick-in">${['Posters', 'Campaigns', 'Video', 'Fashion', 'Nails', 'Type'].map(t => `<span>${t}</span>`).join('').repeat(4)}</div></div>
 
     <section class="sec bey" id="beyond"><div class="wrap">
       <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">04 — Beyond UX</span><h2 class="big"><span class="fit">Off the clock</span></h2></div></div>
       <p class="lead rv">${esc(b.intro || '')}</p>
       <p class="mono" style="margin:clamp(28px,5vh,50px) 0 0;color:var(--coral)">Posters · scroll sideways →</p><div class="post-row">${(b.posters || []).map(p => `<button type="button" class="post" data-lb="${esc(u(p))}" data-cap="Poster"><img src="${esc(u(p))}" alt="Poster" loading="lazy"></button>`).join('')}</div>
       <div class="bey-cards">${(b.cards || []).map(c => `<article class="rv"><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></article>`).join('')}</div>
-      <div class="bey-photos">${(b.photos || []).map((p, i) => `<figure class="ht ${i % 2 ? 'red' : 'blue'} rv" style="margin:0"><img src="${esc(u(p))}" alt="" loading="lazy"></figure>`).join('')}</div>
     </div></section>
 
     <section class="sec" id="about"><div class="wrap">
@@ -1783,7 +1807,7 @@ body.in-cs .cs-view{display:block}
           <h3 class="ab-h">Skills</h3><ul class="chips">${(a.skills || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul>
           <h3 class="ab-h">Tools</h3><ul class="chips line">${(a.tools || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul>
           <div class="cvrow">${a.cv ? `<a class="btn" href="${esc(u(a.cv))}" target="_blank" rel="noopener">View CV ↗</a><a class="btn ghost" href="${esc(u(a.cv))}" download>Download CV ↓</a>`
-            : `<span class="btn ghost" aria-disabled="true" style="opacity:.5;cursor:default">CV coming soon</span>`}</div>
+            : `<span class="btn" aria-disabled="true" style="opacity:.45;cursor:default">View CV ↗</span><span class="btn ghost" aria-disabled="true" style="opacity:.45;cursor:default">Download CV ↓</span><small>CV coming soon</small>`}</div>
         </div>
       </div>
     </div></section>
@@ -1793,7 +1817,7 @@ body.in-cs .cs-view{display:block}
       <h2 class="big"><span class="fit">Let's work</span><span class="fit w" style="margin-top:.04em">together</span></h2>
       <a class="ct-mail" href="mailto:${esc(C.email)}">${esc(C.email)}</a>
       <div class="ct-row">
-        <span class="badge mono"><i class="dot"></i>${esc(C.availability)} · ${esc(C.location)}</span>
+        <span class="badge mono">${esc(C.availability)} · ${esc(C.location)}</span>
         <div class="ct-links">
           <button type="button" class="btn" id="copy">Copy email</button>
           ${links.map(l => `<a class="btn ghost" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}
