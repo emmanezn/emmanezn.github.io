@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Emma Neznikova — UX/UI Designer</title>
 <meta name="description" content="Emma Neznikova, UX & UI design student in The Hague. Case studies, UI work and posters.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0c0e'/%3E%3Cpolygon fill='%23E8382D' points='32,9 38.6,25.4 56,25.6 42.2,36.3 47.1,53.4 32,43.4 16.9,53.4 21.8,36.3 8,25.6 25.4,25.4'/%3E%3C/svg%3E">
+<meta property="og:title" content="Emma Neznikova — UX/UI Designer">
+<meta property="og:description" content="UX & UI design student in The Hague. Case studies, UI work and posters.">
+<meta property="og:image" content="https://emmanezn.github.io/work/og.jpg">
+<meta property="og:url" content="https://emmanezn.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400;500;600&display=swap">
@@ -61,7 +67,7 @@ const CONFIG = {
   /* ── BEYOND UX ── */
   beyond: {
     intro: "Not everything starts with a brief. I design posters and campaign artwork for Lab Rats Radio and muse*, edit video since 2020, and paint nails. It's the same eye for detail, just louder.",
-    posters: [ "muse-01", "all-on-you", "cowboy", "table-talk", "lab-rats-on-air", "gold-standard", "king-of-pop", "house-music", "rock-n-roll",
+    posters: [ "muse-01", "all-on-you", "cowboy", "table-talk", "gold-standard", "king-of-pop", "house-music", "rock-n-roll",
                "mac-miller", "muse-02", "felt-like-flying", "muse-03", "asap-rocky", "the-1985", "just-dance" ].map(n => `work/${n}.jpg`),
     cards: [
       { title: "Video", text: "Filming and editing since 2020: my own videos, my brother's company and a product promo for Medi Studio, a cosmetic clinic. Reels coming soon." },
@@ -73,7 +79,7 @@ const CONFIG = {
 
   /* ── ABOUT ── */
   about: {
-    portrait: "work/pg/red-jacket-1.jpg",
+    portrait: "work/me/portrait.jpg",
     text: [
       "I'm Emma: 21, from Slovakia, studying UX Design at The Hague University of Applied Sciences. I work where research meets visuals. I listen to people first, then shape what they see, tap and feel.",
       "So far I've worked on a website redesign for a social-impact collective, a biodiversity trail for a test park in Binckhorst, and an ordering portal for a microgreen farm.",
@@ -90,7 +96,7 @@ const CONFIG = {
     cv: "work/emma-neznikova-cv.pdf",       // path to your CV PDF, e.g. "work/emma-neznikova-cv.pdf" — shows View + Download buttons
   },
 
-  links: [ { label: "LinkedIn", url: "" }, { label: "Instagram", url: "" }, { label: "Behance", url: "" } ],
+  links: [ { label: "LinkedIn", url: "https://www.linkedin.com/in/emma-neznikova-583a33330/" }, { label: "Instagram", url: "" }, { label: "Behance", url: "" } ],
 
   /* ── PROJECTS & EXPERIENCE (copied from the main site) ── */
   projects: [
@@ -102,7 +108,7 @@ const CONFIG = {
     "status": "finished",
     "year": "2025/2026",
     "logo": "work/logo-perspectivity.png",
-    "summary": "Client Perspectivity asked us to research and redesign their website since their current website made people turn up on them.",
+    "summary": "Perspectivity asked us to research and redesign their website, because visitors didn't understand what they do and left within a minute.",
     "questionLabel": "The question",
     "question": "How can we strengthen Perspectivity's online presence by redesigning its website?",
     "caseStudy": [
@@ -136,6 +142,24 @@ const CONFIG = {
           {
             "label": "Tools",
             "value": "Figma, Miro, Notion, Power BI"
+          }
+        ]
+      },
+      {
+        "step": "Brief",
+        "type": "glance",
+        "items": [
+          {
+            "label": "Problem",
+            "text": "A text-heavy website: visitors didn't understand what Perspectivity does and left within a minute."
+          },
+          {
+            "label": "What I did",
+            "text": "Co-led the design in a team of 5: research, two tested directions and a redesign of the Homepage, About and Training pages over 4 Scrum sprints."
+          },
+          {
+            "label": "Result",
+            "text": "A warm but clear final design, presented to the whole collective. They praised the FAQ and how their projects are shown."
           }
         ]
       },
@@ -570,12 +594,12 @@ const CONFIG = {
   {
     "id": "proefpark-binckhorst",
     "title": "Proefpark Binckhorst",
-    "meta": "Client project (municipality/DISC team) · Research · Physical scale prototype",
+    "meta": "Client project · Municipality of The Hague · Research · Scale prototype",
     "cover": "work/bk/m-iter-3.jpg",
     "status": "finished",
     "year": "2026",
     "logo": "work/logo-binckhorst.png",
-    "summary": "The objective of this group project was to design an interactive shared-space experience that communicates the value of biodiversity-focused green spaces and encourages residents to appreciate and engage with the nature.",
+    "summary": "A playful trail that makes a wild test park read as designed, not abandoned. Group project for the Municipality of The Hague.",
     "questionLabel": "The purpose",
     "question": "Lessons from this 4-year test park will shape the permanent Waterfront Park opening in 2029. If residents reject the \"wild\" look now, they'll reject it again later.",
     "caseStudy": [
@@ -633,6 +657,24 @@ const CONFIG = {
           {
             "label": "Made with",
             "value": "Miro, paper, cardboard, stones & a lot of gravel"
+          }
+        ]
+      },
+      {
+        "step": "Brief",
+        "type": "glance",
+        "items": [
+          {
+            "label": "Problem",
+            "text": "Residents saw a wild, biodiversity-first test park as abandoned and avoided it."
+          },
+          {
+            "label": "What I did",
+            "text": "Led a team of 4: research (10 of 13 data cards), connected three concepts into the Hidden Trail, built and tested a 1:100 scale model."
+          },
+          {
+            "label": "Result",
+            "text": "A playful, low-tech trail presented to the municipality. Testers clearly preferred physical interaction over AR."
           }
         ]
       },
@@ -1040,6 +1082,24 @@ const CONFIG = {
       },
       {
         "step": "Brief",
+        "type": "glance",
+        "items": [
+          {
+            "label": "Problem",
+            "text": "Chefs order microgreens by text message every week, which is chaotic for the farm and unclear for chefs."
+          },
+          {
+            "label": "What I'm doing",
+            "text": "Solo: research with chefs, flows for two user roles and a live ordering portal Marek can run himself."
+          },
+          {
+            "label": "Status",
+            "text": "Research phase · October 2026 – January 2027."
+          }
+        ]
+      },
+      {
+        "step": "Brief",
         "type": "text",
         "label": "The client",
         "text": "Marek grows microgreens and herbs and sells them to local restaurants. Every week, chefs order by text message: different formats, missing quantities, last-minute changes. Marek has to read, collect and confirm every order by hand, and chefs never know what's actually available this week."
@@ -1162,6 +1222,24 @@ const CONFIG = {
           {
             "label": "Status",
             "value": "Live site · research in progress"
+          }
+        ]
+      },
+      {
+        "step": "Brief",
+        "type": "glance",
+        "items": [
+          {
+            "label": "Problem",
+            "text": "Skincare shopping is overwhelming: too many products, steps and jargon."
+          },
+          {
+            "label": "What I did",
+            "text": "Created the brand, packaging and a working e-shop with a routine builder that recommends products in under a minute."
+          },
+          {
+            "label": "Next",
+            "text": "A survey and usability test of the routine builder."
           }
         ]
       },
@@ -1490,20 +1568,25 @@ body[data-hc="red-on-black"] .hero .badge{background:transparent; box-shadow:ins
 .wk-img.ht::after{display:block; content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.42;
   background-image:radial-gradient(circle, #000 36%, transparent 40%); background-size:4px 4px}
 
-/* SCREENS */
-.scs{display:grid; gap:clamp(48px,8vh,90px)}
-.sc-h{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:2px solid var(--ink); padding-top:14px; margin-bottom:16px}
-.sc-h h3{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(28px,3vw,44px); line-height:1; margin:0}
-.sc-h .mono{opacity:.65}
-.sc-link{margin-left:auto; text-decoration:none; border-bottom:2px solid var(--red); padding-bottom:2px}
-.sc-link:hover{color:var(--red)}
-.sc-row{display:grid; gap:clamp(8px,1.2vw,16px)}
-.sc-row.n2{grid-template-columns:1fr 1fr} .sc-row.n3{grid-template-columns:1fr 1fr 1fr} .sc-row.n1{grid-template-columns:1fr}
-.sc-i{all:unset; box-sizing:border-box; cursor:zoom-in; display:block; aspect-ratio:16/10; overflow:hidden; background:#fff; box-shadow:0 0 0 1px rgba(12,12,14,.18)}
-.sc-i img{width:100%; height:100%; object-fit:cover; object-position:top; transition:scale .6s cubic-bezier(.2,.8,.2,1)}
-.sc-i:hover img{scale:1.03}
-.sc-i:focus-visible{outline:3px solid var(--red); outline-offset:3px}
-@media (max-width:700px){ .sc-row.n3,.sc-row.n2{grid-template-columns:1fr 1fr} .sc-row.n3 .sc-i:first-child{grid-column:1 / -1} .sc-link{margin-left:0} }
+/* SCREENS: laptop mockups */
+.scs{display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,80px) clamp(24px,4vw,60px)}
+.dv-lap{all:unset; cursor:zoom-in; display:block; width:100%; padding:0 6%; box-sizing:border-box; transition:translate .4s cubic-bezier(.2,.8,.2,1)}
+.dv-lap:hover{translate:0 -6px}
+.dv-lap:focus-visible{outline:3px solid var(--red); outline-offset:6px}
+.dv-scr{display:block; aspect-ratio:16/10; background:#111; border-radius:14px 14px 0 0; padding:3.2% 3.2% 2.4%; box-shadow:inset 0 0 0 2px #2b2b30; overflow:hidden}
+.dv-scr img{width:100%; height:100%; object-fit:cover; object-position:top; border-radius:3px; background:#fff}
+.dv-base{display:block; height:clamp(10px,1.3vw,18px); margin:0 -7%; background:linear-gradient(#d9dadd,#a9abb0); border-radius:0 0 18px 18px / 0 0 100% 100%; position:relative; box-shadow:0 18px 24px -18px rgba(0,0,0,.55)}
+.dv-base::before{content:""; position:absolute; left:50%; top:0; width:16%; height:40%; translate:-50% 0; background:#9c9ea3; border-radius:0 0 8px 8px}
+.dv-t{margin-top:22px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px}
+.dv-t h3{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(26px,2.6vw,38px); line-height:1; margin:0; width:100%}
+.dv-t .mono{opacity:.65}
+.dv-a{display:flex; gap:16px; margin-left:auto}
+.dv-a .mono{all:unset; cursor:pointer; font-family:var(--f-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; border-bottom:2px solid var(--red); padding-bottom:2px; opacity:1}
+.dv-a .mono:hover{color:var(--red)}
+@media (max-width:760px){ .scs{grid-template-columns:1fr} .dv-a{margin-left:0} }
+.lb-n,.lb-p{all:unset; cursor:pointer; position:fixed; top:50%; translate:0 -50%; color:#fff; font-family:var(--f-big); font-size:28px; background:var(--ink); padding:10px 16px 8px}
+.lb-p{left:14px} .lb-n{right:14px}
+.lb-n[hidden],.lb-p[hidden]{display:none}
 
 /* BEYOND */
 .bey{background:var(--ink); color:var(--paper)}
@@ -1598,6 +1681,12 @@ body.in-cs .cs-view{display:block}
 .t2 .lab{margin:0}
 .t2 p:not(.lab){margin:0; font-size:clamp(18px,1.45vw,21px); max-width:780px}
 .t2.big p:not(.lab){font-family:var(--f-big); text-transform:uppercase; font-size:clamp(30px,3.6vw,58px); line-height:.98; color:var(--blue)}
+.gl{position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:0; background:var(--ink); color:var(--paper); padding:34px 0 0}
+.gl-t{position:absolute; top:12px; left:20px; font-family:var(--f-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--coral)}
+.gl div{padding:10px 20px 22px} .gl div + div{border-left:1px solid rgba(239,236,230,.2)}
+.gl b{display:block; font-family:var(--f-big); font-weight:400; font-size:24px; text-transform:uppercase; line-height:1; margin-bottom:8px; color:var(--coral)}
+.gl p{margin:0; font-size:15.5px; line-height:1.45}
+@media (max-width:760px){ .gl{grid-template-columns:1fr} .gl div + div{border-left:0; border-top:1px solid rgba(239,236,230,.2)} }
 .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0; border-block:3px solid var(--ink)}
 .facts div{padding:16px 18px 16px 0}
 .facts div + div{padding-left:18px; border-left:1px solid rgba(12,12,14,.2)}
@@ -1709,7 +1798,7 @@ body.in-cs .cs-view{display:block}
 <div class="home" id="home"></div>
 <div class="cs-view" id="csv"></div>
 
-<dialog class="lb" id="lb" aria-label="Image"><img id="lb-img" alt=""><p id="lb-cap"></p><button class="lb-x" id="lb-x" type="button">Close ✕</button></dialog>
+<dialog class="lb" id="lb" aria-label="Image"><img id="lb-img" alt=""><p id="lb-cap"></p><button class="lb-x" id="lb-x" type="button">Close ✕</button><button class="lb-p" id="lb-p" type="button" aria-label="Previous" hidden>←</button><button class="lb-n" id="lb-n" type="button" aria-label="Next" hidden>→</button></dialog>
 
 <script>
 (() => {
@@ -1749,10 +1838,14 @@ body.in-cs .cs-view{display:block}
               : `<div class="wk-img"><span>Case study<br>coming soon</span></div>`}
       </button>`; }).join('');
     const proc = (C.process || []).map((s, i) => `<article class="rv"><div class="pn">0${i + 1}</div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></article>`).join('');
-    const ui = (C.screens || []).map(g => `<article class="sc rv">
-        <header class="sc-h"><h3>${esc(g.title)}</h3><span class="mono">${esc(g.type)}</span>${g.link ? `<a class="sc-link mono" href="${esc(u(g.link))}" target="_blank" rel="noopener">Visit ↗</a>` : ''}</header>
-        <div class="sc-row n${(g.images || []).length}">${(g.images || []).map(src => `<button type="button" class="sc-i" data-lb="${esc(u(src))}" data-cap="${esc(g.title)}"><img src="${esc(u(src))}" alt="${esc(g.title)} screen" loading="lazy"></button>`).join('')}</div>
-      </article>`).join('');
+    const ui = (C.screens || []).map(g => { const imgs = (g.images || []).map(u);
+      return `<article class="dv rv">
+        <button type="button" class="dv-lap" data-gal="${esc(imgs.join('|'))}" data-cap="${esc(g.title)}" aria-label="View ${esc(g.title)} screens">
+          <span class="dv-scr"><img src="${esc(imgs[0])}" alt="${esc(g.title)} homepage" loading="lazy"></span><span class="dv-base"></span>
+        </button>
+        <div class="dv-t"><h3>${esc(g.title)}</h3><span class="mono">${esc(g.type)}</span>
+          <span class="dv-a">${imgs.length > 1 ? `<button type="button" class="mono" data-gal="${esc(imgs.join('|'))}" data-cap="${esc(g.title)}">View ${imgs.length} screens</button>` : ''}${g.link ? `<a class="mono" href="${esc(u(g.link))}" target="_blank" rel="noopener">Visit ↗</a>` : ''}</span></div>
+      </article>`; }).join('');
     const b = C.beyond || {};
     const a = C.about || {};
     const xp = (C.experience || []).flatMap(bl => bl.items.map(it => ({ ...it, group: bl.title })));
@@ -1783,7 +1876,7 @@ body.in-cs .cs-view{display:block}
 
     <section class="sec" id="ui"><div class="wrap">
       <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">03 — UI &amp; visual design</span><h2 class="big"><span class="fit">Screens</span></h2></div></div>
-      <p class="lead rv" style="margin-bottom:clamp(30px,5vh,56px)">Visual and interface work from client, school and self-initiated projects. Click a screen to see it big.</p>
+      <p class="lead rv" style="margin-bottom:clamp(30px,5vh,56px)">More web and visual design, from client work to self-initiated concepts. Click a laptop to flip through the screens.</p>
       <div class="scs">${ui}</div>
     </div></section>
 
@@ -1834,6 +1927,7 @@ body.in-cs .cs-view{display:block}
   const B = {
     hero: (b, p) => `<header class="cs-hero"><span class="mono">${esc(p.meta || '')}</span><h1>${esc(b.title || p.title)}</h1>
         ${b.image ? `<figure class="${b.paper ? 'paper' : /\.png$/.test(b.image) ? 'mock' : ''}">${img(b.image, b.alt)}${b.caption ? `<figcaption class="mono" style="margin-top:8px">${esc(b.caption)}</figcaption>` : ''}</figure>` : ''}</header>`,
+    glance: b => `<div class="gl"><span class="gl-t">At a glance</span>${(b.items || []).map(i => `<div><b>${esc(i.label)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>`,
     facts: b => `<dl class="facts">${(b.items || []).map(f => `<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('')}</dl>`,
     text: b => `<div class="t2${b.big ? ' big' : ''}">${lab(b.label)}<p>${P(b.text)}</p></div>`,
     split: b => !b.image ? '' : `<div class="split${b.flip ? ' flip' : ''}"><div class="sp-t">${lab(b.label)}<p>${P(b.text)}</p></div>
@@ -1900,6 +1994,8 @@ body.in-cs .cs-view{display:block}
     if (cs) { e.preventDefault(); location.hash = 'work/' + cs.dataset.cs; return; }
     const h = e.target.closest('[data-home]');
     if (h) { e.preventDefault(); if (document.body.classList.contains('in-cs')) { history.pushState(null, '', '#work'); route(); } else { history.pushState(null, '', location.pathname); scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' }); } return; }
+    const gEl = e.target.closest('[data-gal]');
+    if (gEl) { e.preventDefault(); const list = gEl.dataset.gal.split('|'); openLb(list[0], gEl.dataset.cap || '', list); return; }
     const l = e.target.closest('[data-lb]');
     if (l) { e.preventDefault(); openLb(l.dataset.lb, l.dataset.cap || ''); return; }
     const a = e.target.closest('a[href^="#"]');
@@ -1944,7 +2040,12 @@ body.in-cs .cs-view{display:block}
 
   /* lightbox */
   const lb = $('lb');
-  function openLb(src, cap) { $('lb-img').src = src; $('lb-img').alt = cap; $('lb-cap').textContent = cap; lb.showModal(); }
+  let gal = [], gi = 0;
+  function showG() { $('lb-img').src = gal[gi]; $('lb-cap').textContent = gal.cap + (gal.length > 1 ? ` · ${gi + 1} / ${gal.length}` : ''); }
+  function openLb(src, cap, list) { gal = list || [src]; gal.cap = cap; gi = 0; $('lb-img').alt = cap; $('lb-p').hidden = $('lb-n').hidden = gal.length < 2; showG(); if (!lb.open) lb.showModal(); }
+  $('lb-p').addEventListener('click', () => { gi = (gi - 1 + gal.length) % gal.length; showG(); });
+  $('lb-n').addEventListener('click', () => { gi = (gi + 1) % gal.length; showG(); });
+  lb.addEventListener('keydown', e => { if (e.key === 'ArrowRight') $('lb-n').click(); if (e.key === 'ArrowLeft') $('lb-p').click(); });
   $('lb-x').addEventListener('click', () => lb.close());
   lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
 
