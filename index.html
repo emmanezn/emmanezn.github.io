@@ -54,12 +54,10 @@ const CONFIG = {
   /* ── UI & VISUAL: screens shown on their own. wide: true = spans two columns ── */
   /* Screens: a few visual projects, grouped. Keep it short: 2–3 images per project. */
   screens: [
-    { title: "Marek na Farme", type: "E-shop website · microgreen farm", link: "",
+    { title: "Marek na Farme", type: "E-shop website · microgreen farm", link: "mnf/",
       images: [ "work/screens/mnf-home.jpg", "work/screens/mnf-shop.jpg", "work/screens/mnf-delivery.jpg" ] },
     { title: "RAW. Skincare", type: "E-shop & routine builder · self-initiated", link: "raw/",
       images: [ "work/screens/raw-home.jpg", "work/screens/raw-routine.jpg" ] },
-    { title: "Pure Charge", type: "Brand, packaging & landing page · concept", link: "",
-      images: [ "work/screens/pure-home.jpg", "work/screens/pure-labels.jpg", "work/screens/pure-poster.jpg" ] },
     { title: "Lekker Box", type: "Grocery e-shop · concept", link: "",
       images: [ "work/screens/lekker-home.jpg", "work/screens/lekker-product.jpg" ] },
   ],
@@ -67,13 +65,19 @@ const CONFIG = {
   /* ── BEYOND UX ── */
   beyond: {
     intro: "Not everything starts with a brief. I design posters and campaign artwork for Lab Rats Radio and muse*, edit video since 2020, and paint nails. It's the same eye for detail, just louder.",
-    posters: [ "muse-01", "all-on-you", "cowboy", "table-talk", "gold-standard", "king-of-pop", "house-music", "rock-n-roll",
+    posters: [ "muse-01", "all-on-you", "cowboy", "table-talk", "sonder", "gold-standard", "king-of-pop", "house-music", "rock-n-roll",
                "mac-miller", "muse-02", "felt-like-flying", "muse-03", "asap-rocky", "the-1985", "just-dance" ].map(n => `work/${n}.jpg`),
     cards: [
-      { title: "Video", text: "Filming and editing since 2020: my own videos, my brother's company and a product promo for Medi Studio, a cosmetic clinic. Reels coming soon." },
-      { title: "AI, with limits", text: "I use Claude, ChatGPT and Gemini to summarise interviews and to visualise ideas. Never for ideation: ideas come from research and from people." },
+      { title: "Video", text: "Filming and editing since 2020: my own videos, a product promo for Medi Studio, and recipe reels for Marek na Farme, my brother's microgreen farm, where I plan, style, film and edit every dish." },
       { title: "Nails", text: "Designing nails since 2024 in The Hague. A one-centimetre canvas, planned to the millimetre and finished in one appointment. Great training for patience and listening to clients." },
     ],
+    /* Video reels (vertical). Add more lines like these. */
+    videos: [
+      { src: "work/video/grow-kit.mp4", poster: "work/video/grow-kit.jpg", title: "Growing kit how-to" },
+      { src: "work/video/recipe-2.mp4", poster: "work/video/recipe-2.jpg", title: "Microgreen pesto pasta" },
+      { src: "work/video/recipe-4.mp4", poster: "work/video/recipe-4.jpg", title: "Summer salad" },
+    ],
+    videosLabel: "Reels for Marek na Farme · filmed, styled & edited by me",
     photos: [ "work/pg/street-1.jpg", "work/pg/mirror-cap.jpg", "work/pg/subway.jpg", "work/pg/leather-1.jpg", "work/pg/poster-wall.jpg" ],
   },
 
@@ -165,61 +169,16 @@ const CONFIG = {
       },
       {
         "step": "Brief",
-        "type": "pages",
-        "label": "Three pages, redesigned",
-        "note": "scroll inside each page ↓",
-        "items": [
-          {
-            "title": "Homepage",
-            "image": "work/persp/final-full.jpg"
-          },
-          {
-            "title": "About us",
-            "image": "work/persp/page-about.jpg"
-          },
-          {
-            "title": "Training",
-            "image": "work/persp/page-training.jpg"
-          }
-        ]
-      },
-      {
-        "step": "Brief",
-        "type": "text",
-        "label": "Perspectivity",
-        "text": "Perspectivity is a collective of facilitators who help governments, NGOs and companies navigate complex social challenges through dialogue. Their website didn't reflect that. It was text-heavy, hard to navigate, and visitors left within a minute."
-      },
-      {
-        "step": "Brief",
         "type": "split",
         "label": "The website before",
-        "text": "A beautiful crowd photo and the line “For the love of complexity”, but no clear answer to what Perspectivity actually does. Under it: long paragraphs, abstract menu labels and no stories of real projects.",
+        "text": "Perspectivity helps governments and NGOs work through complex social problems with dialogue. Their site was text-heavy and hard to navigate: visitors didn't understand what they do and left within a minute. Their site is huge, so with the client we agreed to redesign the three most important pages.",
         "image": "work/persp/old-site.jpg",
-        "alt": "The old Perspectivity homepage: crowd photo with the headline For the love of complexity"
-      },
-      {
-        "step": "Brief",
-        "type": "text",
-        "label": "The question",
-        "big": true,
-        "text": "How can we strengthen Perspectivity's online presence by redesigning its website?"
-      },
-      {
-        "step": "Brief",
-        "type": "text",
-        "label": "Why three pages",
-        "text": "Perspectivity's website is very broad, with dozens of pages, and the project only ran for one semester. So together with the client we agreed to redesign the three pages that matter most: the homepage, About us and Training. They set the design system that the rest of the site can follow later."
-      },
-      {
-        "step": "Scrum",
-        "type": "text",
-        "label": "How we worked",
-        "text": "The whole project ran on Scrum, not a fixed design process. Four two-week sprints, each ending with a review with the client and a retrospective — so every design decision was tested against real feedback before the next sprint."
+        "alt": "The old Perspectivity homepage"
       },
       {
         "step": "Scrum",
         "type": "sprints",
-        "label": "Four sprints",
+        "label": "Four Scrum sprints, a client review after each",
         "items": [
           {
             "no": "Sprint 0",
@@ -249,62 +208,12 @@ const CONFIG = {
       },
       {
         "step": "Research",
-        "type": "text",
-        "label": "How we researched",
-        "text": "A mixed-method approach: Google Analytics and LinkedIn visitor data (visualised in Power BI), interviews with four members of the collective, interviews with clients and students, a poll, personas and a competitor analysis."
-      },
-      {
-        "step": "Research",
         "type": "split",
-        "label": "Who is actually looking",
+        "label": "Research",
         "flip": true,
-        "text": "Their LinkedIn visitor data told us who the website really has to work for. Two thirds of the views came from the Netherlands, and business developers looked far more than anyone else, followed by researchers, HR and education. So: busy professionals who need to understand the offer quickly.",
+        "text": "Analytics and LinkedIn data, interviews with the collective, clients and students, a poll and a competitor review. The data showed who really visits: busy professionals who need to understand the offer quickly.",
         "image": "work/persp/linkedin-jobs.jpg",
-        "alt": "Bar chart of LinkedIn page views by job function, Business Development far ahead",
-        "caption": "LinkedIn views by job function"
-      },
-      {
-        "step": "Research",
-        "type": "stakeholders",
-        "label": "Stakeholder map",
-        "quadrants": [
-          {
-            "title": "Keep satisfied",
-            "note": "high influence · lower interest",
-            "items": [
-              "Current clients",
-              "Ministries & government",
-              "NGOs"
-            ]
-          },
-          {
-            "title": "Manage closely",
-            "note": "high influence · high interest",
-            "items": [
-              "Client representative",
-              "Our project team"
-            ],
-            "key": true
-          },
-          {
-            "title": "Monitor",
-            "note": "lower influence · lower interest",
-            "items": [
-              "Potential future clients",
-              "Academic institutions",
-              "Young professionals"
-            ]
-          },
-          {
-            "title": "Keep informed",
-            "note": "lower influence · high interest",
-            "items": [
-              "Perspectivity collective",
-              "Supervisor & teachers",
-              "Students"
-            ]
-          }
-        ]
+        "alt": "LinkedIn views by job function"
       },
       {
         "step": "Research",
@@ -332,107 +241,13 @@ const CONFIG = {
         "by": "user interview"
       },
       {
-        "step": "Research",
-        "type": "empathy",
-        "title": "Empathy map",
-        "persona": "Senior professional or director in management consulting / NGO / government",
-        "quadrants": [
-          {
-            "label": "Say",
-            "notes": [
-              "“The homepage is full of jargon.”",
-              "“I can't find the projects easily.”",
-              "“The design is colorful, but I don't understand what Perspectivity actually does.”",
-              "“Stories and impact examples would explain more than abstract text.”"
-            ]
-          },
-          {
-            "label": "Think",
-            "notes": [
-              "“This seems like a diverse and creative organization, but their message is hidden.”",
-              "“Maybe they do interesting projects, but I don't know where to look.”",
-              "“Why is there no full overview or history of their work?”"
-            ]
-          },
-          {
-            "label": "Feel",
-            "notes": [
-              "Overwhelmed by too much text and unclear navigation.",
-              "Curious about Perspectivity's unique approach, but sometimes frustrated because key information is difficult to access.",
-              "Impressed by their values (justice, peace, human rights), but unsure how these translate into practice."
-            ]
-          },
-          {
-            "label": "Do",
-            "notes": [
-              "Skims the homepage quickly and clicks once or twice, often leaving the site within a short time.",
-              "Relies on newsletters, word of mouth, or government tenders to learn more instead of exploring the website.",
-              "Ignores the search function after it delivers incomplete or wrong information."
-            ]
-          }
-        ]
-      },
-      {
-        "step": "Research",
-        "type": "list",
-        "label": "What we heard",
-        "items": [
-          "Too text-heavy, and the low-quality homepage video made it feel less professional.",
-          "Abstract menu labels and an unpredictable search function made navigation hard.",
-          "“Complexity” felt abstract: people couldn't tell what Perspectivity does at first glance."
-        ]
-      },
-      {
         "step": "Define",
         "type": "statement",
         "label": "The real problem",
         "lines": [
           "It wasn't the content. It was how it was shown.",
-          "Too much text. No hierarchy. Buried key information."
+          "Too much text, no hierarchy, and the key information buried. How might we make Perspectivity's purpose clear within seconds?"
         ]
-      },
-      {
-        "step": "Define",
-        "type": "list",
-        "label": "What was wrong, in five words",
-        "items": [
-          "Clarity: the site didn't say what Perspectivity does.",
-          "Structure: every page was built differently.",
-          "Stories: no human stories or real project results.",
-          "Mobile: hard to use on a phone.",
-          "Outreach: nothing pulled visitors back or into the newsletter."
-        ]
-      },
-      {
-        "step": "Define",
-        "type": "list",
-        "label": "How might we…",
-        "items": [
-          "…make Perspectivity's purpose clear within seconds?",
-          "…make projects and stories easy to find?",
-          "…show the people and values behind the collective in a personal way?"
-        ]
-      },
-      {
-        "step": "Define",
-        "type": "list",
-        "label": "Design principles, backed by research",
-        "items": [
-          "Chunk information into small units — users scan, they don't read (Cognitive Load Theory, Krug).",
-          "A clear visual hierarchy: headings lead, buttons follow (Lidwell et al.).",
-          "Progressive disclosure: the homepage is an overview, details live on subpages.",
-          "Readable type and strong contrast, in line with WCAG 2.1."
-        ]
-      },
-      {
-        "step": "Design",
-        "type": "split",
-        "label": "Ideation & wireframes",
-        "text": "We used brainwriting on Miro so everyone generated ideas on their own first, then built on each other's. Competitor sites inspired us to put success stories right on the homepage, and the FAQ came straight out of these sessions. Then three wireframe structures to test the order of content.",
-        "image": "work/persp/wireframes.png",
-        "alt": "Tops of three greyscale homepage wireframes",
-        "caption": "Wireframes · three structures",
-        "plain": true
       },
       {
         "step": "Design",
@@ -454,105 +269,30 @@ const CONFIG = {
       },
       {
         "step": "Test & iterate",
-        "type": "text",
-        "label": "How we tested",
-        "text": "Think-aloud usability tests and interviews with six participants, including a researcher who works with Perspectivity. Four tasks: a 10-second first impression, finding a past project, finding the contact details, and comparing both designs."
-      },
-      {
-        "step": "Test & iterate",
         "type": "statement",
-        "label": "What testers said",
+        "label": "What testing showed",
         "lines": [
           "Too cold. Too warm.",
-          "The minimal version was called “too cold” and “formal”; one tester compared it to a rehab centre. The warm one felt inviting and human, but too soft and playful for a professional client. So we met in the middle: the clear, bold structure of the minimal version with the warmth, colour and faces of the playful one."
-        ]
-      },
-      {
-        "step": "Test & iterate",
-        "type": "list",
-        "label": "What changed",
-        "items": [
-          "Project results moved up, so people see the impact before scrolling.",
-          "Contact moved into the landing area — clients need it immediately.",
-          "A middle ground between the two directions: the minimal version's clear structure, with the warm version's colour and faces.",
-          "Separate title and body fonts for clearer hierarchy.",
-          "Hover graphics on iconic projects: details without clutter.",
-          "Their board game and tools featured, plus an FAQ section."
+          "We tested both with six users. The minimal one felt “like a rehab centre”, the warm one too soft for a professional client. So we met in the middle: the clear structure of one with the colour and faces of the other."
         ]
       },
       {
         "step": "Result",
         "type": "split",
-        "label": "A clear first impression",
-        "text": "The hero says what Perspectivity does in one line, with four clear entry points: meet the team, methodology, contact and their work. Contact is right there, as testers asked.",
+        "label": "The final design",
+        "text": "One line that says what Perspectivity does, four clear entry points, contact right in the hero, and the faces of the collective straight after. Projects, their board game and an FAQ replace pages of text.",
         "image": "work/persp/final/01-hero.jpg",
-        "alt": "Final homepage hero: For the love of complexity"
-      },
-      {
-        "step": "Result",
-        "type": "split",
-        "label": "The people behind it",
-        "flip": true,
-        "text": "Straight after the hero: what they do in one sentence, and the faces of the collective. Testers said seeing the team made it feel human and trustworthy.",
-        "image": "work/persp/final/02-intro-team.jpg",
-        "alt": "Intro text with the team and the How can we help you section"
-      },
-      {
-        "step": "Result",
-        "type": "split",
-        "label": "How they can help",
-        "flip": true,
-        "text": "Three clear services instead of a wall of text, each with its own illustration, so a visitor knows within seconds what Perspectivity can do for them.",
-        "image": "work/persp/final/02b-help.jpg",
-        "alt": "How can we help you section with three illustrated services"
-      },
-      {
-        "step": "Result",
-        "type": "split",
-        "label": "Their methods, made visual",
-        "text": "The Complexity Navigator: nine tools from their methodology, shown as one visual instead of nine pages.",
-        "image": "work/persp/final/03-navigator.jpg",
-        "alt": "Complexity Navigator section"
-      },
-      {
-        "step": "Result",
-        "type": "split",
-        "label": "Work up front",
-        "flip": true,
-        "text": "Iconic projects come early, each with the partner and the real question they solved — concrete results instead of abstract text.",
-        "image": "work/persp/final/05-iconic-work.jpg",
-        "alt": "Iconic work: two project cards with photos"
-      },
-      {
-        "step": "Result",
-        "type": "split",
-        "label": "Their tools, featured",
-        "text": "Testers noticed their signature tools were missing. The final design gives the Perspectivity Challenge board game its own section.",
-        "image": "work/persp/final/06-serious-gaming.jpg",
-        "alt": "Serious gaming section with a photo of people playing the board game"
-      },
-      {
-        "step": "Result",
-        "type": "split",
-        "label": "Answers, not text walls",
-        "flip": true,
-        "text": "The FAQ replaces pages of explanation with the questions visitors actually ask. It was the part the collective praised most.",
-        "image": "work/persp/final/07-faq.jpg",
-        "alt": "FAQ section with collapsible questions"
-      },
-      {
-        "step": "Result",
-        "type": "scroll",
-        "label": "The final homepage",
-        "image": "work/persp/final-full.jpg",
-        "alt": "The full final homepage design",
-        "note": "scroll inside ↓"
+        "alt": "Final homepage hero"
       },
       {
         "step": "Result",
         "type": "pages",
-        "label": "The other pages",
+        "label": "Three pages, scroll inside",
         "items": [
+          {
+            "title": "Homepage",
+            "image": "work/persp/final-full.jpg"
+          },
           {
             "title": "About us",
             "image": "work/persp/page-about.jpg"
@@ -573,20 +313,31 @@ const CONFIG = {
       },
       {
         "step": "Result",
-        "type": "text",
-        "label": "The result",
-        "big": true,
-        "text": "Presented the final design to the whole Perspectivity collective — they praised the FAQ section and how we showcased their projects."
+        "type": "glance",
+        "title": "The result",
+        "items": [
+          {
+            "label": "Presented",
+            "text": "Final design presented to the whole Perspectivity collective at the end of the semester."
+          },
+          {
+            "label": "Praised",
+            "text": "They highlighted the FAQ and the way their projects are shown."
+          },
+          {
+            "label": "Ready to grow",
+            "text": "The three pages set a design system the rest of the site can follow."
+          }
+        ]
       },
       {
         "step": "Result",
         "type": "list",
         "label": "What I learned",
         "items": [
-          "Design from data, not taste: testers found one version too cold and the other too warm, and the best design sat in between.",
-          "Presenting to a real client, and clarifying expectations early.",
-          "Working in an international team across five cultures.",
-          "Scoping with the client: choosing three key pages instead of the whole site meant each one could be researched, tested and finished properly."
+          "Design from data, not taste: one version was too cold, one too warm, and the best sat in between.",
+          "Agreeing the scope with the client early, three pages instead of the whole site, made each one better.",
+          "Working in an international team of five, across five cultures."
         ]
       }
     ]
@@ -608,29 +359,24 @@ const CONFIG = {
         "type": "hero",
         "title": "Making a “wild” park read as designed, not abandoned",
         "image": "work/bk/fp-map.jpg",
-        "alt": "Illustrated park map of the Hidden Trail with the spiral labyrinth",
+        "alt": "Illustrated map of the Hidden Trail",
         "paper": true
       },
       {
         "step": "Brief",
-        "type": "gallery",
-        "label": "The final concept, at a glance",
+        "type": "glance",
         "items": [
           {
-            "image": "work/bk/f-labyrinth.jpg",
-            "caption": "Spiral labyrinth"
+            "label": "Problem",
+            "text": "Residents saw a wild, biodiversity-first test park as abandoned and avoided it."
           },
           {
-            "image": "work/bk/f-sign-sparrow.jpg",
-            "caption": "Movement challenge"
+            "label": "What I did",
+            "text": "Led a team of 4: research (10 of 13 data cards), connected three concepts into the Hidden Trail, built and tested a 1:100 scale model."
           },
           {
-            "image": "work/bk/f-panel-tit.jpg",
-            "caption": "Panel by local artists"
-          },
-          {
-            "image": "work/bk/f-qr-heron.jpg",
-            "caption": "QR species page"
+            "label": "Result",
+            "text": "A playful, low-tech trail presented to the municipality. Testers clearly preferred physical interaction over AR."
           }
         ]
       },
@@ -662,84 +408,20 @@ const CONFIG = {
       },
       {
         "step": "Brief",
-        "type": "glance",
-        "items": [
-          {
-            "label": "Problem",
-            "text": "Residents saw a wild, biodiversity-first test park as abandoned and avoided it."
-          },
-          {
-            "label": "What I did",
-            "text": "Led a team of 4: research (10 of 13 data cards), connected three concepts into the Hidden Trail, built and tested a 1:100 scale model."
-          },
-          {
-            "label": "Result",
-            "text": "A playful, low-tech trail presented to the municipality. Testers clearly preferred physical interaction over AR."
-          }
-        ]
-      },
-      {
-        "step": "Brief",
-        "type": "text",
-        "label": "My part",
-        "text": "This was a group project with four of us, and I took the lead. Most of the research went through my hands, including 10 of our 13 data cards. In ideation I pushed for something that connects the digital and the physical, and designed three digital concepts of my own. In the end I connected our three concepts into one final idea, the Hidden Trail, and built the physical prototypes, from the paper plan to the 1:100 scale model."
-      },
-      {
-        "step": "Brief",
         "type": "split",
-        "label": "The park",
-        "text": "Proefpark Binckhorst is a temporary test park on a former industrial site. It's left to grow wild on purpose: tall grass, dead wood and bushes give rare local species a home. 190 trees are kept there as a nursery for the future city park.",
-        "image": "work/bk/site-path.jpg",
-        "alt": "A gravel path with a bench and young trees along a fence in the park"
-      },
-      {
-        "step": "Brief",
-        "type": "split",
-        "label": "The problem",
-        "flip": true,
-        "text": "Residents didn't see biodiversity. They saw a messy, unfinished lot. Logs on the ground and long grass looked like nobody was taking care of it, so people walked past instead of in.",
+        "label": "The challenge",
+        "text": "Proefpark Binckhorst is a temporary park left to grow wild on purpose, for local wildlife. Residents saw logs and long grass and read it as abandoned. The park only exists for 4 years, and no fences or building work are allowed.",
         "image": "work/bk/site-logs.jpg",
-        "alt": "Tree trunks lying in the grass next to graffiti walls"
-      },
-      {
-        "step": "Brief",
-        "type": "list",
-        "label": "The constraints",
-        "items": [
-          "The park only exists for 4 years, until a tram line goes through.",
-          "No structural changes and no fences: the space stays open and wild.",
-          "Lessons from here go into the permanent Waterfront Park, opening in 2029. If people reject the wild look now, they'll reject it again later."
-        ]
-      },
-      {
-        "step": "Brief",
-        "type": "text",
-        "label": "Research question",
-        "big": true,
-        "text": "Which design interventions could communicate to residents that the “wild” state of the park is an intentional choice, not a lack of maintenance?"
-      },
-      {
-        "step": "Research",
-        "type": "text",
-        "label": "How we researched",
-        "text": "We went to the park a lot. Interviews on site, a survey on a QR sign placed in the park plus an online version, observation and behavioural maps of who uses it and how, and desk research into how people read “cared for” nature (Nassauer's cues to care, Turku, Landschaftspark Duisburg-Nord)."
+        "alt": "Tree trunks in long grass in the park"
       },
       {
         "step": "Research",
         "type": "split",
-        "label": "Talking to people in the park",
-        "text": "Four interviews right there in the park: two teachers, a resident and a parent. We also mapped the routes of a dog owner, a family, a runner and a young person to see where people actually walk, stop and turn around.",
-        "image": "work/bk/interview.jpg",
-        "alt": "Two team members interviewing a visitor in the park"
-      },
-      {
-        "step": "Research",
-        "type": "split",
-        "label": "A survey you scan in the park",
+        "label": "Research in the park",
         "flip": true,
-        "text": "Our “Binck Five” poster asked visitors to scan and answer a few questions on the spot. The name came from the five species the park is built for: the long-tailed tit, house sparrow, small tortoiseshell, Daubenton's bat and pike.",
-        "image": "work/bk/qr-survey.jpg",
-        "alt": "The Binck Five QR survey poster taped to a tree in the park"
+        "text": "Interviews on site, a QR survey taped to trees, observation of who walks where, and 13 data cards clustered into themes. Most of it went through my hands.",
+        "image": "work/bk/interview.jpg",
+        "alt": "Interviewing a visitor in the park"
       },
       {
         "step": "Research",
@@ -758,7 +440,7 @@ const CONFIG = {
             "label": "would feel better with a sign explaining it"
           }
         ],
-        "after": "After hearing about the biodiversity, every respondent said they'd appreciate the park more. Nobody wanted a clean, traditional park instead."
+        "after": "Once people heard about the biodiversity, every respondent said they'd appreciate the park more."
       },
       {
         "step": "Research",
@@ -767,94 +449,31 @@ const CONFIG = {
         "by": "resident survey"
       },
       {
-        "step": "Research",
-        "type": "split",
-        "label": "From data cards to themes",
-        "text": "Every observation, quote and survey answer became a data card. We printed them, put them on the wall and clustered them into five themes: the permission to stay, passive transit vs. active participation, the temporary lab, intentional wildness vs. urban neglect, and making the invisible visible. Next to them: our three personas, Thijs, Joris and Anna.",
-        "image": "work/bk/r-affinity.jpg",
-        "alt": "Wall of printed data cards clustered under five orange theme notes, with three persona sheets",
-        "flip": true
-      },
-      {
-        "step": "Research",
-        "type": "list",
-        "label": "Key insights",
-        "items": [
-          "Wild is seen as neglected. Without cues to care, like paths or signs, residents assume the park is forgotten.",
-          "Safety and legibility gap: parents avoid the park because the unpredictable, messy look feels unsafe for children.",
-          "Transit, not destination: people use it as a 2-minute shortcut. We need “psychological speed bumps” that turn it into a 5-minute discovery.",
-          "Children love it. They read the untamed character as an invitation to play, not as neglect.",
-          "Parents wait there while kids play, but there's nothing for them to sit on, read or do."
-        ]
-      },
-      {
         "step": "Define",
         "type": "statement",
-        "label": "The real problem",
+        "label": "How might we",
         "lines": [
-          "It wasn't the park.",
-          "It was the missing signal that the mess was intentional."
+          "Make the mess read as intentional.",
+          "Help residents understand, accept and value the wild, biodiversity-first park."
         ]
       },
       {
-        "step": "Define",
-        "type": "text",
-        "label": "How might we",
-        "big": true,
-        "text": "How might we help Binckhorst residents understand, accept and value the wild, biodiversity-first greenery?"
-      },
-      {
-        "step": "Define",
-        "type": "image",
-        "image": "work/b-persona.png",
-        "alt": "Persona card: Thijs, 12 years old, middle school pupil from Binckhorst",
-        "caption": "One of three personas · Thijs, 12"
-      },
-      {
         "step": "Ideate",
-        "type": "split",
-        "label": "Brain dump · 10 ideas each",
-        "text": "Everyone came up with ten ideas on their own first, so no one's thinking got lost in the group. Mine are the yellow notes: a digital board showing how the park will look in four years, binoculars that show where the animals live, a virtual butterfly that leads you along the safe paths, a scale for the trash kids collect. Then we voted for the ideas we liked most.",
-        "image": "work/bk/i-braindump.jpg",
-        "alt": "Miro board with each team member's ten ideas in purple, yellow and pink notes"
-      },
-      {
-        "step": "Ideate",
-        "type": "split",
-        "label": "Lotus blossom",
-        "text": "The strongest ideas went into a lotus blossom: one core goal in the middle, eight themes around it, and eight ideas for every theme. It pushed us past the obvious info boards towards bird houses, sound statues, kids' learning boards and “did you know” facts.",
-        "image": "work/bk/i-lotus.jpg",
-        "alt": "Lotus blossom ideation grid on Miro",
-        "flip": true
-      },
-      {
-        "step": "Ideate",
-        "type": "split",
-        "label": "My digital direction",
-        "text": "I really wanted to connect the physical park with something digital, so I developed three concepts of my own: the X-Ray Nature Lab, where you scan a bush and see the bird nesting inside; the Nature Ranger Game, a glowing safe path that keeps kids away from the road; and the Live Nature Scoreboard, a screen at the entrance that counts the species living in the park today. Each had a value proposition, quotes from research, an HMW and a storyboard.",
-        "image": "work/bk/i-digital.jpg",
-        "alt": "Three concept frames: The X-Ray Nature Lab, The Nature Ranger Game and The Live Nature Scoreboard"
-      },
-      {
-        "step": "Ideate",
-        "type": "directions",
-        "label": "Three concepts for the client",
-        "note": "From all our ideas, the team shaped three concepts to present to the client. I generated the visualisations with AI so the client and testers could picture each idea.",
+        "type": "gallery",
+        "label": "Three concepts",
+        "note": "I generated the concept visuals with AI so the client and testers could picture each idea.",
         "items": [
           {
-            "title": "Binck Eye",
-            "text": "an AR app revealing hidden wildlife through your phone",
-            "image": "work/b-dir1.webp"
+            "image": "work/bk/c-binckeye.jpg",
+            "caption": "Binck Eye · AR app"
           },
           {
-            "title": "Living Labyrinth",
-            "text": "a physical spiral path with sculptures and reflection prompts",
-            "image": "work/b-dir3.webp"
+            "image": "work/bk/c-labyrinth.jpg",
+            "caption": "Living Labyrinth"
           },
           {
-            "title": "Animal Track Adventure",
-            "text": "turning a jogging route into a biodiversity trail",
-            "image": "work/b-dir2.webp"
+            "image": "work/bk/c-tracks.jpg",
+            "caption": "Animal Track Adventure"
           }
         ]
       },
@@ -863,165 +482,106 @@ const CONFIG = {
         "type": "statement",
         "label": "Client feedback",
         "lines": [
-          "Merge the labyrinth with the animal tracks.",
-          "The client also asked for playful challenges (“can you jump that far?”), a light digital layer of QR codes instead of a full app, and wooden info panels made by local artists, so the park feels connected to Binckhorst."
-        ]
-      },
-      {
-        "step": "Ideate",
-        "type": "statement",
-        "label": "Connecting it all",
-        "lines": [
           "Three concepts. One trail.",
-          "I took the strongest parts of all three, the animal tracks, the labyrinth and a light layer of the digital idea, and connected them into one journey through the park: the Hidden Trail."
+          "The client asked us to combine the labyrinth and the animal tracks. I connected the strongest parts of all three into one journey: the Hidden Trail."
         ]
       },
       {
         "step": "Prototype & test",
         "type": "gallery",
-        "label": "Concept iterations",
+        "label": "From paper to a 1:100 model",
         "items": [
           {
             "image": "work/bk/m-iter-1.jpg",
-            "caption": "Testing on paper"
-          },
-          {
-            "image": "work/bk/m-iter-3.jpg",
-            "caption": "Scale model, trail & panels"
-          },
-          {
-            "image": "work/bk/m-iter-4.jpg",
-            "caption": "The detachable labyrinth"
+            "caption": "Round 1 · paper plan"
           },
           {
             "image": "work/bk/m-iter-2.jpg",
-            "caption": "The full 1:100 model"
+            "caption": "Round 2 · scale model"
+          },
+          {
+            "image": "work/bk/m-iter-4.jpg",
+            "caption": "Detachable labyrinth"
+          },
+          {
+            "image": "work/bk/model-test.jpg",
+            "caption": "Testing with users"
           }
         ]
-      },
-      {
-        "step": "Prototype & test",
-        "type": "split",
-        "label": "Round 1 · a plan on paper",
-        "text": "Our first prototype was a 2D plan of the park with paper touchpoints to move around. Testers compared the concepts and placed the interactions themselves. They preferred physical interaction over AR, and wanted it spread out like a trail instead of one station, with the entrance as the most important spot.",
-        "image": "work/bk/plan-2d.jpg",
-        "alt": "Paper touchpoints placed on a printed park plan"
-      },
-      {
-        "step": "Prototype & test",
-        "type": "split",
-        "label": "Round 2 · a 1:100 scale model",
-        "flip": true,
-        "text": "Then I built a high-fidelity scale model with real stones, gravel and grass carpet. The labyrinth is detachable, so testers could pick it up and rearrange what goes inside it.",
-        "image": "work/bk/model-full.jpg",
-        "alt": "The long 1:100 scale model of the park with paths and trees"
-      },
-      {
-        "step": "Prototype & test",
-        "type": "split",
-        "label": "Organising the labyrinth",
-        "text": "Testers placed the elements themselves. Quiet things, like reflection stones, ended up inside the labyrinth. Movement challenges went outside, along the trail. That became the structure of the final design.",
-        "image": "work/bk/model-test.jpg",
-        "alt": "A tester arranging pieces on the scale model"
       },
       {
         "step": "Prototype & test",
         "type": "statement",
-        "label": "The pivot",
+        "label": "What testing showed",
         "lines": [
           "Low-tech beat high-tech.",
-          "Every round pointed away from the AR app and towards things you can touch, walk and climb. The QR codes stayed, but as an extra layer, not the main thing."
+          "Testers wanted things to touch and walk, not an AR app. Quiet elements went inside the labyrinth, movement along the trail."
         ]
-      },
-      {
-        "step": "Final concept",
-        "type": "text",
-        "label": "The Hidden Trail",
-        "big": true,
-        "text": "A playful trail that turns a passive shortcut into an active journey of biodiversity discovery."
-      },
-      {
-        "step": "Final concept",
-        "type": "split",
-        "label": "01 · Animal footprints",
-        "text": "Footprints of the Binck Five are set into the main walking paths. No instructions: it works like a treasure hunt, so kids and adults start tracking what lives in the park on their own.",
-        "image": "work/bk/f-footprints.jpg",
-        "alt": "Bird footprints set into a gravel path"
-      },
-      {
-        "step": "Final concept",
-        "type": "split",
-        "label": "02 · Spiral labyrinth",
-        "text": "Near the playground, a spiral of stones slows people down. Reflection stones along the way ask: “Nature grows at its own pace. What pace are you living at?”",
-        "image": "work/bk/f-labyrinth.jpg",
-        "alt": "Stone spiral labyrinth in the grass near the playground",
-        "flip": true
       },
       {
         "step": "Final concept",
         "type": "gallery",
-        "label": "03 · Movement challenges",
-        "note": "Wooden panels pair a species fact with a physical challenge, so learning happens through the body, not by reading.",
+        "label": "The Hidden Trail",
+        "note": "A playful trail that turns a shortcut into a discovery: low-tech, cheap and built to last the park's 4 years.",
         "items": [
+          {
+            "image": "work/bk/f-footprints.jpg",
+            "caption": "Animal footprints"
+          },
+          {
+            "image": "work/bk/f-labyrinth.jpg",
+            "caption": "Spiral labyrinth"
+          },
           {
             "image": "work/bk/f-sign-sparrow.jpg",
-            "caption": "Can you shake like the house sparrow?"
+            "caption": "Movement challenges"
           },
           {
-            "image": "work/bk/f-sign-pike.jpg",
-            "caption": "Can you strike like the northern pike?"
+            "image": "work/bk/f-panel-vision.jpg",
+            "caption": "Panels by local artists"
           },
           {
-            "image": "work/bk/f-sign-tit.jpg",
-            "caption": "Can you tilt like the long-tailed tit?"
+            "image": "work/bk/f-qr-heron.jpg",
+            "caption": "Light QR layer"
           }
-        ]
-      },
-      {
-        "step": "Final concept",
-        "type": "split",
-        "label": "04 · Local art integration",
-        "text": "Information panels hand-made from wood by local artists, as the client asked. Warmer and more personal than standard signs, and a clear signal to the neighbourhood that someone cares for this place.",
-        "image": "work/bk/f-panel-vision.jpg",
-        "alt": "Carved wooden panel: Park vision and concept, a community haven"
-      },
-      {
-        "step": "Final concept",
-        "type": "split",
-        "label": "05 · Lightweight digital layer",
-        "text": "My digital idea survived as a light layer: QR codes on the panels open bird calls, species facts and biodiversity numbers. Technology adds depth but never replaces the park itself.",
-        "image": "work/bk/f-qr-heron.jpg",
-        "alt": "Phone showing the Grey Heron species page",
-        "flip": true
-      },
-      {
-        "step": "Final concept",
-        "type": "list",
-        "label": "Design principles",
-        "items": [
-          "Playfulness over instruction.",
-          "Discovery over overload.",
-          "Movement as engagement.",
-          "Layered perception: a quick look and a deep dive both work.",
-          "Low-tech, high impact."
         ]
       },
       {
         "step": "Result",
-        "type": "text",
+        "type": "split",
         "label": "The result",
-        "big": true,
-        "text": "We presented the Hidden Trail and the scale model to the municipality. They were enthusiastic about the direction."
+        "text": "We presented the Hidden Trail to the Municipality of The Hague with the 1:100 scale model, so the client could walk through the park with their hands. The concept answers the research question without changing the park itself: instead of taming the wild, it gives people a reason to explore it. Footprints pull visitors off the shortcut, the labyrinth makes them slow down, and the panels explain why the park looks wild. The client was enthusiastic about the direction.",
+        "alt": "Result video: the Hidden Trail, from scale model to the park",
+        "video": "work/bk/hidden-trail.mp4",
+        "poster": "work/bk/hidden-trail.jpg"
+      },
+      {
+        "step": "Result",
+        "type": "glance",
+        "items": [
+          {
+            "label": "Wild = cared for",
+            "text": "Panels made with local artists and a clear trail signal that the park is looked after, not abandoned."
+          },
+          {
+            "label": "Shortcut → discovery",
+            "text": "Footprints and movement challenges turn a 2-minute walk into a 5-minute adventure."
+          },
+          {
+            "label": "Built to move",
+            "text": "Low-tech and modular, so it can move to the permanent Waterfront Park in 2029."
+          }
+        ],
+        "title": "How it answers the question"
       },
       {
         "step": "Result",
         "type": "list",
         "label": "Next steps we recommended",
         "items": [
-          "A maintenance plan, so the trail itself never looks abandoned.",
-          "A toolkit for schools to use the park as an outdoor classroom.",
-          "Testing with children aged 6 to 12, the main audience.",
-          "Making it modular, so it can move to the Waterfront Park in 2029."
+          "Test the challenges with children aged 6–12, the main audience.",
+          "A school toolkit, so teachers can use the park as an outdoor classroom.",
+          "A maintenance plan, so the trail itself never looks abandoned."
         ]
       },
       {
@@ -1029,10 +589,9 @@ const CONFIG = {
         "type": "list",
         "label": "What I learned",
         "items": [
-          "Testing with a physical model gives better feedback than any screen: people grab things and move them.",
-          "My digital ideas didn't make the final cut as the main concept, and that was the right call: testers wanted something to touch. Keeping a light digital layer was the compromise.",
-          "Leading a team means delegating, even when it feels uncomfortable, and telling people what I'm working on.",
-          "We solved what happens inside the park, but not how to pull people in from outside. That's the next problem."
+          "A physical model gets better feedback than any screen: people pick things up and move them.",
+          "My digital ideas didn't win, and that was right. Testers wanted something to touch.",
+          "Leading a team means delegating, and telling people what I'm working on."
         ]
       }
     ]
@@ -1186,131 +745,6 @@ const CONFIG = {
         ]
       }
     ]
-  },
-  {
-    "id": "raw",
-    "title": "RAW. Skincare",
-    "meta": "Self-initiated · Brand · Packaging · Website · AI mockups",
-    "cover": "raw/img/tray.jpg",
-    "status": "ongoing",
-    "year": "2026",
-    "summary": "A skincare concept brand I created from scratch: name, logo, sculptural chrome packaging and a working website with a routine builder that recommends products based on how your skin feels today.",
-    "caseStudy": [
-      {
-        "step": "Brief",
-        "type": "hero",
-        "title": "Skincare, stripped back",
-        "image": "raw/img/hero.jpg",
-        "alt": "The RAW. collection on a chrome plinth"
-      },
-      {
-        "step": "Brief",
-        "type": "facts",
-        "items": [
-          {
-            "label": "My role",
-            "value": "Everything: concept, brand, packaging, website design & build"
-          },
-          {
-            "label": "Type",
-            "value": "Self-initiated project"
-          },
-          {
-            "label": "Tools",
-            "value": "Canva, AI image generation, HTML/CSS/JS"
-          },
-          {
-            "label": "Status",
-            "value": "Live site · research in progress"
-          }
-        ]
-      },
-      {
-        "step": "Brief",
-        "type": "glance",
-        "items": [
-          {
-            "label": "Problem",
-            "text": "Skincare shopping is overwhelming: too many products, steps and jargon."
-          },
-          {
-            "label": "What I did",
-            "text": "Created the brand, packaging and a working e-shop with a routine builder that recommends products in under a minute."
-          },
-          {
-            "label": "Next",
-            "text": "A survey and usability test of the routine builder."
-          }
-        ]
-      },
-      {
-        "step": "Brief",
-        "type": "text",
-        "label": "The idea",
-        "text": "Most skincare brands ask you to hide their products in a bathroom cabinet. RAW. does the opposite: sculptural chrome objects you want to keep out, with soft, simple formulas inside. Hard outside, soft inside."
-      },
-      {
-        "step": "Brief",
-        "type": "text",
-        "label": "The UX question",
-        "big": true,
-        "text": "How might we help someone build a skincare routine that fits their skin in under a minute?"
-      },
-      {
-        "step": "Design",
-        "type": "gallery",
-        "label": "Brand & packaging",
-        "items": [
-          {
-            "image": "raw/img/logo-cream.jpg",
-            "caption": "Logo"
-          },
-          {
-            "image": "raw/img/bottles-1.jpg",
-            "caption": "Packaging"
-          },
-          {
-            "image": "raw/img/spatulas.jpg",
-            "caption": "Textures"
-          },
-          {
-            "image": "raw/img/labels.jpg",
-            "caption": "Labels"
-          }
-        ]
-      },
-      {
-        "step": "Design",
-        "type": "split",
-        "label": "The routine builder",
-        "text": "Instead of a ten-step routine, visitors tap how their skin feels today and pick morning or night. The site builds their routine from the collection, skips steps they don't need, and adds it all to the cart in one tap.",
-        "image": "raw/img/tray.jpg",
-        "alt": "Chrome tray with RAW. products"
-      },
-      {
-        "step": "Design",
-        "type": "text",
-        "label": "Honest about AI",
-        "text": "I designed the brand, the packaging, the website and the routine builder. I used AI to generate the product mockups and to help write the copy."
-      },
-      {
-        "step": "Result",
-        "type": "link",
-        "label": "See it live",
-        "text": "Click through the working website: shop, product pages, routine builder and cart.",
-        "button": "Open the RAW. website ↗",
-        "url": "raw/"
-      },
-      {
-        "step": "Result",
-        "type": "statement",
-        "label": "Coming next",
-        "lines": [
-          "Research in progress.",
-          "A survey, competitor review and usability test of the routine builder will be added here."
-        ]
-      }
-    ]
   }
 ],
 
@@ -1322,29 +756,6 @@ const CONFIG = {
         "when": "2024 – now",
         "what": "Communication & Multimedia Design · UX",
         "where": "The Hague University of Applied Sciences",
-        "note": ""
-      }
-    ]
-  },
-  {
-    "title": "Client projects",
-    "items": [
-      {
-        "when": "2025/2026",
-        "what": "Perspectivity",
-        "where": "Website research & redesign",
-        "note": ""
-      },
-      {
-        "when": "2026",
-        "what": "Proefpark Binckhorst",
-        "where": "Municipality / DISC team",
-        "note": ""
-      },
-      {
-        "when": "2026 – 2027",
-        "what": "MNF Chef Portal",
-        "where": "Marek na farme · B2B ordering portal",
         "note": ""
       }
     ]
@@ -1363,28 +774,11 @@ const CONFIG = {
         "what": "Florist",
         "where": "Pure Flowers by Peter van der Meij · The Hague",
         "note": ""
-      }
-    ]
-  },
-  {
-    "title": "Side work",
-    "items": [
+      },
       {
         "when": "2020 – now",
-        "what": "Video editing",
-        "where": "My own videos · my brother's company · Medi Studio",
-        "note": ""
-      },
-      {
-        "when": "2019 – now",
-        "what": "Posters & campaigns",
-        "where": "muse*, Lab Rats Radio",
-        "note": ""
-      },
-      {
-        "when": "2024 – now",
-        "what": "Nail design",
-        "where": "The Hague",
+        "what": "Content creator & video editor",
+        "where": "Marek na Farme · Medi Studio",
         "note": ""
       }
     ]
@@ -1596,7 +990,16 @@ body[data-hc="red-on-black"] .hero .badge{background:transparent; box-shadow:ins
 .post img{width:100%; height:auto; box-shadow:0 20px 30px -20px rgba(0,0,0,.8)}
 .post:hover{translate:0 -6px; rotate:-1deg}
 .post:focus-visible{outline:3px solid var(--red); outline-offset:4px}
-.bey-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,2vw,28px); margin-top:clamp(40px,7vh,80px)}
+.reels{display:grid; grid-template-columns:repeat(3,minmax(0,250px)); justify-content:center; gap:clamp(18px,4vw,64px); margin-top:clamp(24px,4vh,40px); align-items:start}
+.reel{margin:0; text-align:center}
+.reel:nth-child(2){margin-top:clamp(30px,6vw,80px)}
+.reel:nth-child(1){rotate:-3deg} .reel:nth-child(3){rotate:3deg}
+.reel-ph{position:relative; padding:10px; background:#1d1d22; border-radius:34px; box-shadow:0 0 0 2px #3a3a42, 0 30px 50px -24px rgba(0,0,0,.9)}
+.reel-ph::before{content:""; position:absolute; z-index:2; top:18px; left:50%; translate:-50% 0; width:28%; height:16px; background:#1d1d22; border-radius:10px; pointer-events:none}
+.reel video{display:block; width:100%; aspect-ratio:9/16; object-fit:cover; background:#000; border-radius:25px}
+.reel figcaption{font-family:var(--f-big); text-transform:uppercase; font-size:clamp(18px,1.6vw,24px); line-height:1; margin-top:16px}
+@media (max-width:700px){ .reels{grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px} .reel-ph{padding:5px; border-radius:18px} .reel-ph::before{display:none} .reel video{border-radius:14px} .reel figcaption{font-size:14px} }
+.bey-cards{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(14px,2vw,28px); margin-top:clamp(40px,7vh,80px)}
 .bey-cards article{border-top:3px solid var(--paper); padding-top:14px}
 .bey-cards h3{font-family:var(--f-big); font-weight:400; font-size:clamp(34px,3.4vw,52px); text-transform:uppercase; line-height:.9; margin:0 0 10px; color:var(--red)}
 .bey-cards p{margin:0; opacity:.88}
@@ -1697,6 +1100,7 @@ body.in-cs .cs-view{display:block}
 .sp-t p{margin:0; font-size:clamp(17px,1.35vw,20px)}
 .sp-t h3{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(34px,3.6vw,56px); line-height:.92; margin:0 0 14px}
 .sp-f{margin:0; cursor:zoom-in}
+.sp-v{display:block; width:100%; height:auto; background:#000; box-shadow:0 0 0 2px var(--ink)}
 .sp-f img{width:100%; height:auto; max-height:70vh; object-fit:cover; box-shadow:0 0 0 2px var(--ink)}
 .sp-f figcaption,.fig figcaption{font-family:var(--f-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; margin-top:8px; opacity:.7}
 .sprints{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:0; margin:0}
@@ -1869,27 +1273,25 @@ body.in-cs .cs-view{display:block}
       <div class="work">${workList}</div>
     </div></section>
 
-    <section class="sec proc" id="process"><div class="wrap">
-      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">02 — How I work</span><h2 class="big"><span class="fit">Research first</span></h2></div></div>
-      <div class="proc-g">${proc}</div>
-    </div></section>
 
     <section class="sec" id="ui"><div class="wrap">
-      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">03 — UI &amp; visual design</span><h2 class="big"><span class="fit">Screens</span></h2></div></div>
+      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">02 — UI &amp; visual design</span><h2 class="big"><span class="fit">Screens</span></h2></div></div>
       <p class="lead rv" style="margin-bottom:clamp(30px,5vh,56px)">More web and visual design, from client work to self-initiated concepts. Click a laptop to flip through the screens.</p>
       <div class="scs">${ui}</div>
     </div></section>
 
 
     <section class="sec bey" id="beyond"><div class="wrap">
-      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">04 — Beyond UX</span><h2 class="big"><span class="fit">Off the clock</span></h2></div></div>
+      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">03 — Beyond UX</span><h2 class="big"><span class="fit">Off the clock</span></h2></div></div>
       <p class="lead rv">${esc(b.intro || '')}</p>
       <p class="mono" style="margin:clamp(28px,5vh,50px) 0 0;color:var(--coral)">Posters · scroll sideways →</p><div class="post-row">${(b.posters || []).map(p => `<button type="button" class="post" data-lb="${esc(u(p))}" data-cap="Poster"><img src="${esc(u(p))}" alt="Poster" loading="lazy"></button>`).join('')}</div>
+      ${(b.videos || []).length ? `<p class="mono" style="margin:clamp(40px,7vh,80px) 0 0;color:var(--coral)">${esc(b.videosLabel || 'Video')}</p>
+      <div class="reels">${b.videos.map(v => `<figure class="reel"><div class="reel-ph"><video src="${esc(u(v.src))}" poster="${esc(u(v.poster))}" controls playsinline preload="none" aria-label="${esc(v.title)}"></video></div><figcaption>${esc(v.title)}</figcaption></figure>`).join('')}</div>` : ''}
       <div class="bey-cards">${(b.cards || []).map(c => `<article class="rv"><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></article>`).join('')}</div>
     </div></section>
 
     <section class="sec" id="about"><div class="wrap">
-      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">05 — About</span><h2 class="big"><span class="fit">Hi, I'm Emma</span></h2></div></div>
+      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">04 — About</span><h2 class="big"><span class="fit">Hi, I'm Emma</span></h2></div></div>
       <div class="ab-g">
         <figure class="ab-pic ht red" style="margin:0"><img src="${esc(u(a.portrait))}" alt="Emma Neznikova" loading="lazy"><figcaption class="mono">That's me ★</figcaption></figure>
         <div class="ab-txt rv">
@@ -1906,7 +1308,7 @@ body.in-cs .cs-view{display:block}
     </div></section>
 
     <section class="sec ct" id="contact"><div class="wrap">
-      <span class="kick" style="color:var(--ink)">06 — Contact</span>
+      <span class="kick" style="color:var(--ink)">05 — Contact</span>
       <h2 class="big"><span class="fit">Let's work</span><span class="fit w" style="margin-top:.04em">together</span></h2>
       <a class="ct-mail" href="mailto:${esc(C.email)}">${esc(C.email)}</a>
       <div class="ct-row">
@@ -1927,11 +1329,11 @@ body.in-cs .cs-view{display:block}
   const B = {
     hero: (b, p) => `<header class="cs-hero"><span class="mono">${esc(p.meta || '')}</span><h1>${esc(b.title || p.title)}</h1>
         ${b.image ? `<figure class="${b.paper ? 'paper' : /\.png$/.test(b.image) ? 'mock' : ''}">${img(b.image, b.alt)}${b.caption ? `<figcaption class="mono" style="margin-top:8px">${esc(b.caption)}</figcaption>` : ''}</figure>` : ''}</header>`,
-    glance: b => `<div class="gl"><span class="gl-t">At a glance</span>${(b.items || []).map(i => `<div><b>${esc(i.label)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>`,
+    glance: b => `<div class="gl"><span class="gl-t">${esc(b.title || 'At a glance')}</span>${(b.items || []).map(i => `<div><b>${esc(i.label)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>`,
     facts: b => `<dl class="facts">${(b.items || []).map(f => `<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('')}</dl>`,
     text: b => `<div class="t2${b.big ? ' big' : ''}">${lab(b.label)}<p>${P(b.text)}</p></div>`,
-    split: b => !b.image ? '' : `<div class="split${b.flip ? ' flip' : ''}"><div class="sp-t">${lab(b.label)}<p>${P(b.text)}</p></div>
-        <figure class="sp-f">${img(b.image, b.alt)}${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure></div>`,
+    split: b => !(b.image || b.video) ? '' : `<div class="split${b.flip ? ' flip' : ''}"><div class="sp-t">${lab(b.label)}<p>${P(b.text)}</p></div>
+        <figure class="sp-f">${b.video ? `<video class="sp-v" src="${esc(u(b.video))}" poster="${esc(u(b.poster || ''))}" controls playsinline preload="metadata" aria-label="${esc(b.alt || '')}"></video>` : img(b.image, b.alt)}${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure></div>`,
     sprints: b => `${lab(b.label)}<ol class="sprints">${(b.items || []).map(s => `<li><span class="no">${esc(s.no)}</span><b>${esc(s.goal)}</b><p>${esc(s.note)}</p>${s.retro ? `<span class="re">${esc(s.retro)}</span>` : ''}</li>`).join('')}</ol>`,
     stakeholders: b => `${lab(b.label)}<div class="sh">${(b.quadrants || []).map(q => `<div class="${q.key ? 'key' : ''}"><h4>${esc(q.title)}</h4><small>${esc(q.note)}</small><ul>${(q.items || []).map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`).join('')}</div>`,
     stats: b => `<div class="stats">${(b.items || []).map(s => `<div><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>${b.after ? `<p class="stats-after">${esc(b.after)}</p>` : ''}`,
