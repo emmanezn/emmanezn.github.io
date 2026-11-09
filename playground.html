@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playground — Emma Neznikova</title>
+<meta name="description" content="Posters, nails and photos of Emma Neznikova — the fun, messy side.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+@font-face{font-family:"Pen";src:url(work/v3/fonts/pen.woff2) format("woff2");font-display:swap}
+:root{--ink:#0c0c0e;--paper:#efece6;--blue:#2E2EA3;--red:#E8382D;--coral:#EC636B;--f-big:"Anton",Impact,sans-serif;--f-body:"Jost",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,monospace;--spring:cubic-bezier(.3,1.4,.5,1)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--paper);color:var(--ink);font-family:var(--f-body)}
+.top{position:fixed;z-index:6;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px max(16px,4vw);pointer-events:none}
+.top a{pointer-events:auto;text-decoration:none;color:var(--ink)}
+.logo{font-family:var(--f-big);font-size:26px;text-transform:uppercase;line-height:1;background:var(--paper);padding:8px 10px 6px;box-shadow:0 0 0 1px rgba(17,17,17,.14)}.logo b{color:var(--red);font-weight:400}
+.back{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper)!important;padding:11px 14px}
+.back:hover{background:var(--red)}
+.pg{position:fixed;inset:0;overflow:hidden;touch-action:none;cursor:grab;outline:none;user-select:none;-webkit-user-select:none}
+.pg.grabbing{cursor:grabbing}
+.pg-world{position:absolute;left:0;top:0;will-change:transform;background-image:radial-gradient(rgba(46,46,163,.18) 1.2px,transparent 1.4px);background-size:34px 34px}
+.pg-item{all:unset;position:absolute;cursor:pointer;display:block;background:#fff;padding:6px;box-sizing:border-box;rotate:var(--r);box-shadow:0 14px 28px -18px rgba(20,10,40,.6);transition:rotate .5s var(--spring),box-shadow .3s,scale .4s var(--spring)}
+.pg-item img{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none}
+.pg-item.pg-poster{padding:0}
+.pg-item:hover{scale:1.03}
+.pg-item.front{rotate:0deg;scale:1.06;box-shadow:0 30px 50px -22px rgba(20,10,40,.7),0 0 0 3px var(--red)}
+.pg-item:focus-visible{outline:3px dashed var(--blue);outline-offset:4px}
+.pg-intro{position:fixed;z-index:4;left:max(14px,2vw);top:84px;width:min(370px,calc(100vw - 28px));background:var(--paper);color:var(--ink);box-shadow:0 18px 40px -22px rgba(20,10,40,.55),0 0 0 1px rgba(17,17,17,.14);rotate:-1deg}
+.pg-intro::before{content:"";position:absolute;inset:5px;border:1px dashed rgba(17,17,17,.25);pointer-events:none}
+.pg-intro-t{all:unset;cursor:pointer;display:flex;width:100%;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px 0;position:relative}
+.kick{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.pg-intro-t b{font-family:var(--f-mono);font-weight:400;font-size:20px;line-height:1;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:var(--paper)}
+.pg-intro-b{padding:6px 20px 20px;position:relative}
+.pg-intro h1{margin:2px 0 8px;font-family:var(--f-big);font-weight:400;text-transform:uppercase;font-size:clamp(34px,3.2vw,46px);line-height:.92;color:var(--blue)}
+.pg-intro p{margin:0;font-size:15px;line-height:1.5}
+.pg-intro .pen{display:block;margin-top:10px;font-family:"Pen",cursive;font-size:30px;line-height:.9;color:var(--red);rotate:-3deg}
+.pg-intro.min{width:auto}.pg-intro.min .pg-intro-t{padding:11px 14px 11px 18px}.pg-intro.min .pg-intro-b{display:none}
+.pg-ui{position:fixed;inset:auto 0 0 0;z-index:3;pointer-events:none;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:0 max(14px,2vw) max(14px,2.4vh)}
+.pg-hint{margin:0;padding:9px 13px 8px;background:var(--paper);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;position:relative;transition:opacity .6s}
+.pg-hint::before{content:"";position:absolute;inset:3px;border:1px dashed rgba(17,17,17,.3)}
+body.used .pg-hint{opacity:.55}
+.pg-home{all:unset;pointer-events:auto;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:9px 13px 8px;margin-left:auto;background:var(--blue);color:#fff;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.pg-home:hover{background:var(--red)}
+.pg-map{pointer-events:auto;position:relative;width:clamp(110px,12vw,170px);background:rgba(247,245,241,.9);box-shadow:0 0 0 1px rgba(17,17,17,.25);cursor:crosshair;overflow:hidden}
+.pg-map-in{position:absolute;inset:0}
+.pg-dot{position:absolute;opacity:.6}
+.pg-dot.pg-poster{background:var(--blue)}.pg-dot.pg-nails{background:var(--red)}.pg-dot.pg-me{background:var(--ink)}.pg-dot.pg-cake{background:#d9a441}.pg-dot.pg-collage{background:#888}
+.pg-view{position:absolute;box-shadow:0 0 0 1.5px var(--ink);background:rgba(232,56,45,.12)}
+.lb{position:fixed;inset:0;z-index:20;background:rgba(12,12,14,.92);display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 30px 60px -20px #000}
+.lb button{all:unset;cursor:pointer;position:absolute;color:var(--paper);font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:12px 14px}
+.lb .x{top:10px;right:14px}.lb .p{left:8px;top:50%;font-size:28px}.lb .n{right:8px;top:50%;font-size:28px}
+.lb button:hover{color:var(--red)}
+@media (max-width:600px){.pg-intro{left:12px;right:12px;top:70px;width:auto;rotate:0deg}.pg-intro.min{right:auto}.pg-intro p{font-size:14px}.pg-hint{display:none}.pg-map{width:96px}.lb{padding:50px 10px}}
+@media (prefers-reduced-motion:reduce){.pg-item{transition:none}}
+</style></head><body>
+<div class="top"><a class="logo" href="index.html">Emma<b>★</b>N</a><a class="back" href="index.html#beyond">← Back to portfolio</a></div>
+<div class="pg" tabindex="0" aria-label="Playground. Drag, scroll or use the arrow keys to look around."><div class="pg-world"></div></div>
+<aside class="pg-intro" aria-label="About the playground">
+  <button type="button" class="pg-intro-t" aria-expanded="true"><span class="kick">Me, beyond the design</span><b aria-hidden="true">–</b></button>
+  <div class="pg-intro-b"><h1>The fun, messy side</h1><p>Not everything I make starts with a brief. These are the posters I design for Lab Rats Radio and muse*, the nails I paint, cakes I bake and decorate, a cut-and-paste moodboard, and a few photos of me. Same eye for detail, just with fewer sticky notes.</p><span class="pen">drag me around ✶</span></div>
+</aside>
+<div class="pg-ui"><p class="pg-hint">drag to explore · click to pick · click again to view</p><button type="button" class="pg-home" aria-label="Back to the middle">★ middle</button><div class="pg-map" aria-hidden="true"><div class="pg-map-in"></div><span class="pg-view"></span></div></div>
+<div class="lb" id="lb" role="dialog" aria-label="Picture"><img alt=""><button class="x" type="button">Close ✕</button><button class="p" type="button" aria-label="Previous">←</button><button class="n" type="button" aria-label="Next">→</button></div>
+<script>
+(() => {
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let kb = false; addEventListener('keydown', () => kb = true); addEventListener('pointerdown', () => kb = false);
+  const c = { seed: 7, items: [{"type": "poster", "image": "work/pg/t/muse-01.jpg", "ar": 1.413, "full": "work/muse-01.jpg"}, {"type": "poster", "image": "work/pg/t/all-on-you.jpg", "ar": 1.416, "full": "work/all-on-you.jpg"}, {"type": "poster", "image": "work/pg/t/cowboy.jpg", "ar": 1.413, "full": "work/cowboy.jpg"}, {"type": "poster", "image": "work/pg/t/table-talk.jpg", "ar": 1.25, "full": "work/table-talk.jpg"}, {"type": "poster", "image": "work/pg/t/sonder.jpg", "ar": 1.422, "full": "work/sonder.jpg"}, {"type": "poster", "image": "work/pg/t/gold-standard.jpg", "ar": 1.252, "full": "work/gold-standard.jpg"}, {"type": "poster", "image": "work/pg/t/king-of-pop.jpg", "ar": 1.252, "full": "work/king-of-pop.jpg"}, {"type": "poster", "image": "work/pg/t/house-music.jpg", "ar": 1.252, "full": "work/house-music.jpg"}, {"type": "poster", "image": "work/pg/t/rock-n-roll.jpg", "ar": 1.252, "full": "work/rock-n-roll.jpg"}, {"type": "poster", "image": "work/pg/t/mac-miller.jpg", "ar": 1.429, "full": "work/mac-miller.jpg"}, {"type": "poster", "image": "work/pg/t/muse-02.jpg", "ar": 1.413, "full": "work/muse-02.jpg"}, {"type": "poster", "image": "work/pg/t/felt-like-flying.jpg", "ar": 1.416, "full": "work/felt-like-flying.jpg"}, {"type": "poster", "image": "work/pg/t/muse-03.jpg", "ar": 1.413, "full": "work/muse-03.jpg"}, {"type": "poster", "image": "work/pg/t/asap-rocky.jpg", "ar": 1.429, "full": "work/asap-rocky.jpg"}, {"type": "poster", "image": "work/pg/t/the-1985.jpg", "ar": 1.25, "full": "work/the-1985.jpg"}, {"type": "poster", "image": "work/pg/t/just-dance.jpg", "ar": 1.252, "full": "work/just-dance.jpg"}, {"type": "nails", "image": "work/pg/t/nail-01.jpg", "ar": 1.753, "full": "work/pg/nail-01.jpg"}, {"type": "nails", "image": "work/pg/t/nail-06.jpg", "ar": 1.458, "full": "work/pg/nail-06.jpg"}, {"type": "nails", "image": "work/pg/t/nail-15.jpg", "ar": 1.778, "full": "work/pg/nail-15.jpg"}, {"type": "nails", "image": "work/pg/t/nail-19.jpg", "ar": 1.458, "full": "work/pg/nail-19.jpg"}, {"type": "me", "image": "work/pg/t/subway.jpg", "ar": 1.145, "full": "work/pg/subway.jpg"}, {"type": "me", "image": "work/pg/t/scuffers.jpg", "ar": 1.905, "full": "work/pg/scuffers.jpg"}, {"type": "me", "image": "work/pg/t/poster-wall.jpg", "ar": 1.778, "full": "work/pg/poster-wall.jpg"}, {"type": "me", "image": "work/pg/t/red-jacket-1.jpg", "ar": 1.778, "full": "work/pg/red-jacket-1.jpg"}, {"type": "me", "image": "work/pg/t/garage-1.jpg", "ar": 1.333, "full": "work/pg/garage-1.jpg"}, {"type": "me", "image": "work/pg/t/leather-1.jpg", "ar": 1.778, "full": "work/pg/leather-1.jpg"}, {"type": "me", "image": "work/pg/t/street-1.jpg", "ar": 1.778, "full": "work/pg/street-1.jpg"}, {"type": "me", "image": "work/pg/t/mirror-cap.jpg", "ar": 1.778, "full": "work/pg/mirror-cap.jpg"}, {"type": "collage", "image": "work/pg/t/moodboard.jpg", "ar": 1.426, "full": "work/pg/moodboard.jpg", "size": "l"}, {"type": "cake", "image": "work/pg/t/cake-figs-top.jpg", "ar": 1.778, "full": "work/pg/cake-figs-top.jpg"}, {"type": "cake", "image": "work/pg/t/cake-football.jpg", "ar": 1.333, "full": "work/pg/cake-football.jpg"}, {"type": "cake", "image": "work/pg/t/cake-rainbow.jpg", "ar": 1.778, "full": "work/pg/cake-rainbow.jpg"}, {"type": "cake", "image": "work/pg/t/cake-figs.jpg", "ar": 1.778, "full": "work/pg/cake-figs.jpg"}] };
+  const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+  const pg = document.querySelector('.pg'), world = pg.querySelector('.pg-world');
+  const items = c.items;
+  world.innerHTML = items.map((it, i) => `<button type="button" class="pg-item pg-${esc(it.type)}" data-i="${i}" aria-label="${it.type === 'me' ? 'Photo of Emma' : it.type === 'nails' ? 'Nail design' : it.type === 'cake' ? 'Cake by Emma' : it.type === 'collage' ? 'Moodboard collage' : 'Poster'} ${i + 1}"><img src="${esc(it.image)}" alt="" draggable="false" decoding="async"></button>`).join('');
+  const els = [...world.querySelectorAll('.pg-item')];
+  const map = document.querySelector('.pg-map'), mapIn = map.querySelector('.pg-map-in'), view = map.querySelector('.pg-view');
+  // lightbox
+  const lb = document.getElementById('lb'), lbImg = lb.querySelector('img'); let lbI = 0;
+  const show = i => { lbI = (i + items.length) % items.length; lbImg.src = items[lbI].full || items[lbI].image; };
+  function openLightbox(i) { show(i); lb.classList.add('on'); lb.querySelector('.x').focus(); }
+  const closeLb = () => { lb.classList.remove('on'); pg.focus(); };
+  lb.querySelector('.x').onclick = closeLb; lb.querySelector('.p').onclick = () => show(lbI - 1); lb.querySelector('.n').onclick = () => show(lbI + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  addEventListener('keydown', e => { if (!lb.classList.contains('on')) return; if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowLeft') show(lbI - 1); if (e.key === 'ArrowRight') show(lbI + 1); });
+  let seed = (c.seed || 7) >>> 0;
+  const rnd = () => { seed = (seed + 0x6D2B79F5) >>> 0; let t = seed; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const S = { pg, world, els, x: 0, y: 0, W: 0, H: 0, vx: 0, vy: 0, top: els.length + 10, front: null, raf: 0 };
+    function layout() {
+      const u = Math.max(.62, Math.min(1.1, innerWidth / 1400));
+      const colW = 230 * u, m = colW * .9, N = els.length;
+      const step = colW * .97;                       // columns barely touch
+      const sizes = { s: .8, m: .9, l: 1 };
+      const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+      const posters = shuffle(els.map((_, i) => i).filter(i => items[i].type === 'poster'));
+      const others = shuffle(els.map((_, i) => i).filter(i => items[i].type !== 'poster'));
+      const avg = items.reduce((t, it) => t + (it.ar || 1.3), 0) / Math.max(1, N);
+      // posters: a block of columns in the middle; everything else grows around it
+      const pc = posters.length ? Math.max(1, Math.min(posters.length, Math.round(Math.sqrt(posters.length * (innerWidth > innerHeight ? 1.3 : .8))))) : 0;
+      let cols = Math.max(pc + 2, Math.round(Math.sqrt(N * avg * 1.7 * Math.max(.5, Math.min(2.2, innerWidth / innerHeight)))) + 4);
+      if ((cols - pc) % 2) cols++;
+      const c0 = (cols - pc) / 2;
+      const up = new Array(cols).fill(0), dn = new Array(cols).fill(0);
+      const placed = [];
+      const put = (idx, c, dir) => {
+        const it = items[idx];
+        const sz = it.size || (it.type === 'poster' ? 'l' : (rnd() < .35 ? 's' : 'm'));
+        const w = colW * (sizes[sz] || .9), h = w * (it.ar || 1.3) + (it.type === 'poster' ? 0 : 12);
+        const x = c * step + (colW - w) / 2 + (rnd() - .5) * colW * .14;
+        const gap = (rnd() - .7) * h * .1 + colW * .02;   // a small overlap or a small gap
+        let y;
+        if (dir > 0) { y = dn[c] + gap * (dn[c] === up[c] ? 0 : 1); dn[c] = y + h; }
+        else { y = up[c] - h - gap; up[c] = y; }
+        placed.push({ idx, x, y, w, h });
+      };
+      // 1. posters, column by column, downwards
+      posters.forEach(idx => { let best = c0; for (let c = c0; c < c0 + pc; c++) if (dn[c] < dn[best]) best = c; put(idx, best, 1); });
+      if (pc) {   // centre the poster block on y = 0 and let the other columns start from there
+        const hb = Math.max(...dn.slice(c0, c0 + pc));
+        placed.forEach(p => p.y -= hb / 2);
+        for (let c = 0; c < cols; c++) {
+          if (c >= c0 && c < c0 + pc) { up[c] = -hb / 2; dn[c] -= hb / 2; }
+          else { up[c] = dn[c] = (rnd() - .5) * colW * .6; }
+        }
+      }
+      // 2. everything else: always into the free spot closest to the middle (wider than tall, like a screen)
+      const cx = (cols - 1) / 2, k = Math.max(.45, Math.min(2.4, innerHeight / innerWidth * 1.1)) * step;   // grows into the shape of the screen
+      others.forEach(idx => {
+        let best = null;
+        for (let c = 0; c < cols; c++) for (const dir of [1, -1]) {
+          const dy = dir > 0 ? dn[c] : -up[c];
+          const cost = Math.hypot(dy, Math.abs(c - cx) * k) + rnd() * colW * .5;
+          if (!best || cost < best.cost) best = { c, dir, cost };
+        }
+        put(idx, best.c, best.dir);
+      });
+      const minY = Math.min(...placed.map(p => p.y)), maxY = Math.max(...placed.map(p => p.y + p.h));
+      const minX = Math.min(...placed.map(p => p.x)), maxX = Math.max(...placed.map(p => p.x + p.w));   // drop empty columns
+      placed.forEach(p => { p.x += m - minX; p.y += m - minY; });
+      S.W = m * 2 + (maxX - minX); S.H = m * 2 + (maxY - minY);
+      S.cx = m - minX + (c0 + pc / 2) * step; S.cy = m - minY;   // middle of the poster block
+      world.style.width = S.W + 'px'; world.style.height = S.H + 'px';
+      mapIn.innerHTML = '';
+      placed.sort((p, q) => (items[p.idx].type === 'poster') - (items[q.idx].type === 'poster'));   // posters on top
+      placed.forEach(({ idx, x, y, w, h }, k) => {
+        const el = els[idx], it = items[idx];
+        el.style.cssText = `left:${x}px;top:${y}px;width:${w}px;--r:${((rnd() - .5) * 7).toFixed(1)}deg;z-index:${k + 1}`;
+        const d = document.createElement('i');
+        d.className = 'pg-dot pg-' + (it.type || 'x');
+        d.style.cssText = `left:${x / S.W * 100}%;top:${y / S.H * 100}%;width:${w / S.W * 100}%;height:${h / S.H * 100}%`;
+        mapIn.appendChild(d);
+      });
+      map.style.aspectRatio = `${S.W} / ${S.H}`;
+      map.style.width = S.H > S.W ? `${Math.round(Math.min(150, innerHeight * .2) * S.W / S.H)}px` : '';
+    }
+
+    const vw = () => innerWidth, vh = () => innerHeight;
+    function clamp() {
+      const padX = vw() * .25, padY = vh() * .25;
+      const minX = Math.min(vw() - S.W - padX, (vw() - S.W) / 2), maxX = Math.max(padX, (vw() - S.W) / 2);
+      const minY = Math.min(vh() - S.H - padY, (vh() - S.H) / 2), maxY = Math.max(padY, (vh() - S.H) / 2);
+      S.x = Math.max(minX, Math.min(maxX, S.x)); S.y = Math.max(minY, Math.min(maxY, S.y));
+    }
+    function paint() {
+      clamp();
+      world.style.transform = `translate3d(${S.x}px, ${S.y}px, 0)`;
+      view.style.left = `${-S.x / S.W * 100}%`; view.style.top = `${-S.y / S.H * 100}%`;
+      view.style.width = `${vw() / S.W * 100}%`; view.style.height = `${vh() / S.H * 100}%`;
+    }
+    function center(smooth) { goTo(S.cx ?? S.W / 2, S.cy ?? S.H / 2, smooth); }
+    function goTo(wx, wy, smooth) {
+      const tx = vw() / 2 - wx, ty = vh() / 2 - wy;
+      cancelAnimationFrame(S.raf);
+      if (!smooth || RM) { S.x = tx; S.y = ty; paint(); return; }
+      const sx = S.x, sy = S.y, t0 = performance.now();
+      const step = t => { const k = Math.min(1, (t - t0) / 650), e = 1 - Math.pow(1 - k, 3);
+        S.x = sx + (tx - sx) * e; S.y = sy + (ty - sy) * e; paint(); if (k < 1) S.raf = requestAnimationFrame(step); };
+      S.raf = requestAnimationFrame(step);
+    }
+    function glide() {
+      cancelAnimationFrame(S.raf);
+      if (RM) return;
+      const step = () => { S.vx *= .93; S.vy *= .93; S.x += S.vx; S.y += S.vy; paint();
+        if (Math.abs(S.vx) + Math.abs(S.vy) > .3) S.raf = requestAnimationFrame(step); };
+      S.raf = requestAnimationFrame(step);
+    }
+
+    // drag (mouse + touch); a click only counts if the pointer barely moved
+    let down = null, dragging = false, justDragged = false;
+    pg.addEventListener('pointerdown', e => {
+      if (e.button) return;
+      cancelAnimationFrame(S.raf);
+      down = { x: e.clientX, y: e.clientY, sx: S.x, sy: S.y, t: performance.now(), lx: e.clientX, ly: e.clientY, id: e.pointerId };
+      dragging = false; S.vx = S.vy = 0;
+    });
+    pg.addEventListener('pointermove', e => {
+      if (!down || e.pointerId !== down.id) return;
+      const dx = e.clientX - down.x, dy = e.clientY - down.y;
+      if (!dragging && Math.hypot(dx, dy) > 6) { dragging = true; try { pg.setPointerCapture(e.pointerId); } catch (_) {} pg.classList.add('grabbing'); document.body.classList.add('used'); }
+      if (!dragging) return;
+      const now = performance.now(), dt = Math.max(1, now - down.t);
+      S.vx = (e.clientX - down.lx) / dt * 16; S.vy = (e.clientY - down.ly) / dt * 16;
+      down.lx = e.clientX; down.ly = e.clientY; down.t = now;
+      S.x = down.sx + dx; S.y = down.sy + dy; paint();
+    });
+    const up = () => {
+      if (!down) return;
+      if (dragging) { justDragged = true; setTimeout(() => justDragged = false, 0); glide(); }
+      down = null; dragging = false; pg.classList.remove('grabbing');
+    };
+    pg.addEventListener('pointerup', up);
+    pg.addEventListener('pointercancel', up);
+
+    // wheel / trackpad scrolls in both directions
+    pg.addEventListener('wheel', e => {
+      e.preventDefault();
+      cancelAnimationFrame(S.raf);
+      const k = e.deltaMode === 1 ? 32 : 1;
+      S.x -= (e.shiftKey && !e.deltaX ? e.deltaY : e.deltaX) * k;
+      S.y -= (e.shiftKey && !e.deltaX ? 0 : e.deltaY) * k;
+      paint();
+      document.body.classList.add('used');
+    }, { passive: false });
+
+    // arrow keys
+    pg.addEventListener('keydown', e => {
+      const step = e.shiftKey ? 360 : 140;
+      const d = { ArrowLeft: [step, 0], ArrowRight: [-step, 0], ArrowUp: [0, step], ArrowDown: [0, -step] }[e.key];
+      if (!d) return;
+      e.preventDefault();
+      goTo(vw() / 2 - S.x - d[0], vh() / 2 - S.y - d[1], true);
+    });
+
+    // first click: to the front. second click: open big.
+    world.addEventListener('click', e => {
+      const el = e.target.closest('.pg-item');
+      if (!el || justDragged) return;
+      if (S.front === el) { openLightbox(+el.dataset.i); return; }
+      S.front?.classList.remove('front');
+      S.front = el;
+      el.style.zIndex = ++S.top;
+      el.classList.add('front');
+      if (!RM) el.animate([{ scale: .94 }, { scale: 1.1 }, { scale: 1.06 }], { duration: 420, easing: 'cubic-bezier(.3,1.5,.5,1)' });
+    });
+    // keyboard focus brings the picture into view
+    world.addEventListener('focusin', e => {
+      const el = e.target.closest('.pg-item');
+      if (!el || !kb) return;
+      goTo(el.offsetLeft + el.offsetWidth / 2, el.offsetTop + el.offsetHeight / 2, true);
+    });
+
+    // minimap: click or drag to jump
+    const mapJump = e => {
+      const r = map.getBoundingClientRect();
+      goTo((e.clientX - r.left) / r.width * S.W, (e.clientY - r.top) / r.height * S.H, e.type === 'pointerdown');
+    };
+    map.addEventListener('pointerdown', e => { e.stopPropagation(); map.setPointerCapture(e.pointerId); mapJump(e); });
+    map.addEventListener('pointermove', e => { if (e.buttons) mapJump(e); });
+    document.querySelector('.pg-home').addEventListener('click', () => center(true));
+    const intro = document.querySelector('.pg-intro');
+    if (intro && innerHeight < 560) { intro.classList.add('min'); const t = intro.querySelector('.pg-intro-t'); t.setAttribute('aria-expanded', 'false'); t.querySelector('b').textContent = '+'; }
+    intro?.querySelector('.pg-intro-t').addEventListener('click', e => {
+      const t = e.currentTarget, min = intro.classList.toggle('min');
+      t.setAttribute('aria-expanded', String(!min)); t.querySelector('b').textContent = min ? '+' : '–';
+    });
+    ['pointerdown', 'wheel'].forEach(ev => intro?.addEventListener(ev, e => e.stopPropagation()));
+
+
+    layout(); center(false);
+    addEventListener('resize', () => { clearTimeout(S.t); S.t = setTimeout(() => { const cx = innerWidth / 2 - S.x, cy = innerHeight / 2 - S.y, ow = S.W, oh = S.H; seed = (c.seed || 7) >>> 0; layout(); goTo(cx / ow * S.W, cy / oh * S.H, false); }, 150); });
+    if (!RM) els.forEach(el => {
+      const dx = el.offsetLeft - (S.cx ?? S.W / 2), dy = el.offsetTop - (S.cy ?? S.H / 2), dist = Math.hypot(dx, dy);
+      el.animate([{ opacity: 0, translate: `${-dx * .35}px ${-dy * .35}px`, scale: .6 }, { opacity: 1, translate: '0 0', scale: 1 }],
+        { duration: 900, delay: 300 + dist * .35, easing: 'cubic-bezier(.2,.9,.3,1.15)', fill: 'backwards' });
+    });
+    pg.focus({ preventScroll: true });
+})();
+</script></body></html>
