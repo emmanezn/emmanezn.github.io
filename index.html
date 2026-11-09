@@ -58,6 +58,8 @@ const CONFIG = {
       images: [ "work/screens/mnf-home.jpg", "work/screens/mnf-shop.jpg", "work/screens/mnf-delivery.jpg" ] },
     { title: "RAW. Skincare", type: "E-shop & routine builder · self-initiated", link: "raw/",
       images: [ "work/screens/raw-home.jpg", "work/screens/raw-routine.jpg" ] },
+    { title: "Pure Charge", type: "Packaging & brand · concept", link: "",
+      images: [ "work/screens/pure-cans.jpg", "work/screens/pure-brand.jpg" ] },
     { title: "Lekker Box", type: "Grocery e-shop · concept", link: "",
       images: [ "work/screens/lekker-home.jpg", "work/screens/lekker-product.jpg" ] },
   ],
@@ -76,8 +78,9 @@ const CONFIG = {
       { src: "work/video/grow-kit.mp4", poster: "work/video/grow-kit.jpg", title: "Growing kit how-to" },
       { src: "work/video/recipe-2.mp4", poster: "work/video/recipe-2.jpg", title: "Microgreen pesto pasta" },
       { src: "work/video/recipe-4.mp4", poster: "work/video/recipe-4.jpg", title: "Summer salad" },
+      { src: "work/video/medi-studio.mp4", poster: "work/video/medi-studio.jpg", title: "Medi Studio" },
     ],
-    videosLabel: "Reels for Marek na Farme · filmed, styled & edited by me",
+    videosLabel: "Reels for Marek na Farme & Medi Studio · filmed and edited by me",
     photos: [ "work/pg/street-1.jpg", "work/pg/mirror-cap.jpg", "work/pg/subway.jpg", "work/pg/leather-1.jpg", "work/pg/poster-wall.jpg" ],
   },
 
@@ -95,8 +98,8 @@ const CONFIG = {
       { label: "Based in", value: "The Hague, NL" },
       { label: "Languages", value: "English, Slovak, Czech · basic German & Dutch" },
     ],
-    skills: [ "User research", "Interviews & surveys", "Personas & journeys", "Wireframing", "Prototyping", "Usability testing", "UI design", "Graphic design", "Video editing" ],
-    tools: [ "Figma", "Miro", "Canva", "Affinity", "Procreate", "Notion", "Power BI", "Claude / ChatGPT / Gemini" ],
+    skills: [ "User research", "Personas & journeys", "Wireframing", "Prototyping", "Usability testing", "UI design", "Graphic design", "Video editing" ],
+    tools: [ "Figma", "Miro", "Canva", "Affinity", "Procreate", "Notion", "Claude / ChatGPT / Gemini" ],
     cv: "work/emma-neznikova-cv.pdf",       // path to your CV PDF, e.g. "work/emma-neznikova-cv.pdf" — shows View + Download buttons
   },
 
@@ -145,7 +148,7 @@ const CONFIG = {
           },
           {
             "label": "Tools",
-            "value": "Figma, Miro, Notion, Power BI"
+            "value": "Figma, Miro, Notion"
           }
         ]
       },
@@ -990,15 +993,15 @@ body[data-hc="red-on-black"] .hero .badge{background:transparent; box-shadow:ins
 .post img{width:100%; height:auto; box-shadow:0 20px 30px -20px rgba(0,0,0,.8)}
 .post:hover{translate:0 -6px; rotate:-1deg}
 .post:focus-visible{outline:3px solid var(--red); outline-offset:4px}
-.reels{display:grid; grid-template-columns:repeat(3,minmax(0,250px)); justify-content:center; gap:clamp(18px,4vw,64px); margin-top:clamp(24px,4vh,40px); align-items:start}
+.reels{display:grid; grid-template-columns:repeat(4,minmax(0,230px)); justify-content:center; gap:clamp(18px,4vw,64px); margin-top:clamp(24px,4vh,40px); align-items:start}
 .reel{margin:0; text-align:center}
-.reel:nth-child(2){margin-top:clamp(30px,6vw,80px)}
-.reel:nth-child(1){rotate:-3deg} .reel:nth-child(3){rotate:3deg}
+.reel:nth-child(even){margin-top:clamp(30px,6vw,80px)}
+.reel:nth-child(1){rotate:-3deg} .reel:nth-child(4){rotate:3deg}
 .reel-ph{position:relative; padding:10px; background:#1d1d22; border-radius:34px; box-shadow:0 0 0 2px #3a3a42, 0 30px 50px -24px rgba(0,0,0,.9)}
 .reel-ph::before{content:""; position:absolute; z-index:2; top:18px; left:50%; translate:-50% 0; width:28%; height:16px; background:#1d1d22; border-radius:10px; pointer-events:none}
 .reel video{display:block; width:100%; aspect-ratio:9/16; object-fit:cover; background:#000; border-radius:25px}
 .reel figcaption{font-family:var(--f-big); text-transform:uppercase; font-size:clamp(18px,1.6vw,24px); line-height:1; margin-top:16px}
-@media (max-width:700px){ .reels{grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px} .reel-ph{padding:5px; border-radius:18px} .reel-ph::before{display:none} .reel video{border-radius:14px} .reel figcaption{font-size:14px} }
+@media (max-width:700px){ .reels{grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px} .reel-ph{padding:5px; border-radius:18px} .reel-ph::before{display:none} .reel video{border-radius:14px} .reel figcaption{font-size:14px} }
 .bey-cards{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(14px,2vw,28px); margin-top:clamp(40px,7vh,80px)}
 .bey-cards article{border-top:3px solid var(--paper); padding-top:14px}
 .bey-cards h3{font-family:var(--f-big); font-weight:400; font-size:clamp(34px,3.4vw,52px); text-transform:uppercase; line-height:.9; margin:0 0 10px; color:var(--red)}
