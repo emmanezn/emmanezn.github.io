@@ -1198,9 +1198,8 @@ body.in-cs .cs-view{display:block}
 .hero-star{position:absolute; z-index:4; pointer-events:none}
 /* ── ABOUT POSTER ── */
 @font-face{font-family:"Pen";src:url(work/v3/fonts/pen.woff2) format("woff2");font-display:swap}
-.abp{--abp:var(--blue); --abp-t:var(--paper); min-height:max(100vh,680px); display:grid; grid-template-rows:26% 1fr; grid-template-rows:minmax(150px,26vh) 1fr; background:var(--abp); color:var(--abp-t); position:relative; overflow:hidden}
-.abp-eyes{background:#ccc url(work/me/eyes.jpg) center 48%/cover no-repeat}
-.abp-pk{position:relative; padding:0 24px 26px; display:flex; flex-direction:column}
+.abp{--abp:var(--blue); --abp-t:var(--paper); min-height:max(100vh,680px); display:grid; grid-template-rows:1fr; background:var(--abp); color:var(--abp-t); position:relative; overflow:hidden}
+.abp-pk{position:relative; padding:clamp(110px,14vh,150px) 24px 26px; display:flex; flex-direction:column}
 .abp-pk::after{content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:soft-light; opacity:.6; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .25' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .abp-big{align-self:flex-start; font-family:var(--f-big); font-weight:400; font-size:21vw; line-height:.74; margin:.02em 0 0; white-space:nowrap; transform-origin:0 0; color:var(--abp-t); position:relative; z-index:1}
 .abp-sig{position:absolute; right:4vw; font-family:"Pen",cursive; font-size:clamp(40px,4.2vw,62px); line-height:.8; transform:rotate(-8deg); z-index:2}
@@ -1216,15 +1215,9 @@ body.in-cs .cs-view{display:block}
 .abp-cv a:hover{background:var(--red); color:var(--paper); box-shadow:none}
 @media (max-width:820px){ .hero-role{width:88%; margin-top:.45em !important} }
 @media (max-width:1000px){ .abp-bot{grid-template-columns:1fr 1fr} }
-@media (max-width:760px){ .abp{min-height:0; grid-template-rows:150px auto} .abp-pk{padding:0 16px 30px} .abp-big{font-size:23vw} .abp-sig{right:18px} .abp-bot{margin-top:70px; grid-template-columns:1fr; font-size:15px} }
+@media (max-width:760px){ .abp{min-height:0} .abp-pk{padding:96px 16px 30px} .abp-big{font-size:23vw} .abp-sig{right:18px} .abp-bot{margin-top:70px; grid-template-columns:1fr; font-size:15px} }
 
-/* ── ABOUT: polaroid ── */
-.abp-pol{position:absolute; z-index:3; margin:0; right:clamp(16px,4vw,70px); top:calc(clamp(14px,2.4vh,26px) - max(150px,26vh)); width:clamp(130px,11.5vw,180px); background:#fff; padding:9px 9px 0; rotate:5deg; box-shadow:0 22px 40px -18px rgba(0,0,0,.55); transition:rotate .5s cubic-bezier(.3,1.4,.5,1)}
-.abp-pol:hover{rotate:0deg}
-.abp-pol::before{content:""; position:absolute; top:-13px; left:50%; translate:-50% 0; rotate:-4deg; width:46%; height:24px; background:rgba(241,233,168,.85)}
-.abp-pol img{display:block; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 30%}
-.abp-pol figcaption{font-family:"Pen",cursive; color:var(--ink); font-size:clamp(22px,1.9vw,30px); line-height:1; padding:8px 4px 10px; text-align:center}
-@media (max-width:760px){ .abp-pol{width:84px; right:10px; top:-140px; padding:5px 5px 0} .abp-pol figcaption{font-size:16px; padding:4px 2px 6px} }
+
 /* ── personality strip ── */
 .me-tick{background:var(--ink); border-block:0}
 .me-tick .tick-in{animation-duration:48s}
@@ -1242,6 +1235,8 @@ body.in-cs .cs-view{display:block}
 .pg-cta-t em{font-family:"Pen",cursive; font-style:normal; font-size:clamp(22px,2vw,30px); color:var(--blue); line-height:1}
 .pg-cta:hover{background:#fff} .pg-cta:hover b{color:var(--red)}
 @media (max-width:600px){ .pg-cta{flex-direction:column; align-items:flex-start} }
+
+.abp-photo{position:absolute; z-index:1; display:block; object-fit:cover; object-position:50% 28%; filter:contrast(1.04)}
 </style>
 </head>
 <body>
@@ -1274,14 +1269,25 @@ body.in-cs .cs-view{display:block}
   /* ── fit text: every .fit fills its parent's width exactly ── */
   function aboutFit() {
     const b = document.querySelector('.abp-big'); if (!b) return;
-    const pk = b.parentElement, bot = pk.querySelector('.abp-bot'), sig = pk.querySelector('.abp-sig');
-    const mob = innerWidth < 760;
+    const pk = b.parentElement, bot = pk.querySelector('.abp-bot'), sig = pk.querySelector('.abp-sig'), ph = pk.querySelector('.abp-photo');
+    const mob = innerWidth < 760, pad = mob ? 16 : 24, gap = mob ? 0 : Math.round(innerWidth * .02);
     b.style.transform = 'none'; b.style.height = '';
-    const kx = (pk.clientWidth - (mob ? 32 : 48)) / b.scrollWidth;
-    const avail = pk.clientHeight - bot.offsetHeight - (mob ? 110 : 130);
-    const ky = Math.max(1.2, Math.min(avail / b.offsetHeight, mob ? 2.4 : 3.2));
-    b.style.transform = `scale(${kx},${ky})`; b.style.height = (b.offsetHeight * ky) + 'px';
-    sig.style.top = (b.offsetHeight + (mob ? 14 : 34)) + 'px';
+    const top = b.offsetTop, natH = b.offsetHeight, natW = b.scrollWidth;
+    if (mob) {
+      const kx = (pk.clientWidth - pad * 2) / natW, ky = 1.25;
+      b.style.transform = `scale(${kx},${ky})`; b.style.height = (natH * ky) + 'px';
+      const pw = Math.round((pk.clientWidth - pad * 2) * .62);
+      Object.assign(ph.style, { position: 'relative', left: 'auto', right: 'auto', top: 'auto', width: pw + 'px', height: Math.round(pw * 1.2) + 'px', marginTop: '28px' });
+      sig.style.top = (top + natH * ky + 28 + pw * 1.2 - 40) + 'px';
+      return;
+    }
+    const avail = pk.clientHeight - bot.offsetHeight - top - 150;
+    const ky = Math.max(1.2, Math.min(avail / natH, 3.2));
+    const H = natH * ky, pw = Math.round(H * 1.173 * .74);
+    const kx = (pk.clientWidth - pad * 2 - pw - gap) / natW;
+    b.style.transform = `scale(${kx},${ky})`; b.style.height = H + 'px';
+    Object.assign(ph.style, { position: 'absolute', marginTop: '0', right: pad + 'px', left: 'auto', top: (top + H * -.097) + 'px', width: pw + 'px', height: (H * 1.173) + 'px' });
+    sig.style.top = (top + H * 1.076 + 4) + 'px';
   }
   function fitAll(root = document) {
     requestAnimationFrame(aboutFit);
@@ -1366,11 +1372,10 @@ body.in-cs .cs-view{display:block}
     </div></section>
 
     <section class="abp" id="about">
-      <div class="abp-eyes" role="img" aria-label="Emma Neznikova"></div>
       <div class="abp-pk">
         <h2 class="abp-big" aria-label="About me">ABOUT ME</h2>
         <span class="abp-sig" aria-hidden="true">Emma N.</span>
-        <figure class="abp-pol"><img src="${esc(u(a.portrait))}" alt="Portrait of Emma Neznikova"><figcaption>that’s me ✶</figcaption></figure>
+        <img class="abp-photo" src="${esc(u(a.portrait))}" alt="Portrait of Emma Neznikova">
         <div class="abp-bot">
           <div><b>Hi, I’m Emma</b><p>${esc((a.text || [])[0] || '')}</p></div>
           <div><b>Experience</b><ul>${xp.map(it => `<li>${esc(it.what)} · ${esc((it.where || '').split('·')[0].trim())} <span>${esc(it.when || '')}</span></li>`).join('')}</ul></div>
