@@ -66,9 +66,14 @@ const CONFIG = {
 
   /* ── BEYOND UX ── */
   beyond: {
-    intro: "Not everything starts with a brief. I design posters and campaign artwork for Lab Rats Radio and muse*, edit video since 2020, and paint nails. It's the same eye for detail, just louder.",
+    intro: "Not everything starts with a brief. I design posters and campaign artwork for Lab Rats Radio and muse*, menus and loyalty cards, edit video since 2020, and paint nails. It's the same eye for detail, just louder.",
     posters: [ "muse-01", "all-on-you", "cowboy", "table-talk", "sonder", "gold-standard", "king-of-pop", "house-music", "rock-n-roll",
                "mac-miller", "muse-02", "felt-like-flying", "muse-03", "asap-rocky", "the-1985", "just-dance" ].map(n => `work/${n}.jpg`),
+    /* Print & branding projects — shown first in the poster row, click opens all images */
+    print: [
+      { title: "Kvety Naomi", type: "Loyalty card · flower & decor store", images: [ "work/print/kvety-1.jpg", "work/print/kvety-2.jpg" ] },
+      { title: "WALQ", type: "Café menu & loyalty card", images: [ "work/screens/walq-cafe.jpg", "work/screens/walq-latte.jpg", "work/screens/walq-loyalty.jpg" ] },
+    ],
     cards: [
       { title: "Video", text: "Filming and editing since 2020: my own videos, a product promo for Medi Studio, and recipe reels for Marek na Farme, my brother's microgreen farm, where I plan, style, film and edit every dish." },
       { title: "Nails", text: "Designing nails since 2024 in The Hague. A one-centimetre canvas, planned to the millimetre and finished in one appointment. Great training for patience and listening to clients." },
@@ -1464,6 +1469,10 @@ body.in-cs .cs-view{display:block}
 @keyframes ringspin{to{rotate:360deg}}
 @media (prefers-reduced-motion:reduce){.hero-ring{animation:none}}
 @media (max-width:760px){.hero-ring{width:80vw; top:48%}}
+
+.post-row{align-items:flex-start}
+.post-l{display:block; font-family:var(--f-mono); font-size:11px; letter-spacing:.05em; text-transform:uppercase; margin-top:10px; line-height:1.4; opacity:.8}
+.post-l b{font-family:var(--f-big); font-weight:400; font-size:22px; letter-spacing:0; display:block; opacity:1; color:var(--paper)}
 </style>
 </head>
 <body>
@@ -1588,7 +1597,7 @@ body.in-cs .cs-view{display:block}
     <section class="sec bey" id="beyond"><div class="wrap">
       <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">03 — Beyond UX</span><h2 class="big"><span class="fit">Off the clock</span></h2></div></div>
       <p class="lead rv">${esc(b.intro || '')}</p>
-      <p class="mono" style="margin:clamp(28px,5vh,50px) 0 0;color:var(--coral)">Posters · scroll sideways →</p><div class="post-row">${(b.posters || []).map(p => `<button type="button" class="post" data-lb="${esc(u(p))}" data-cap="Poster"><img src="${esc(u(p))}" alt="Poster" loading="lazy"></button>`).join('')}</div>
+      <p class="mono" style="margin:clamp(28px,5vh,50px) 0 0;color:var(--coral)">Posters &amp; print · scroll sideways →</p><div class="post-row">${(b.print || []).map(g => `<button type="button" class="post post-pr" data-gal="${esc(g.images.map(u).join('|'))}" data-cap="${esc(g.title)}"><img src="${esc(u(g.images[0]))}" alt="${esc(g.title)}" loading="lazy"><span class="post-l"><b>${esc(g.title)}</b> ${esc(g.type)}${g.images.length > 1 ? ` · ${g.images.length} images` : ''}</span></button>`).join('')}${(b.posters || []).map(p => `<button type="button" class="post" data-lb="${esc(u(p))}" data-cap="Poster"><img src="${esc(u(p))}" alt="Poster" loading="lazy"></button>`).join('')}</div>
       ${(b.videos || []).length ? `<p class="mono" style="margin:clamp(40px,7vh,80px) 0 0;color:var(--coral)">${esc(b.videosLabel || 'Video')}</p>
       <div class="reels">${b.videos.map(v => `<figure class="reel"><div class="reel-ph"><video src="${esc(u(v.src))}" poster="${esc(u(v.poster))}" controls playsinline preload="none" aria-label="${esc(v.title)}"></video></div><figcaption>${esc(v.title)}</figcaption></figure>`).join('')}</div>` : ''}
       <div class="bey-cards">${(b.cards || []).map(c => `<article class="rv"><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></article>`).join('')}</div>
