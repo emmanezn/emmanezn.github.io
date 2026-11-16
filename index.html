@@ -1295,6 +1295,16 @@ body.in-cs .cs-view{display:block}
 .hero-name .fit{position:relative; z-index:1}
 .hero-star.big{z-index:0}
 @media (max-width:760px){ .hero-star.big:nth-of-type(1){top:-18%} }
+.hero-cut img{filter:contrast(1.15) saturate(1.1) drop-shadow(0 18px 24px rgba(0,0,0,.3)) !important}
+
+.hero-star.big{z-index:0}
+.hero-cut{z-index:4 !important}
+.hero-name .fit{position:relative; z-index:3}
+
+.hero-ring{position:absolute; z-index:0; left:50%; top:54%; translate:-50% -50%; width:min(100vh,70vw); max-width:none; pointer-events:none; animation:ringspin 90s linear infinite}
+@keyframes ringspin{to{rotate:360deg}}
+@media (prefers-reduced-motion:reduce){.hero-ring{animation:none}}
+@media (max-width:760px){.hero-ring{width:80vw; top:48%}}
 </style>
 </head>
 <body>
@@ -1394,7 +1404,7 @@ body.in-cs .cs-view{display:block}
       <div class="wrap hero-name">
         <h1 class="big"><span class="fit" aria-label="${esc(C.name + ' ' + C.surname)}">${esc(C.name)}</span></h1>
         ${h.cutout ? `<figure class="hero-cut" style="--m:url('${esc(u(h.cutout))}')" aria-hidden="true"><img src="${esc(u(h.cutout))}" alt=""></figure>` : ''}
-        <svg class="hero-star big" style="left:12%;top:-26%;width:clamp(200px,34vw,540px);rotate:-10deg" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,5.0 61.5,37.2 95.7,38.2 68.5,59.0 78.2,91.8 50.0,72.5 21.8,91.8 31.5,59.0 4.3,38.2 38.5,37.2" fill="#9B1F1A" stroke="none" stroke-width="0" stroke-linejoin="round"/></svg><svg class="hero-star big" style="right:-7%;top:14%;width:clamp(140px,23vw,360px);rotate:14deg" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,5.0 61.5,37.2 95.7,38.2 68.5,59.0 78.2,91.8 50.0,72.5 21.8,91.8 31.5,59.0 4.3,38.2 38.5,37.2" fill="#9B1F1A" stroke="none" stroke-width="0" stroke-linejoin="round"/></svg><svg class="hero-star big" style="left:-6%;bottom:-22%;width:clamp(120px,19vw,300px);rotate:8deg" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,5.0 61.5,37.2 95.7,38.2 68.5,59.0 78.2,91.8 50.0,72.5 21.8,91.8 31.5,59.0 4.3,38.2 38.5,37.2" fill="#9B1F1A" stroke="none" stroke-width="0" stroke-linejoin="round"/></svg>
+        <img class="hero-ring" src="work/v3/star-ring.png" alt="" aria-hidden="true">
       </div>
       <div class="wrap"><p class="big hero-role"><span class="fit">UX<i>★</i>UI<i>★</i>Designer</span></p></div>
       <div class="wrap hero-row">
