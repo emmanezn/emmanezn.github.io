@@ -2759,7 +2759,7 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
 .cr-f p{color:var(--ink) !important}
 
 /* hero availability: status line instead of a button-looking badge */
-.avail{display:inline-flex; align-items:center; gap:12px; margin-right:auto; padding:0}
+.avail{display:inline-flex; align-items:center; gap:10px; margin-right:auto; padding:0; flex-basis:100%; justify-content:flex-end}
 .avail i{position:relative; width:10px; height:10px; border-radius:50%; background:#2fb36b; flex:0 0 auto}
 .avail i::after{content:""; position:absolute; inset:-5px; border-radius:50%; border:2px solid #2fb36b; opacity:0; animation:avp 2s ease-out infinite}
 @keyframes avp{0%{transform:scale(.4); opacity:.9} 100%{transform:scale(1.4); opacity:0}}
@@ -2775,6 +2775,9 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
 .ab-row p a{color:inherit; text-decoration:none; background:linear-gradient(var(--red),var(--red)) 0 100%/100% 2px no-repeat; padding-bottom:1px; transition:color .2s}
 .ab-row p a::after{content:" ↗"; color:var(--red); font-size:.85em}
 .ab-row p a:hover{color:var(--red)}
+
+.avail b{white-space:nowrap; font-family:var(--f-mono) !important; font-weight:400 !important; font-size:12px !important; letter-spacing:.12em; text-transform:uppercase; border-bottom:0 !important; padding:0 !important}
+@media (max-width:860px){ .avail{justify-content:flex-start} .avail b{white-space:normal !important; font-size:11px !important} }
 </style>
 </head>
 <body>
@@ -2955,7 +2958,7 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
       <div class="wrap"><p class="big hero-role"><span class="fit">UX<i>★</i>UI<i>★</i>Designer</span></p></div>
       <div class="wrap hero-row">
         <p>${esc(h.intro)}</p>
-        <div class="hero-ctas"><span class="avail"><i aria-hidden="true"></i><span class="mono">Status</span><b>${esc(C.availability)}</b></span><a class="btn" href="#work">${esc(h.cta || 'See the work')} →</a></div>
+        <div class="hero-ctas"><span class="avail"><i aria-hidden="true"></i><b>${esc(C.availability)}</b></span><a class="btn" href="#work">${esc(h.cta || 'See the work')} →</a></div>
       </div>
     </section>
     <section class="wrap dr">
