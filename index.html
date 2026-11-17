@@ -29,7 +29,7 @@ const CONFIG = {
   surname: "Neznikova",
   role: "UX / UI Designer",
   email: "eneznik@gmail.com",
-  availability: "Open to internships from February",
+  availability: "Open to a graduation internship · Feb 2027 · 17 weeks",
   location: "The Hague, NL",
 
   /* ── HERO COLOURS ── pick one: "black-red" | "red-black" | "blue-red" | "black-blue" | "red-on-black" */
@@ -2771,6 +2771,10 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
 /* about: bigger CV buttons */
 .abp-cv{gap:10px !important; margin-top:20px !important}
 .abp-cv a{flex:1 1 auto; text-align:center; font-family:var(--f-big) !important; font-size:clamp(20px,1.7vw,26px) !important; letter-spacing:.02em !important; padding:14px 22px 12px !important; line-height:1}
+
+.ab-row p a{color:inherit; text-decoration:none; background:linear-gradient(var(--red),var(--red)) 0 100%/100% 2px no-repeat; padding-bottom:1px; transition:color .2s}
+.ab-row p a::after{content:" ↗"; color:var(--red); font-size:.85em}
+.ab-row p a:hover{color:var(--red)}
 </style>
 </head>
 <body>
@@ -2915,7 +2919,7 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
     <div class="tick me-tick" aria-label="Things about me"><div class="tick-in">${[0,1].map(k => (C.personality || []).map(t => `<span${k ? ' aria-hidden="true"' : ''}>${esc(t)}</span>`).join('')).join('')}</div></div>
 
     <section class="pg wrap ab-story">
-      <div class="ab-story-g"><h2 class="rv">More<br>about<br>me<span>★</span></h2><div class="ab-story-l">${(a.text || []).slice(1).map((t, i) => `<div class="ab-row rv"><span class="ab-n">0${i + 1}</span><b>${['Working with people','How I work'][i] || ''}</b><p>${esc(t)}</p></div>`).join('')}</div></div>
+      <div class="ab-story-g"><h2 class="rv">More<br>about<br>me<span>★</span></h2><div class="ab-story-l">${(a.text || []).slice(1).map((t, i) => `<div class="ab-row rv"><span class="ab-n">0${i + 1}</span><b>${['Working with people','How I work'][i] || ''}</b><p>${esc(t).replace('redesigned a website for a social-impact collective','<a href="#work/perspectivity">redesigned a website for a social-impact collective</a>').replace('built a biodiversity trail for a test park in Binckhorst','<a href="#work/proefpark-binckhorst">built a biodiversity trail for a test park in Binckhorst</a>').replace('designed an ordering portal for a microgreen farm','<a href="#work/mnf-grow-buddy">designed an ordering portal for a microgreen farm</a>')}</p></div>`).join('')}</div></div>
     </section>
     <section class="pg wrap" style="padding-top:0">${nextLink(pg)}</section>`;
     if (pg === 'contact') return `<section class="pg wrap ctp">
