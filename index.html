@@ -66,12 +66,14 @@ const CONFIG = {
 
   /* ── BEYOND UX ── */
   beyond: {
+    crafts: {"title": "Always making something", "text": "I'm always in the middle of a project. When I'm not designing, I'm saving inspiration, filling a sketchbook or trying a craft I've never done before. Every new one trains my eye and my hands, and I bring that straight back into my design work.", "outro": "Different materials, same habit: look closely, try, fix, try again.", "rows": [["Posters", "#poster1", "#poster2", "Video"], ["#video1", "Editing", "#video2", "#insta1"], ["Instagram", "#insta2", "Drawing &"], ["#paint", "Painting", "#style", "Style"], ["Crocheting", "#clay1", "Sewing"], ["#clay2", "Clay", "#clay3", "Ceramics"], ["Baking", "#cake1", "#cake2", "#nails1"], ["#nails2", "Nails", "#nails3", "#dogs"]], "photos": {"poster1": {"src": "work/me/life/labrats-crop.jpg", "pos": "30% 55%"}, "poster2": {"src": "work/table-talk.jpg", "pos": "50% 58%"}, "video1": {"src": "work/video/naomi-christmas.jpg", "pos": "50% 50%"}, "video2": {"src": "work/video/recipe-2.jpg", "pos": "50% 52%", "g": 0.8}, "insta1": {"src": "work/me/life/bouquet.jpg", "pos": "50% 50%"}, "insta2": {"src": "work/me/life/gingerbread.jpg", "pos": "50% 44%", "g": 0.8}, "paint": {"src": "work/me/life/painting.jpg", "pos": "62% 38%"}, "style": {"src": "work/me/life/outfit-crop.jpg", "pos": "50% 55%", "g": 0.7}, "clay1": {"src": "work/me/life/clay-front.jpg", "pos": "50% 52%", "g": 0.8}, "clay2": {"src": "work/me/life/clay-keys.jpg", "pos": "50% 58%", "g": 0.8}, "clay3": {"src": "work/me/life/clay-back.jpg", "pos": "50% 52%", "g": 0.8}, "cake1": {"src": "work/pg/cake-figs.jpg", "pos": "50% 50%"}, "cake2": {"src": "work/pg/cake-rainbow.jpg", "pos": "50% 45%"}, "nails1": {"src": "work/me/life/nails-dots.jpg", "pos": "50% 45%"}, "nails2": {"src": "work/me/life/nails-smiley.jpg", "pos": "30% 22%"}, "nails3": {"src": "work/me/life/nails-starfish.jpg", "pos": "45% 35%"}, "dogs": {"src": "work/me/life/puppies-crop.jpg", "pos": "50% 40%"}}},
     intro: "I'm happiest when I'm learning something new with my hands. Crocheting, sewing, cooking, drawing, graphic design: every new material is a puzzle, and solving it is half the fun.",
     posters: [ "muse-01", "all-on-you", "cowboy", "table-talk", "sonder", "gold-standard", "king-of-pop", "house-music", "rock-n-roll",
                "mac-miller", "muse-02", "felt-like-flying", "muse-03", "asap-rocky", "the-1985", "just-dance" ].map(n => `work/${n}.jpg`),
     /* Print & branding projects — shown first in the poster row, click opens all images */
     print: [
       { title: "Kvety Naomi", type: "Loyalty card · flower & decor store", images: [ "work/print/kvety-1.jpg", "work/print/kvety-2.jpg" ] },
+      { title: "Nail price list", type: "Price list · my nail business", images: [ "work/print/nail-pricelist.jpg" ] },
       { title: "WALQ", type: "Café menu & loyalty card", images: [ "work/screens/walq-cafe.jpg", "work/screens/walq-latte.jpg", "work/screens/walq-loyalty.jpg" ] },
     ],
     cards: [
@@ -372,6 +374,198 @@ const CONFIG = {
           "Knowing when to ask for help: I left the power-saw cuts to my dad."
         ],
         "sign": "Emma, chief elf"
+      }
+    ]
+  },
+  {
+    "id": "look-at-me",
+    "order": 50,
+    "title": "Look at me",
+    "meta": "Interaction design · HCI expo · Physical prototype · Team project",
+    "cover": "work/lookatme/exhibition.jpg",
+    "status": "finished",
+    "theme": "watch",
+    "year": "2026",
+    "summary": "An interactive installation for the HCI “Mostly Human” expo. You peek into a mysterious box to watch a short film, and at the end you find out the box was watching you.",
+    "caseStudy": [
+      {
+        "step": "Brief",
+        "type": "whero",
+        "title": "Look at me",
+        "sub": "A box that looks back",
+        "video": "work/lookatme/cam-loop.mp4",
+        "poster": "work/lookatme/cam-loop.jpg"
+      },
+      {
+        "step": "Brief",
+        "type": "glance",
+        "items": [
+          {
+            "label": "The idea",
+            "text": "Your devices are always watching, and you never notice. We wanted people to feel that, not just read it."
+          },
+          {
+            "label": "What we made",
+            "text": "A wooden box with a viewing hole. You watch a short film inside, and at the end your own eyes appear on the walls around you."
+          },
+          {
+            "label": "Result",
+            "text": "Shown at the Mostly Human HCI Expo at the Dutch Innovation Factory in Zoetermeer, among 33 student installations."
+          }
+        ]
+      },
+      {
+        "step": "Brief",
+        "type": "facts",
+        "items": [
+          {
+            "label": "Course",
+            "value": "Human–Computer Interaction · Playful Interaction workshop"
+          },
+          {
+            "label": "Time",
+            "value": "2 weeks, building nonstop"
+          },
+          {
+            "label": "Team",
+            "value": "Team project"
+          },
+          {
+            "label": "Shown at",
+            "value": "Mostly Human HCI Expo · Dutch Innovation Factory, Zoetermeer · 26 June 2026"
+          },
+          {
+            "label": "Made with",
+            "value": "Wood, cardboard, sewn fleece, a hidden camera, an LED ring, a reset button & a projector"
+          }
+        ]
+      },
+      {
+        "step": "Brief",
+        "type": "split",
+        "label": "The brief",
+        "text": "Two weeks, one product, theme “Mostly Human”. We wanted to make something you experience with your body, not on a screen, and landed on a feeling everyone knows but rarely notices: being watched through your own devices.",
+        "image": "work/lookatme/concept.jpg",
+        "alt": "AI concept visual of a dark room full of projected eyes with a viewing box",
+        "caption": "AI concept visual of the room"
+      },
+      {
+        "step": "Concept",
+        "type": "statement",
+        "label": "The idea",
+        "lines": [
+          "Looking is the whole interface.",
+          "And the box looks back."
+        ]
+      },
+      {
+        "step": "Concept",
+        "type": "text",
+        "label": "The experience",
+        "text": "One person at a time walks into a dark room, presses a button and leans into the box. Inside, a film plays: a girl going about her night, intercut with phone-camera shots, while a voice describes something watching her through her devices, never naming what it is. The voice gets closer, then turns to the viewer: “And you? You thought you were safe.” The film cuts to a live feed, and suddenly your own eyes are projected on the walls around you."
+      },
+      {
+        "step": "Concept",
+        "type": "gallery",
+        "label": "From sketch to concept",
+        "note": "We sketched the room and the box first, then made an AI concept visual to picture the final room before building it.",
+        "items": [
+          {
+            "image": "work/lookatme/sketch-room.jpg",
+            "caption": "The room, sketched"
+          },
+          {
+            "image": "work/lookatme/sketch-box.jpg",
+            "caption": "Box studies"
+          }
+        ]
+      },
+      {
+        "step": "Making",
+        "type": "text",
+        "label": "Building it",
+        "text": "We kept the technology deliberately thin, so the story and the staging carry the weight. We started with a cardboard box and a camera and kept testing distance and angle until the eyes filled the frame. Then we built the real thing: a wooden box with a viewing hole, a sewn fleece eye mask so it's comfortable to lean into, a hidden camera with an LED ring lighting the eyes, a reset button and a projector for the live feed."
+      },
+      {
+        "step": "Making",
+        "type": "gallery",
+        "items": [
+          {
+            "image": "work/lookatme/cardboard-test.jpg",
+            "caption": "First test: cardboard & camera"
+          },
+          {
+            "image": "work/lookatme/cutting.jpg",
+            "caption": "Cutting the eye hole"
+          },
+          {
+            "image": "work/lookatme/mask.jpg",
+            "caption": "The sewn fleece eye mask"
+          },
+          {
+            "image": "work/lookatme/inside.jpg",
+            "caption": "Inside: LED ring, camera, live feed"
+          }
+        ]
+      },
+      {
+        "step": "Testing",
+        "type": "gallery",
+        "label": "Testing",
+        "note": "We tested the setup again and again in the studio: how far the eyes should be from the camera, whether the mask blocks the light, and whether people actually lean in.",
+        "items": [
+          {
+            "image": "work/lookatme/measuring.jpg",
+            "caption": "Measuring the distance"
+          },
+          {
+            "image": "work/lookatme/mask-side.jpg",
+            "caption": "Mask on the front panel"
+          },
+          {
+            "image": "work/lookatme/testing.jpg",
+            "caption": "Classmates trying it"
+          }
+        ]
+      },
+      {
+        "step": "Result",
+        "type": "film",
+        "label": "Inside the box",
+        "title": "The film",
+        "tag": "Our film",
+        "note": "What visitors watch through the viewing hole, before the box turns on them.",
+        "video": "work/lookatme/film.mp4",
+        "poster": "work/lookatme/film.jpg",
+        "alt": "The film shown inside the box: a girl at night, watched through her devices"
+      },
+      {
+        "step": "Result",
+        "type": "split",
+        "flip": true,
+        "label": "At the expo",
+        "text": "On expo night the box stood in a dark corner of the Dutch Innovation Factory. Visitors leaned in out of curiosity, watched the film, and then saw their own eyes fill the wall behind them. The reveal works the way a jump scare works in a game: curiosity first, then the box looks back.",
+        "image": "work/lookatme/exhibition.jpg",
+        "alt": "A visitor leaning into the box while eyes are projected on the wall",
+        "caption": "Mostly Human HCI Expo, Zoetermeer"
+      },
+      {
+        "step": "Result",
+        "type": "statement",
+        "label": "What it says",
+        "lines": [
+          "Your devices are always watching.",
+          "You never notice, until it's you on the screen."
+        ]
+      },
+      {
+        "step": "Result",
+        "type": "list",
+        "label": "What I learned",
+        "items": [
+          "A strong concept doesn't need complex tech. The simplest version told the story best.",
+          "Building a physical prototype early showed problems no sketch could: light, angle and comfort."
+        ]
       }
     ]
   },
@@ -787,6 +981,17 @@ const CONFIG = {
         "lines": [
           "Low-tech beat high-tech.",
           "Testers wanted things to touch and walk, not an AR app. Quiet elements went inside the labyrinth, movement along the trail."
+        ]
+      },
+      {
+        "step": "Final concept",
+        "type": "gallery",
+        "label": "Eight touchpoints",
+        "fit": true,
+        "note": "I sketched the eight moments along the trail by hand, from the entrance labyrinth to the spiral heart, then turned the sketch into a clean touchpoints matrix with AI.",
+        "items": [
+          { "image": "work/bk/touchpoints-sketch.jpg", "caption": "My hand sketch" },
+          { "image": "work/bk/touchpoints-matrix.jpg", "caption": "Touchpoints matrix (AI-refined)" }
         ]
       },
       {
@@ -2430,6 +2635,70 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
 .cc-wide .cc-img{flex:0 0 58%}
 .cc-wide .cc-b{padding-top:0}
 @media (max-width:820px){ .cc-wide{flex-direction:column; align-items:stretch} .cc-wide .cc-img{flex:none} .cc-wide .cc-b{padding-top:20px} }
+/* beyond hero: portrait sits higher, crafts section covers its bottom */
+.ph-fig{top:clamp(-90px,-5vw,-30px) !important; bottom:auto !important; width:min(60%,720px) !important}
+.ph-img{margin-bottom:clamp(-150px,-9vw,-60px) !important}
+@media (max-width:860px){ .ph-fig{top:auto !important; width:100% !important} .ph-img{margin-bottom:50px !important} }
+/* beyond: crafts wall — words with photos in between */
+.cr{position:relative; z-index:3; margin:0 0 clamp(80px,12vh,140px); width:100vw; margin-left:calc(50% - 50vw); background:#0b0b0b; color:#f4f1ea}
+.cr-in{max-width:var(--max); margin:0 auto; padding:clamp(56px,9vh,110px) clamp(20px,5vw,72px) clamp(60px,10vh,120px)}
+.cr-k{color:var(--red); display:block; margin-bottom:clamp(18px,3vh,30px)}
+.cr-w{display:flex; flex-direction:column; gap:clamp(8px,1vw,14px); font-family:var(--f-big); text-transform:uppercase; font-size:clamp(46px,7.6vw,132px); line-height:.9}
+.cr-r{display:flex; align-items:center; justify-content:space-between; gap:clamp(12px,1.4vw,22px)}
+.cr-w b{font-weight:400; white-space:nowrap; letter-spacing:-.005em}
+.cr-t{display:block; flex:1 1 0; min-width:1.2em; max-width:1.9em; height:.86em; overflow:hidden; background:#222}
+.cr-t img{width:100%; height:100%; object-fit:cover; display:block; transition:scale .6s cubic-bezier(.2,.8,.2,1)}
+.cr-t:hover img{scale:1.06}
+.cr-f{display:grid; grid-template-columns:auto minmax(0,46ch); gap:clamp(20px,4vw,60px); align-items:start; margin-top:clamp(40px,7vh,80px); padding-top:clamp(24px,4vh,36px); border-top:1px solid rgba(244,241,234,.25)}
+.cr-f h2{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(30px,3vw,48px); line-height:.9; margin:0}
+.cr-f p{margin:0; font-size:17px; line-height:1.6; color:rgba(244,241,234,.85)}
+.cr-f .cr-o{margin-top:14px; font-family:"Pen",cursive; font-size:clamp(24px,2.2vw,32px); line-height:1.1; color:var(--red); transform:rotate(-2deg)}
+@media (max-width:860px){ .cr-w{font-size:10.5vw} .cr-r{gap:8px; flex-wrap:wrap} .cr-t{min-width:1.6em} .cr-f{grid-template-columns:1fr} .cr-f h2{grid-row:auto} }
+
+/* ── LOOK AT ME: surveillance theme ── */
+body.watch{--ink:#efece6; --paper:#0b0b0c; --paper2:#151517; background:#0b0b0c; color:#efece6}
+body.watch .top{background:rgba(11,11,12,.86)}
+body.watch .cs-back{background:var(--red); color:#fff}
+body.watch .glance, body.watch .gl{background:#141416 !important; color:#efece6 !important}
+.x-watch .blk{position:relative}
+.wh{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:clamp(24px,4vw,64px); align-items:center; margin-bottom:clamp(30px,5vh,60px)}
+.wh-rec{display:inline-flex; align-items:center; gap:10px; color:var(--red); letter-spacing:.14em}
+.wh-rec i{width:10px; height:10px; border-radius:50%; background:var(--red); animation:whb 1.2s steps(2,start) infinite}
+@keyframes whb{to{visibility:hidden}}
+.wh h1{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(76px,11vw,200px); line-height:.84; margin:16px 0 18px; color:#efece6}
+.wh-s{font-size:clamp(20px,1.8vw,26px); margin:0 0 18px; color:#efece6}
+.wh-m{display:block; color:rgba(239,236,230,.55); letter-spacing:.1em}
+.wh-cam{position:relative; margin:0; aspect-ratio:16/9; background:#000; overflow:hidden; box-shadow:0 0 0 1px rgba(239,236,230,.18)}
+.wh-cam video{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.1)}
+.wh-sc{position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(to bottom, rgba(255,255,255,.04) 0 1px, transparent 1px 3px)}
+.wh-cam figcaption{position:absolute; left:14px; right:14px; bottom:10px; display:flex; justify-content:space-between; color:#efece6; font-size:12px; letter-spacing:.14em; text-shadow:0 1px 2px #000}
+/* every photo becomes a camera frame */
+.x-watch .gal figure, .x-watch .sp-f{position:relative}
+.x-watch .gal figure::before, .x-watch .sp-f::before{content:"● REC"; position:absolute; z-index:2; top:12px; left:14px; font:500 11px var(--f-mono); letter-spacing:.14em; color:var(--red); text-shadow:0 1px 2px rgba(0,0,0,.6); pointer-events:none}
+.x-watch .gal figure::after, .x-watch .sp-f::after{content:""; position:absolute; z-index:2; inset:10px; pointer-events:none; --c:rgba(255,255,255,.9);
+ background:
+  linear-gradient(var(--c),var(--c)) top left/22px 2px, linear-gradient(var(--c),var(--c)) top left/2px 22px,
+  linear-gradient(var(--c),var(--c)) top right/22px 2px, linear-gradient(var(--c),var(--c)) top right/2px 22px,
+  linear-gradient(var(--c),var(--c)) bottom left/22px 2px, linear-gradient(var(--c),var(--c)) bottom left/2px 22px,
+  linear-gradient(var(--c),var(--c)) bottom right/22px 2px, linear-gradient(var(--c),var(--c)) bottom right/2px 22px;
+ background-repeat:no-repeat}
+.x-watch .sp-f::after{bottom:36px} .x-watch .sp-f figcaption{color:rgba(239,236,230,.6)}
+.x-watch .film2-v{box-shadow:0 0 0 1px rgba(239,236,230,.18) !important; background:#000 !important; border:0 !important; padding:0 !important}
+body.watch .cs-next, body.watch .cs-next b{color:#efece6}
+.x-watch .sp-f img{box-shadow:0 0 0 1px rgba(239,236,230,.18) !important}
+.x-watch .sp-f{box-shadow:none !important}
+@media (max-width:860px){ .wh{grid-template-columns:1fr} .wh h1{font-size:22vw} }
+.gal.fit{grid-template-columns:1fr 1fr !important; align-items:start}
+.gal.fit figure, .gal.fit img{height:auto !important; aspect-ratio:auto !important}
+.gal.fit img{object-fit:contain !important}
+@media (max-width:760px){.gal.fit{grid-template-columns:1fr !important}}
+.life{padding:clamp(40px,7vh,80px) 0 0}
+.life-in{display:grid; grid-template-columns:repeat(7,1fr); gap:clamp(8px,1vw,14px); max-width:var(--max); margin:0 auto; padding:0 clamp(20px,5vw,72px)}
+.life figure{margin:0; aspect-ratio:3/4; overflow:hidden; background:var(--paper2)}
+.life figure:nth-child(even){translate:0 24px}
+.life img{width:100%; height:100%; object-fit:cover; display:block; transition:scale .6s}
+.life figure:hover img{scale:1.05}
+@media (max-width:860px){.life-in{grid-template-columns:repeat(3,1fr)} .life figure:nth-child(n+7){display:none}}
 </style>
 </head>
 <body>
@@ -2506,10 +2775,17 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
   function homeHTML(pg = 'home') {
     const h = C.hero || {}, a = C.about || {}, b = C.beyond || {};
     const feat = projects.filter(p => p.beyond), work = projects.filter(p => !p.beyond).sort((a, b) => (a.order || 0) - (b.order || 0));
+    const crafts = b.crafts ? `<section class="cr">
+        <div class="cr-in">
+        <span class="mono cr-k rv">Hobbies, all of them</span>
+        <div class="cr-w">${b.crafts.rows.map(r => `<div class="cr-r">${r.map(t => { if (t[0] !== '#') return `<b class="rv">${esc(t)}</b>`; let ph = (b.crafts.photos || {})[t.slice(1)]; if (!ph) return ''; if (typeof ph === 'string') ph = { src: ph }; return `<span class="cr-t rv" style="flex-grow:${ph.g || 1}"><img src="${esc(u(ph.src))}" alt="" loading="lazy" style="object-position:${esc(ph.pos || '50% 50%')}"></span>`; }).join('')}</div>`).join('')}</div>
+        <div class="cr-f rv"><h2>${esc(b.crafts.title)}</h2><div><p>${esc(b.crafts.text)}</p><p class="cr-o">${esc(b.crafts.outro)}</p></div></div>
+        </div>
+      </section>` : '';
     const xp = (C.experience || []).flatMap(bl => bl.items.map(it => ({ ...it, group: bl.title })));
     const links = (C.links || []).filter(l => l.url);
     if (pg === 'work') return `<section class="pg wrap">
-      <div class="ph-wrap"><svg class="ph-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="49.2,11.9 54.4,36.0 72.4,15.5 61.5,38.9 87.2,30.4 64.5,47.1 97.2,56.3 64.1,55.7 86.7,82.8 58.4,63.3 58.3,85.7 49.3,65.4 40.9,86.5 41.2,64.5 17.8,80.2 35.7,56.2 13.5,55.0 34.9,48.6 12.2,31.7 37.5,39.6 28.1,16.3 45.9,33.9"/></svg>${pageHead('01 — Work', 'Case studies', 'Five projects, from research to a working product. Pick one to read the full story.')}</div>
+      <div class="ph-wrap"><svg class="ph-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="49.2,11.9 54.4,36.0 72.4,15.5 61.5,38.9 87.2,30.4 64.5,47.1 97.2,56.3 64.1,55.7 86.7,82.8 58.4,63.3 58.3,85.7 49.3,65.4 40.9,86.5 41.2,64.5 17.8,80.2 35.7,56.2 13.5,55.0 34.9,48.6 12.2,31.7 37.5,39.6 28.1,16.3 45.9,33.9"/></svg>${pageHead('01 — Work', 'Case studies', 'Six projects, from research to a working product. Pick one to read the full story.')}</div>
       <div class="cg">${work.map((p, i) => { const has = (p.caseStudy || []).length; return `<button type="button" class="cc rv${i === work.length - 1 && work.length % 2 ? ' cc-wide' : ''}" style="--d:${(i % 2) * .1}s" ${has ? `data-cs="${esc(p.id)}"` : 'aria-disabled="true"'} data-cur="Read">
         <span class="cc-img wk-img ht">${p.status === 'ongoing' ? '<span class="wk-stamp">In progress</span>' : ''}<img src="${esc(u(p.cover))}" alt="" loading="lazy"></span>
         <span class="cc-b"><span class="mono">${String(i + 1).padStart(2, '0')} · ${esc(p.year || '')}</span><b>${esc(p.title)}</b><span class="cc-s">${esc(p.summary || '')}</span>
@@ -2532,6 +2808,8 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
       return `<section class="pg wrap">
       <header class="ph ph-img"><span class="ph-k mono rv">03 — Beyond UX</span><h1 class="ph-t rv">Off the clock</h1>
         <figure class="ph-fig rv"><img src="${esc(u('work/me/emma-star.png'))}" alt="Halftone portrait of Emma with a red star"></figure><p class="ph-p rv">${esc(b.intro || '')}</p></header>
+      ${crafts}
+      
       ${feat.map(f => `<button type="button" class="bf rv" data-cs="${esc(f.id)}" data-cur="Open"><span class="bf-img wk-img ht"><img src="${esc(u(f.cover))}" alt="" loading="lazy"></span>
         <span class="bf-b"><span class="mono">Experience design · a story</span><b>${esc(f.title)}</b><span>${esc(f.summary)}</span><em class="mono">Read the story →</em></span></button>`).join('')}
       <a class="bf pgf rv" href="playground.html" data-cur="Play"><span class="pgf-g">${['work/pg/t/red-jacket-1.jpg','work/pg/cake-figs.jpg','work/pg/nail-02.jpg','work/pg/t/king-of-pop.jpg','work/pg/mirror-cap.jpg','work/nails/red-lily.jpg'].map(x => `<img src="${esc(u(x))}" alt="" loading="lazy">`).join('')}</span>
@@ -2563,6 +2841,7 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
       </div>
     </section>
     <div class="tick me-tick" aria-label="Things about me"><div class="tick-in">${[0,1].map(k => (C.personality || []).map(t => `<span${k ? ' aria-hidden="true"' : ''}>${esc(t)}</span>`).join('')).join('')}</div></div>
+    <section class="life"><div class="life-in">${["puppies","painting","clay-front","outfit","bouquet","nails-starfish","clay-keys"].map((n, i) => `<figure class="rv" style="--d:${i * .05}s"><img src="${esc(u(`work/me/life/${n}.jpg`))}" alt="" loading="lazy"></figure>`).join("")}</div></section>
     <section class="pg wrap ab-story">
       <span class="mono">More about me</span>
       <div class="ab-story-cols">${(a.text || []).slice(1).map((t, i) => `<div class="rv"><b>${['Working with people','How I work','Off screen'][i] || ''}</b><p>${esc(t)}</p></div>`).join('')}</div>
@@ -2677,12 +2956,14 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
     xquote: b => `<div class="xq">${ELF('q', 'left:6%;bottom:12%')}<p class="xq-q">${esc(b.text)}</p><span class="xq-by">${esc(b.by || '')}</span>${b.after ? `<p class="xq-a">${esc(b.after)}</p>` : ''}</div>`,
     xornaments: b => `<div class="xst">${(b.items || []).map((o, i) => `<div><b>${esc(o.value)}${i === 1 ? `<svg class="xmk xst-c" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M120 8 C60 2 10 22 8 60 C6 100 70 116 130 108 C180 100 196 70 188 44 C180 20 150 8 104 12"/></svg>` : ''}</b><span>${esc(o.label)}</span></div>`).join('')}</div>`,
     xletter: b => `<div class="xlt">${lab(b.label)}<ol>${(b.items || []).map(t => `<li>${esc(t)}</li>`).join('')}</ol><p class="xlt-s">${esc(b.sign || '')}</p>${ELF('l', 'right:4%;bottom:0')}</div>`,
+    whero: (b, p) => `<header class="wh"><div class="wh-t"><span class="mono wh-rec"><i></i>REC · live feed</span><h1>${esc(b.title)}</h1><p class="wh-s">${esc(b.sub || '')}</p><span class="mono wh-m">${esc(p.meta || '')}</span></div>
+      <figure class="wh-cam"><video src="${esc(u(b.video))}" poster="${esc(u(b.poster || ''))}" autoplay muted loop playsinline aria-label="Camera shots from the film"></video><span class="wh-sc"></span><figcaption class="mono"><span>CAM 01</span><span class="wh-clk">00:00:00</span></figcaption></figure></header>`,
     hero: (b, p) => `<header class="cs-hero"><span class="mono">${esc(p.meta || '')}</span><h1>${esc(b.title || p.title)}</h1>
         ${b.image ? `<figure class="${b.paper ? 'paper' : /\.png$/.test(b.image) ? 'mock' : ''}">${img(b.image, b.alt)}${b.caption ? `<figcaption class="mono" style="margin-top:8px">${esc(b.caption)}</figcaption>` : ''}</figure>` : ''}</header>`,
     glance: b => `<div class="gl"><span class="gl-t">${esc(b.title || 'At a glance')}</span>${(b.items || []).map(i => `<div><b>${esc(i.label)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>`,
     facts: b => `<dl class="facts">${(b.items || []).map(f => `<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('')}</dl>`,
     text: b => `<div class="t2${b.big ? ' big' : ''}">${lab(b.label)}<p>${P(b.text)}</p></div>`,
-    film: b => `<div class="film2"><div class="film2-h">${lab(b.label)}<h2>${esc(b.title || '')}</h2>${b.note ? `<p class="film2-n"><span>Made with AI</span>${esc(b.note)}</p>` : ''}</div>
+    film: b => `<div class="film2"><div class="film2-h">${lab(b.label)}<h2>${esc(b.title || '')}</h2>${b.note ? `<p class="film2-n"><span>${esc(b.tag || 'Made with AI')}</span>${esc(b.note)}</p>` : ''}</div>
       <div class="film2-v"><video src="${esc(u(b.video))}" poster="${esc(u(b.poster || ''))}" controls playsinline preload="metadata" aria-label="${esc(b.alt || b.title || '')}"></video></div>
       ${b.text ? `<p class="film2-t">${P(b.text)}</p>` : ''}</div>`,
     split: b => !(b.image || b.video) ? '' : `<div class="split${b.flip ? ' flip' : ''}"><div class="sp-t">${lab(b.label)}<p>${P(b.text)}</p></div>
@@ -2695,7 +2976,7 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
     list: b => `${lab(b.label)}<ol class="list">${(b.items || []).map(i => `<li>${esc(i)}</li>`).join('')}</ol>`,
     statement: b => `<div class="stm">${lab(b.label)}<h3>${esc((b.lines || [])[0] || '')}</h3>${(b.lines || []).slice(1).map(l => `<p>${esc(l)}</p>`).join('')}</div>`,
     versions: b => `${lab(b.label)}${b.intro ? `<p style="margin:0 0 24px;font-size:18px">${esc(b.intro)}</p>` : ''}<div class="vers">${(b.items || []).map(v => `<figure class="${v.winner ? 'win' : ''}">${img(v.image, v.alt)}${v.stamp ? `<span class="stp">${esc(v.stamp)}</span>` : ''}</figure>`).join('')}</div>`,
-    gallery: b => `${lab(b.label)}${b.note ? `<p style="margin:0 0 22px;max-width:720px;font-size:18px">${esc(b.note)}</p>` : ''}<div class="gal n${Math.min((b.items || []).length, 5)}">${(b.items || []).map(it => `<figure>${img(it.image, it.caption)}${it.caption ? `<figcaption>${esc(it.caption)}</figcaption>` : ''}</figure>`).join('')}</div>`,
+    gallery: b => `${lab(b.label)}${b.note ? `<p style="margin:0 0 22px;max-width:720px;font-size:18px">${esc(b.note)}</p>` : ''}<div class="gal n${Math.min((b.items || []).length, 5)}${b.fit ? ' fit' : ''}">${(b.items || []).map(it => `<figure>${img(it.image, it.caption)}${it.caption ? `<figcaption>${esc(it.caption)}</figcaption>` : ''}</figure>`).join('')}</div>`,
     pages: b => `${lab(b.label)}<div class="pgs">${(b.items || []).map(it => `<figure><figcaption>${esc(it.title)}</figcaption><div class="pgs-in" tabindex="0" aria-label="${esc(it.title)} page, scrollable"><img src="${esc(u(it.image))}" alt="${esc(it.title)} page" loading="lazy"></div></figure>`).join('')}</div>${b.note ? `<p class="scrollnote">${esc(b.note)}</p>` : ''}`,
     scroll: b => `${lab(b.label)}<div class="scrollf" tabindex="0" aria-label="${esc(b.alt || 'Scrollable design')}"><img src="${esc(u(b.image))}" alt="${esc(b.alt || '')}" loading="lazy"></div>${b.note ? `<p class="scrollnote">${esc(b.note)}</p>` : ''}`,
     link: b => `<div class="t2">${lab(b.label)}<div><p style="margin-bottom:18px">${esc(b.text || '')}</p><a class="btn red" href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.button || 'Open ↗')}</a></div></div>`,
@@ -2760,12 +3041,12 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
     const p = m && projects.find(x => x.id === m[1]);
     if (p) {
       if (curCs !== p.id) { csv.innerHTML = caseHTML(p); curCs = p.id; reveal(csv); wireSteps(); if (p.theme === 'xmas') { xGame(); xWish(); } }
-      document.body.classList.add('in-cs'); document.body.classList.toggle('xmas', p.theme === 'xmas'); window.scrollTo(0, 0); fitAll(csv);
+      document.body.classList.add('in-cs'); document.body.classList.toggle('xmas', p.theme === 'xmas'); document.body.classList.toggle('watch', p.theme === 'watch'); window.scrollTo(0, 0); fitAll(csv);
       document.title = `${p.title} — Emma Neznikova`;
     } else {
       const was = document.body.classList.contains('in-cs');
       const pg = PAGES.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
-      const swap = () => { document.body.classList.remove('in-cs', 'xmas'); curCs = null; csv.innerHTML = '';
+      const swap = () => { document.body.classList.remove('in-cs', 'xmas', 'watch'); curCs = null; csv.innerHTML = '';
         home.innerHTML = homeHTML(pg); home.dataset.pg = pg; reveal(home); fitAll(home); window.scrollTo(0, 0);
         document.title = (pg === 'home' ? '' : PNAME[pg] + ' — ') + 'Emma Neznikova — UX/UI Designer';
         document.querySelectorAll('.nav a[data-pg]').forEach(x => x.classList.toggle('on', x.dataset.pg === pg)); wireNP(); };
@@ -2951,6 +3232,10 @@ document.addEventListener('submit', e => {
   const drFit = () => document.querySelectorAll('.dr-ims').forEach(st => { const w = st.clientWidth; let used = 0;
     st.querySelectorAll('img').forEach(im => { im.style.display = ''; const iw = st.clientHeight * .8 + 8; used += iw; if (used - 8 > w) im.style.display = 'none'; }); });
   addEventListener('resize', drFit); new MutationObserver(drFit).observe(document.getElementById('home'), { childList: true }); setTimeout(drFit, 100);
+
+
+  /* look at me: ticking camera clock */
+  setInterval(() => { const c = document.querySelector('.wh-clk'); if (!c) return; const d = new Date(); c.textContent = [d.getHours(), d.getMinutes(), d.getSeconds()].map(n => String(n).padStart(2, '0')).join(':'); }, 1000);
 </script>
 </body>
 </html>
