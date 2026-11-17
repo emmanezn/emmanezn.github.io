@@ -99,7 +99,7 @@ const CONFIG = {
     text: [
       "I'm Emma, 21, from Slovakia, studying UX Design at The Hague University of Applied Sciences. I like a challenge. Put me in a situation I've never been in and I'll figure it out, and I learn fast along the way.",
       "I grew up going to summer schools abroad, surrounded by people from everywhere. It taught me to communicate clearly and to feel at home in diverse teams. I work well on my own and in a group, and if the group needs someone to lead, I'm happy to step up.",
-      "I'm organised, I keep my deadlines, and I care about the small details people notice without realising it. So far I've redesigned a website for a social-impact collective, worked in a team to visualise the impact of women's organisations in a community of practice, built a biodiversity trail for a test park in Binckhorst and designed an ordering portal for a microgreen farm.",
+      "I'm organised, I keep my deadlines, and I care about the small details people notice without realising it. So far I've redesigned a website for a social-impact collective, worked in a team to visualise the impact of women's organisations in a community of practice, built a biodiversity trail for a test park in Binckhorst and designed an ordering portal for a microgreen farm. On my own I made a mobile app for our student radio and built a Santa’s Village in my family’s flower shop, and for an HCI course I came up with an installation that watches you back.",
     ],
     facts: [
       { label: "Studying", value: "Communication & Multimedia Design (UX) · The Hague University of Applied Sciences" },
@@ -108,8 +108,8 @@ const CONFIG = {
       { label: "Summer schools", value: "Grew up attending them abroad" },
       { label: "Languages", value: "English, Slovak, Czech · basic German & Dutch" },
     ],
-    skills: [ "User research", "Personas & journeys", "Wireframing", "Prototyping", "Usability testing", "UI design", "Graphic design", "Video editing" ],
-    tools: [ "Figma", "Miro", "Canva", "Affinity", "Procreate", "Notion", "Claude / ChatGPT / Gemini" ],
+    skills: [ "User research", "Usability testing", "Journeys", "Wireframing", "Prototyping", "UI design", "Physical prototyping", "Branding", "Video editing" ],
+    tools: [ "Figma", "Miro", "Affinity", "Canva", "Procreate", "Notion", "VS Code", "HTML/CSS", "AI tools" ],
     cv: "work/emma-neznikova-cv.pdf",       // path to your CV PDF, e.g. "work/emma-neznikova-cv.pdf" — shows View + Download buttons
   },
 
@@ -1223,7 +1223,7 @@ const CONFIG = {
     ]
   },
   {
-    "id": "mnf-grow-buddy",
+    "id": "mnf-chef-portal",
     "title": "MNF Chef Portal",
     "meta": "Client project · B2B · Multi-role UX · Figma · Live web portal",
     "cover": "work/mnf/pots.jpg",
@@ -1419,7 +1419,7 @@ const CONFIG = {
       {
         "when": "2019 – 2025",
         "what": "Florist & visual merchandising",
-        "where": "Naomi s.r.o. · family flower & decoration store",
+        "where": "Kvety Naomi · family flower & decoration store",
         "note": ""
       },
       {
@@ -2922,7 +2922,7 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
     <div class="tick me-tick" aria-label="Things about me"><div class="tick-in">${[0,1].map(k => (C.personality || []).map(t => `<span${k ? ' aria-hidden="true"' : ''}>${esc(t)}</span>`).join('')).join('')}</div></div>
 
     <section class="pg wrap ab-story">
-      <div class="ab-story-g"><h2 class="rv">More<br>about<br>me<span>★</span></h2><div class="ab-story-l">${(a.text || []).slice(1).map((t, i) => `<div class="ab-row rv"><span class="ab-n">0${i + 1}</span><b>${['Working with people','How I work'][i] || ''}</b><p>${esc(t).replace('redesigned a website for a social-impact collective','<a href="#work/perspectivity">redesigned a website for a social-impact collective</a>').replace('built a biodiversity trail for a test park in Binckhorst','<a href="#work/proefpark-binckhorst">built a biodiversity trail for a test park in Binckhorst</a>').replace('designed an ordering portal for a microgreen farm','<a href="#work/mnf-grow-buddy">designed an ordering portal for a microgreen farm</a>')}</p></div>`).join('')}</div></div>
+      <div class="ab-story-g"><h2 class="rv">More<br>about<br>me<span>★</span></h2><div class="ab-story-l">${(a.text || []).slice(1).map((t, i) => `<div class="ab-row rv"><span class="ab-n">0${i + 1}</span><b>${['Working with people','How I work'][i] || ''}</b><p>${esc(t).replace('redesigned a website for a social-impact collective','<a href="#work/perspectivity">redesigned a website for a social-impact collective</a>').replace('built a biodiversity trail for a test park in Binckhorst','<a href="#work/proefpark-binckhorst">built a biodiversity trail for a test park in Binckhorst</a>').replace('designed an ordering portal for a microgreen farm','<a href="#work/mnf-chef-portal">designed an ordering portal for a microgreen farm</a>').replace('made a mobile app for our student radio','<a href="#work/lab-rats-radio">made a mobile app for our student radio</a>').replace('built a Santa’s Village in my family’s flower shop','<a href="#work/santa-village">built a Santa’s Village in my family’s flower shop</a>').replace("built a Santa's Village in my family's flower shop",'<a href="#work/santa-village">built a Santa’s Village in my family’s flower shop</a>').replace('an installation that watches you back','<a href="#work/look-at-me">an installation that watches you back</a>')}</p></div>`).join('')}</div></div>
     </section>
     <section class="pg wrap" style="padding-top:0">${nextLink(pg)}</section>`;
     if (pg === 'contact') return `<section class="pg wrap ctp">
@@ -3115,6 +3115,7 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
   const home = $('home'), csv = $('csv');
   let curCs = null;
   function route() {
+    if (location.hash === '#work/mnf-grow-buddy') { history.replaceState(null, '', '#work/mnf-chef-portal'); }
     const m = location.hash.match(/^#work\/([\w-]+)/);
     const p = m && projects.find(x => x.id === m[1]);
     if (p) {
