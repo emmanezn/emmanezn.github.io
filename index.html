@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400;500;600&display=swap">
 
 <script>
 /* ==========================================================================
@@ -122,39 +122,43 @@ const CONFIG = {
     "beyond": true,
     "title": "Santa’s Village",
     "meta": "Experience design · Kvety Naomi, Trenčín · Designed & built by me",
-    "cover": "work/santa/final-reindeer.jpg",
+    "cover": "work/santa/final-hero.jpg",
     "status": "finished",
     "year": "2026",
     "summary": "I turned the upper floor of my parents’ flower store into a Santa Claus village: a walk-through Christmas experience that I designed and built myself, from the barn to the elves’ workshop.",
+    "theme": "xmas",
     "caseStudy": [
       {
         "step": "Brief",
-        "type": "hero",
-        "title": "A Santa Claus village inside a flower store",
-        "image": "work/santa/final-reindeer.jpg",
-        "alt": "Wooden barn with two reindeer heads, garlands and fairy lights"
+        "type": "xhero",
+        "kicker": "Experience design · Kvety Naomi, Trenčín",
+        "title": "Santa’s Village",
+        "lines": ["Reindeer barn | Dielňa | Gift line | Letters to Mikuláš", "Designed, sawn, painted & built by Emma", "Kvety Naomi | Trenčín | Upstairs, past the flowers"],
+        "image": "work/santa/final-hero.jpg",
+        "alt": "The reindeer barn lit up with garlands and fairy lights"
       },
       {
         "step": "Brief",
-        "type": "glance",
+        "type": "xtags",
         "items": [
           {
             "label": "The idea",
-            "text": "Give people a reason to come up to the upper floor of Kvety Naomi at Christmas: something to walk through, look at and take a photo of."
+            "text": "Give people a reason to come up to the upper floor at Christmas: something to walk through, look at and take a photo of."
           },
           {
             "label": "What I did",
-            "text": "Came up with the concept and the route, designed every piece and built it myself: the barn, the reindeer, the signs and the elves’ workshop."
+            "text": "Came up with the concept and the route, designed every piece and built it myself, from the barn to the elves’ workshop."
           },
           {
-            "label": "Result",
+            "label": "The result",
             "text": "Visitors smile, take photos and share it on their Instagram stories. No other shop around has anything like it."
           }
         ]
       },
       {
         "step": "Brief",
-        "type": "facts",
+        "type": "xticket",
+        "title": "Workshop order",
         "items": [
           {
             "label": "My role",
@@ -162,7 +166,7 @@ const CONFIG = {
           },
           {
             "label": "Where",
-            "value": "Kvety Naomi, my parents’ flower & decor store · Trenčín, Slovakia"
+            "value": "Kvety Naomi, my parents’ flower & decor store, Trenčín"
           },
           {
             "label": "When",
@@ -170,110 +174,113 @@ const CONFIG = {
           },
           {
             "label": "For",
-            "value": "Families, kids and everyone visiting the store"
+            "value": "Families, kids & everyone visiting the store"
           },
           {
             "label": "Made with",
-            "value": "Pine boards, hay bales, burlap, old fruit crates, garlands & a lot of fairy lights"
+            "value": "Pine boards, hay, burlap, old fruit crates & fairy lights"
           },
           {
             "label": "Help",
-            "value": "My dad did the power-saw cuts. Everything else is mine."
+            "value": "Dad did the power-saw cuts. The rest is mine."
           }
         ]
       },
       {
         "step": "The space",
-        "type": "split",
+        "type": "xbefore",
         "label": "Where it started",
-        "text": "The upper floor is a long gallery that looks down into the store. It held home decor and it was easy to walk past. I saw an empty stage: one long wall, a walkway and a railing everyone looks over.",
-        "image": "work/santa/before-loft.jpg",
-        "alt": "The empty upper gallery of the store with damask wallpaper",
-        "caption": "Before: the upper gallery"
+        "title": "From an empty gallery to a village",
+        "text": "The upper floor is a long gallery that looks down into the store. It held home decor and people walked past it. I saw a stage: one long wall, a walkway and a railing everyone looks over.",
+        "before": {
+          "image": "work/santa/before-loft.jpg",
+          "caption": "Before"
+        },
+        "after": {
+          "image": "work/santa/final-after.jpg",
+          "caption": "After"
+        }
       },
       {
         "step": "The space",
-        "type": "statement",
-        "label": "The experience",
-        "lines": [
-          "Walk in. Look around. Take a photo.",
-          "The village is a short route along one wall, so it works without any staff or explanation.",
-          "Each stop is a scene you can stand in front of, so every visitor leaves with a picture."
-        ]
-      },
-      {
-        "step": "The space",
-        "type": "list",
+        "type": "xroute",
         "label": "The route",
+        "title": "Walk in. Look around. Take a photo.",
+        "text": "A short route along one wall, so it works without staff or explanation. Every stop is a scene you can stand in front of.",
+        "image": "work/santa/final-route.jpg",
+        "alt": "The route along the gallery",
         "items": [
-          "The reindeer barn: a wooden barn front with two reindeer looking out of the stable windows. The main photo spot.",
-          "DIELNA, the elves’ workshop: stacked fruit crates full of elves, hats and wrapped gifts.",
-          "The gift line: a long workbench where the elves send presents into the red house.",
-          "Coming on 6 December: a letter-writing station where kids write to Mikuláš."
+          {
+            "name": "The reindeer barn",
+            "text": "Two reindeer look out of the stable windows. The main photo spot."
+          },
+          {
+            "name": "Dielňa",
+            "text": "The elves’ workshop: fruit crates full of elves, hats and gifts."
+          },
+          {
+            "name": "The gift line",
+            "text": "A long workbench where elves send presents into the red house."
+          },
+          {
+            "name": "Letters to Mikuláš",
+            "text": "From 6 December kids can write a letter at their own little desk."
+          }
         ]
       },
       {
         "step": "Making",
-        "type": "built",
+        "type": "xpolaroids",
         "label": "Built by hand",
-        "text": "I built everything from scratch: the barn walls and roof, the stable doors, the reindeer heads with burlap antlers, the hand-painted DIELNA sign and the workshop. I wanted it to feel handmade and warm, like a fairytale, not like plastic shop decoration.",
-        "images": [
+        "title": "Every board. Every antler.",
+        "text": "I built everything from scratch: the barn walls and roof, the stable doors, the reindeer heads with burlap antlers, the hand-painted sign and the workshop. It should feel handmade and warm like a fairytale, not like plastic shop decoration.",
+        "items": [
           {
             "image": "work/santa/build-barn.jpg",
-            "alt": "The bare wooden barn with hay bales"
+            "caption": "the barn, day one"
           },
           {
             "image": "work/santa/build-reindeer.jpg",
-            "alt": "Reindeer heads mounted on the barn"
+            "caption": "reindeer moving in"
           },
           {
             "image": "work/santa/build-overview.jpg",
-            "alt": "The workshop taking shape along the wall"
+            "caption": "the workshop grows"
+          },
+          {
+            "image": "work/santa/build-workshop.jpg",
+            "caption": "elves on shift"
           }
         ]
       },
       {
         "step": "Making",
-        "type": "split",
-        "flip": true,
+        "type": "xnote",
         "label": "Details people notice",
         "text": "Small elves sit on the crates, climb out of the vents and hang from the garland. People keep finding new ones, so they stay longer and look closer.",
-        "image": "work/santa/build-workshop.jpg",
-        "alt": "Elves on the crates and the workbench full of gifts"
+        "note": "Spot the elves!"
       },
       {
         "step": "Result",
-        "type": "split",
+        "type": "xfilm",
         "label": "Walk through it",
-        "text": "This is what visitors see when they come up the stairs: the reindeer barn, the DIELNA workshop and the gift line, all lit up.",
+        "title": "Lights on",
+        "text": "What visitors see when they come up the stairs.",
         "video": "work/santa/village-walk.mp4",
         "poster": "work/santa/village-walk.jpg",
-        "alt": "Video walking past the reindeer barn and the elves' workshop"
+        "image": "work/santa/final-dielna.jpg",
+        "alt": "The barn and the Dielňa workshop lit up"
       },
       {
         "step": "Result",
-        "type": "gallery",
-        "label": "The finished village",
-        "items": [
-          {
-            "image": "work/santa/final-dielna.jpg",
-            "caption": "The barn and DIELNA, lit up"
-          },
-          {
-            "image": "work/santa/final-route.jpg",
-            "caption": "The route along the gallery"
-          }
-        ]
-      },
-      {
-        "step": "Result",
-        "type": "quote",
+        "type": "xquote",
         "text": "It looks like a fairytale.",
-        "by": "Visitors at Kvety Naomi"
+        "by": "visitors at Kvety Naomi",
+        "after": "People are surprised when they come upstairs. They smile, take pictures and share them on Instagram, saying it feels new and really festive."
       },
       {
         "step": "Result",
-        "type": "stats",
+        "type": "xornaments",
         "items": [
           {
             "value": "100%",
@@ -281,20 +288,24 @@ const CONFIG = {
           },
           {
             "value": "1st",
-            "label": "shop around with its own Santa village"
+            "label": "shop around with a Santa village"
+          },
+          {
+            "value": "6.12",
+            "label": "Mikuláš letter desk opens"
           }
-        ],
-        "after": "People are surprised when they come upstairs. They smile, take pictures and share them on Instagram, saying it feels new and really festive."
+        ]
       },
       {
         "step": "Result",
-        "type": "list",
+        "type": "xletter",
         "label": "What I learned",
         "items": [
           "Designing a space is designing a route: what people see first decides whether they walk in.",
           "If something is easy to photograph, people share it, and that brings new visitors to the store.",
           "Knowing when to ask for help: I left the power-saw cuts to my dad."
-        ]
+        ],
+        "sign": "Emma, chief elf"
       }
     ]
   },
@@ -1686,6 +1697,202 @@ body.in-cs .cs-view{display:block}
 .film figcaption{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 18px; margin-top:14px}
 .film b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(28px,2.6vw,40px); line-height:.9}
 .film .mono{color:var(--coral)}
+
+/* ───────── Santa's Village theme (only this case study) ───────── */
+body.xmas{--xg:#17482c; --xg2:#0f3520; --xr:#e8302a; --xc:#f6f3ec; --xt:"Inter Tight", "Helvetica Neue", Arial, sans-serif; --xs:"Instrument Serif", Georgia, serif; background:var(--xc); color:var(--xg)}
+body.xmas .cs-bar{background:var(--xc); border-bottom:2px solid var(--xg)}
+body.xmas .cs-back{background:var(--xr); color:#fff}
+body.xmas .cs-steps button{color:var(--xg)} body.xmas .cs-steps button.on{background:var(--xg); color:var(--xc)}
+body.xmas .cs-next{background:var(--xg); color:var(--xc)} body.xmas .cs-next .mono{color:var(--xr)} body.xmas .cs-next b{font-family:var(--xt); font-weight:800; letter-spacing:-.05em} body.xmas .cs-next:hover b{color:var(--xr)}
+.x-xmas{padding-top:clamp(64px,8vh,76px)}
+.x-xmas .blk{margin:clamp(80px,13vh,150px) 0}
+.x-xmas .lab{font-family:var(--xs); font-style:italic; font-size:22px; letter-spacing:0; text-transform:none; color:var(--xr); margin:0 0 10px}
+.x-xmas .lab::before{display:none}
+.x-xmas h2{font-family:var(--xt); font-weight:800; font-size:clamp(40px,6vw,96px); line-height:.88; letter-spacing:-.055em; text-transform:uppercase; margin:0 0 20px; color:var(--xg)}
+.x-xmas h3{font-family:var(--xt); font-weight:800; font-size:clamp(20px,1.7vw,26px); line-height:1.1; letter-spacing:-.03em; margin:0 0 8px; color:var(--xg)}
+.x-xmas p{color:var(--xg); margin:0}
+.x-xmas img{display:block; width:100%; height:100%; object-fit:cover; cursor:zoom-in}
+.x-xmas figure{margin:0; position:relative}
+.x-xmas figcaption{font-family:var(--xs); font-size:19px; color:var(--xg); margin-top:8px}
+.xno{font-family:var(--xs); font-style:italic; font-size:22px; color:var(--xr)}
+.xhead{display:grid; grid-template-columns:1fr 1fr; gap:12px clamp(24px,5vw,80px); align-items:end; margin-bottom:clamp(28px,5vh,52px)}
+.xhead .lab{grid-column:1 / -1; margin:0} .xhead h2{margin:0} .xhead p{max-width:52ch; font-size:17px; line-height:1.55}
+
+/* marker strokes */
+.xmk{fill:none; stroke:var(--xr); stroke-linecap:round; stroke-linejoin:round; overflow:visible; pointer-events:none}
+.xmk path{stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.1s cubic-bezier(.6,.05,.3,1)}
+.in .xmk path, .xwin.on .xmk path{stroke-dashoffset:0}
+.xmk path:nth-child(2){transition-delay:.35s} .xmk path:nth-child(3){transition-delay:.55s} .xmk path:nth-child(4){transition-delay:.8s} .xmk path:nth-child(5){transition-delay:1.3s} .xmk path:nth-child(6){transition-delay:1.4s}
+@media (prefers-reduced-motion:reduce){.xmk path{transition:none; stroke-dashoffset:0 !important}}
+
+/* hero poster */
+.xh{position:relative; container-type:inline-size; max-width:1040px; margin:0 auto; aspect-ratio:1000/900}
+.xh-type{position:absolute; inset:0 0 auto 0; text-align:center}
+.xh h1{margin:0; font-family:var(--xt); font-weight:800; text-transform:uppercase; letter-spacing:-.06em; color:var(--xg); display:flex; flex-direction:column; align-items:center; font-size:14cqw; padding-top:2cqw}
+.xh h1 span{line-height:.74; padding-top:.06em}
+.xh h1 small + small{margin-top:-.6cqw}
+.xh h1 small{position:relative; z-index:3; width:fit-content; background:var(--xc); padding:0 .35em; box-shadow:0 0 0 2px var(--xc);
+ display:block; font-family:var(--xs); font-weight:400; text-transform:none; letter-spacing:0; font-size:max(12px,1.75cqw); line-height:1; margin:.5cqw 0 1.6cqw; color:var(--xg)}
+.xh h1 span{display:block}
+.xh-ph{position:absolute; left:9.5%; right:9%; top:38.6%; bottom:2.6%; overflow:hidden}
+.xh-gift{position:absolute; inset:0; width:100%; height:100%; z-index:2; stroke-width:max(7px,1.3cqw)}
+.xh-gift path{vector-effect:non-scaling-stroke; stroke-dasharray:3000; stroke-dashoffset:3000} .in .xh-gift path{stroke-dashoffset:0}
+.xh-hint{position:absolute; left:0; right:0; bottom:-44px; text-align:center; font-family:var(--xs); font-style:italic; font-size:20px; color:var(--xg)}
+.xh-hint b{font-family:var(--xt); font-style:normal; color:var(--xr)}
+
+/* elves game */
+.xelf{all:unset; position:absolute; z-index:5; width:38px; height:38px; cursor:pointer; transition:transform .35s cubic-bezier(.3,1.6,.5,1), opacity .4s}
+.xelf svg{width:100%; height:100%; overflow:visible}
+.xelf .h{fill:var(--xr); stroke:var(--xg2); stroke-width:2; stroke-linejoin:round} .xelf .b{fill:#fff; stroke:var(--xg2); stroke-width:2} .xelf .p{fill:#fff; stroke:var(--xg2); stroke-width:2}
+.xelf:hover{transform:rotate(-14deg) scale(1.15)}
+.xelf:focus-visible{outline:2px dashed var(--xr); outline-offset:4px}
+.xelf.got{transform:translateY(-30px) rotate(20deg) scale(.4); opacity:0; pointer-events:none}
+.xgame{position:fixed; right:18px; bottom:18px; z-index:60; background:var(--xg); color:var(--xc); font-family:var(--xs); font-size:20px; padding:8px 16px; border-radius:40px; translate:0 120px; transition:translate .4s cubic-bezier(.3,1.4,.5,1), scale .25s}
+.xgame b{font-family:var(--xt); color:var(--xr); font-style:normal}
+.xgame.show{translate:0 0} .xgame.pop{scale:1.15}
+body:not(.xmas) .xgame{display:none}
+.xwin[hidden]{display:none !important}
+.xwin{position:fixed; inset:0; z-index:90; display:grid; place-items:center; padding:20px; background:rgba(15,53,32,.0); transition:background .3s}
+.xwin.on{background:rgba(15,53,32,.75)}
+.xwin-in{position:relative; max-width:520px; background:var(--xc); color:var(--xg); padding:40px 36px 34px; text-align:center; scale:.85; opacity:0; transition:scale .45s cubic-bezier(.3,1.5,.5,1), opacity .3s}
+.xwin.on .xwin-in{scale:1; opacity:1}
+.xwin-bow{width:140px; height:84px; stroke-width:9; display:block; margin:-80px auto 8px}
+.xwin-k{font-family:var(--xs); font-style:italic; font-size:22px; color:var(--xr) !important}
+.xwin h3{font-family:var(--xt); font-weight:800; font-size:clamp(34px,5vw,52px); letter-spacing:-.05em; line-height:.9; text-transform:uppercase; margin:6px 0 14px; color:var(--xg)}
+.xwin p{margin:0 0 22px; font-size:17px; color:var(--xg)} .xwin p b{color:var(--xr)}
+.xwin-x{all:unset; cursor:pointer; background:var(--xr); color:#fff; font-family:var(--f-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; padding:12px 18px}
+.xwin-x:hover{background:var(--xg)}
+
+/* three points */
+.xt3{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,4vw,64px); margin-top:40px}
+.xt3 > div{border-top:2px solid var(--xg); padding-top:14px}
+.xt3 h3{margin-top:14px}
+
+/* facts */
+.xfacts{display:grid; grid-template-columns:repeat(3,1fr); margin:0; border-top:2px solid var(--xg)}
+.xfacts div{position:relative; padding:16px 50px 20px 0; border-bottom:1px solid rgba(23,72,44,.25)}
+.xfacts dt{font-family:var(--xs); font-style:italic; font-size:19px; color:var(--xr); margin-bottom:4px}
+.xfacts dd{margin:0; font-size:16px; line-height:1.45}
+
+/* before / after */
+.xba{display:grid; grid-template-columns:1fr 1fr; gap:clamp(10px,1.4vw,18px); position:relative}
+.xba img{aspect-ratio:4/3}
+.xba figcaption{position:absolute; top:12px; left:12px; margin:0; background:var(--xc); padding:2px 10px; font-style:italic}
+.xba-ar{position:absolute; left:50%; top:-60px; width:clamp(90px,10vw,150px); translate:-50% 0; stroke-width:6; z-index:3}
+
+/* route: green band */
+.xrt{display:grid; grid-template-columns:1fr 1.15fr; gap:clamp(28px,5vw,90px); align-items:start; background:var(--xg); margin-inline:calc(50% - 50vw); padding:clamp(60px,10vh,110px) max(var(--pad), calc(50vw - 50% + var(--pad)))}
+.xrt h2,.xrt h3,.xrt p{color:var(--xc)}
+.xrt-f{position:sticky; top:140px} .xrt-f img{aspect-ratio:4/5}
+.xrt ol{list-style:none; margin:clamp(24px,4vh,40px) 0 0; padding:0}
+.xrt li{position:relative; display:grid; grid-template-columns:52px 1fr; gap:12px; padding:20px 50px 20px 0; border-top:1px solid rgba(246,243,236,.3)}
+.xrt li:last-child{border-bottom:1px solid rgba(246,243,236,.3)}
+.xrt-t > p{font-size:17px; max-width:48ch}
+.xrt .xno{color:var(--xr)}
+
+/* build grid */
+.xgrid{display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(8px,1.2vw,16px); align-items:start}
+.xgrid figure{grid-column:span 3} .xgrid .g2{margin-top:clamp(40px,7vh,90px)} .xgrid .g3{margin-top:clamp(14px,2vh,30px)} .xgrid .g4{margin-top:clamp(70px,11vh,140px)}
+.xgrid img{aspect-ratio:4/5}
+.xgrid figcaption span{color:var(--xr); font-style:italic}
+
+/* note */
+.xnt{max-width:980px; margin:0 auto; text-align:center}
+.xnt p{font-family:var(--xs); font-size:clamp(28px,3.4vw,50px); line-height:1.1; color:var(--xg)}
+.xnt-n{display:inline-block; margin-top:22px; font-family:var(--xt); font-weight:800; font-size:clamp(28px,3vw,44px); letter-spacing:-.05em; text-transform:uppercase; color:var(--xr); rotate:-3deg}
+
+/* film */
+.xfm{margin:0 calc(50% - 50vw); background:#000}
+.xfm video{display:block; width:100%; max-height:86vh; aspect-ratio:16/9; object-fit:cover}
+
+/* quote: red band */
+.xq{position:relative; margin:0 calc(50% - 50vw); background:var(--xr); text-align:center; padding:clamp(80px,14vh,150px) var(--pad)}
+.xq-q{font-family:var(--xt); font-weight:800; text-transform:uppercase; letter-spacing:-.06em; font-size:clamp(46px,9vw,150px); line-height:.84; color:var(--xc) !important; max-width:12ch; margin:0 auto !important}
+.xq-by{display:block; margin-top:22px; font-family:var(--xs); font-style:italic; font-size:22px; color:var(--xc)}
+.xq-a{max-width:560px; margin:18px auto 0 !important; font-size:17px; color:var(--xc) !important}
+.xq .xelf .h{fill:var(--xg)}
+
+/* stats */
+.xst{display:grid; grid-template-columns:repeat(3,1fr); border-top:2px solid var(--xg)}
+.xst div{padding:26px 20px 10px 0}
+.xst div + div{border-left:1px solid rgba(23,72,44,.25); padding-left:clamp(16px,2vw,28px)}
+.xst b{position:relative; display:inline-block; font-family:var(--xt); font-weight:800; letter-spacing:-.06em; font-size:clamp(60px,8vw,130px); line-height:.86; color:var(--xg)}
+.xst-c{position:absolute; left:-22%; top:-22%; width:144%; height:144%; stroke-width:6}
+.xst-c path{vector-effect:non-scaling-stroke; stroke-dasharray:3000; stroke-dashoffset:3000} .in .xst-c path{stroke-dashoffset:0}
+.xst span{display:block; margin-top:14px; font-family:var(--xs); font-size:20px; color:var(--xg)}
+
+/* learned */
+.xlt{position:relative; max-width:960px}
+.xlt ol{list-style:none; counter-reset:x; margin:0; padding:0}
+.xlt li{counter-increment:x; display:grid; grid-template-columns:56px 1fr; gap:12px; padding:22px 0; border-top:2px solid var(--xg); font-family:var(--xt); font-weight:800; font-size:clamp(20px,2.2vw,32px); line-height:1.1; letter-spacing:-.035em; color:var(--xg)}
+.xlt li::before{content:"0" counter(x); font-family:var(--xs); font-style:italic; font-weight:400; font-size:22px; letter-spacing:0; color:var(--xr)}
+.xlt-s{margin-top:22px !important; font-family:var(--xs); font-style:italic; font-size:24px; color:var(--xr) !important}
+.xlt-s::before{content:"— "}
+
+/* wishlist envelope opener (scroll-driven) */
+.x-xmas > .blk:first-of-type{margin-top:0}
+.xw{--p:0; position:relative; height:280vh; margin:0 calc(50% - 50vw)}
+.xw-stage{position:sticky; top:122px; height:calc(100vh - 122px); overflow:hidden; --W:min(900px, 94vw); --EH:min(34%, calc(var(--W) * .5));
+  background-color:#1d4a33;
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 80px, rgba(9,34,22,.6) 80px 150px, transparent 150px 190px, rgba(232,48,42,.9) 190px 195px, transparent 195px 290px),
+    repeating-linear-gradient(0deg, transparent 0 80px, rgba(9,34,22,.55) 80px 150px, transparent 150px 190px, rgba(232,48,42,.8) 190px 195px, transparent 195px 290px),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,.08) 0 1px, transparent 1px 3px)}
+.xw-env-back{position:absolute; left:50%; bottom:-2%; width:var(--W); height:var(--EH); translate:-50% 0; background:#e9dfca url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.xw-flap{position:absolute; left:0; right:0; bottom:100%; height:calc(var(--EH) * .8); background:#e2d6bd url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); clip-path:polygon(0 100%, 50% 4%, 100% 100%); filter:drop-shadow(0 -2px 0 rgba(0,0,0,.05))}
+.xw-card{position:absolute; left:50%; bottom:4%; width:min(540px, 74vw); height:calc(100% - 40px - var(--EH) * .15); translate:-50% calc((1 - min(1, var(--p) * 1.7)) * 75%); rotate:calc((1 - min(1, var(--p) * 1.7)) * 2deg - 1deg);
+  background:#fbf8f2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); box-shadow:0 20px 40px -16px rgba(0,0,0,.45); padding:clamp(40px,6vh,64px) clamp(20px,4vw,44px) 0; text-align:center; color:var(--xr); z-index:2}
+.xw-pm{position:absolute; top:18px; right:18px; width:clamp(120px,20vw,170px); fill:none; stroke:#2b6a4c; stroke-width:2.6; opacity:.9; rotate:-6deg; mix-blend-mode:multiply}
+.xw-pm text{fill:#2b6a4c; stroke:none; font-family:var(--xs); font-size:12px; letter-spacing:.06em} .xw-pm text.b{font-size:17px}
+.xw-t{font-family:var(--xs) !important; font-weight:400 !important; font-size:clamp(44px,min(6.4vw,8vh),78px) !important; line-height:.86 !important; letter-spacing:-.01em !important; color:#8f2418 !important; margin:clamp(24px,4vh,44px) 0 6px !important}
+.xw-e{font-family:var(--xt); font-weight:800; text-transform:uppercase; letter-spacing:-.04em; font-size:clamp(16px,2.4vw,26px); color:#8f2418 !important}
+.xw-aka{font-family:var(--f-mono); font-size:clamp(13px,1.5vw,17px); color:#2a2620 !important; margin:clamp(10px,2vh,20px) 0 clamp(10px,2vh,18px) !important}
+.xw-l{list-style:none; margin:0 auto; padding:0; max-width:36ch; text-align:left}
+.xw-l li{position:relative; padding:5px 0 5px 30px; border-top:1px dashed rgba(42,38,32,.3); font-family:var(--f-mono); font-size:clamp(12px,1.3vw,14.5px); line-height:1.4; color:#2a2620}
+.xw-l li::before{content:""; position:absolute; left:2px; top:7px; width:13px; height:13px; border:1.5px solid #8f2418}
+.xw-l li:first-child::after{content:"✓"; position:absolute; left:1px; top:0; font-family:"Pen",cursive; font-size:26px; color:var(--xr)}
+.xw-s{font-family:"Pen",cursive; font-size:clamp(28px,3vw,40px); color:var(--xr) !important; margin-top:10px !important}
+.xw-env-front{position:absolute; left:50%; bottom:-2%; width:var(--W); height:var(--EH); translate:-50% 0; z-index:3; pointer-events:none; filter:drop-shadow(0 -6px 10px rgba(0,0,0,.18))}
+.xw-env-front span{position:absolute; inset:0; background:#eee5d2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.xw-env-front .l{clip-path:polygon(0 0, 52% 70%, 0 100%); background-color:#e6dbc4}
+.xw-env-front .r{clip-path:polygon(100% 0, 48% 70%, 100% 100%); background-color:#e6dbc4}
+.xw-env-front .b{clip-path:polygon(0 100%, 50% 52%, 100% 100%); background-color:#f1e9d8; box-shadow:inset 0 2px 0 rgba(255,255,255,.5)}
+.xw .xw-pol{position:absolute;}
+.xw-pol{position:absolute; z-index:4; margin:0 !important; background:#f7f5f0; padding:8px 8px 30px; box-shadow:0 18px 30px -12px rgba(0,0,0,.55);
+  opacity:clamp(0, (var(--p) - .42) * 6, 1); transition:none}
+.xw-pol img{display:block; width:100%; aspect-ratio:4/5; object-fit:cover}
+.xw-pol.p1{width:clamp(130px,15vw,220px); left:max(2vw, calc(50% - 270px - clamp(130px,15vw,220px) - 30px)); top:14%; rotate:-7deg; translate:calc((1 - clamp(0, (var(--p) - .42) * 6, 1)) * -60px) 0}
+.xw-pol.p2{width:clamp(110px,12vw,180px); right:max(2vw, calc(50% - 270px - clamp(110px,12vw,180px) - 40px)); top:30%; rotate:6deg; translate:calc((1 - clamp(0, (var(--p) - .5) * 6, 1)) * 60px) 0; opacity:clamp(0, (var(--p) - .5) * 6, 1)}
+.xw-tape{position:absolute; top:-12px; left:50%; width:74px; height:24px; translate:-50% 0; rotate:4deg; background:rgba(236,226,200,.78); box-shadow:0 1px 2px rgba(0,0,0,.12); z-index:2}
+.xw-tix{position:absolute; z-index:5; left:max(4vw, calc(50% - 270px - clamp(130px,15vw,220px) + 10px)); top:calc(14% + clamp(150px,18vw,260px)); display:flex; flex-direction:column; gap:4px; rotate:-14deg; opacity:clamp(0, (var(--p) - .55) * 6, 1); translate:0 calc((1 - clamp(0, (var(--p) - .55) * 6, 1)) * 40px)}
+.xw-tix span{display:block; width:clamp(120px,13vw,160px); padding:8px 12px; background:#efe6cf url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); font-family:var(--f-mono); font-size:11px; letter-spacing:.08em; color:#2a2620; border-left:2px dashed rgba(42,38,32,.35); box-shadow:0 6px 12px -6px rgba(0,0,0,.4);
+  -webkit-mask:radial-gradient(circle 6px at 0 50%, transparent 5.5px, #000 6px) left / 51% 100% no-repeat, radial-gradient(circle 6px at 100% 50%, transparent 5.5px, #000 6px) right / 51% 100% no-repeat;
+  mask:radial-gradient(circle 6px at 0 50%, transparent 5.5px, #000 6px) left / 51% 100% no-repeat, radial-gradient(circle 6px at 100% 50%, transparent 5.5px, #000 6px) right / 51% 100% no-repeat}
+.xw-tix i{display:block; font-style:normal; font-size:8.5px; opacity:.7; margin-top:2px}
+.xw-tix span + span{translate:8px 0}
+.xw-hint{position:absolute; left:50%; bottom:14px; translate:-50% 0; z-index:6; font-family:var(--xs); font-style:italic; font-size:18px; color:var(--xc) !important; opacity:calc(1 - var(--p) * 4)}
+.xw.static{height:auto} .xw.static .xw-stage{position:relative; top:0; height:min(100vh, 900px)}
+@media (max-width:700px){
+  .xw-stage{top:110px; height:calc(100vh - 110px); --W:104vw; --EH:26%}
+  .xw-card{width:84vw; padding-top:46px}
+  .xw-pm{width:110px; top:10px; right:10px}
+  .xw-t{margin-top:34px !important}
+  .xw-pol.p1{width:96px; left:3vw; top:auto; bottom:3%; z-index:5} .xw-pol.p2{width:88px; right:3vw; top:auto; bottom:5%; z-index:5} .xw-tix{display:none}
+  .xw-card{height:calc(100% - 30px - var(--EH) * .1)}
+}
+@media (max-width:860px){
+  .xhead,.xrt,.xba{grid-template-columns:1fr}
+  .xba-ar{display:none}
+  .xrt-f{position:static}
+  .xt3,.xfacts{grid-template-columns:1fr}
+  .xh{aspect-ratio:1000/1100}
+  .xh-ph{top:39%}
+  .xh h1{font-size:12cqw; padding-top:1cqw} .xh h1 span{line-height:.9; padding-top:0} .xh h1 small{font-size:11px; margin:3px 0 7px} .xh h1 small + small{margin-top:-4px}
+  .xgrid{grid-template-columns:1fr 1fr} .xgrid figure{grid-column:auto !important; margin-top:0 !important} .xgrid .g2,.xgrid .g4{margin-top:40px !important}
+  .xst{grid-template-columns:1fr} .xst div + div{border-left:0; border-top:1px solid rgba(23,72,44,.25); padding-left:0}
+  .xh-hint{font-size:17px}
+}
 </style>
 </head>
 <body>
@@ -1878,6 +2085,45 @@ body.in-cs .cs-view{display:block}
   const lab = l => l ? `<p class="lab">${esc(l)}</p>` : '';
   const img = (src, alt = '', cls = '') => src ? `<img src="${esc(u(src))}" alt="${esc(alt)}" loading="lazy" class="${cls}" data-lb="${esc(u(src))}" data-cap="${esc(alt)}">` : '';
   const B = {
+    xwish: b => `<div class="xw"><div class="xw-stage">
+        <div class="xw-env-back" aria-hidden="true"><span class="xw-flap"></span></div>
+        <div class="xw-card">${ELF('c', 'right:14px;bottom:30%')}
+          <svg class="xw-pm" viewBox="0 0 230 120" aria-hidden="true"><defs><path id="xwpm" d="M150 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs>
+            <rect x="8" y="22" width="78" height="86" rx="3"/><rect x="14" y="28" width="66" height="74" rx="2"/><text x="47" y="84" text-anchor="middle" class="b">06/12</text><text x="47" y="98" text-anchor="middle">TRENČÍN</text><path d="M30 62 C38 50 52 46 64 50 M40 58 C44 46 50 40 58 38"/>
+            <circle cx="150" cy="60" r="56"/><circle cx="150" cy="60" r="36"/><text><textPath href="#xwpm">MERRY CHRISTMAS ✶ HAPPY NEW YEAR ✶</textPath></text><path d="M150 36 L158 60 L150 84 L142 60 Z M128 60 L172 60"/></svg>
+          <h2 class="xw-t">${esc(b.title)}</h2><p class="xw-e">${esc(b.edition)}</p><p class="xw-aka">${esc(b.aka)}</p>
+          <ul class="xw-l">${(b.items || []).map(t => `<li>${esc(t)}</li>`).join('')}</ul><p class="xw-s">${esc(b.sign)}</p></div>
+        <div class="xw-env-front" aria-hidden="true"><span class="l"></span><span class="r"></span><span class="b"></span></div>
+        ${(b.photos || []).map((ph, i) => `<figure class="xw-pol p${i + 1}"><span class="xw-tape"></span>${img(ph.image, ph.alt)}</figure>`).join('')}
+        <div class="xw-tix" aria-hidden="true"><span>Nº 061226<i>Admit one ✶ Santa’s Village</i></span><span>Nº 061227<i>Admit one ✶ Santa’s Village</i></span></div>
+        <p class="xw-hint">scroll ↓</p>
+      </div></div>`,
+    xhero: (b, p) => `<header class="xh">
+        <div class="xh-type"><h1><span>Santa’s</span><small>${esc((b.lines || [])[0] || '')}</small><span>Village</span><small>${esc((b.lines || [])[1] || '')}</small><small>${esc((b.lines || [])[2] || '')}</small></h1></div>
+        <div class="xh-ph">${img(b.image, b.alt)}</div>
+        <svg class="xmk xh-gift" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path pathLength="1" d="M9 40.5 C30 39.2 70 40.8 91.5 39.6 C90.6 58 92 80 90.8 97.6 C68 98.6 31 97.2 8.6 98.4 C9.6 80 8.4 57 9 40.5"/>
+          <path pathLength="1" d="M50.4 40 C49.6 58 50.8 80 50 98"/><path pathLength="1" d="M8.8 68.6 C35 67.4 66 69.4 91.2 67.8"/>
+          <path pathLength="1" d="M50 39.6 C40 34 26 22 27.6 13 C29.4 4.6 41 7 46 16 C48.6 21 49.8 30 50 39.6 C51 30 53 20 57 13.6 C62 6 73 5.8 73.8 13.8 C74.6 22 61 33 50 39.6"/>
+          <path pathLength="1" d="M50 39.6 C45 42 39 46 33.4 48.6"/><path pathLength="1" d="M50 39.6 C55.6 42.4 61 46.6 66.4 49.4"/>
+        </svg>
+        ${ELF('h', 'top:6%;right:3%')}<p class="xh-hint">psst… <b data-elfcount>0</b>/<b data-elftotal>7</b> elves are hiding on this page. Click them.</p></header>`,
+    xtags: b => `<div class="xt3">${(b.items || []).map((t, i) => `<div><span class="xno">0${i + 1}</span><h3>${esc(t.label)}</h3><p>${esc(t.text)}</p></div>`).join('')}</div>`,
+    xticket: b => `<dl class="xfacts">${(b.items || []).map((f, i) => `<div>${i === 4 ? ELF('f', 'right:8px;bottom:6px') : ''}<dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('')}</dl>`,
+    xbefore: b => `<div class="xhead">${lab(b.label)}<h2>${esc(b.title)}</h2><p>${esc(b.text)}</p></div>
+        <div class="xba"><figure>${img(b.before.image, 'Before')}<figcaption>${esc(b.before.caption)}</figcaption></figure>
+        <svg class="xmk xba-ar" viewBox="0 0 120 60" aria-hidden="true"><path pathLength="1" d="M6 38 C30 18 64 14 104 26"/><path pathLength="1" d="M88 12 C96 18 102 22 106 27 C99 31 93 36 86 42"/></svg>
+        <figure>${ELF('b', 'top:-18px;right:14%')}${img(b.after.image, 'After')}<figcaption>${esc(b.after.caption)}</figcaption></figure></div>`,
+    xroute: b => `<div class="xrt"><figure class="xrt-f">${img(b.image, b.alt)}</figure><div class="xrt-t">${lab(b.label)}<h2>${esc(b.title)}</h2><p>${esc(b.text)}</p>
+        <ol>${(b.items || []).map((r, i) => `<li><span class="xno">0${i + 1}</span><div><h3>${esc(r.name)}</h3><p>${esc(r.text)}</p></div>${i === 2 ? ELF('r', 'right:0;top:14px') : ''}</li>`).join('')}</ol></div></div>`,
+    xpolaroids: b => `<div class="xhead">${lab(b.label)}<h2>${esc(b.title)}</h2><p>${esc(b.text)}</p></div>
+        <div class="xgrid">${(b.items || []).map((it, i) => `<figure class="g${i + 1}">${i === 2 ? ELF('p', 'left:-12px;bottom:40px') : ''}${img(it.image, it.caption)}<figcaption><span>0${i + 1}</span> ${esc(it.caption)}</figcaption></figure>`).join('')}</div>`,
+    xnote: b => `<div class="xnt"><p>${esc(b.text)}</p>${b.note ? `<span class="xnt-n">${esc(b.note)}</span>` : ''}</div>`,
+    xfilm: b => `<div class="xhead">${lab(b.label)}<h2>${esc(b.title)}</h2><p>${esc(b.text)}</p></div>
+        <div class="xfm"><video src="${esc(u(b.video))}" poster="${esc(u(b.poster || ''))}" controls playsinline preload="metadata" aria-label="${esc(b.alt || b.title)}"></video></div>`,
+    xquote: b => `<div class="xq">${ELF('q', 'left:6%;bottom:12%')}<p class="xq-q">${esc(b.text)}</p><span class="xq-by">${esc(b.by || '')}</span>${b.after ? `<p class="xq-a">${esc(b.after)}</p>` : ''}</div>`,
+    xornaments: b => `<div class="xst">${(b.items || []).map((o, i) => `<div><b>${esc(o.value)}${i === 1 ? `<svg class="xmk xst-c" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M120 8 C60 2 10 22 8 60 C6 100 70 116 130 108 C180 100 196 70 188 44 C180 20 150 8 104 12"/></svg>` : ''}</b><span>${esc(o.label)}</span></div>`).join('')}</div>`,
+    xletter: b => `<div class="xlt">${lab(b.label)}<ol>${(b.items || []).map(t => `<li>${esc(t)}</li>`).join('')}</ol><p class="xlt-s">${esc(b.sign || '')}</p>${ELF('l', 'right:4%;bottom:0')}</div>`,
     hero: (b, p) => `<header class="cs-hero"><span class="mono">${esc(p.meta || '')}</span><h1>${esc(b.title || p.title)}</h1>
         ${b.image ? `<figure class="${b.paper ? 'paper' : /\.png$/.test(b.image) ? 'mock' : ''}">${img(b.image, b.alt)}${b.caption ? `<figcaption class="mono" style="margin-top:8px">${esc(b.caption)}</figcaption>` : ''}</figure>` : ''}</header>`,
     glance: b => `<div class="gl"><span class="gl-t">${esc(b.title || 'At a glance')}</span>${(b.items || []).map(i => `<div><b>${esc(i.label)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>`,
@@ -1902,6 +2148,37 @@ body.in-cs .cs-view{display:block}
     built: b => `<div class="built">${lab(b.label)}<p>${esc(b.text)}</p><div class="collage">${(b.images || []).map(i => img(i.image, i.alt)).join('')}</div></div>`,
   };
 
+  const ELF = (id, pos) => `<button type="button" class="xelf" data-elf="${id}" style="${pos}" aria-label="A hidden elf! Click to catch it"><svg viewBox="0 0 48 48" aria-hidden="true"><path class="h" d="M9 37 C12 24 19 12 33 6.5 C31 15 34 26 40 37 Z"/><path class="b" d="M6.5 36.5 C17 34.8 31 34.6 42 36.4 C42.6 39 42.4 41 41.8 43 C30 41.4 18 41.6 6.8 43.2 C6 41 6 39 6.5 36.5 Z"/><circle class="p" cx="34" cy="6.8" r="4.2"/></svg></button>`;
+  const XGAME = `<div class="xgame" aria-live="polite"><span class="xgame-n"><b data-elfcount>0</b>/<b data-elftotal>7</b> elves</span></div>
+    <div class="xwin" hidden><div class="xwin-in"><svg class="xmk xwin-bow" viewBox="0 0 100 60" aria-hidden="true"><path pathLength="1" d="M50 50 C40 44 24 30 26 18 C28 6 42 8 47 20 C49 28 50 40 50 50 C51 40 53 28 57 19 C62 8 76 6 76 18 C76 30 60 44 50 50"/></svg>
+      <p class="xwin-k">All elves found</p><h3>You’d make a great elf.</h3><p>Come up to the village at Kvety Naomi in Trenčín, tell us the secret word <b>“DIELŇA”</b> and the elves owe you a candy cane.</p>
+      <button type="button" class="xwin-x">Back to the village</button></div></div>`;
+  function xGame() {
+    const root = csv; const elves = [...root.querySelectorAll('.xelf')]; if (!elves.length) return;
+    const found = new Set(); const set = () => root.querySelectorAll('[data-elfcount]').forEach(n => n.textContent = found.size);
+    root.querySelectorAll('[data-elftotal]').forEach(n => n.textContent = elves.length);
+    const win = root.querySelector('.xwin'), bar = root.querySelector('.xgame');
+    elves.forEach(el => el.addEventListener('click', e => {
+      e.stopPropagation(); if (found.has(el.dataset.elf)) return;
+      found.add(el.dataset.elf); el.classList.add('got'); set(); bar.classList.add('show', 'pop'); setTimeout(() => bar.classList.remove('pop'), 500);
+      if (found.size === elves.length) setTimeout(() => { win.hidden = false; requestAnimationFrame(() => win.classList.add('on')); }, 700);
+    }));
+    win.querySelector('.xwin-x').addEventListener('click', () => { win.classList.remove('on'); setTimeout(() => win.hidden = true, 300); });
+    win.addEventListener('click', e => { if (e.target === win) win.querySelector('.xwin-x').click(); });
+  }
+  let xwOff = null;
+  function xWish() {
+    if (xwOff) xwOff();
+    const w = csv.querySelector('.xw'); if (!w) return;
+    const RMq = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (RMq) { w.style.setProperty('--p', 1); w.classList.add('static'); return; }
+    let raf = 0;
+    const tick = () => { raf = 0; const r = w.getBoundingClientRect(), st = w.querySelector('.xw-stage').offsetHeight;
+      const p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - st))); w.style.setProperty('--p', p.toFixed(4)); };
+    const on = () => { if (!raf) raf = requestAnimationFrame(tick); };
+    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on); tick();
+    xwOff = () => { removeEventListener('scroll', on); removeEventListener('resize', on); };
+  }
   function caseHTML(p) {
     const blocks = p.caseStudy || [];
     const steps = [...new Set(blocks.map(b => b.step).filter(Boolean))];
@@ -1915,7 +2192,7 @@ body.in-cs .cs-view{display:block}
     const grp = projects.filter(x => !!x.beyond === !!p.beyond), i = grp.indexOf(p), next = grp[(i + 1) % grp.length];
     return `<div class="cs-bar"><div class="wrap cs-bar-in"><button type="button" class="cs-back" data-home="${p.beyond ? 'beyond' : 'work'}">← ${p.beyond ? 'Back' : 'All work'}</button>
         ${steps.length > 1 ? `<nav class="cs-steps" aria-label="Case study phases">${steps.map((s, k) => `<button type="button" data-step="${esc(s)}">${String(k + 1).padStart(2, '0')} ${esc(s)}</button>`).join('')}</nav>` : ''}</div></div>
-      <article class="wrap cs">${body}</article>
+      <article class="wrap cs${p.theme ? ' x-' + esc(p.theme) : ''}">${body}</article>${p.theme === 'xmas' ? XGAME : ''}
       ${next && next !== p ? `<button type="button" class="cs-next" data-cs="${esc(next.id)}"><div class="wrap"><span class="mono">Next project →</span><b>${esc(next.title)}</b></div></button>` : ''}`;
   }
 
@@ -1927,12 +2204,12 @@ body.in-cs .cs-view{display:block}
     const m = location.hash.match(/^#work\/([\w-]+)/);
     const p = m && projects.find(x => x.id === m[1]);
     if (p) {
-      if (curCs !== p.id) { csv.innerHTML = caseHTML(p); curCs = p.id; reveal(csv); wireSteps(); }
-      document.body.classList.add('in-cs'); window.scrollTo(0, 0); fitAll(csv);
+      if (curCs !== p.id) { csv.innerHTML = caseHTML(p); curCs = p.id; reveal(csv); wireSteps(); if (p.theme === 'xmas') { xGame(); xWish(); } }
+      document.body.classList.add('in-cs'); document.body.classList.toggle('xmas', p.theme === 'xmas'); window.scrollTo(0, 0); fitAll(csv);
       document.title = `${p.title} — Emma Neznikova`;
     } else {
       const was = document.body.classList.contains('in-cs');
-      document.body.classList.remove('in-cs'); curCs = null; csv.innerHTML = '';
+      document.body.classList.remove('in-cs', 'xmas'); curCs = null; csv.innerHTML = '';
       document.title = 'Emma Neznikova — UX/UI Designer';
       fitAll(home);
       const id = location.hash.slice(1);
