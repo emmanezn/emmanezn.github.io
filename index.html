@@ -100,7 +100,6 @@ const CONFIG = {
       "I'm Emma, 21, from Slovakia, studying UX Design at The Hague University of Applied Sciences. I like a challenge. Put me in a situation I've never been in and I'll figure it out, and I learn fast along the way.",
       "I grew up going to summer schools abroad, surrounded by people from everywhere. It taught me to communicate clearly and to feel at home in diverse teams. I work well on my own and in a group, and if the group needs someone to lead, I'm happy to step up.",
       "I'm organised, I keep my deadlines, and I care about the small details people notice without realising it. So far I've redesigned a website for a social-impact collective, worked in a team to visualise the impact of women's organisations in a community of practice, built a biodiversity trail for a test park in Binckhorst and designed an ordering portal for a microgreen farm.",
-      "When I'm not designing, I'm crocheting, sewing, cooking, baking or drawing. It's the same thing I love about UX, just with different materials.",
     ],
     facts: [
       { label: "Studying", value: "Communication & Multimedia Design (UX) · The Hague University of Applied Sciences" },
@@ -115,7 +114,7 @@ const CONFIG = {
   },
 
   /* little things about me — the moving strip under About */
-  personality: [ "Can’t walk past a badly designed sign", "Grew up in my family’s flower shop", "Loud type & a lot of red stars", "Posters for our student radio", "Grew up in summer schools abroad", "Fast learner", "Baking & cooking", "Sewing & crocheting", "Drawing", "Never miss a deadline", "Style is part of how I think", "From Slovakia, living in The Hague" ],
+  personality: [ "Can’t walk past a badly designed sign", "Grew up in my family’s flower shop", "Loud type & a lot of red stars", "Posters for our student radio", "Grew up in summer schools abroad", "Fast learner", "Never miss a deadline", "Style is part of how I think", "From Slovakia, living in The Hague" ],
 
   links: [ { label: "LinkedIn", url: "https://www.linkedin.com/in/emma-neznikova-583a33330/" }, { label: "Instagram", url: "" }, { label: "Behance", url: "" } ],
 
@@ -2699,6 +2698,56 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
 .life img{width:100%; height:100%; object-fit:cover; display:block; transition:scale .6s}
 .life figure:hover img{scale:1.05}
 @media (max-width:860px){.life-in{grid-template-columns:repeat(3,1fr)} .life figure:nth-child(n+7){display:none}}
+
+/* home doors: photos roll out big over the right side on hover */
+.dr-i{position:relative}
+.dr-ims{position:absolute !important; right:56px; top:50%; translate:0 -50%; height:clamp(90px,8.5vw,130px) !important; width:auto !important; overflow:visible !important; padding:0 !important; z-index:2; pointer-events:none; gap:10px}
+.dr-ims img{aspect-ratio:4/5; box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.dr-i em{transition:opacity .2s; grid-column:4} .dr-i i{grid-column:5}
+.dr-i:hover em{opacity:0}
+@media (max-width:1100px){ .dr-ims img:nth-child(n+4){display:none !important} }
+
+/* fixes: band never overlaps intro, wall always fits its column */
+.ph-img{margin-bottom:clamp(40px,7vh,80px) !important; clip-path:inset(-300px -100vw 0 -100vw)}
+@media (max-width:860px){ .ph-img{margin-bottom:40px !important} }
+.cr{width:auto !important; margin-left:0 !important; margin-right:0 !important; box-shadow:0 0 0 100vmax #0b0b0b; clip-path:inset(0 -100vmax); container-type:inline-size}
+.cr-in{max-width:none !important; padding-left:0 !important; padding-right:0 !important}
+.cr-w{font-size:clamp(34px,8.2cqw,128px) !important}
+.cr-r{min-width:0}
+.cr-r b{flex:0 0 auto}
+@media (max-width:860px){ .cr-w{font-size:9.5cqw !important} }
+
+/* about: life collage */
+.life{padding:clamp(60px,9vh,110px) 0 clamp(20px,4vh,40px) !important}
+.life-in{display:grid !important; grid-template-columns:1.25fr repeat(4,1fr) !important; grid-auto-rows:auto; gap:clamp(18px,2.4vw,36px) clamp(14px,2vw,28px) !important; align-items:start}
+.life-h{grid-row:span 2; align-self:center}
+.life-h .mono{color:var(--red); display:block; margin-bottom:14px}
+.life-h h2{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(40px,4.6vw,76px); line-height:.9; margin:0}
+.life figure{aspect-ratio:auto !important; overflow:visible !important; background:#fff !important; padding:8px 8px 0; box-shadow:0 1px 0 rgba(0,0,0,.06), 0 12px 26px rgba(0,0,0,.12); rotate:var(--r); translate:none !important; transition:rotate .35s, scale .35s}
+.life figure:hover{rotate:0deg; scale:1.04; z-index:2}
+.life figure img{aspect-ratio:4/5; height:auto !important; width:100%; object-fit:cover}
+.life figure:hover img{scale:1 !important}
+.life figcaption{font-family:"Pen",cursive; font-size:clamp(17px,1.5vw,22px); color:var(--ink); padding:6px 2px 9px; text-align:center; line-height:1}
+@media (max-width:860px){ .life-in{grid-template-columns:1fr 1fr !important} .life-h{grid-column:1 / -1; grid-row:auto} .life figure:nth-child(n+7){display:block !important}  }
+/* about: story as editorial rows */
+.ab-story > .mono{display:none}
+.ab-story-g{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr); gap:clamp(30px,5vw,90px); align-items:start}
+.ab-story-g h2{position:sticky; top:110px; font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(56px,7.4vw,124px); line-height:.86; margin:0}
+.ab-story-g h2 span{color:var(--red); font-size:.45em; vertical-align:top; margin-left:.1em}
+.ab-row{display:grid; grid-template-columns:54px minmax(0,1fr); column-gap:18px; padding:26px 0 30px; border-top:2px solid var(--ink)}
+.ab-row:last-child{border-bottom:2px solid var(--ink)}
+.ab-n{font-family:var(--f-mono); color:var(--red); font-size:14px; padding-top:8px; grid-row:span 2}
+.ab-row b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(28px,2.8vw,44px); line-height:.95; margin-bottom:12px}
+.ab-row p{margin:0; font-size:18px; line-height:1.6; max-width:56ch}
+@media (max-width:860px){ .ab-story-g{grid-template-columns:1fr} .ab-story-g h2{position:static} .ab-row{grid-template-columns:40px 1fr} .ab-row p{font-size:16px} }
+
+/* about photos: clean grid, no polaroid */
+.life figure{background:none !important; padding:0 !important; box-shadow:none !important; rotate:none !important}
+.life figure:hover{rotate:none !important; scale:1 !important}
+.life figure img{transition:scale .6s}
+.life figure:hover img{scale:1.04 !important}
+.life figure{overflow:hidden !important}
+.life figcaption{display:none}
 </style>
 </head>
 <body>
@@ -2841,10 +2890,9 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
       </div>
     </section>
     <div class="tick me-tick" aria-label="Things about me"><div class="tick-in">${[0,1].map(k => (C.personality || []).map(t => `<span${k ? ' aria-hidden="true"' : ''}>${esc(t)}</span>`).join('')).join('')}</div></div>
-    <section class="life"><div class="life-in">${["puppies","painting","clay-front","outfit","bouquet","nails-starfish","clay-keys"].map((n, i) => `<figure class="rv" style="--d:${i * .05}s"><img src="${esc(u(`work/me/life/${n}.jpg`))}" alt="" loading="lazy"></figure>`).join("")}</div></section>
+
     <section class="pg wrap ab-story">
-      <span class="mono">More about me</span>
-      <div class="ab-story-cols">${(a.text || []).slice(1).map((t, i) => `<div class="rv"><b>${['Working with people','How I work','Off screen'][i] || ''}</b><p>${esc(t)}</p></div>`).join('')}</div>
+      <div class="ab-story-g"><h2 class="rv">More<br>about<br>me<span>★</span></h2><div class="ab-story-l">${(a.text || []).slice(1).map((t, i) => `<div class="ab-row rv"><span class="ab-n">0${i + 1}</span><b>${['Working with people','How I work'][i] || ''}</b><p>${esc(t)}</p></div>`).join('')}</div></div>
     </section>
     <section class="pg wrap" style="padding-top:0">${nextLink(pg)}</section>`;
     if (pg === 'contact') return `<section class="pg wrap ctp">
@@ -3229,7 +3277,7 @@ document.addEventListener('submit', e => {
   })();
 
   /* show only whole photos in the menu strips */
-  const drFit = () => document.querySelectorAll('.dr-ims').forEach(st => { const w = st.clientWidth; let used = 0;
+  const drFit = () => document.querySelectorAll('.dr-ims').forEach(st => { st.querySelectorAll('img').forEach(im => im.style.display = ''); return; const w = st.clientWidth; let used = 0;
     st.querySelectorAll('img').forEach(im => { im.style.display = ''; const iw = st.clientHeight * .8 + 8; used += iw; if (used - 8 > w) im.style.display = 'none'; }); });
   addEventListener('resize', drFit); new MutationObserver(drFit).observe(document.getElementById('home'), { childList: true }); setTimeout(drFit, 100);
 
