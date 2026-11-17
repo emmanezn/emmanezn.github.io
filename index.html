@@ -2757,6 +2757,16 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
 .cr-f{border-top:2px solid var(--ink) !important}
 .cr-f h2{color:var(--ink)}
 .cr-f p{color:var(--ink) !important}
+
+/* hero availability: status line instead of a button-looking badge */
+.avail{display:inline-flex; align-items:center; gap:12px; margin-right:auto; padding:0}
+.avail i{position:relative; width:10px; height:10px; border-radius:50%; background:#2fb36b; flex:0 0 auto}
+.avail i::after{content:""; position:absolute; inset:-5px; border-radius:50%; border:2px solid #2fb36b; opacity:0; animation:avp 2s ease-out infinite}
+@keyframes avp{0%{transform:scale(.4); opacity:.9} 100%{transform:scale(1.4); opacity:0}}
+.avail .mono{font-size:11px; letter-spacing:.14em; text-transform:uppercase; opacity:.55}
+.avail b{font-family:var(--f-body); font-weight:500; font-size:clamp(15px,1.2vw,18px); border-bottom:2px solid var(--red); padding-bottom:2px}
+.hero-ctas{align-items:center}
+@media (prefers-reduced-motion:reduce){ .avail i::after{animation:none} }
 </style>
 </head>
 <body>
@@ -2937,7 +2947,7 @@ body.watch .cs-next, body.watch .cs-next b{color:#efece6}
       <div class="wrap"><p class="big hero-role"><span class="fit">UX<i>★</i>UI<i>★</i>Designer</span></p></div>
       <div class="wrap hero-row">
         <p>${esc(h.intro)}</p>
-        <div class="hero-ctas"><span class="badge mono">${esc(C.availability)}</span><a class="btn" href="#work">${esc(h.cta || 'See the work')} →</a></div>
+        <div class="hero-ctas"><span class="avail"><i aria-hidden="true"></i><span class="mono">Status</span><b>${esc(C.availability)}</b></span><a class="btn" href="#work">${esc(h.cta || 'See the work')} →</a></div>
       </div>
     </section>
     <section class="wrap dr">
