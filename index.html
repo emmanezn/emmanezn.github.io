@@ -121,13 +121,13 @@ const CONFIG = {
   projects: [
   {
     "id": "santa-village",
-    "beyond": true,
+    "order": 99,
     "title": "Santa’s Village",
     "meta": "Experience design · Kvety Naomi, Trenčín · Designed & built by me",
     "cover": "work/santa/final-hero.jpg",
     "status": "finished",
     "year": "2026",
-    "summary": "I turned the upper floor of my parents’ flower store into a Santa Claus village: a walk-through Christmas experience that I designed and built myself, from the barn to the elves’ workshop.",
+    "summary": "I turned the upper floor of my family’s flower store into a Santa Claus village: a walk-through Christmas experience that I designed and built myself, from the barn to the elves’ workshop.",
     "theme": "xmas",
     "caseStudy": [
       {
@@ -227,6 +227,70 @@ const CONFIG = {
           {
             "name": "Letters to Mikuláš",
             "text": "From 6 December kids can write a letter at their own little desk."
+          }
+        ]
+      },
+      {
+        "step": "The space",
+        "type": "xjourney",
+        "label": "Customer journey",
+        "title": "From the shop floor to Santa’s desk",
+        "text": "The gallery upstairs is U-shaped, wrapped around the open shop below. The village takes up one arm of the U. I mapped how a family moves through it, how they feel at each stop and what I designed for that moment.",
+        "plan": [
+          "Stairs",
+          "Reindeer barn",
+          "Dielňa",
+          "Gift line",
+          "Letters to Mikuláš"
+        ],
+        "stages": [
+          {
+            "name": "Downstairs",
+            "doing": "Shopping for flowers, spots lights and reindeer up on the gallery.",
+            "feel": 2,
+            "mood": "Curious",
+            "touch": "Garland on the railing, sign by the stairs",
+            "design": "Make the village visible from the shop floor"
+          },
+          {
+            "name": "The stairs",
+            "doing": "Climbs up with the kids.",
+            "feel": 3,
+            "mood": "Excited",
+            "touch": "Lit stairs, the sled at the top",
+            "design": "Lights that lead the way up"
+          },
+          {
+            "name": "Reindeer barn",
+            "doing": "Stops for the first photo.",
+            "feel": 4.5,
+            "mood": "Wow",
+            "touch": "Reindeer in the stable windows, STOP HERE sign",
+            "design": "A clear photo spot right at the entrance"
+          },
+          {
+            "name": "Dielňa",
+            "doing": "Looks at the details, the kids hunt for elves.",
+            "feel": 4,
+            "mood": "Playful",
+            "touch": "Crates of elves, hats and gifts",
+            "design": "Lots to discover at kid height"
+          },
+          {
+            "name": "Gift line & letters",
+            "doing": "Kids write a letter to Mikuláš.",
+            "feel": 5,
+            "mood": "Proud",
+            "touch": "Workbench, little desk, the red house",
+            "design": "Something kids can do without staff"
+          },
+          {
+            "name": "Back down",
+            "doing": "Looks over the railing, shops, posts a photo.",
+            "feel": 3.5,
+            "mood": "Warm",
+            "touch": "View of the Christmas shop below, Instagram",
+            "design": "The route ends with a view of the shop"
           }
         ]
       },
@@ -2328,6 +2392,44 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
 .ab-story-cols b{display:block; font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(26px,2.6vw,40px); line-height:.95; margin-bottom:14px}
 .ab-story-cols p{margin:0; font-size:17px; line-height:1.6; max-width:42ch}
 @media (max-width:820px){.ab-story-cols{grid-template-columns:1fr}}
+
+/* santa: customer journey map */
+.xj-top{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(24px,4vw,64px); align-items:center; margin-bottom:clamp(28px,4vw,48px)}
+.xj-top .xhead{text-align:left; margin:0; display:block; max-width:none}
+.xj-top .xhead h2{font-size:clamp(38px,4.6vw,76px)}
+.xj-top .xhead p{max-width:46ch; margin-top:6px}
+.xj-plan{margin:0}
+.xjp{width:100%; height:auto; display:block; overflow:visible}
+.xjp-u{fill:#fff; stroke:var(--xg); stroke-width:3}
+.xjp-v{fill:var(--xg)}
+.xjp-c{font:italic 20px var(--xs); fill:var(--xg); opacity:.7}
+.xjp-s{font:italic 16px var(--xs); fill:var(--xg); opacity:.55}
+.xjp-st line{stroke:var(--xc); stroke-width:2}
+.xjp-r{fill:none; stroke:var(--xr); stroke-width:3; stroke-dasharray:7 7; stroke-linecap:round; stroke-linejoin:round}
+.xjp-d{fill:var(--xr)} .xjp-n{font:800 14px var(--xt); fill:#fff}
+.xjp-l{font:800 14px var(--xt); fill:var(--xc); letter-spacing:-.02em} .xjp-l2{font:italic 17px var(--xs); fill:var(--xg)}
+.xj-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px}
+.xj-map{display:grid; grid-template-columns:130px repeat(var(--n),minmax(140px,1fr)); min-width:960px; border-top:2px solid var(--xg)}
+.xj-map > *{border-bottom:1px solid rgba(23,72,44,.18); padding:14px 12px 16px}
+.xj-rl{font-family:var(--xs); font-style:italic; font-size:19px; color:var(--xr); padding-left:0}
+.xj-h{display:flex; flex-direction:column; gap:2px} .xj-h .xno{font-size:18px} .xj-h b{font-family:var(--xt); font-weight:800; font-size:18px; letter-spacing:-.03em; line-height:1.1; color:var(--xg)}
+.x-xmas .xj-c{font-size:15px; line-height:1.45}
+.x-xmas .xj-dz{font-weight:600}
+.xj-curve{grid-column:2 / -1; position:relative; height:150px; padding:0 !important}
+.xj-curve svg{position:absolute; inset:14px 0; width:100%; height:calc(100% - 28px); overflow:visible}
+.xj-curve path{fill:none; stroke:var(--xr); stroke-width:3; vector-effect:non-scaling-stroke}
+.xj-curve span{position:absolute; translate:-50% -10px; margin-top:0; display:flex; flex-direction:column; align-items:center}
+.xj-curve span{top:calc(14px + var(--y) * (100% - 28px))}
+.xj-curve i{width:14px; height:14px; border-radius:50%; background:var(--xr); border:3px solid var(--xc); box-shadow:0 0 0 2px var(--xr)}
+.xj-curve em{font-family:var(--xs); font-size:18px; color:var(--xg); margin-top:4px; white-space:nowrap}
+@media (max-width:860px){ .xj-top{grid-template-columns:1fr} .xj-map{grid-template-columns:92px repeat(var(--n),150px); min-width:0} .xj-rl{font-size:17px} .xj-scroll::before{content:'swipe the map →'; display:block; font:italic 17px var(--xs); color:var(--xr); margin-bottom:8px} }
+
+.xjp-st2 line{stroke:var(--xg)}
+/* work: last odd card spans the full row */
+.cc-wide{grid-column:1 / -1; flex-direction:row; align-items:center; gap:clamp(30px,4vw,60px)}
+.cc-wide .cc-img{flex:0 0 58%}
+.cc-wide .cc-b{padding-top:0}
+@media (max-width:820px){ .cc-wide{flex-direction:column; align-items:stretch} .cc-wide .cc-img{flex:none} .cc-wide .cc-b{padding-top:20px} }
 </style>
 </head>
 <body>
@@ -2403,12 +2505,12 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
   function pageHead(n, title, text) { return `<header class="ph"><span class="ph-k mono rv">${n}</span><h1 class="ph-t rv">${title}</h1>${text ? `<p class="ph-p rv">${text}</p>` : ''}</header>`; }
   function homeHTML(pg = 'home') {
     const h = C.hero || {}, a = C.about || {}, b = C.beyond || {};
-    const feat = projects.filter(p => p.beyond), work = projects.filter(p => !p.beyond);
+    const feat = projects.filter(p => p.beyond), work = projects.filter(p => !p.beyond).sort((a, b) => (a.order || 0) - (b.order || 0));
     const xp = (C.experience || []).flatMap(bl => bl.items.map(it => ({ ...it, group: bl.title })));
     const links = (C.links || []).filter(l => l.url);
     if (pg === 'work') return `<section class="pg wrap">
-      <div class="ph-wrap"><svg class="ph-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="49.2,11.9 54.4,36.0 72.4,15.5 61.5,38.9 87.2,30.4 64.5,47.1 97.2,56.3 64.1,55.7 86.7,82.8 58.4,63.3 58.3,85.7 49.3,65.4 40.9,86.5 41.2,64.5 17.8,80.2 35.7,56.2 13.5,55.0 34.9,48.6 12.2,31.7 37.5,39.6 28.1,16.3 45.9,33.9"/></svg>${pageHead('01 — Work', 'Case studies', 'Four projects, from research to a working product. Pick one to read the full story.')}</div>
-      <div class="cg">${work.map((p, i) => { const has = (p.caseStudy || []).length; return `<button type="button" class="cc rv" style="--d:${(i % 2) * .1}s" ${has ? `data-cs="${esc(p.id)}"` : 'aria-disabled="true"'} data-cur="Read">
+      <div class="ph-wrap"><svg class="ph-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="49.2,11.9 54.4,36.0 72.4,15.5 61.5,38.9 87.2,30.4 64.5,47.1 97.2,56.3 64.1,55.7 86.7,82.8 58.4,63.3 58.3,85.7 49.3,65.4 40.9,86.5 41.2,64.5 17.8,80.2 35.7,56.2 13.5,55.0 34.9,48.6 12.2,31.7 37.5,39.6 28.1,16.3 45.9,33.9"/></svg>${pageHead('01 — Work', 'Case studies', 'Five projects, from research to a working product. Pick one to read the full story.')}</div>
+      <div class="cg">${work.map((p, i) => { const has = (p.caseStudy || []).length; return `<button type="button" class="cc rv${i === work.length - 1 && work.length % 2 ? ' cc-wide' : ''}" style="--d:${(i % 2) * .1}s" ${has ? `data-cs="${esc(p.id)}"` : 'aria-disabled="true"'} data-cur="Read">
         <span class="cc-img wk-img ht">${p.status === 'ongoing' ? '<span class="wk-stamp">In progress</span>' : ''}<img src="${esc(u(p.cover))}" alt="" loading="lazy"></span>
         <span class="cc-b"><span class="mono">${String(i + 1).padStart(2, '0')} · ${esc(p.year || '')}</span><b>${esc(p.title)}</b><span class="cc-s">${esc(p.summary || '')}</span>
         <span class="cc-tags">${(p.meta || '').split('·').map(t => t.trim()).filter(Boolean).slice(0, 3).map(t => `<i>${esc(t)}</i>`).join('')}</span></span></button>`; }).join('')}</div>
@@ -2545,6 +2647,28 @@ body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
         <figure>${ELF('b', 'top:-18px;right:14%')}${img(b.after.image, 'After')}<figcaption>${esc(b.after.caption)}</figcaption></figure></div>`,
     xroute: b => `<div class="xrt"><figure class="xrt-f">${img(b.image, b.alt)}</figure><div class="xrt-t">${lab(b.label)}<h2>${esc(b.title)}</h2><p>${esc(b.text)}</p>
         <ol>${(b.items || []).map((r, i) => `<li><span class="xno">0${i + 1}</span><div><h3>${esc(r.name)}</h3><p>${esc(r.text)}</p></div>${i === 2 ? ELF('r', 'right:0;top:14px') : ''}</li>`).join('')}</ol></div></div>`,
+    xjourney: b => { const st = b.stages || [], n = st.length, W = 1000, H = 120;
+      const pts = st.map((x, i) => [((i + .5) / n) * W, H - 14 - ((x.feel - 1) / 4) * (H - 34)]);
+      const d = pts.map((q, i) => i ? (() => { const p0 = pts[i - 1], cx = (p0[0] + q[0]) / 2; return `C${cx},${p0[1]} ${cx},${q[1]} ${q[0]},${q[1]}`; })() : `M${q[0]},${q[1]}`).join(' ');
+      const pl = b.plan || [];
+      const plan = `<svg class="xjp" viewBox="0 0 470 330" role="img" aria-label="Floor plan: U-shaped gallery around the open shop, stairs on the left, the village on the right arm">
+        <path class="xjp-u" d="M20,20 H450 V300 H250 V110 H120 V300 H20 Z"/>
+        <path class="xjp-v" d="M250,20 H450 V300 H250 Z"/>
+        <text class="xjp-c" x="185" y="200" text-anchor="middle">open to the</text><text class="xjp-c" x="185" y="224" text-anchor="middle">shop below</text>
+        <text class="xjp-s" x="140" y="48" text-anchor="middle">rest of the gallery</text>
+        <g class="xjp-st xjp-st2">${[0,1,2,3,4].map(k => `<line x1="30" x2="110" y1="${272 + k * 6}" y2="${272 + k * 6}"/>`).join('')}</g>
+        <path class="xjp-r" d="M70,266 V78 H278 V286"/><path class="xjp-r" d="M268,274 L278,290 L288,274"/>
+        ${pl.slice(1).map((t, k) => { const y = 120 + k * 46; return `<circle class="xjp-d" cx="278" cy="${y}" r="13"/><text class="xjp-n" x="278" y="${y + 5}" text-anchor="middle">${k + 1}</text><text class="xjp-l" x="300" y="${y + 5}">${esc(t)}</text>`; }).join('')}
+        <text class="xjp-l2" x="20" y="324">↑ ${esc(pl[0] || '')} from the shop</text>
+      </svg>`;
+      return `<div class="xj"><div class="xj-top"><div class="xhead">${lab(b.label)}<h2>${esc(b.title)}</h2><p>${esc(b.text)}</p></div><figure class="xj-plan">${plan}<figcaption>Up the stairs, along the gallery, into the village (green)</figcaption></figure></div>
+      <div class="xj-scroll"><div class="xj-map" style="--n:${n}">
+        <div class="xj-rl"></div>${st.map((x, i) => `<div class="xj-h"><span class="xno">0${i + 1}</span><b>${esc(x.name)}</b></div>`).join('')}
+        <div class="xj-rl">Doing</div>${st.map(x => `<p class="xj-c">${esc(x.doing)}</p>`).join('')}
+        <div class="xj-rl">Feeling</div><div class="xj-curve"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><path d="${d}"/></svg>${pts.map((q, i) => `<span style="left:${q[0] / 10}%;--y:${(q[1] / H).toFixed(3)}"><i></i><em>${esc(st[i].mood)}</em></span>`).join('')}</div>
+        <div class="xj-rl">Touchpoints</div>${st.map(x => `<p class="xj-c">${esc(x.touch)}</p>`).join('')}
+        <div class="xj-rl">What I designed</div>${st.map(x => `<p class="xj-c xj-dz">${esc(x.design)}</p>`).join('')}
+      </div></div></div>`; },
     xpolaroids: b => `<div class="xhead">${lab(b.label)}<h2>${esc(b.title)}</h2><p>${esc(b.text)}</p></div>
         <div class="xgrid">${(b.items || []).map((it, i) => `<figure class="g${i + 1}">${i === 2 ? ELF('p', 'left:-12px;bottom:40px') : ''}${img(it.image, it.caption)}<figcaption><span>0${i + 1}</span> ${esc(it.caption)}</figcaption></figure>`).join('')}</div>`,
     xnote: b => `<div class="xnt"><p>${esc(b.text)}</p>${b.note ? `<span class="xnt-n">${esc(b.note)}</span>` : ''}</div>`,
