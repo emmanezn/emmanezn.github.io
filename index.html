@@ -80,14 +80,14 @@ const CONFIG = {
     ],
     /* Video reels (vertical). Add more lines like these. */
     videos: [
-      { src: "work/video/grow-kit.mp4", poster: "work/video/grow-kit.jpg", title: "Growing kit how-to" },
-      { src: "work/video/recipe-2.mp4", poster: "work/video/recipe-2.jpg", title: "Microgreen pesto pasta" },
-      { src: "work/video/recipe-4.mp4", poster: "work/video/recipe-4.jpg", title: "Summer salad" },
-      { src: "work/video/medi-studio.mp4", poster: "work/video/medi-studio.jpg", title: "Medi Studio" },
+      { src: "work/video/grow-kit.mp4", poster: "work/video/grow-kit.jpg", title: "Growing kit how-to", meta: "Marek na Farme · reel" },
+      { src: "work/video/recipe-2.mp4", poster: "work/video/recipe-2.jpg", title: "Microgreen pesto pasta", meta: "Marek na Farme · recipe reel" },
+      { src: "work/video/recipe-4.mp4", poster: "work/video/recipe-4.jpg", title: "Summer salad", meta: "Marek na Farme · recipe reel" },
+      { src: "work/video/medi-studio.mp4", poster: "work/video/medi-studio.jpg", title: "Medi Studio", meta: "Medi Studio · product promo" },
     ],
     videosLabel: "Reels for Marek na Farme & Medi Studio · filmed and edited by me",
     /* Wide (landscape) film under the reels */
-    film: { src: "work/video/naomi-christmas.mp4", poster: "work/video/naomi-christmas.jpg", title: "Christmas collection", label: "Promo film for Kvety Naomi · filmed and edited by me" },
+    film: { src: "work/video/naomi-christmas-web.mp4", poster: "work/video/naomi-christmas.jpg", title: "Christmas collection", label: "Promo film for Kvety Naomi · filmed and edited by me" },
     photos: [ "work/pg/street-1.jpg", "work/pg/mirror-cap.jpg", "work/pg/subway.jpg", "work/pg/leather-1.jpg", "work/pg/poster-wall.jpg" ],
   },
 
@@ -95,9 +95,9 @@ const CONFIG = {
   about: {
     portrait: "work/me/portrait.jpg",
     text: [
-      "I'm Emma: 21, from Slovakia, studying UX Design at The Hague University of Applied Sciences. I work where research meets visuals. I listen to people first, then shape what they see, tap and feel.",
+      "I'm Emma: 21, from Slovakia, studying UX Design at The Hague University of Applied Sciences. I work where research meets visuals. I listen to people first, then shape what they see, tap and feel. Away from the screen I sew and crochet.",
       "So far I've worked on a website redesign for a social-impact collective, a biodiversity trail for a test park in Binckhorst, and an ordering portal for a microgreen farm.",
-      "Outside of UX I make posters, edit videos and decorate my family's flower store, so visual detail is always part of how I design.",
+      "Outside of UX I make posters, edit videos, sew, crochet and decorate my family's flower store, so visual detail is always part of how I design.",
     ],
     facts: [
       { label: "Studying", value: "Communication & Multimedia Design (UX) · The Hague University of Applied Sciences" },
@@ -111,7 +111,7 @@ const CONFIG = {
   },
 
   /* little things about me — the moving strip under About */
-  personality: [ "Can’t walk past a badly designed sign", "Grew up in my family’s flower shop", "Loud type & a lot of red stars", "Posters for Lab Rats Radio & muse*", "A new nail set every few weeks", "Baking & decorating cakes", "Filming & editing since 2020", "Style is part of how I think", "From Slovakia, living in The Hague" ],
+  personality: [ "Can’t walk past a badly designed sign", "Grew up in my family’s flower shop", "Loud type & a lot of red stars", "Posters for Lab Rats Radio & muse*", "A new nail set every few weeks", "Baking & decorating cakes", "Sewing & crocheting", "Filming & editing", "Style is part of how I think", "From Slovakia, living in The Hague" ],
 
   links: [ { label: "LinkedIn", url: "https://www.linkedin.com/in/emma-neznikova-583a33330/" }, { label: "Instagram", url: "" }, { label: "Behance", url: "" } ],
 
@@ -1259,7 +1259,7 @@ body[data-hc="red-on-black"] .hero .badge{background:transparent; box-shadow:ins
 .tick.red span::after{color:var(--ink)}
 
 /* sections */
-.sec{padding:clamp(70px,12vh,140px) 0}
+.sec{padding:clamp(60px,10vh,120px) 0}
 .sec-h .fit, .ct h2 .fit:first-child{margin-top:.07em}
 .sec-h{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:clamp(34px,6vh,72px)}
 .sec-h .fit{color:var(--ink)}
@@ -1272,7 +1272,7 @@ body[data-hc="red-on-black"] .hero .badge{background:transparent; box-shadow:ins
 .wk:focus-visible{outline:3px solid var(--red); outline-offset:6px}
 .wk-t{display:flex; flex-direction:column; gap:14px; min-width:0}
 .wk-n{font-family:var(--f-mono); font-size:13px; color:var(--red)}
-.wk h3{font-family:var(--f-big); font-weight:400; text-transform:uppercase; line-height:.86; margin:0; font-size:clamp(52px,8vw,128px); transition:color .25s}
+.wk h3{font-family:var(--f-big); font-weight:400; text-transform:uppercase; line-height:.86; margin:0; font-size:clamp(40px,5.2vw,84px); transition:color .25s}
 .wk:hover h3{color:var(--blue)}
 .wk p{margin:0; max-width:520px}
 .wk-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto}
@@ -1559,7 +1559,7 @@ body.in-cs .cs-view{display:block}
 .abp{--abp:var(--blue); --abp-t:var(--paper); min-height:max(100vh,680px); display:grid; grid-template-rows:1fr; background:var(--abp); color:var(--abp-t); position:relative; overflow:hidden}
 .abp-pk{position:relative; padding:clamp(110px,14vh,150px) 24px 26px; display:flex; flex-direction:column}
 .abp-pk::after{content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:soft-light; opacity:.6; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .25' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.abp-big{align-self:flex-start; font-family:var(--f-big); font-weight:400; font-size:21vw; line-height:.74; margin:.02em 0 0; white-space:nowrap; transform-origin:0 0; color:var(--abp-t); position:relative; z-index:1}
+.abp-big{align-self:flex-start; font-family:var(--f-big); font-weight:400; font-size:17vw; line-height:.74; margin:.02em 0 0; white-space:nowrap; transform-origin:0 0; color:var(--abp-t); position:relative; z-index:1}
 .abp-sig{position:absolute; right:4vw; font-family:"Pen",cursive; font-size:clamp(40px,4.2vw,62px); line-height:.8; transform:rotate(-8deg); z-index:2}
 .abp-bot{margin-top:auto; display:grid; grid-template-columns:1.35fr 1.25fr 1fr 1fr; gap:clamp(18px,2.4vw,40px); font-size:14.5px; line-height:1.45; position:relative; z-index:2}
 .abp-bot b{display:block; font:400 11px/1.2 var(--f-mono); letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px; opacity:.85}
@@ -1630,7 +1630,7 @@ body.in-cs .cs-view{display:block}
 
 .ct-grid:has(.mf1){grid-template-columns:1fr}
 .mf1{border-top:3px solid var(--ink); padding-top:clamp(24px,4vh,40px)}
-.mf1-line{margin:0; font-family:var(--f-big); text-transform:uppercase; font-size:clamp(34px,5.4vw,88px); line-height:1.12; color:var(--ink)}
+.mf1-line{margin:0; font-family:var(--f-big); text-transform:uppercase; font-size:clamp(26px,3.6vw,58px); line-height:1.15; color:var(--ink)}
 .mf1-line input{font:inherit; color:var(--paper); background:transparent; border:0; border-bottom:4px solid var(--paper); outline:none; padding:0 .08em; margin:0 .05em; min-width:3ch; max-width:100%; text-transform:uppercase}
 .mf1-line input::placeholder{color:rgba(239,236,230,.5)}
 .mf1-line input:focus{border-color:var(--ink); color:var(--paper)}
@@ -1893,6 +1893,384 @@ body:not(.xmas) .xgame{display:none}
   .xst{grid-template-columns:1fr} .xst div + div{border-left:0; border-top:1px solid rgba(23,72,44,.25); padding-left:0}
   .xh-hint{font-size:17px}
 }
+.prn-ht{background:var(--blue)}
+.prn-ht .prn-main{filter:grayscale(1) contrast(1.45) brightness(1.06); mix-blend-mode:screen; transition:filter .5s, mix-blend-mode .5s, transform .8s cubic-bezier(.2,.8,.2,1)}
+.prn-ht::after{content:""; position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.42; background-image:radial-gradient(circle, #000 36%, transparent 40%); background-size:4px 4px; transition:opacity .5s}
+.prn-c:hover .prn-ht .prn-main{filter:none; mix-blend-mode:normal} .prn-c:hover .prn-ht::after{opacity:0}
+
+/* Beyond UX: chapters + video */
+.bey .lead{max-width:40ch}
+.bch{display:grid; grid-template-columns:auto 1fr 1.1fr auto; gap:8px clamp(18px,3vw,48px); align-items:end; margin:clamp(80px,12vh,140px) 0 clamp(28px,4vh,44px); padding-top:22px; border-top:1px solid rgba(240,235,225,.25)}
+.bch-n{font-family:var(--f-big); font-size:clamp(44px,5vw,80px); line-height:.8; color:transparent; -webkit-text-stroke:1.5px var(--coral)}
+.bch h3{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(32px,3.6vw,58px); line-height:.85; margin:0}
+.bch p{margin:0; max-width:48ch; font-size:16px; line-height:1.55; opacity:.82}
+.bch-c{color:var(--coral); white-space:nowrap}
+.bch + .post-row{margin-top:0} .bch + .prn{margin-top:0}
+.prn{margin-top:0}
+.vd-film{position:relative; margin:0 calc(50% - 50vw) clamp(40px,7vh,80px); background:#000; overflow:hidden}
+.vd-film video{display:block; width:100%; max-height:82vh; aspect-ratio:16/9; object-fit:cover}
+.vd-play{all:unset; position:absolute; inset:0; cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; padding:clamp(20px,4vw,60px) max(var(--pad), calc(50vw - 660px)); background:linear-gradient(180deg, rgba(0,0,0,.05) 40%, rgba(0,0,0,.65)); transition:opacity .4s}
+.vd-btn{align-self:center; margin-top:auto; width:clamp(90px,9vw,130px); aspect-ratio:1; border-radius:50%; display:grid; place-items:center; background:var(--red); color:#fff; font-size:clamp(28px,3vw,40px); padding-left:6px; box-sizing:border-box; transition:scale .35s cubic-bezier(.3,1.6,.5,1)}
+.vd-play:hover .vd-btn{scale:1.1}
+.vd-ft{margin-top:auto; display:flex; flex-direction:column; gap:6px; color:#fff}
+.vd-ft .mono{color:var(--coral)} .vd-ft b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(44px,6vw,96px); line-height:.85}
+.vd-film.on .vd-play{opacity:0; pointer-events:none}
+.vd-reels{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,30px); align-items:start}
+.vr{margin:0; rotate:var(--r); transition:rotate .5s cubic-bezier(.3,1.4,.5,1), translate .5s cubic-bezier(.3,1.4,.5,1)}
+.vr:nth-child(even){margin-top:clamp(30px,6vh,70px)}
+.vr:hover,.vr.live{rotate:0deg; translate:0 -8px}
+.vr-ph{position:relative; aspect-ratio:9/16; overflow:hidden; background:#000; cursor:pointer; box-shadow:0 30px 50px -28px rgba(0,0,0,.9)}
+.vr-ph video{display:block; width:100%; height:100%; object-fit:cover}
+.vr-snd{position:absolute; left:10px; bottom:10px; background:var(--red); color:#fff; padding:5px 8px; font-size:10px; opacity:0; transition:opacity .3s}
+.vr:hover .vr-snd{opacity:1} .vr.live .vr-snd{display:none}
+.vr figcaption{display:flex; gap:10px; align-items:baseline; margin-top:12px; font-family:var(--f-big); font-size:20px; text-transform:uppercase; line-height:1}
+.vr figcaption .mono{font-size:11px; color:var(--coral)}
+.vd-cap{margin-top:clamp(24px,4vh,40px) !important; color:var(--coral); opacity:.85}
+.bey .pg-cta{margin-top:0}
+@media (max-width:860px){
+  .bch{grid-template-columns:auto 1fr; align-items:end} .bch p,.bch-c{grid-column:1 / -1}
+  .vd-reels{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; margin:0 calc(-1 * var(--pad)); padding:10px var(--pad) 20px}
+  .vr{flex:0 0 62vw; scroll-snap-align:center; margin-top:0 !important}
+  .vd-ft b{font-size:36px} .vd-btn{width:70px}
+}
+
+/* scroll interactions (--en: 0→1 as it enters, --sp: 0→1 while it passes) */
+.bun{position:fixed; right:20px; bottom:20px; z-index:200; width:78px; height:54px; padding:9px 10px; box-sizing:border-box; background:var(--paper); box-shadow:0 8px 20px -10px rgba(0,0,0,.5); pointer-events:none}
+.bun circle{fill:var(--ink,#111)} .bun circle.hi{fill:var(--red)}
+body.xmas .xgame{right:auto; left:18px}
+.bun svg{display:block; width:100%; height:100%; overflow:visible}
+.bun g{display:none} .bun g.on{display:inline}
+body.xmas .bun{background:#f6f3ec} body.xmas .bun circle{fill:#17482c} body.xmas .bun circle.hi{fill:#e8302a}
+.bch-n{background:linear-gradient(var(--coral),var(--coral)) left bottom / 100% calc(var(--en,1) * 100%) no-repeat; -webkit-background-clip:text; background-clip:text}
+.bch h3{transform:translateX(calc((1 - var(--en,1)) * 60px)); opacity:calc(.2 + var(--en,1) * .8)}
+.post-row .post{transform:translateY(calc((1 - var(--en,1)) * (70px + var(--i,0) * 30px))) rotate(calc((1 - var(--en,1)) * (var(--i,0) - 3) * 1.5deg))}
+.prn-c .prn-main{scale:1.12; translate:0 calc((var(--sp,.5) - .5) * -60px)}
+.vd-film{clip-path:inset(0 calc((1 - var(--en,1)) * 10%) round calc((1 - var(--en,1)) * 28px))}
+.vd-film video{scale:calc(1.15 - var(--en,1) * .15)}
+.vd-reels .vr{transform:translateY(calc((1 - var(--en,1)) * (110px + var(--i,0) * 50px))) rotate(calc((1 - var(--en,1)) * (var(--i,0) - 1.5) * 6deg))}
+.pg-cta-pics img{transform:translateY(calc((1 - var(--en,1)) * 50px)) rotate(calc((1 - var(--en,1)) * -12deg))}
+.lead{transform:translateY(calc((1 - var(--en,1)) * 30px)); opacity:calc(.3 + var(--en,1) * .7)}
+
+
+/* Video: index + player */
+.vx{--en:1; display:grid; grid-template-columns:1.25fr 1fr; gap:clamp(30px,5vw,90px); align-items:center}
+.vx-l{list-style:none; margin:0; padding:0; border-top:1px solid rgba(240,235,225,.2)}
+.vx-i{all:unset; box-sizing:border-box; cursor:pointer; width:100%; will-change:transform; display:grid; grid-template-columns:44px 1fr auto; column-gap:14px; align-items:baseline; padding:clamp(14px,2.2vh,22px) 0; border-bottom:1px solid rgba(240,235,225,.2);
+  transform:translateX(calc((1 - var(--en)) * (60px + var(--i) * 40px))); opacity:calc(var(--en) * 1.4 - var(--i) * .1); transition:color .25s}
+.vx-i .mono{font-size:12px; color:var(--coral)}
+.vx-i b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(26px,2.8vw,44px); line-height:.9; transition:translate .35s cubic-bezier(.3,1.4,.5,1), color .25s; color:rgba(240,235,225,.45)}
+.vx-i em{grid-column:2; font-style:normal; font-size:11px !important; opacity:.7; margin-top:6px; color:var(--paper) !important}
+.vx-i i{font-style:normal; color:var(--red); opacity:0; transition:opacity .25s; align-self:center}
+.vx-i:hover b,.vx-i.on b{color:var(--paper); translate:14px 0}
+.vx-i.on i{opacity:1; animation:vxb 1.2s infinite}
+.vx-i:focus-visible{outline:2px dashed var(--red); outline-offset:4px}
+@keyframes vxb{50%{opacity:.25}}
+.vx-p{position:sticky; top:140px; display:flex; flex-direction:column; align-items:center}
+.vx-f{position:relative; width:min(100%, 380px); aspect-ratio:9/16; background:#000; overflow:hidden; box-shadow:0 40px 70px -30px rgba(0,0,0,.95); transition:width .45s cubic-bezier(.6,.05,.3,1), aspect-ratio .45s cubic-bezier(.6,.05,.3,1); will-change:transform;
+  rotate:calc((1 - var(--en)) * 6deg); scale:calc(.85 + var(--en) * .15)}
+.vx-f.wide{width:100%; aspect-ratio:16/10}
+.vx-f video{position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .2s}
+.vx-f video.on{opacity:1; z-index:1}
+.vx-rec,.vx-n,.vx-snd{z-index:2}
+.vx-rec{position:absolute; top:12px; left:12px; font-size:10px; color:#fff; background:rgba(0,0,0,.45); padding:4px 8px}
+.vx-n{position:absolute; top:12px; right:12px; font-size:10px; color:#fff; background:rgba(0,0,0,.45); padding:4px 8px}
+.vx-snd{all:unset; cursor:pointer; position:absolute; left:12px; bottom:12px; background:var(--red); color:#fff; font-size:11px; padding:7px 10px}
+.vx-snd[aria-pressed="true"]{background:var(--paper); color:#111}
+.vx-cap{margin-top:18px !important; color:var(--coral); text-align:center; font-size:11px}
+@media (max-width:860px){ .vx{grid-template-columns:1fr} .vx-p{position:static; order:-1} .vx-f{width:min(72vw,320px)} .vx-f.wide{width:100%} .vx-i b{font-size:30px} }
+
+/* ═════════ new multi-page portfolio ═════════ */
+body.np{--max:1240px}
+body.np .wrap{padding:0 clamp(20px,5vw,72px)}
+body.np .nav a.on{color:var(--red)}
+/* page transition */
+.pt{position:fixed; inset:0; z-index:300; background:var(--red); display:grid; place-items:center; transform:translateY(100%); pointer-events:none; visibility:hidden}
+.pt.go{visibility:visible}
+.pt span{font-family:var(--f-big); font-size:clamp(40px,6vw,90px); color:var(--paper); text-transform:uppercase; opacity:0; transition:opacity .2s .15s}
+.pt.go{transform:translateY(0); transition:transform .43s cubic-bezier(.7,0,.3,1)} .pt.go span{opacity:1}
+.pt.go.out{transform:translateY(-100%); transition:transform .5s cubic-bezier(.7,0,.3,1)} .pt.out span{opacity:0; transition:opacity .15s}
+/* hover image follower */
+.hov{position:fixed; z-index:60; left:0; top:0; width:clamp(200px,20vw,300px); aspect-ratio:4/5; object-fit:cover; pointer-events:none; opacity:0; scale:.85; rotate:-4deg; transition:opacity .25s, scale .35s cubic-bezier(.3,1.4,.5,1); box-shadow:0 30px 50px -24px rgba(0,0,0,.6)}
+.hov.on{opacity:1; scale:1}
+@media (hover:none){ .hov{display:none} }
+/* page head */
+.pg{padding-top:clamp(140px,20vh,200px); padding-bottom:clamp(60px,10vh,110px)}
+.ph{display:grid; grid-template-columns:1fr 1fr; gap:14px clamp(30px,6vw,90px); align-items:end; margin-bottom:clamp(60px,10vh,110px)}
+.ph-k{grid-column:1 / -1; color:var(--red)}
+.ph-t{margin:0; font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(56px,8vw,128px); line-height:.86}
+.ph-p{margin:0; max-width:46ch; font-size:clamp(16px,1.3vw,19px); line-height:1.6}
+.sub{display:grid; grid-template-columns:1fr 1fr; gap:14px clamp(30px,6vw,90px); align-items:end; margin:clamp(110px,16vh,170px) 0 clamp(36px,5vh,56px); border-top:2px solid var(--ink); padding-top:22px}
+.sub h2{margin:0; font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(40px,4.6vw,72px); line-height:.9}
+.sub p{margin:0; max-width:46ch; line-height:1.6; opacity:.85}
+/* next page link */
+.nx{display:flex; align-items:baseline; gap:20px; margin-top:clamp(120px,18vh,200px); padding-top:24px; border-top:2px solid var(--ink); text-decoration:none; color:var(--ink)}
+.nx .mono{color:var(--red)} .nx b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(48px,8vw,120px); line-height:.9; transition:color .25s, translate .4s cubic-bezier(.3,1.4,.5,1)}
+.nx em{font-style:normal; font-family:var(--f-big); font-size:clamp(40px,6vw,90px); margin-left:auto; transition:translate .3s}
+.nx:hover b{color:var(--red); translate:14px 0} .nx:hover em{translate:10px 0}
+/* home */
+.hh{min-height:100svh; display:flex; align-items:center; padding:120px 0 60px; overflow:hidden}
+.hh-g{display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; width:100%; box-sizing:border-box}
+.hh-t > .mono{color:var(--red)}
+.hh-h{margin:18px 0 10px; font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(70px,10.5vw,170px); line-height:.86}
+.hh-h .ln{display:block; overflow:hidden} .hh-h .ln > span{display:block; animation:hhup 1s cubic-bezier(.2,.9,.2,1) both} .hh-h .ln:nth-child(2) > span{animation-delay:.12s}
+.hh-h b{color:var(--red)}
+@keyframes hhup{from{transform:translateY(105%)}}
+.hh-role{margin:0 0 26px; font-family:var(--f-big); text-transform:uppercase; font-size:clamp(22px,2.2vw,32px); color:transparent; -webkit-text-stroke:1.2px var(--ink)} .hh-role i{font-style:normal; color:var(--red); -webkit-text-stroke:0}
+.hh-p{max-width:44ch; font-size:clamp(16px,1.3vw,19px); line-height:1.6; margin:0 0 30px}
+.hh-cta{display:flex; gap:12px; flex-wrap:wrap}
+.hh-me{position:relative; aspect-ratio:1; display:grid; place-items:center}
+.hh-ring{position:absolute; width:100%; animation:hhspin 40s linear infinite} @keyframes hhspin{to{rotate:360deg}}
+.hh-cut{position:relative; width:84%; filter:drop-shadow(0 30px 40px rgba(0,0,0,.25)); animation:hhin 1.2s .2s cubic-bezier(.2,.9,.2,1) both} @keyframes hhin{from{opacity:0; translate:0 40px; scale:.94}}
+.hh-st{position:absolute; right:2%; bottom:12%; z-index:2; font-family:var(--f-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; background:var(--ink); color:var(--paper); padding:8px 11px; rotate:-5deg; animation:ab3f 5s ease-in-out infinite}
+@keyframes ab3f{50%{translate:0 -7px}}
+.dr{padding-top:clamp(60px,10vh,110px); padding-bottom:clamp(100px,16vh,170px)}
+.dr-k{color:var(--red); display:block; margin-bottom:24px}
+.dr-l{border-top:2px solid var(--ink)}
+.dr-i{display:grid; grid-template-columns:56px 1fr auto 40px; align-items:baseline; gap:18px; padding:clamp(18px,3vh,30px) 0; border-bottom:1px solid rgba(12,12,14,.2); text-decoration:none; color:var(--ink); transition-delay:var(--d,0s)}
+.dr-i .mono{color:var(--red)} .dr-i b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(44px,6.4vw,100px); line-height:.9; transition:translate .45s cubic-bezier(.3,1.4,.5,1), color .25s}
+.dr-i em{font-style:normal; font-size:15px; opacity:.7} .dr-i i{font-style:normal; font-family:var(--f-big); font-size:34px; opacity:0; translate:-10px 0; transition:opacity .25s, translate .3s}
+.dr-i:hover b{translate:18px 0; color:var(--red)} .dr-i:hover i{opacity:1; translate:0 0}
+/* work */
+.cg{display:grid; grid-template-columns:1fr 1fr; gap:clamp(70px,10vh,110px) clamp(30px,4vw,60px)}
+.cc{all:unset; cursor:pointer; display:flex; flex-direction:column; transition-delay:var(--d,0s)}
+.cc:nth-child(even){margin-top:clamp(60px,12vh,140px)}
+.cc-img{aspect-ratio:4/3; position:relative; overflow:hidden}
+.cc-img img{width:100%; height:100%; object-fit:cover; display:block; transition:filter .5s, mix-blend-mode .5s, scale .8s cubic-bezier(.2,.8,.2,1)}
+.cc:hover .cc-img img{filter:none; mix-blend-mode:normal; scale:1.04} .cc:hover .cc-img::after{opacity:0}
+.cc-b{display:flex; flex-direction:column; padding-top:20px}
+.cc-b .mono{color:var(--red)} .cc-b b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(34px,3.4vw,54px); line-height:.9; margin:8px 0 12px; transition:color .25s}
+.cc:hover .cc-b b{color:var(--red)}
+.cc-s{max-width:44ch; line-height:1.6; font-size:16px}
+.cc-tags{display:flex; gap:6px; flex-wrap:wrap; margin-top:14px} .cc-tags i{font-style:normal; font-family:var(--f-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:5px 8px; box-shadow:inset 0 0 0 1px var(--ink)}
+/* visual */
+.fl{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:clamp(36px,6vh,60px)}
+.fl button{all:unset; cursor:pointer; font-family:var(--f-big); text-transform:uppercase; font-size:clamp(18px,1.6vw,24px); padding:10px 18px 8px; box-shadow:inset 0 0 0 2px var(--ink); transition:background .2s, color .2s}
+.fl button sup{font-family:var(--f-mono); font-size:10px; margin-left:4px} .fl button.on,.fl button:hover{background:var(--ink); color:var(--paper)}
+.vg{columns:3; column-gap:clamp(16px,2vw,28px)}
+.vi{all:unset; cursor:zoom-in; display:block; break-inside:avoid; margin-bottom:clamp(16px,2vw,28px); position:relative; overflow:hidden; animation:vin .5s cubic-bezier(.2,.8,.2,1) both}
+.vi.hide{display:none} @keyframes vin{from{opacity:0; transform:translateY(20px) scale(.98)}}
+.vi img{display:block; width:100%; height:auto; transition:scale .7s cubic-bezier(.2,.8,.2,1)} .vi:hover img{scale:1.04}
+.vi-c{position:absolute; left:0; right:0; bottom:0; padding:30px 14px 12px; background:linear-gradient(transparent, rgba(0,0,0,.75)); color:#fff; font-size:13px; display:flex; flex-direction:column; translate:0 100%; transition:translate .35s cubic-bezier(.2,.8,.2,1)}
+.vi-c b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:22px} .vi:hover .vi-c,.vi:focus-visible .vi-c{translate:0 0}
+/* beyond */
+.bf{all:unset; cursor:pointer; display:grid; grid-template-columns:1.5fr 1fr; background:var(--ink); color:var(--paper); width:100%}
+.bf-img{aspect-ratio:16/10; position:relative; overflow:hidden} .bf-img img{width:100%; height:100%; object-fit:cover; display:block; transition:filter .5s, mix-blend-mode .5s}
+.bf:hover .bf-img img{filter:none; mix-blend-mode:normal} .bf:hover .bf-img::after{opacity:0}
+.bf-b{display:flex; flex-direction:column; justify-content:center; gap:12px; padding:clamp(24px,4vw,56px)}
+.bf-b .mono{color:var(--coral)} .bf-b b{font-family:var(--f-big); font-weight:400; text-transform:uppercase; font-size:clamp(40px,4.6vw,72px); line-height:.88} .bf-b > span:not(.mono){opacity:.85; line-height:1.6} .bf-b em{font-style:normal; color:var(--coral); margin-top:8px}
+body.np .vx{--en:1}
+body.np .vx-l{border-color:rgba(12,12,14,.2)} body.np .vx-i{border-color:rgba(12,12,14,.2)} body.np .vx-i b{color:rgba(12,12,14,.35)} body.np .vx-i:hover b, body.np .vx-i.on b{color:var(--ink)} body.np .vx-i em{color:var(--ink) !important}
+/* contact */
+.ctg2{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(40px,6vw,100px); align-items:start}
+.ctp .ct-mail{display:block; margin-bottom:20px; font-size:clamp(26px,2.6vw,40px); overflow-wrap:anywhere; word-break:normal}
+body.np .mf1-line input{color:var(--red); border-bottom-color:var(--ink)} body.np .mf1-line input::placeholder{color:rgba(232,56,45,.45)}
+body.np .foot{margin-top:clamp(100px,16vh,160px)}
+/* custom cursor label */
+.cur{position:fixed; z-index:70; left:0; top:0; pointer-events:none; width:74px; height:74px; margin:-37px 0 0 -37px; border-radius:50%; background:var(--red); color:#fff; display:grid; place-items:center; font-family:var(--f-big); text-transform:uppercase; font-size:15px; scale:0; transition:scale .3s cubic-bezier(.3,1.5,.5,1)}
+.cur.on{scale:1} @media (hover:none){ .cur{display:none} }
+@media (max-width:860px){
+  .hh-g,.ph,.sub,.cg,.bf,.ctg2{grid-template-columns:1fr} .hh-me{max-width:420px; width:90%; margin:0 auto; order:-1} .hh{padding-top:100px}
+  .cc:nth-child(even){margin-top:0} .vg{columns:2} .dr-i{grid-template-columns:40px 1fr} .dr-i em,.dr-i i{display:none}
+}
+@media (prefers-reduced-motion:reduce){ .hh-ring,.hh-cut,.hh-h .ln > span,.hh-st,.vi{animation:none} .pt{display:none} }
+body.np .dr{padding-top:clamp(90px,14vh,150px); padding-bottom:clamp(100px,16vh,170px)}
+body.np .pg{padding-top:clamp(140px,20vh,200px); padding-bottom:clamp(60px,10vh,110px)}
+.bun{display:none !important}
+
+.vsc{margin-bottom:clamp(90px,14vh,150px)} .vsc.hide,.vg.hide{display:none}
+body.np .hero .wrap{max-width:1440px; padding:0 var(--pad)}
+.ph-t{font-size:clamp(72px,11.5vw,190px) !important}
+.sub h2{font-size:clamp(52px,6.4vw,104px) !important}
+.cc-b b{font-size:clamp(40px,4.4vw,72px) !important}
+.bf-b b{font-size:clamp(48px,5.6vw,90px) !important}
+.nx b{font-size:clamp(60px,10vw,160px) !important}
+.dr-i b{font-size:clamp(52px,8vw,130px) !important}
+body.np .dv-t h3{font-size:clamp(30px,3vw,48px)}
+
+/* contact tidy */
+.ctp .ph{grid-template-columns:1fr; gap:18px}
+.ctp .ph-t{font-size:clamp(64px,9vw,150px) !important}
+.ctg2{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(40px,6vw,96px); border-top:2px solid var(--ink); padding-top:clamp(30px,5vh,50px)}
+.ctp .ct-mail{font-size:clamp(24px,2.4vw,38px) !important}
+.ctp .badge{display:inline-block; max-width:100%}
+.ctp .mf1{border-top:0 !important; padding-top:0 !important}
+.ctp .mf1-k{margin-top:0}
+.ctp .mf1-line{font-size:clamp(22px,2.2vw,34px) !important; line-height:1.4 !important}
+.ctp .mf1-line input{border-bottom-width:3px}
+/* playground big card */
+.pg-big{padding:clamp(24px,3vw,40px)} .pg-big .pg-cta-pics img{width:clamp(90px,10vw,150px)} .pg-big .pg-cta-t b{font-size:clamp(40px,5.4vw,88px)}
+
+/* santa page fit fixes */
+body.xmas .x-xmas{padding-top:clamp(110px,15vh,150px)}
+body.xmas .xh{max-width:min(1040px, calc((100vh - 150px) * 1.11), 100%)}
+body.xmas .xba-ar{top:-46px; left:52%; width:clamp(70px,7vw,110px)}
+body.xmas .xhead{margin-bottom:clamp(50px,8vh,80px)}
+body.xmas .xfm{margin:0; background:#000}
+body.xmas .xfm video{max-height:78vh; aspect-ratio:16/9; object-fit:contain; background:#000}
+body.xmas .xrt-f{top:clamp(140px,18vh,180px)}
+@media (max-width:860px){ body.xmas .x-xmas{padding-top:120px} body.xmas .xh{max-width:100%} }
+
+.dr-i{grid-template-columns:56px auto 1fr auto 40px !important; align-items:center !important}
+.dr-ims{display:flex; gap:8px; justify-self:start; padding-left:clamp(10px,2vw,30px); height:clamp(54px,6.4vw,100px)}
+.dr-ims img{height:100%; aspect-ratio:4/5; width:auto; object-fit:cover; clip-path:inset(0 100% 0 0); transform:translateX(-14px); transition:clip-path .45s cubic-bezier(.7,0,.2,1), transform .45s cubic-bezier(.7,0,.2,1); transition-delay:calc(var(--j) * .06s)}
+.dr-i:hover .dr-ims img,.dr-i:focus-visible .dr-ims img{clip-path:inset(0 0 0 0); transform:none}
+.dr-i em{align-self:center}
+@media (max-width:860px){ .dr-ims{display:none} .dr-i{grid-template-columns:40px 1fr !important} }
+@media (prefers-reduced-motion:reduce){ .dr-ims img{transition:none} }
+
+.dr-i{grid-template-columns:56px auto minmax(0,1fr) auto 40px !important; column-gap:clamp(14px,2vw,28px) !important}
+.dr-ims{min-width:0; overflow:hidden; padding-left:0; height:clamp(50px,5.4vw,86px)}
+.dr-ims img{flex:0 0 auto}
+.dr-i em{white-space:nowrap; position:relative; z-index:1; background:var(--paper); padding-left:10px}
+
+.ctp .ph-t{font-size:inherit !important; line-height:.82}
+.ctp .ph-t .fit{display:block; width:max-content; line-height:.84}
+.ctp .ph-t .fit + .fit{margin-top:.02em; color:var(--red)}
+@media (max-width:860px){ .ctg2{grid-template-columns:1fr !important} .ctp .ct-mail{font-size:28px !important} }
+.ctp .ph-p{margin-top:clamp(18px,3vh,30px) !important}
+
+/* contact v2 */
+.ct-h{margin-bottom:clamp(50px,8vh,90px)}
+.ct-h .ph-k{display:block; margin-bottom:14px}
+.ct-big{margin:0 0 clamp(20px,3vh,32px); font-family:var(--f-big); font-weight:400; text-transform:uppercase; line-height:.84; font-size:min(19.6vw, 248px)}
+.ct-big span{display:block} .ct-big span + span{color:var(--red)}
+.ct-card{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr); background:var(--ink); color:var(--paper)}
+.ct-side{padding:clamp(28px,4vw,56px); border-right:1px solid rgba(239,236,230,.18); display:flex; flex-direction:column; gap:22px}
+.ct-lab{color:var(--coral); font-size:11px; letter-spacing:.12em; text-transform:uppercase}
+.ct-addr{font-family:var(--f-big); text-transform:uppercase; font-size:clamp(24px,2.4vw,36px); color:var(--paper); text-decoration:none; overflow-wrap:anywhere; line-height:1; transition:color .2s} .ct-addr:hover{color:var(--red)}
+.ct-btns{display:flex; gap:8px; flex-wrap:wrap}
+.ct-b{all:unset; cursor:pointer; font-family:var(--f-big); text-transform:uppercase; font-size:16px; padding:12px 16px 10px; background:var(--paper); color:var(--ink); transition:background .2s,color .2s} .ct-b:hover{background:var(--red); color:#fff}
+.ct-b.ol{background:transparent; color:var(--paper); box-shadow:inset 0 0 0 1.5px var(--paper)} .ct-b.ol:hover{background:var(--paper); color:var(--ink)}
+.ct-facts{list-style:none; margin:auto 0 0; padding:0} .ct-facts li{padding:12px 0; border-top:1px solid rgba(239,236,230,.18); font-size:15px; display:grid; grid-template-columns:90px 1fr; gap:10px} .ct-facts .mono{font-size:10px; letter-spacing:.1em; text-transform:uppercase; opacity:.6; padding-top:3px}
+.ct-form{padding:clamp(28px,4vw,56px); display:flex; flex-direction:column; gap:26px}
+.ct-line{margin:0; font-family:var(--f-big); text-transform:uppercase; font-size:clamp(24px,2.5vw,38px); line-height:1.45; color:var(--paper)}
+.ct-line input{font:inherit; text-transform:none; color:var(--red); background:transparent; border:0; border-bottom:3px solid rgba(239,236,230,.5); outline:none; padding:0 .1em; margin:0 .1em; min-width:3ch; max-width:100%; transition:border-color .2s}
+.ct-line input::placeholder{color:rgba(239,236,230,.35)} .ct-line input:focus{border-color:var(--red)}
+.ct-msg{display:flex; flex-direction:column; gap:8px} .ct-msg .mono{font-size:10px; letter-spacing:.1em; text-transform:uppercase; opacity:.6}
+.ct-msg textarea{background:rgba(239,236,230,.06); border:1px solid rgba(239,236,230,.2); color:var(--paper); font:inherit; font-size:16px; padding:12px 14px; resize:vertical; outline:none; transition:border-color .2s} .ct-msg textarea:focus{border-color:var(--red)}
+.ct-end{display:flex; align-items:center; gap:20px; flex-wrap:wrap}
+.ct-send{all:unset; cursor:pointer; font-family:var(--f-big); text-transform:uppercase; font-size:clamp(22px,2vw,30px); padding:14px 26px 12px; background:var(--red); color:#fff; transition:background .2s, translate .3s cubic-bezier(.3,1.5,.5,1)} .ct-send:hover{background:var(--paper); color:var(--ink); translate:0 -3px}
+.ct-send b{display:inline-block; transition:rotate .5s} .ct-send:hover b{rotate:144deg}
+.ct-end p{margin:0; font-size:13px; opacity:.6; max-width:30ch}
+@media (max-width:860px){ .ct-card{grid-template-columns:1fr} .ct-side{border-right:0; border-bottom:1px solid rgba(239,236,230,.18)} .ct-big{font-size:19vw} }
+.ctp form.ct-form{padding:clamp(28px,4vw,56px) !important; border:0 !important; margin:0}
+
+/* beyond feature cards: same size, image fills, stays blue */
+.bf{align-items:stretch} .bf-img{aspect-ratio:auto; height:100%; min-height:clamp(320px,38vw,520px)}
+.bf:hover .bf-img img{scale:1.04}
+.bf-img img{transition:scale .8s cubic-bezier(.2,.8,.2,1)}
+.pgf{margin-top:clamp(30px,4vw,50px); text-decoration:none}
+.pgf-g{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); gap:4px; height:clamp(320px,38vw,520px); overflow:hidden}
+.pgf-g img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.pgf:hover .pgf-g img:nth-child(odd){transform:scale(1.06) rotate(-1deg)} .pgf:hover .pgf-g img:nth-child(even){transform:scale(1.06) rotate(1deg)}
+.pgf .bf-b em{transition:translate .3s} .pgf:hover .bf-b em{translate:8px 0}
+@media (max-width:860px){ .bf-img{min-height:260px} .pgf-g{height:300px} }
+
+/* beyond header with portrait */
+.ph-img{grid-template-columns:1fr 1fr; grid-template-areas:"k k" "t f" "t p"; align-items:end}
+.ph-img .ph-k{grid-area:k} .ph-img .ph-t{grid-area:t; align-self:end} .ph-img .ph-p{grid-area:p}
+.ph-fig{grid-area:f; margin:0 0 10px; justify-self:end; width:min(100%,340px)}
+.ph-fig img{display:block; width:100%; height:auto; animation:phf 6s ease-in-out infinite}
+@keyframes phf{50%{transform:translateY(-8px) rotate(-1.5deg)}}
+@media (max-width:860px){ .ph-img{grid-template-columns:1fr; grid-template-areas:"k" "f" "t" "p"} .ph-fig{justify-self:start; width:70%} }
+@media (prefers-reduced-motion:reduce){ .ph-fig img{animation:none} }
+/* playground click cues */
+.pgf{position:relative}
+.pgf-btn{align-self:flex-start; margin-top:10px; display:inline-flex; gap:10px; align-items:center; font-family:var(--f-big); text-transform:uppercase; font-size:clamp(18px,1.6vw,24px); padding:13px 20px 11px; background:var(--red); color:#fff; transition:background .2s,color .2s}
+.pgf-btn i{font-style:normal; display:inline-block; transition:translate .3s} .pgf:hover .pgf-btn{background:var(--paper); color:var(--ink)} .pgf:hover .pgf-btn i{translate:6px 0}
+.pgf-tag{position:absolute; left:calc(60% - 150px); top:auto; bottom:24px; width:120px; height:120px; border-radius:50%; background:var(--red); color:#fff; display:grid; place-items:center; z-index:2; pointer-events:none; box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+.pgf-tag svg{position:absolute; inset:0; width:100%; height:100%; animation:pgspin 10s linear infinite} .pgf-tag text{fill:#fff; font-family:var(--f-mono); font-size:9.6px; letter-spacing:.12em}
+.pgf-tag b{font-size:30px; line-height:1} @keyframes pgspin{to{rotate:360deg}}
+@media (max-width:860px){ .pgf-tag{left:auto; right:14px; top:14px; translate:0 0; width:90px; height:90px} }
+/* star cursor */
+.cur{width:104px !important; height:104px !important; margin:-52px 0 0 -52px !important; border-radius:0 !important; clip-path:polygon(50.0% 0.0%, 62.3% 33.0%, 97.6% 34.5%, 70.0% 56.5%, 79.4% 90.5%, 50.0% 71.0%, 20.6% 90.5%, 30.0% 56.5%, 2.4% 34.5%, 37.7% 33.0%); font-size:13px !important; padding-top:6px; box-sizing:border-box}
+/* video player: one fixed frame, no resizing */
+body.np .vx-f,body.np .vx-f.wide{width:min(100%,420px) !important; aspect-ratio:4/5 !important; transition:none !important; background:#000}
+body.np .vx-f video{object-fit:contain !important; background:#000}
+body.np .vx-f{rotate:none !important; scale:none !important}
+
+/* beyond header v2 */
+.ph-img{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr) !important; grid-template-areas:"k f" "t f" "p f" !important; column-gap:clamp(30px,5vw,80px) !important; row-gap:0 !important; align-items:start !important; margin-bottom:clamp(70px,11vh,120px)}
+.ph-img .ph-k{margin-bottom:16px}
+.ph-img .ph-t{margin-bottom:clamp(22px,3vh,32px) !important}
+.ph-img .ph-p{max-width:48ch}
+.ph-fig{align-self:center !important; justify-self:center !important; width:min(100%,460px) !important; margin:0 !important; position:relative}
+.ph-fig::before{content:""; position:absolute; inset:8% -4% -2% 6%; background:var(--paper2,#e6e2da); z-index:-1; rotate:-3deg}
+@media (max-width:860px){ .ph-img{grid-template-columns:1fr !important; grid-template-areas:"k" "f" "t" "p" !important} .ph-fig{width:78% !important; margin-bottom:24px !important} }
+
+/* beyond header v3: big portrait behind */
+.ph-img{position:relative; display:block !important; min-height:min(78vh,720px); padding-top:clamp(10px,3vh,30px)}
+.ph-img .ph-k,.ph-img .ph-t,.ph-img .ph-p{position:relative; z-index:2}
+.ph-img .ph-t{font-size:clamp(90px,15vw,240px) !important; line-height:.82; max-width:7ch; margin-top:10px !important}
+.ph-img .ph-p{max-width:40ch; background:var(--paper); padding:14px 18px 14px 0; margin-top:clamp(20px,3vh,30px) !important; box-shadow:18px 0 0 var(--paper)}
+.ph-fig{position:absolute !important; z-index:1; right:-4%; top:-6%; width:min(66%,780px) !important; margin:0 !important; pointer-events:none}
+.ph-fig::before{display:none}
+.ph-fig img{animation:phf2 9s ease-in-out infinite !important}
+@keyframes phf2{50%{transform:translate(-10px,-12px) rotate(-2deg)}}
+.ph-img::after{content:"★"; position:absolute; z-index:0; left:44%; top:6%; font-size:clamp(60px,8vw,120px); color:var(--red); line-height:1; animation:hhspin 18s linear infinite}
+@media (max-width:860px){ .ph-img{min-height:0} .ph-fig{position:relative !important; right:auto; top:auto; width:100% !important; margin:-30px 0 -60px 10% !important} .ph-img .ph-t{font-size:22vw !important} .ph-img::after{left:auto; right:6%; top:2%} }
+
+/* portrait flows behind Santa card */
+.ph-img{overflow:visible; margin-bottom:clamp(-180px,-14vw,-90px) !important}
+.ph-fig{top:-4% !important; width:min(68%,820px) !important}
+.ph-img + .bf, .ph-img ~ .bf{position:relative; z-index:3}
+/* small star cursor */
+.cur{width:30px !important; height:30px !important; margin:-15px 0 0 -15px !important; font-size:0 !important; color:transparent !important; padding:0 !important}
+@media (max-width:860px){ .ph-img{margin-bottom:-40px !important} .ph-fig{margin-bottom:0 !important} }
+
+/* video: no black bars, video sits on the page */
+body.np .vx-f{background:transparent !important; box-shadow:none !important; aspect-ratio:9/16 !important; width:min(100%,380px) !important}
+body.np .vx-f video{background:transparent !important; object-fit:contain !important}
+body.np .vx-n{background:var(--ink)} body.np .vx-snd{z-index:3}
+
+/* keep text clear of the Santa card; let only the portrait run behind it */
+.ph-img{margin-bottom:clamp(50px,7vh,80px) !important; padding-bottom:0}
+.ph-fig{top:auto !important; bottom:clamp(-260px,-18vw,-120px) !important}
+@media (max-width:860px){ .ph-img{margin-bottom:40px !important} .ph-fig{bottom:auto !important} }
+
+/* about halftone portrait */
+.abp-photo.abp-ht{object-fit:contain !important; object-position:50% 100% !important; filter:none !important; background:transparent}
+/* work page star */
+.ph-wrap{position:relative}
+.ph-wrap .ph{position:relative; z-index:1}
+.ph-star{position:absolute; z-index:0; right:4%; top:-16%; width:clamp(180px,24vw,340px); fill:var(--red); animation:hhspin 40s linear infinite; pointer-events:none}
+@media (max-width:860px){ .ph-star{width:44vw; top:-10px; right:-6%} }
+@media (prefers-reduced-motion:reduce){ .ph-star{animation:none} }
+
+/* one-line titles on Work + Visual */
+#home[data-pg="work"] .ph, #home[data-pg="visual"] .ph{grid-template-columns:1fr; row-gap:clamp(16px,2.4vh,26px)}
+#home[data-pg="work"] .ph-t, #home[data-pg="visual"] .ph-t{white-space:nowrap; font-size:min(11.6vw, 176px) !important; line-height:.9}
+#home[data-pg="work"] .ph-p, #home[data-pg="visual"] .ph-p{max-width:52ch}
+#home[data-pg="work"] .ph-star{top:auto; bottom:-6%; right:0; width:clamp(150px,17vw,250px)}
+@media (max-width:860px){ #home[data-pg="work"] .ph-t, #home[data-pg="visual"] .ph-t{font-size:12.4vw !important} #home[data-pg="work"] .ph-star{width:30vw; bottom:auto; top:-30px} }
+
+/* bigger titles + big background star */
+#home[data-pg="work"] .ph-t, #home[data-pg="visual"] .ph-t{font-size:min(15.6vw, 190px) !important; line-height:.86}
+#home[data-pg="work"] .ph-star{top:-38% !important; bottom:auto !important; right:-6% !important; width:clamp(320px,46vw,680px) !important; opacity:.95}
+#home[data-pg="work"] .ph-p{background:var(--paper); width:fit-content; padding-right:16px}
+.pg{overflow-x:clip}
+@media (max-width:860px){ #home[data-pg="work"] .ph-t, #home[data-pg="visual"] .ph-t{font-size:13.6vw !important} #home[data-pg="work"] .ph-star{width:78vw !important; top:-60px !important; right:-24% !important} }
+
+/* video section on black */
+.vband{background:var(--ink); color:var(--paper); margin:clamp(90px,14vh,150px) calc(50% - 50vw) 0; padding:clamp(60px,10vh,110px) max(clamp(20px,5vw,72px), calc(50vw - 620px + clamp(20px,5vw,72px)))}
+.vband .sub{margin-top:0; border-top-color:rgba(239,236,230,.3)}
+.vband .sub h2{color:var(--paper)} .vband .sub p{color:var(--paper)}
+body.np .vband .vx-l, body.np .vband .vx-i{border-color:rgba(239,236,230,.18)}
+body.np .vband .vx-i b{color:rgba(239,236,230,.35)} body.np .vband .vx-i:hover b, body.np .vband .vx-i.on b{color:var(--paper)}
+body.np .vband .vx-i em{color:var(--paper) !important}
+body.np .vband .vx-n{background:var(--paper); color:var(--ink)}
+.vband + .nx{margin-top:clamp(80px,12vh,130px)}
+
+.abp-col{opacity:0; pointer-events:none; transition:opacity .45s ease}
+.abp-ht:not(.abp-col):hover + .abp-col{opacity:1}
+.abp-ht:not(.abp-col){cursor:pointer}
+
+/* about: big blue halftone star */
+.abp-star{position:absolute; z-index:0; left:34%; top:4%; width:clamp(320px,44vw,640px); pointer-events:none; opacity:.9}
+.abp-big{z-index:1}
+@media (max-width:760px){ .abp-star{width:90vw; left:30%; top:60px} }
+/* stars stay still */
+.ph-star, .ph-img::after{animation:none !important}
 </style>
 </head>
 <body>
@@ -1900,15 +2278,18 @@ body:not(.xmas) .xgame{display:none}
 
 <header class="top" id="top">
   <div class="wrap top-in">
-    <a class="logo" href="#" data-home>Emma<b>★</b>N</a>
+    <a class="logo" href="#home">Emma<b>★</b>N</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="#work">Work</a><a href="#ui">UI</a><a href="#beyond">Beyond UX</a><a href="#about">About</a><a href="playground.html">Playground</a><a class="hire" href="#contact">Contact</a>
+      <a href="#work" data-pg="work">Work</a><a href="#visual" data-pg="visual">Visual</a><a href="#beyond" data-pg="beyond">Beyond UX</a><a href="#about" data-pg="about">About</a><a href="playground.html">Playground</a><a class="hire" href="#contact" data-pg="contact">Contact</a>
     </nav>
   </div>
 </header>
 
+<script>document.body.classList.add("np")</script>
 <div class="home" id="home"></div>
+<div class="pt" id="pt" aria-hidden="true"><span>Emma★N</span></div>
+<img class="hov" id="hov" alt="" aria-hidden="true">
 <div class="cs-view" id="csv"></div>
 
 <dialog class="lb" id="lb" aria-label="Image"><img id="lb-img" alt=""><p id="lb-cap"></p><button class="lb-x" id="lb-x" type="button">Close ✕</button><button class="lb-p" id="lb-p" type="button" aria-label="Previous" hidden>←</button><button class="lb-n" id="lb-n" type="button" aria-label="Next" hidden>→</button></dialog>
@@ -1923,7 +2304,8 @@ body:not(.xmas) .xgame{display:none}
   const projects = (C.projects || []).filter(p => p.title && (p.summary || (p.caseStudy || []).length));
 
   /* ── fit text: every .fit fills its parent's width exactly ── */
-  function aboutFit() {
+  function aboutFit() { aboutFit0(); const c = document.querySelector('.abp-col'), h = document.querySelector('.abp-ht:not(.abp-col)'); if (c && h) { c.style.cssText = h.style.cssText; if (getComputedStyle(h).position === 'relative') { c.style.position = 'absolute'; c.style.left = h.offsetLeft + 'px'; c.style.top = h.offsetTop + 'px'; c.style.marginTop = '0'; } } }
+  function aboutFit0() {
     const b = document.querySelector('.abp-big'); if (!b) return;
     const pk = b.parentElement, bot = pk.querySelector('.abp-bot'), sig = pk.querySelector('.abp-sig'), ph = pk.querySelector('.abp-photo');
     const mob = innerWidth < 760, pad = mob ? 16 : 24, gap = mob ? 0 : Math.round(innerWidth * .02);
@@ -1951,95 +2333,66 @@ body:not(.xmas) .xgame{display:none}
       const box = el.parentElement.clientWidth; if (!box) return;
       el.style.fontSize = '100px';
       const w = el.scrollWidth || 1;
-      el.style.fontSize = (100 * box / w * .995) + 'px';
+      const k = innerWidth < 700 ? 1 : el.closest('.sec-h') ? .6 : el.closest('.ct h2') ? .7 : 1;
+      el.style.fontSize = (100 * box * k / w * .995) + 'px';
     });
   }
 
   /* ── HOME ── */
-  function homeHTML() {
-    const h = C.hero || {};
-    const tick = (C.ticker || []).map(t => `<span>${esc(t)}</span>`).join('');
-    const workList = projects.filter(p => !p.beyond).map((p, i) => {
-      const has = (p.caseStudy || []).length;
-      const tags = (p.meta || '').split('·').map(t => t.trim()).filter(Boolean).slice(0, 4);
-      return `<button type="button" class="wk rv${has ? '' : ' soon'}" ${has ? `data-cs="${esc(p.id)}"` : 'aria-disabled="true"'}>
-        <div class="wk-t">
-          <span class="wk-n">${String(i + 1).padStart(2, '0')} / ${esc(p.year || '')} · ${p.status === 'ongoing' ? 'In progress' : 'Finished'}</span>
-          <h3>${esc(p.title)}</h3>
-          <p>${esc(p.summary || '')}</p>
-          <ul class="wk-tags">${tags.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
-          ${has ? '<span class="wk-go">Read the case study <b>→</b></span>' : ''}
-        </div>
-        ${has ? `<div class="wk-img ht blue">${p.status === 'ongoing' ? '<span class="wk-stamp">In progress</span>' : ''}<img src="${esc(u(p.cover))}" alt="" loading="lazy"></div>`
-              : `<div class="wk-img"><span>Case study<br>coming soon</span></div>`}
-      </button>`; }).join('');
-    const proc = (C.process || []).map((s, i) => `<article class="rv"><div class="pn">0${i + 1}</div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></article>`).join('');
-    const ui = (C.screens || []).map(g => { const imgs = (g.images || []).map(u);
-      return `<article class="dv rv">
-        <button type="button" class="dv-lap" data-gal="${esc(imgs.join('|'))}" data-cap="${esc(g.title)}" aria-label="View ${esc(g.title)} screens">
-          <span class="dv-scr"><img src="${esc(imgs[0])}" alt="${esc(g.title)} homepage" loading="lazy"></span><span class="dv-base"></span>
-        </button>
-        <div class="dv-t"><h3>${esc(g.title)}</h3><span class="mono">${esc(g.type)}</span>
-          <span class="dv-a">${imgs.length > 1 ? `<button type="button" class="mono" data-gal="${esc(imgs.join('|'))}" data-cap="${esc(g.title)}">View ${imgs.length} screens</button>` : ''}${g.link ? `<a class="mono" href="${esc(u(g.link))}" target="_blank" rel="noopener">Visit ↗</a>` : ''}</span></div>
-      </article>`; }).join('');
-    const b = C.beyond || {}; const feat = projects.filter(p => p.beyond);
-    const a = C.about || {};
+  const PAGES = ['home', 'work', 'visual', 'beyond', 'about', 'contact'];
+  const PNAME = { home: 'Home', work: 'Work', visual: 'Visual', beyond: 'Beyond UX', about: 'About', contact: 'Contact' };
+  function nextLink(pg) { const i = PAGES.indexOf(pg), n = PAGES[(i + 1) % PAGES.length];
+    return `<a class="nx" href="#${n}"><span class="mono">Next page</span><b>${PNAME[n]}</b><em>→</em></a>`; }
+  function pageHead(n, title, text) { return `<header class="ph"><span class="ph-k mono rv">${n}</span><h1 class="ph-t rv">${title}</h1>${text ? `<p class="ph-p rv">${text}</p>` : ''}</header>`; }
+  function homeHTML(pg = 'home') {
+    const h = C.hero || {}, a = C.about || {}, b = C.beyond || {};
+    const feat = projects.filter(p => p.beyond), work = projects.filter(p => !p.beyond);
     const xp = (C.experience || []).flatMap(bl => bl.items.map(it => ({ ...it, group: bl.title })));
     const links = (C.links || []).filter(l => l.url);
-    return `
-    <section class="hero" id="hello">
-      <div class="wrap hero-meta mono"><span>Portfolio ’26</span><span>${esc(C.location)}</span></div>
-      <div class="wrap hero-name">
-        <h1 class="big"><span class="fit" aria-label="${esc(C.name + ' ' + C.surname)}">${esc(C.name)}</span></h1>
-        ${h.cutout ? `<figure class="hero-cut" style="--m:url('${esc(u(h.cutout))}')" aria-hidden="true"><img src="${esc(u(h.cutout))}" alt=""></figure>` : ''}
-        <img class="hero-ring" src="work/v3/star-ring.png" alt="" aria-hidden="true">
+    if (pg === 'work') return `<section class="pg wrap">
+      <div class="ph-wrap"><svg class="ph-star" viewBox="0 0 100 100" aria-hidden="true"><polygon points="49.2,11.9 54.4,36.0 72.4,15.5 61.5,38.9 87.2,30.4 64.5,47.1 97.2,56.3 64.1,55.7 86.7,82.8 58.4,63.3 58.3,85.7 49.3,65.4 40.9,86.5 41.2,64.5 17.8,80.2 35.7,56.2 13.5,55.0 34.9,48.6 12.2,31.7 37.5,39.6 28.1,16.3 45.9,33.9"/></svg>${pageHead('01 — Work', 'Case studies', 'Four projects, from research to a working product. Pick one to read the full story.')}</div>
+      <div class="cg">${work.map((p, i) => { const has = (p.caseStudy || []).length; return `<button type="button" class="cc rv" style="--d:${(i % 2) * .1}s" ${has ? `data-cs="${esc(p.id)}"` : 'aria-disabled="true"'} data-cur="Read">
+        <span class="cc-img wk-img ht">${p.status === 'ongoing' ? '<span class="wk-stamp">In progress</span>' : ''}<img src="${esc(u(p.cover))}" alt="" loading="lazy"></span>
+        <span class="cc-b"><span class="mono">${String(i + 1).padStart(2, '0')} · ${esc(p.year || '')}</span><b>${esc(p.title)}</b><span class="cc-s">${esc(p.summary || '')}</span>
+        <span class="cc-tags">${(p.meta || '').split('·').map(t => t.trim()).filter(Boolean).slice(0, 3).map(t => `<i>${esc(t)}</i>`).join('')}</span></span></button>`; }).join('')}</div>
+      ${nextLink(pg)}</section>`;
+    if (pg === 'visual') { const items = [
+        ...(C.screens || []).map(g => ({ k: 'screens', t: g.title, ty: g.type, img: g.images[0], gal: g.images })),
+        ...(b.print || []).map(g => ({ k: 'print', t: g.title, ty: g.type, img: g.images[0], gal: g.images })),
+        ...(b.posters || []).map((x, i) => ({ k: 'posters', t: 'Poster', ty: '', img: x, lb: x }))];
+      return `<section class="pg wrap">
+      ${pageHead('02 — Visual', 'Visual design', 'Websites, print and posters. Filter by type, click anything to see it big.')}
+      <div class="fl rv" role="tablist">${[['all', 'All', items.length], ['screens', 'Screens', (C.screens || []).length], ['print', 'Print', (b.print || []).length], ['posters', 'Posters', (b.posters || []).length]].map(([k, l, n], i) => `<button type="button" role="tab" class="${i ? '' : 'on'}" data-f="${k}" aria-selected="${!i}">${l}<sup>${n}</sup></button>`).join('')}</div>
+      <div class="scs vsc" data-k="screens">${(C.screens || []).map(g => { const imgs = (g.images || []).map(u); return `<article class="dv rv">
+        <button type="button" class="dv-lap" data-gal="${esc(imgs.join('|'))}" data-cap="${esc(g.title)}" data-cur="View" aria-label="View ${esc(g.title)} screens"><span class="dv-scr"><img src="${esc(imgs[0])}" alt="${esc(g.title)} homepage" loading="lazy"></span><span class="dv-base"></span></button>
+        <div class="dv-t"><h3>${esc(g.title)}</h3><span class="mono">${esc(g.type)}</span><span class="dv-a">${imgs.length > 1 ? `<button type="button" class="mono" data-gal="${esc(imgs.join('|'))}" data-cap="${esc(g.title)}">View ${imgs.length} screens</button>` : ''}${g.link ? `<a class="mono" href="${esc(u(g.link))}" target="_blank" rel="noopener">Visit site ↗</a>` : ''}</span></div></article>`; }).join('')}</div>
+      <div class="vg">${items.filter(x => x.k !== 'screens').map(x => `<button type="button" class="vi ${x.k}" data-k="${x.k}" ${x.gal ? `data-gal="${esc(x.gal.map(u).join('|'))}" data-cap="${esc(x.t)}"` : `data-lb="${esc(u(x.lb))}" data-cap="Poster"`} data-cur="View">
+        <img src="${esc(u(x.img))}" alt="${esc(x.t)}" loading="lazy">${x.ty ? `<span class="vi-c"><b>${esc(x.t)}</b>${esc(x.ty)}</span>` : ''}</button>`).join('')}</div>
+      ${nextLink(pg)}</section>`; }
+    if (pg === 'beyond') { const L = [...(b.film ? [{ ...b.film, meta: 'Kvety Naomi · promo film', wide: true }] : []), ...(b.videos || []).map(v => ({ ...v, meta: v.meta || 'Reel' }))];
+      return `<section class="pg wrap">
+      <header class="ph ph-img"><span class="ph-k mono rv">03 — Beyond UX</span><h1 class="ph-t rv">Off the clock</h1>
+        <figure class="ph-fig rv"><img src="${esc(u('work/me/emma-star.png'))}" alt="Halftone portrait of Emma with a red star"></figure><p class="ph-p rv">${esc(b.intro || '')}</p></header>
+      ${feat.map(f => `<button type="button" class="bf rv" data-cs="${esc(f.id)}" data-cur="Open"><span class="bf-img wk-img ht"><img src="${esc(u(f.cover))}" alt="" loading="lazy"></span>
+        <span class="bf-b"><span class="mono">Experience design · a story</span><b>${esc(f.title)}</b><span>${esc(f.summary)}</span><em class="mono">Read the story →</em></span></button>`).join('')}
+      <a class="bf pgf rv" href="playground.html" data-cur="Play"><span class="pgf-g">${['work/pg/t/red-jacket-1.jpg','work/pg/cake-figs.jpg','work/pg/nail-02.jpg','work/pg/t/king-of-pop.jpg','work/pg/mirror-cap.jpg','work/nails/red-lily.jpg'].map(x => `<img src="${esc(u(x))}" alt="" loading="lazy">`).join('')}</span>
+        <span class="bf-b"><span class="mono">Posters · nails · cakes · photos of me</span><b>Play&shy;ground</b><span>Everything that didn’t fit anywhere else, on one board you can drag around.</span><span class="pgf-btn">Open the board <i>→</i></span></span><span class="pgf-tag" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="pgc" d="M50 50 m-36 0 a36 36 0 1 1 72 0 a36 36 0 1 1 -72 0"/></defs><text><textPath href="#pgc">CLICK TO PLAY ★ CLICK TO PLAY ★ </textPath></text></svg><b>★</b></span></a>
+      <div class="vband">
+      <div class="sub rv"><h2>Video</h2><p>${esc(((b.cards || [])[0] || {}).text || '')}</p></div>
+      <div class="vx" data-items="${esc(JSON.stringify(L.map(x => ({ s: u(x.src), p: u(x.poster), w: !!x.wide, t: x.title, m: x.meta }))))}">
+        <ol class="vx-l">${L.map((x, i) => `<li><button type="button" class="vx-i${i ? '' : ' on'}" data-i="${i}" style="--i:${i}"><span class="mono">${String(i + 1).padStart(2, '0')}</span><b>${esc(x.title)}</b><em class="mono">${esc(x.meta)}</em><i aria-hidden="true">●</i></button></li>`).join('')}</ol>
+        <div class="vx-p"><div class="vx-f${L[0].wide ? ' wide' : ''}">${L.map((x, i) => `<video class="${i ? '' : 'on'}" data-i="${i}" src="${esc(u(x.src))}" poster="${esc(u(x.poster))}" muted loop playsinline preload="${i ? 'none' : 'metadata'}" aria-label="${esc(x.title)}"></video>`).join('')}
+          <button type="button" class="vx-snd mono" aria-pressed="false">Sound off</button><span class="vx-n mono">01 / ${String(L.length).padStart(2, '0')}</span></div></div>
       </div>
-      <div class="wrap"><p class="big hero-role"><span class="fit">UX<i>★</i>UI<i>★</i>Designer</span></p></div>
-      <div class="wrap hero-row">
-        <p>${esc(h.intro)}</p>
-        <div class="hero-ctas"><span class="badge mono">${esc(C.availability)}</span><a class="btn" href="#work">${esc(h.cta || 'See the work')} ↓</a></div>
+
       </div>
-    </section>
-
-    <section class="sec" id="work"><div class="wrap">
-      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">01 — Selected work</span><h2 class="big"><span class="fit">Case studies</span></h2></div></div>
-      <div class="work">${workList}</div>
-    </div></section>
-
-
-    <section class="sec" id="ui"><div class="wrap">
-      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">02 — UI &amp; visual design</span><h2 class="big"><span class="fit">Screens</span></h2></div></div>
-      <p class="lead rv" style="margin-bottom:clamp(30px,5vh,56px)">More web and visual design, from client work to self-initiated concepts. Click a laptop to flip through the screens.</p>
-      <div class="scs">${ui}</div>
-    </div></section>
-
-
-    <section class="sec bey" id="beyond"><div class="wrap">
-      <div class="sec-h"><div style="flex:1;min-width:0"><span class="kick">03 — Beyond UX</span><h2 class="big"><span class="fit">Off the clock</span></h2></div></div>
-      <p class="lead rv">${esc(b.intro || '')}</p>
-      <p class="mono" style="margin:clamp(28px,5vh,50px) 0 0;color:var(--coral)">Posters · scroll sideways →</p><div class="post-row">${(b.posters || []).map(p => `<button type="button" class="post" data-lb="${esc(u(p))}" data-cap="Poster"><img src="${esc(u(p))}" alt="Poster" loading="lazy"></button>`).join('')}</div>
-      ${(b.print || []).length || feat.length ? `<div class="prn"><p class="mono prn-k">Spaces, print &amp; branding · ${String(b.print.length + feat.length).padStart(2,'0')}</p><div class="prn-g">${feat.map(f => `<button type="button" class="prn-c prn-w rv" data-cs="${esc(f.id)}" aria-label="Read the ${esc(f.title)} story">
-        <span class="prn-m"><img class="prn-main" src="${esc(u(f.cover))}" alt="" loading="lazy"></span>
-        <span class="prn-t"><span class="mono">S/01</span><b>${esc(f.title)}</b><span class="prn-ty">${esc(f.summary)}</span><span class="prn-v mono">Read the story →</span></span>
-      </button>`).join('')}${b.print.map((g, i) => `<button type="button" class="prn-c rv" data-gal="${esc(g.images.map(u).join('|'))}" data-cap="${esc(g.title)}" aria-label="View ${esc(g.title)}, ${g.images.length} images">
-        <span class="prn-m"><img class="prn-main" src="${esc(u(g.images[0]))}" alt="" loading="lazy"><span class="prn-st" aria-hidden="true">${g.images.slice(1, 3).map(x => `<img src="${esc(u(x))}" alt="" loading="lazy">`).join('')}</span></span>
-        <span class="prn-t"><span class="mono">P/${String(i + 1).padStart(2,'0')}</span><b>${esc(g.title)}</b><span class="prn-ty">${esc(g.type)}</span><span class="prn-v mono">View ${g.images.length} ${g.images.length > 1 ? 'images' : 'image'} →</span></span>
-      </button>`).join('')}</div></div>` : ''}
-      ${(b.videos || []).length ? `<p class="mono" style="margin:clamp(40px,7vh,80px) 0 0;color:var(--coral)">${esc(b.videosLabel || 'Video')}</p>
-      <div class="reels">${b.videos.map(v => `<figure class="reel"><div class="reel-ph"><video src="${esc(u(v.src))}" poster="${esc(u(v.poster))}" controls playsinline preload="none" aria-label="${esc(v.title)}"></video></div><figcaption>${esc(v.title)}</figcaption></figure>`).join('')}</div>` : ''}
-      ${b.film ? `<figure class="film rv"><video src="${esc(u(b.film.src))}" poster="${esc(u(b.film.poster))}" controls playsinline preload="none" aria-label="${esc(b.film.title)}"></video><figcaption><b>${esc(b.film.title)}</b><span class="mono">${esc(b.film.label || '')}</span></figcaption></figure>` : ''}
-      <div class="bey-cards">${(b.cards || []).map(c => `<article class="rv"><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></article>`).join('')}</div>
-      <a class="pg-cta rv" href="playground.html">
-        <span class="pg-cta-pics" aria-hidden="true"><img src="work/pg/t/red-jacket-1.jpg" alt=""><img src="work/pg/t/cake-figs-top.jpg" alt=""><img src="work/pg/t/king-of-pop.jpg" alt=""></span>
-        <span class="pg-cta-t"><span class="mono">Posters · nails · cakes · photos of me</span><b>Go to the playground →</b><em>drag everything around ✶</em></span>
-      </a>
-    </div></section>
-
-    <section class="abp" id="about">
+      ${nextLink(pg)}</section>`; }
+    if (pg === 'about') return `
+    <section class="abp" id="about-p">
       <div class="abp-pk">
-        <h2 class="abp-big" aria-label="About me">ABOUT ME</h2>
+        <svg class="abp-star" viewBox="0 0 100 100" aria-hidden="true"><defs><pattern id="abpd" width="2.2" height="2.2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2.2" height="2.2" fill="#efece6"/><circle cx="1.1" cy="1.1" r=".78" fill="#2E2EA3"/></pattern></defs><polygon points="49.8,4.4 56.8,31.8 77.0,12.9 65.4,38.0 95.8,35.8 68.9,49.2 96.3,63.0 64.5,60.9 77.2,91.5 55.8,69.0 51.4,90.1 44.3,67.3 26.1,85.1 34.9,62.1 4.0,65.2 30.1,50.0 5.7,35.6 34.7,39.0 22.7,8.2 44.4,30.7" fill="url(#abpd)"/></svg><h2 class="abp-big" aria-label="About me">ABOUT ME</h2>
         <span class="abp-sig" aria-hidden="true">Emma N.</span>
-        <img class="abp-photo" src="${esc(u(a.portrait))}" alt="Portrait of Emma Neznikova">
+        <img class="abp-photo abp-ht" src="${esc(u('work/me/portrait-star.png'))}" alt="Portrait of Emma Neznikova"><img class="abp-photo abp-ht abp-col" src="${esc(u('work/me/portrait-cut.png'))}" alt="" aria-hidden="true">
         <div class="abp-bot">
           <div><b>Hi, I’m Emma</b><p>${esc((a.text || [])[0] || '')}</p></div>
           <div><b>Experience</b><ul>${xp.map(it => `<li>${esc(it.what)} · ${esc((it.where || '').split('·')[0].trim())} <span>${esc(it.when || '')}</span></li>`).join('')}</ul></div>
@@ -2050,34 +2403,49 @@ body:not(.xmas) .xgame{display:none}
         </div>
       </div>
     </section>
-
     <div class="tick me-tick" aria-label="Things about me"><div class="tick-in">${[0,1].map(k => (C.personality || []).map(t => `<span${k ? ' aria-hidden="true"' : ''}>${esc(t)}</span>`).join('')).join('')}</div></div>
-
-    <section class="sec ct" id="contact"><div class="wrap">
-      <span class="kick" style="color:var(--ink)">05 — Contact</span>
-      <h2 class="big"><span class="fit">Let's work</span><span class="fit w" style="margin-top:.04em">together</span></h2>
-      <div class="ct-grid">
-        <div class="ct-l">
-          <p class="ct-intro">Got a graduation internship, a project or just a question? Write me a little note, I usually answer within a day or two.</p>
-          <a class="ct-mail" href="mailto:${esc(C.email)}">${esc(C.email)}</a>
-          <div class="ct-row">
-            <span class="badge mono">${esc(C.availability)} · ${esc(C.location)}</span>
-            <div class="ct-links">
-              <button type="button" class="btn" id="copy">Copy email</button>
-              ${links.map(l => `<a class="btn ghost" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}
-            </div>
-          </div>
-        </div>
-        <form class="mform mf1" novalidate aria-label="Write Emma a message">
+    <section class="pg wrap" style="padding-top:0">${nextLink(pg)}</section>`;
+    if (pg === 'contact') return `<section class="pg wrap ctp">
+      <header class="ct-h"><span class="ph-k mono rv">05 — Contact</span>
+        <h1 class="ct-big rv"><span>Let’s work</span><span>together</span></h1>
+        <p class="ph-p rv">Got a graduation internship, a project or just a question? I usually answer within a day or two.</p></header>
+      <div class="ctg2">
+        <div class="rv"><a class="ct-mail" href="mailto:${esc(C.email)}">${esc(C.email)}</a>
+          <span class="badge mono">${esc(C.availability)} · ${esc(C.location)}</span>
+          <div class="ct-links" style="margin-top:20px"><button type="button" class="btn" id="copy">Copy email</button>${links.map(l => `<a class="btn ghost" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div></div>
+        <form class="mform mf1 rv" novalidate aria-label="Write Emma a message">
           <p class="mf1-k"><span class="mf1-ic" aria-hidden="true">✉</span> Write me an email right here: fill in the gaps and hit send</p>
           <p class="mf1-line">Hi Emma, I’m <input name="name" autocomplete="name" placeholder="your name" size="9"> from <input name="org" autocomplete="organization" placeholder="company" size="8"> and I’d love to talk about <input name="topic" placeholder="an internship" size="12">.</p>
           <label class="mf1-msg"><span>Anything else? (optional)</span><textarea name="msg" rows="2" placeholder="Write it here…"></textarea></label>
           <div class="mf1-end"><button type="submit" class="mf-go"><span>Send it</span><b>★</b></button>
-          <p class="mf1-note">This opens your email app (Gmail, Mail, Outlook…) with the message ready to send to <u>${esc(C.email)}</u>. Just press send there.</p></div>
+          <p class="mf1-note">This opens your email app with the message ready to send to <u>${esc(C.email)}</u>.</p></div>
         </form>
       </div>
-      <div class="foot"><span>© ${new Date().getFullYear()} Emma Neznikova</span><span>Designed by me · built with AI</span><a href="#hello">Back to top ↑</a></div>
-    </div></section>`;
+      <div class="foot"><span>© ${new Date().getFullYear()} Emma Neznikova</span><span>Designed by me · built with AI</span><a href="#home">Back home ↑</a></div></section>`;
+    /* home */
+    const P = (b.posters || []).map(u);
+    const doors = [['work', 'Work', `${work.length} case studies`, work.map(p => p.cover)],
+      ['visual', 'Visual', 'Screens, print & posters', [...(C.screens || []).slice(0, 2).map(g => g.images[0]), (b.print || [])[0] && b.print[0].images[0], P[2]].filter(Boolean)],
+      ['beyond', 'Beyond UX', 'Film, spaces & the playground', [feat[0] && feat[0].cover, 'work/video/naomi-christmas.jpg', 'work/pg/cake-figs.jpg', 'work/pg/nail-02.jpg'].filter(Boolean)],
+      ['about', 'About', 'Who I am & what I’ve done', [a.portrait, 'work/pg/mirror-cap.jpg', 'work/pg/leather-1.jpg', 'work/pg/street-1.jpg']],
+      ['contact', 'Contact', 'Let’s talk about an internship', ['work/pg/subway.jpg', 'work/pg/heart-top.jpg', 'work/pg/lake-friends.jpg']]];
+    return `<section class="hero" id="hello">
+      <div class="wrap hero-meta mono"><span>Portfolio ’26</span><span>${esc(C.location)}</span></div>
+      <div class="wrap hero-name">
+        <h1 class="big"><span class="fit" aria-label="${esc(C.name + ' ' + C.surname)}">${esc(C.name)}</span></h1>
+        ${h.cutout ? `<figure class="hero-cut" style="--m:url('${esc(u(h.cutout))}')" aria-hidden="true"><img src="${esc(u(h.cutout))}" alt=""></figure>` : ''}
+      </div>
+      <div class="wrap"><p class="big hero-role"><span class="fit">UX<i>★</i>UI<i>★</i>Designer</span></p></div>
+      <div class="wrap hero-row">
+        <p>${esc(h.intro)}</p>
+        <div class="hero-ctas"><span class="badge mono">${esc(C.availability)}</span><a class="btn" href="#work">${esc(h.cta || 'See the work')} →</a></div>
+      </div>
+    </section>
+    <section class="wrap dr">
+      <span class="mono dr-k rv">Where to?</span>
+      <nav class="dr-l" aria-label="Pages">${doors.map(([k, t, d, im], i) => `<a class="dr-i rv" style="--d:${i * .06}s" href="#${k}"><span class="mono">${String(i + 1).padStart(2, '0')}</span><b>${t}</b><span class="dr-ims" aria-hidden="true">${(im || []).slice(0, 4).map((x, j) => `<img src="${esc(u(x))}" alt="" loading="lazy" style="--j:${j}">`).join('')}</span><em>${d}</em><i aria-hidden="true">→</i></a>`).join('')}</nav>
+    </section>
+    <div class="tick" aria-hidden="true"><div class="tick-in">${[0,1].map(() => (C.ticker || []).map(t => `<span>${esc(t)}</span>`).join('')).join('')}</div></div>`;
   }
 
   /* ── CASE STUDY BLOCKS ── */
@@ -2198,7 +2566,6 @@ body:not(.xmas) .xgame{display:none}
 
   /* ── routing ── */
   const home = $('home'), csv = $('csv');
-  home.innerHTML = homeHTML();
   let curCs = null;
   function route() {
     const m = location.hash.match(/^#work\/([\w-]+)/);
@@ -2209,14 +2576,22 @@ body:not(.xmas) .xgame{display:none}
       document.title = `${p.title} — Emma Neznikova`;
     } else {
       const was = document.body.classList.contains('in-cs');
-      document.body.classList.remove('in-cs', 'xmas'); curCs = null; csv.innerHTML = '';
-      document.title = 'Emma Neznikova — UX/UI Designer';
-      fitAll(home);
-      const id = location.hash.slice(1);
-      const t = id && document.getElementById(id);
-      if (t) requestAnimationFrame(() => t.scrollIntoView({ behavior: was || RM ? 'auto' : 'smooth' }));
-      else if (was) { const w = $('work'); w && w.scrollIntoView(); }
+      const pg = PAGES.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
+      const swap = () => { document.body.classList.remove('in-cs', 'xmas'); curCs = null; csv.innerHTML = '';
+        home.innerHTML = homeHTML(pg); home.dataset.pg = pg; reveal(home); fitAll(home); window.scrollTo(0, 0);
+        document.title = (pg === 'home' ? '' : PNAME[pg] + ' — ') + 'Emma Neznikova — UX/UI Designer';
+        document.querySelectorAll('.nav a[data-pg]').forEach(x => x.classList.toggle('on', x.dataset.pg === pg)); wireNP(); };
+      if (home.dataset.pg === pg && !was) return;
+      if (!home.dataset.pg || RM) { swap(); return; }
+      const pt = $('pt'); pt.classList.remove('out'); pt.classList.add('go');
+      setTimeout(() => { swap(); pt.classList.add('out'); setTimeout(() => pt.classList.remove('go', 'out'), 520); }, 430);
     }
+  }
+  function wireNP() {
+    home.querySelectorAll('.fl button').forEach(btn => btn.addEventListener('click', () => {
+      const f = btn.dataset.f; home.querySelectorAll('.fl button').forEach(x => { x.classList.toggle('on', x === btn); x.setAttribute('aria-selected', String(x === btn)); });
+      const sc = home.querySelector('.vsc'); if (sc) sc.classList.toggle('hide', !(f === 'all' || f === 'screens')); const vg = home.querySelector('.vg'); if (vg) vg.classList.toggle('hide', f === 'screens');
+      home.querySelectorAll('.vi').forEach((it, i) => { const show = f === 'all' || it.dataset.k === f; it.classList.toggle('hide', !show); if (show) { it.style.animation = 'none'; it.offsetHeight; it.style.animation = ''; } }); }));
   }
   addEventListener('hashchange', route);
   document.addEventListener('click', e => {
@@ -2314,6 +2689,80 @@ document.addEventListener('submit', e => {
   const spin = () => { const r = document.querySelector('.hero-ring'); if (r) r.style.rotate = (scrollY * 0.18) + 'deg'; ticking = false; };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(spin); } }, { passive: true });
 })();
+
+  /* Beyond: video previews */
+  document.addEventListener('mouseover', e => { const r = e.target.closest && e.target.closest('.vr'); if (r && !r.classList.contains('live')) { const v = r.querySelector('video'); v.muted = true; v.play().catch(() => {}); } });
+  document.addEventListener('mouseout', e => { const r = e.target.closest && e.target.closest('.vr'); if (r && !r.contains(e.relatedTarget) && !r.classList.contains('live')) r.querySelector('video').pause(); });
+  document.addEventListener('click', e => {
+    const r = e.target.closest && e.target.closest('.vr-ph');
+    if (r && !r.closest('.vr').classList.contains('live')) { document.querySelectorAll('.vr.live').forEach(x => { x.classList.remove('live'); const v = x.querySelector('video'); v.controls = false; v.muted = true; v.pause(); });
+      const v = r.querySelector('video'); r.closest('.vr').classList.add('live'); v.muted = false; v.controls = true; v.currentTime = 0; v.play().catch(() => {}); }
+    const f = e.target.closest && e.target.closest('.vd-play');
+    if (f) { const w = f.closest('.vd-film'), v = w.querySelector('video'); w.classList.add('on'); v.controls = true; v.play().catch(() => {}); }
+  });
+
+  /* scroll-driven interactions */
+  (() => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const bar = document.createElement('div'); bar.className = 'bun'; bar.setAttribute('aria-hidden', 'true');
+    bar.innerHTML = '<svg viewBox="0 0 55 35" role="img"><circle cx="2.5" cy="2.5" r="2" data-x="0" data-y="0"/><circle cx="32.5" cy="2.5" r="2" data-x="6" data-y="0"/><circle cx="7.5" cy="2.5" r="2" data-x="1" data-y="0"/><circle cx="12.5" cy="2.5" r="2" data-x="2" data-y="0"/><circle cx="17.5" cy="2.5" r="2" data-x="3" data-y="0"/><circle cx="22.5" cy="2.5" r="2" data-x="4" data-y="0"/><circle cx="52.5" cy="2.5" r="2" data-x="10" data-y="0"/><circle cx="2.5" cy="7.5" r="2" data-x="0" data-y="1"/><circle cx="32.5" cy="7.5" r="2" data-x="6" data-y="1"/><circle cx="37.5" cy="7.5" r="2" data-x="7" data-y="1"/><circle cx="52.5" cy="7.5" r="2" data-x="10" data-y="1"/><circle cx="2.5" cy="12.5" r="2" data-x="0" data-y="2"/><circle cx="32.5" cy="12.5" r="2" data-x="6" data-y="2"/><circle cx="42.5" cy="12.5" r="2" data-x="8" data-y="2"/><circle cx="52.5" cy="12.5" r="2" data-x="10" data-y="2"/><circle cx="2.5" cy="17.5" r="2" data-x="0" data-y="3"/><circle cx="32.5" cy="17.5" r="2" data-x="6" data-y="3"/><circle cx="7.5" cy="17.5" r="2" data-x="1" data-y="3"/><circle cx="12.5" cy="17.5" r="2" data-x="2" data-y="3"/><circle cx="17.5" cy="17.5" r="2" data-x="3" data-y="3"/><circle cx="47.5" cy="17.5" r="2" data-x="9" data-y="3"/><circle cx="52.5" cy="17.5" r="2" data-x="10" data-y="3"/><circle cx="2.5" cy="22.5" r="2" data-x="0" data-y="4"/><circle cx="32.5" cy="22.5" r="2" data-x="6" data-y="4"/><circle cx="52.5" cy="22.5" r="2" data-x="10" data-y="4"/><circle cx="2.5" cy="27.5" r="2" data-x="0" data-y="5"/><circle cx="32.5" cy="27.5" r="2" data-x="6" data-y="5"/><circle cx="52.5" cy="27.5" r="2" data-x="10" data-y="5"/><circle cx="2.5" cy="32.5" r="2" data-x="0" data-y="6"/><circle cx="32.5" cy="32.5" r="2" data-x="6" data-y="6"/><circle cx="7.5" cy="32.5" r="2" data-x="1" data-y="6"/><circle cx="12.5" cy="32.5" r="2" data-x="2" data-y="6"/><circle cx="17.5" cy="32.5" r="2" data-x="3" data-y="6"/><circle cx="22.5" cy="32.5" r="2" data-x="4" data-y="6"/><circle cx="52.5" cy="32.5" r="2" data-x="10" data-y="6"/></svg>'; document.body.appendChild(bar);
+    const dots = [...bar.querySelectorAll('circle')].map(c => [c, +c.dataset.x, +c.dataset.y]);
+    const nav = () => { const h = document.getElementById('top'), c = document.querySelector('body.in-cs .cs-bar'); const t = Math.max(h ? h.getBoundingClientRect().bottom : 64, c ? c.getBoundingClientRect().bottom : 0); bar.style.setProperty('--bt', (t + 6) + 'px'); };
+    const SEL = '.bch, .post-row, .prn-c, .vx, .pg-cta, .bey .lead';
+    let raf = 0;
+    const tick = () => { raf = 0; const vh = innerHeight;
+      const de = document.documentElement; bar.style.setProperty('--pg', (scrollY / Math.max(1, de.scrollHeight - vh)).toFixed(4));
+      const ph = scrollY / 90; dots.forEach(([c, x, y]) => { const w = Math.sin(ph - x * .55 - y * .25); c.setAttribute('r', (0.9 + 1.5 * (w * .5 + .5)).toFixed(2)); c.classList.toggle('hi', w > .82); }); nav();
+      document.querySelectorAll(SEL).forEach(el => { const r = el.getBoundingClientRect(); if (r.bottom < -200 || r.top > vh + 200) return;
+        const en = Math.min(1, Math.max(0, (vh - r.top) / (vh * .55)));
+        const sp = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+        el.style.setProperty('--en', en.toFixed(3)); el.style.setProperty('--sp', sp.toFixed(3)); }); };
+    const on = () => { if (!raf) raf = requestAnimationFrame(tick); };
+    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on); addEventListener('hashchange', () => setTimeout(on, 60));
+    new MutationObserver(on).observe(document.body, { childList: true, subtree: true }); on();
+  })();
+
+  /* Video index player: one <video> per film, stacked, so switching is instant */
+  (() => {
+    let tm = 0;
+    const show = btn => { const box = btn.closest('.vx'); if (!box) return;
+      const i = +btn.dataset.i, f = box.querySelector('.vx-f'), vids = [...f.querySelectorAll('video')], v = vids[i], L = JSON.parse(box.dataset.items);
+      box.querySelectorAll('.vx-i').forEach(x => x.classList.toggle('on', x === btn));
+      
+      const snd = f.querySelector('.vx-snd'), loud = snd.getAttribute('aria-pressed') === 'true';
+      vids.forEach(x => { if (x !== v) { x.classList.remove('on'); x.pause(); } });
+      if (v.preload === 'none') v.preload = 'auto';
+      v.muted = !loud; v.classList.add('on'); const pr = v.play(); if (pr) pr.catch(() => {});
+      f.querySelector('.vx-n').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(vids.length).padStart(2, '0'); };
+    const pick = btn => { if (btn.classList.contains('on')) return; clearTimeout(tm); tm = setTimeout(() => show(btn), 70); };
+    document.addEventListener('mouseover', e => { const b = e.target.closest && e.target.closest('.vx-i'); if (b && matchMedia('(hover:hover)').matches) pick(b); });
+    document.addEventListener('focusin', e => { const b = e.target.closest && e.target.closest('.vx-i'); if (b) pick(b); });
+    document.addEventListener('click', e => {
+      const b = e.target.closest && e.target.closest('.vx-i'); if (b) { clearTimeout(tm); show(b); }
+      const s = e.target.closest && e.target.closest('.vx-snd'); if (s) { const v = s.closest('.vx-f').querySelector('video.on'); const loud = s.getAttribute('aria-pressed') !== 'true';
+        v.muted = !loud; s.setAttribute('aria-pressed', String(loud)); s.textContent = loud ? 'Sound on' : 'Sound off'; v.play().catch(() => {}); }
+    });
+    const io = new IntersectionObserver(es => es.forEach(en => { const f = en.target, v = f.querySelector('video.on');
+      if (en.isIntersecting) { f.querySelectorAll('video[preload="none"]').forEach(x => x.preload = 'metadata'); v.play().catch(() => {}); } else f.querySelectorAll('video').forEach(x => x.pause()); }), { threshold: .3 });
+    const watch = () => document.querySelectorAll('.vx-f:not([data-w])').forEach(f => { f.dataset.w = 1; io.observe(f); });
+    new MutationObserver(watch).observe(document.body, { childList: true, subtree: true }); watch();
+  })();
+
+  /* hover image + cursor label */
+  (() => { const hov = document.getElementById('hov'); const cur = document.createElement('div'); cur.className = 'cur'; cur.setAttribute('aria-hidden', 'true'); document.body.appendChild(cur);
+    let x = 0, y = 0, hx = 0, hy = 0, cx = 0, cy = 0;
+    addEventListener('mousemove', e => { x = e.clientX; y = e.clientY;
+      const d = null; if (d) { if (hov.getAttribute('src') !== d.dataset.img) hov.src = d.dataset.img; hov.classList.add('on'); } else hov.classList.remove('on');
+      const c = e.target.closest && e.target.closest('[data-cur]'); if (c) { cur.textContent = c.dataset.cur; cur.classList.add('on'); } else cur.classList.remove('on'); }, { passive: true });
+    const loop = () => { hx += (x - hx) * .14; hy += (y - hy) * .14; cx += (x - cx) * .35; cy += (y - cy) * .35;
+      hov.style.transform = `translate(${hx + 30}px, ${hy - 120}px)`; cur.style.transform = `translate(${cx}px, ${cy}px)`; requestAnimationFrame(loop); }; loop();
+    addEventListener('hashchange', () => { hov.classList.remove('on'); cur.classList.remove('on'); });
+  })();
+
+  /* show only whole photos in the menu strips */
+  const drFit = () => document.querySelectorAll('.dr-ims').forEach(st => { const w = st.clientWidth; let used = 0;
+    st.querySelectorAll('img').forEach(im => { im.style.display = ''; const iw = st.clientHeight * .8 + 8; used += iw; if (used - 8 > w) im.style.display = 'none'; }); });
+  addEventListener('resize', drFit); new MutationObserver(drFit).observe(document.getElementById('home'), { childList: true }); setTimeout(drFit, 100);
 </script>
 </body>
 </html>
